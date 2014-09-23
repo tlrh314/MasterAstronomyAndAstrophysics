@@ -301,8 +301,8 @@ def compare_two_stations(station_west, station_east):
                                            station_east, year)
         max_temp_east_avg = month_average_time_series(max_temp_east)
         for month in range(7, 10):  # summer
-            print 'west', year, month, 'max', max_temp_west_avg[month]
-            print 'east', year, month, 'max', max_temp_east_avg[month]
+            # print 'west', year, month, 'max', max_temp_west_avg[month]
+            # print 'east', year, month, 'max', max_temp_east_avg[month]
             summer_five_years_west.append(max_temp_west_avg[month])
             summer_five_years_east.append(max_temp_east_avg[month])
 
@@ -315,21 +315,34 @@ def compare_two_stations(station_west, station_east):
                                            station_east, year)
         min_temp_east_avg = month_average_time_series(min_temp_east)
         for month in range(1, 4):  # winter
-            print 'west', year, month, 'min', min_temp_west_avg[month]
-            print 'east', year, month, 'min', min_temp_east_avg[month]
+            # print 'west', year, month, 'min', min_temp_west_avg[month]
+            # print 'east', year, month, 'min', min_temp_east_avg[month]
             winter_five_years_west.append(min_temp_west_avg[month])
             winter_five_years_east.append(min_temp_east_avg[month])
 
-    print summer_five_years_west
-    print summer_five_years_east
+    # print summer_five_years_west
+    # print summer_five_years_east
     plot_five_year_series(station_west, station_east, 1991, 'TX',
                           summer_five_years_west, summer_five_years_east)
 
-    print winter_five_years_west
-    print winter_five_years_east
+    # print winter_five_years_west
+    # print winter_five_years_east
     plot_five_year_series(station_west, station_east, 1991, 'TN',
                           winter_five_years_west, winter_five_years_east)
 
+
+def time_series_for_decade():
+    tx_column_number = find_column_number('Maximum temperature')
+    decade_time_series = list()
+
+    for year in range(1960, 1970):
+        decade_time_series.extend(create_time_series(
+            knmi_data, tx_column_number, 344, year))
+
+    plot_time_series(decade_time_series, 'TX')
+
+
+# This function is for hw4 (not finished).
 def monthly_decade_average(dataset, station_id, column_number):
     """
     Function to calculate monthly averages per decade.
@@ -381,7 +394,7 @@ def monthly_decade_average(dataset, station_id, column_number):
     return decade_average
 
 
-# Step 5 (hw4)
+# Step 5 (hw4). Not finished.
 # Compare the summers in “De kooy” with those in “Valkenburg”. Calculate
 # monthly averages for min, max temperature and the amount of precipitation
 # on a 10 yearly basis. Where are the summers warmer, where are they
@@ -423,6 +436,7 @@ def compare_dekooy_valkenburg(dataset):
         print k, v
 
 
+# This code is for hw4. Not finished.
 def plot_comparison(valkenburgData, dekooyData, s):
     # http://matplotlib.org/examples/api/barchart_demo.html
     title = {'TX': 'maximum temperature', 'TN': 'minimum temperature',
@@ -445,7 +459,7 @@ def plot_comparison(valkenburgData, dekooyData, s):
     # plt.close()
 
 
-# Step 6 (hw4)
+# Step 6 (hw4). Not finished.
 # Using the monthly averages (averaged over 10 year blocks), is the weather
 # getting warmer or wetter?
 def warmer_or_wetter():
@@ -479,6 +493,8 @@ def main():
     plot_time_series(hottest_time_series, 'TX')
 
     compare_two_stations(210, 283)
+
+    time_series_for_decade()
 
     # compare_dekooy_valkenburg(knmi_data)
 
