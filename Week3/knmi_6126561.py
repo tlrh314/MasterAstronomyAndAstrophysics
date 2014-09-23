@@ -1,20 +1,21 @@
-# -* coding: utf-8 -*
 #!/usr/bin/python
+# -* coding: utf-8 -*
+
 # knmi-6126561.py <-- Step 1 (hw4)
 
 # Basic Linux and Coding for AA homework 4 (week 2) and homework 5 (week 3).
 # Usage: python knmi-6126561.py
 # TLR Halbesma, 6126561, september 21, 2014. Version 2.0; added hw5.
 
-import math
-import matplotlib.pyplot as plt
-import numpy as np
-from collections import defaultdict
 # An instance of defaultdict(dict) enables obtaining values as
 # name_of_instance[var1][var2]. e.g. for matrix of month and decade.
+from collections import defaultdict
+
+import matplotlib.pyplot as plt
+import numpy as np
 
 # Import methods and variables from homework 3 (week 2).
-from knmi_1_6126561 import * # <-- Step 2 (hw4)
+from knmi_1_6126561 import *  # <-- Step 2 (hw4)
 
 # Override INPUTFILE with dataset that does not include 20000101!
 # NB this is a slightly different dataset than used for homework 3.
@@ -22,332 +23,366 @@ INPUTFILE = './KNMI_19991231.txt'
 
 # Make data available troughout all methods (global variables).
 # Perhaps in the future implement a class that holds the data?
-knmiData = list()
-knmiStationIDs = list()
-knmiColumnDescription = dict()
-knmiColumnHeader = list()
+knmi_data = list()
+knmi_station_ids = list()
+knmi_column_description = dict()
+knmi_column_header = list()
 
-def readDataset(maxLines=None):
+
+def read_dataset(max_lines=None):
     """
     Read the KNMI dataset, save to global variables.
 
-    maxLines : int/None. if None, entire dataset is read.
-               else: maxLines is the maximum number of lines to read.
+    max_lines : int/None. if None, entire dataset is read.
+               else: max_lines is the maximum number of lines to read.
 
-    knmiData: list containing a list with all datapoints.
-    knmiStationIDs: list containing stationID's parameters.
-    knmiColumnDescription: dict mapping column name to description.
-    knmiColumnHeader: list of column names
+    knmi_data: list containing a list with all datapoints.
+    knmi_station_ids: list containing station_id's parameters.
+    knmi_column_description: dict mapping column name to description.
+    knmi_column_header: list of column names
 
     See knmi_1_6126561.py for full details.
     """
 
+    global knmi_data
+    global knmi_station_ids
+    global knmi_column_description
+    global knmi_column_header
+
     f = open(INPUTFILE, 'r')
-    datasetKNMI = f.readlines()
+    raw_knmi_data = f.readlines()
     f.close()
 
-    if maxLines is None:
-        maxLines = len(datasetKNMI)
-    # The header is 85 lines so the program fails if maxLines < 85!
-    elif maxLines < 85:
-        maxLines = 85
-
-    global knmiData
-    global knmiStationIDs
-    global knmiColumnDescription
-    global knmiColumnHeader
+    if max_lines is None:
+        max_lines = len(raw_knmi_data)
+    # The header is 85 lines so the program fails if max_lines < 85!
+    elif max_lines < 85:
+        max_lines = 85
 
     # Obtain data and entries using homework3's methods.
-    print "readDataset(): start. Be patient, may take a while."
-    knmiData = read_data(datasetKNMI, maxLines)
-    knmiStationIDs = read_StationID(datasetKNMI)
-    knmiColumnDescription = read_ColumnDescription(datasetKNMI)
-    knmiColumnHeader = read_ColumnHeader(datasetKNMI)
+    print "read_dataset(): start. Be patient, may take a while."
+    knmi_data = read_data(raw_knmi_data, max_lines)
+    knmi_station_ids = read_stationid(raw_knmi_data)
+    knmi_column_description = read_column_description(raw_knmi_data)
+    knmi_column_header = read_column_header(raw_knmi_data)
 
-    print "\nreadDataset(): done. Success :-)!\n"
+    print "\nread_dataset(): done. Success :-)!\n"
 
-def findColumnNumber(myIdentifier):
+
+def find_column_number(keyword):
     """
     Function to obtain the number of a column given a (unique) identifier.
-    This functions searches myIdentifier in ColumnDiscription header, finds
-    its abbreviation and looks for that abbreviation in the columnHeader.
+    This functions searches keyword in ColumnDiscription header, finds
+    its abbreviation and looks for that abbreviation in the column_header.
 
-    myIdentifier : string. e.g. 'Maximum temperature', 'precipitation', etc.
+    keyword : string. e.g. 'Maximum temperature', 'precipitation', etc.
 
-    returns an integer. Data entry list number for myIdentifier string.
+    returns an integer. Data entry list number for keyword string.
     """
 
-    ColumnAbbreviation = None
+    column_abbreviation = None
     # Loop trough ColumnDescription, find given string in value (description).
-    for key,value in knmiColumnDescription.items():
-        if myIdentifier in value:
+    for key, value in knmi_column_description.items():
+        if keyword in value:
             # Now get the key (abbreviation) and find it in the ColumnHeader.
-            ColumnAbbreviation = key
+            column_abbreviation = key
             break
-    if ColumnAbbreviation: # Check if ColumnAbbreviation is found.
-        return knmiColumnHeader.index(ColumnAbbreviation)
+    if column_abbreviation:  # Check if column_abbreviation is found.
+        return knmi_column_header.index(column_abbreviation)
     else:
         return None
 
-def findStationName(myStationID):
-    for station in knmiStationIDs:
-        if station[0] == myStationID:
+
+def find_station_name(station_id):
+    for station in knmi_station_ids:
+        if station[0] == station_id:
             return station[-1]
 
     return None
 
-def findStationID(myStationName):
-    for station in knmiStationIDs:
-        if ''.join(station[4:]) == myStationName:
+
+def find_station_id(station_name):
+    for station in knmi_station_ids:
+        if ''.join(station[4:]) == station_name:
             return station[0]
 
     return None
 
+
 # Step 3 (hw4), Question 1 (hw5)
-def findMax(myDataSet, columnNumber, toReverse):
+def find_max(dataset, column_number, to_reverse):
     """
-    Find the maximum value in the data set given a columnNumber to sort on.
+    Find the maximum value in the data set given a column_number to sort on.
     Found sorting a matrix on http://xahlee.info/perl-python/sort_list.html
 
-    myDataSet : nested list. Contains the dataset that should be sorted.
-    columnNumber : int. Specify which column should be sorted on.
-    toReverse : boolean. True => reverse (max -> min); False => (min -> max)
+    dataset : nested list. Contains the dataset that is sorted.
+    column_number : int. Specify which column is  sorted on.
+    to_reverse : boolean. True => reverse (max -> min); False => (min -> max)
 
     returns a list containing the entry of the max (or min) in the dataset.
     """
 
-    myDataSet.sort(key=lambda x:x[columnNumber], reverse=toReverse)
-    return myDataSet[0]
+    # Initlial implementation with sort and lambda. This, however, alters
+    # the order of my global variable. Therefore changed the implementation.
+    # dataset.sort(key=lambda x: x[column_number], reverse=to_reverse)
+    # return dataset[0]
+
+    biggest = 0
+    biggest_entry = list()
+
+    if to_reverse:
+        for entry in dataset:
+            # NB biggest now is smallest!
+            if entry[column_number] < biggest:
+                biggest = entry[column_number]
+                biggest_entry = entry
+    else:
+        for entry in dataset:
+            if entry[column_number] > biggest:
+                biggest = entry[column_number]
+                biggest_entry = entry
+
+    return biggest_entry
+
 
 # Step 4 (hw4), Question 2 (hw5)
-def createTimeSeries(myDataSet, columnNumber, stationID, year):
+def create_time_series(dataset, column_number, station_id, year):
     """
     function to create a time-series.
 
-    myDataSet : nested list. Contains the dataset a subset should be made for.
-    columnNumber : int. Specify which column is in the subset.
-    stationID : int. ID number of Station the averages should be obtained for.
-    year : int. Specify which year should be in the subset.
+    dataset : nested list. Contains the dataset a subset is made for.
+    column_number : int. Specify which column is in the subset.
+    station_id : int. ID number of Station the averages is obtained for.
+    year : int. Specify which year is in the subset.
 
     returns a nested list containing the time-series subset.
     """
 
     subset = list()
 
-    for entry in myDataSet:
+    for entry in dataset:
         # entry[1] is the date YYYYMMDD as integer. So div by 1e5 will
         # result in YYYY. As it is int-int division it is truncated.
-        if entry[0] == stationID and entry[1]/10000 == year:
-            print entry
-            subset.append(list((entry[0], entry[1], entry[columnNumber])))
+        if entry[0] == station_id and entry[1]/10000 == year:
+            subset.append(list((entry[0], entry[1], entry[column_number])))
 
     return subset
 
-def monthAverageTimeSeries(myTimeSeries):
-    monthAverage = dict()
-    monthCount = dict()
+
+def month_average_time_series(time_series):
+    month_average = dict()
+    month_count = dict()
 
     # Set initial values to zero
-    for i in range(1,13):
-        monthAverage[i] = int()
-        monthCount[i] = int()
+    for i in range(1, 13):
+        month_average[i] = int()
+        month_count[i] = int()
 
     # Sum per-month, keep track of number of entries in dataset.
-    for entry in myTimeSeries:
-        month = (entry[1]/100)%100
+    for entry in time_series:
+        month = (entry[1]/100) % 100
         if entry[2] and entry[2] is not 0:
-            monthCount[month] += 1
-            monthAverage[month] += entry[2]
+            month_count[month] += 1
+            month_average[month] += entry[2]
 
     # Devide per-month sum by number of entries.
-    for i in range(1,13):
-        monthAverage[i] /= float(monthCount[i])
+    for i in range(1, 13):
+        month_average[i] /= float(month_count[i])
 
-    return monthAverage
+    return month_average
+
 
 # A stepped line plot.. that is just a histogram, right?!
-def plotTimeSeries(myTimeSeries, whichData):
-    monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug',\
-            'Sep', 'Oct', 'Nov', 'Dec']
-    y_label = {'TX': r'Maximum temperature TX ($^\circ$C)',\
-            'TN': r'Minimum temperature TN ($^\circ$C)',\
-            'RH': r'Daily precipitation RH (mm)'}
+def plot_time_series(time_series, chosen_column):
+    month_names = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug',
+                   'Sep', 'Oct', 'Nov', 'Dec']
+    y_label = {'TX': r'Maximum temperature TX ($^\circ$C)',
+               'TN': r'Minimum temperature TN ($^\circ$C)',
+               'RH': r'Daily precipitation RH (mm)'}
 
-    firstEntry = myTimeSeries[0]
-    stationID = firstEntry[0]
-    stationName = findStationName(stationID)
-    year = firstEntry[1]/10000
+    first_entry = time_series[0]
+    station_id = first_entry[0]
+    station_name = find_station_name(station_id)
+    year = first_entry[1]/10000
 
-    monthAverage = monthAverageTimeSeries(myTimeSeries)
+    month_average = month_average_time_series(time_series)
 
-    index = np.arange(1,13)
+    index = np.arange(1, 13)
     width = 0.55
     fig, ax = plt.subplots()
-    histogram = ax.bar(index, [monthAverage[x]/10. for x in range(1,13)],\
-            width, color='r')
-    ax.set_xlabel('Month of '+str(year))
-    ax.set_ylabel(y_label.get(whichData, 'KeyError'))
-    ax.set_title(whichData+' for '+stationName+' in '+str(year))
-    plt.xticks(range(1,13), monthNames, rotation=45)
-    plt.savefig('BLAC_hw5_TLRH_6126561_'+str(stationID)+'_'+whichData\
-            +'_'+str(year)+'.pdf')
+    ax.bar(index, [month_average[x]/10. for x in range(1, 13)],
+           width, color='r')
+    ax.set_xlabel('Month of ' + str(year))
+    ax.set_ylabel(y_label.get(chosen_column, 'KeyError'))
+    ax.set_title(chosen_column + ' for ' + station_name +
+                 ' in ' + str(year))
+    plt.xticks(range(1, 13), month_names, rotation=45)
+    plt.savefig('BLAC_hw5_TLRH_6126561_' + str(station_id) + '_' +
+                chosen_column + '_' + str(year) + '.pdf')
 
-def monthlyDecadeAverage(myDataSet, stationID, columnNumber):
+
+def monthly_decade_average(dataset, station_id, column_number):
     """
     Function to calculate monthly averages per decade.
     NB, this functions requires a dataset from 1950 until (excluding) 2000.
     This is because I use integer indices representing month and decade
     in the range(1,13) for month, and range(5,10) for decade.
 
-    myDataSet : list containing the entire dataset including header
-    stationID : int. ID number of Station the averages should be obtained for.
-    columnNumber : int. Number of column the averages should be obtained for.
+    dataset : list containing the entire dataset including header
+    station_id : int. ID number of station the averages is obtained for.
+    column_number : int. Number of column the averages is obtained for.
 
-    returns a dictionary. The keys are 4-tuples (stationID, columnNumber,
+    returns a dictionary. The keys are 4-tuples (station_id, column_number,
         month, decade). The values are the averages as a float.
     """
 
-    decadeAverage = dict()
-    numberOfEntries = defaultdict(dict)
+    decade_average = dict()
+    number_of_entries = defaultdict(dict)
 
     # All variables must be zero initialy. Otherwise the first += fails.
-    for month in range(1,13):
-        for decade in range(5,10):
-            numberOfEntries[month][decade] = int()
-            decadeAverage[(stationID,columnNumber,month,decade)] = int()
+    for month in range(1, 13):
+        for decade in range(5, 10):
+            number_of_entries[month][decade] = int()
+            decade_average[(station_id, column_number, month, decade)] =\
+                int()
 
-    for entry in myDataSet:
-        if entry[0] == stationID:
+    for entry in dataset:
+        if entry[0] == station_id:
             # entry[1] is the date YYYYMMDD as integer. So (div by 100)%100
             # will result in MM. As it is int-int division it is truncated.
-            month = (entry[1]/100)%100
+            month = (entry[1]/100) % 100
             # split decade up in blocks of 10
             # Note that the dataset must not include 2000!!
-            decade = (entry[1]/100000)%10
+            decade = (entry[1]/100000) % 10
 
-            # Missing data has value None in dataset. NB bool(0) -> False!
-            if entry[columnNumber] and entry[columnNumber] is not 0:
-                numberOfEntries[month][decade] += 1
-                decadeAverage[(stationID,columnNumber,month,decade)] \
-                        += entry[columnNumber]
+            # Missing data has value None in dataset. NB bool(0) --> False!
+            if entry[column_number] and entry[column_number] is not 0:
+                number_of_entries[month][decade] += 1
+                decade_average[(station_id, column_number, month, decade)] \
+                    += entry[column_number]
 
     # Now divide the monthly decade sums over the number of entries.
-    for month in range(1,13):
+    for month in range(1, 13):
         for decade in range(5, 10):
-            if decadeAverage[(stationID, columnNumber,month,decade)] != 0:
-                decadeAverage[(stationID,columnNumber,month,decade)]\
-                        /= float(numberOfEntries[month][decade])
+            if decade_average[(station_id, column_number, month, decade)] \
+                    != 0:
+                decade_average[(station_id, column_number, month, decade)]\
+                    /= float(number_of_entries[month][decade])
 
-    return decadeAverage
+    return decade_average
+
 
 # Step 5 (hw4)
 # Compare the summers in “De kooy” with those in “Valkenburg”. Calculate
 # monthly averages for min, max temperature and the amount of precipitation
 # on a 10 yearly basis. Where are the summers warmer, where are they
 # wetter?
-def compareDeKooyValkenburg(myDataSet):
-    precipitationNumber = findColumnNumber('precipitation amount')
-    hottestNumber = findColumnNumber('Maximum temperature')
-    coldestNumber = findColumnNumber('Minimum temperature')
+def compare_dekooy_valkenburg(dataset):
+    rh_column_number = find_column_number('precipitation amount')
+    tx_column_number = find_column_number('Maximum temperature')
+    tn_column_number = find_column_number('Minimum temperature')
 
-    deKooy = findStationID('DE KOOY')
-    valkenburg = findStationID('VALKENBURG')
+    dekooy = find_station_id('DE KOOY')
+    valkenburg = find_station_id('VALKENBURG')
 
-    deKooyRHAverage = \
-            monthlyDecadeAverage(knmiData, deKooy, precipitationNumber)
+    dekooyRHAverage = \
+        monthly_decade_average(knmi_data, dekooy, rh_column_number)
     valkenburgRHAverage =\
-            monthlyDecadeAverage(knmiData, valkenburg, precipitationNumber)
-    deKooyTXAverage = \
-            monthlyDecadeAverage(knmiData, deKooy, hottestNumber)
+        monthly_decade_average(knmi_data, valkenburg, rh_column_number)
+    dekooyTXAverage = \
+        monthly_decade_average(knmi_data, dekooy, tx_column_number)
     valkenburgTXAverage =\
-            monthlyDecadeAverage(knmiData, valkenburg, hottestNumber)
-    deKooyTNAverage = \
-            monthlyDecadeAverage(knmiData, deKooy, coldestNumber)
+        monthly_decade_average(knmi_data, valkenburg, tx_column_number)
+    dekooyTNAverage = \
+        monthly_decade_average(knmi_data, dekooy, tn_column_number)
     valkenburgTNAverage =\
-            monthlyDecadeAverage(knmiData, valkenburg, coldestNumber)
+        monthly_decade_average(knmi_data, valkenburg, tn_column_number)
 
-    for k,v in deKooyRHAverage.items():
-        print k,v
-    for k,v in  valkenburgRHAverage.items():
-        print k,v
+    for k, v in dekooyRHAverage.items():
+        print k, v
+    for k, v in valkenburgRHAverage.items():
+        print k, v
     print
-    for k,v in deKooyTXAverage.items():
-        print k,v
-    for k,v in  valkenburgTXAverage.items():
-        print k,v
+    for k, v in dekooyTXAverage.items():
+        print k, v
+    for k, v in valkenburgTXAverage.items():
+        print k, v
     print
-    for k,v in deKooyTNAverage.items():
-        print k,v
-    for k,v in  valkenburgTNAverage.items():
-        print k,v
+    for k, v in dekooyTNAverage.items():
+        print k, v
+    for k, v in valkenburgTNAverage.items():
+        print k, v
 
-def plotComparison(valkenburgData, deKooyData, s):
+
+def plot_comparison(valkenburgData, dekooyData, s):
     """
     REPLACEREPLACE
     """
 
     # http://matplotlib.org/examples/api/barchart_demo.html
-    title = {'TX': 'maximum temperature', 'TN':'minimum temperature',\
-            'RH': 'daily precipitation'}
-    monthNames = ['Jan', 'Feb', 'Mrt', 'Apr', 'Mei', 'Jun', 'Jul', 'Aug',\
-            'Sep', 'Okt', 'Nov', 'Dec']
-    ind = np.arange(1,13)
+    title = {'TX': 'maximum temperature', 'TN': 'minimum temperature',
+             'RH': 'daily precipitation'}
+    month_names = ['Jan', 'Feb', 'Mrt', 'Apr', 'Mei', 'Jun', 'Jul', 'Aug',
+                   'Sep', 'Okt', 'Nov', 'Dec']
+    ind = np.arange(1, 13)
     width = 0.35
     fig, ax = plt.subplots()
-    rects1 = ax.bar(ind, tuple([valkenburgData.get((s,i, 5))\
-            for i in range(1,13)]), width, color='r')
-    rects2 = ax.bar(ind+width, tuple([deKooyData.get((s,i, 5))\
-            for i in range(1,13)]), width, color='y')
+    rects1 = ax.bar(ind, tuple([valkenburgData.get((s, i, 5))
+                    for i in range(1, 13)]), width, color='r')
+    rects2 = ax.bar(ind + width, tuple([dekooyData.get((s, i, 5))
+                    for i in range(1, 13)]), width, color='y')
 
     ax.legend((rects1[0], rects2[0]), ('Valkenburg', 'DeKooy'))
     ax.set_ylabel(s)
-    ax.set_title('Plot of '+title[s])
-    plt.xticks(range(1,13), monthNames, rotation=45)
+    ax.set_title('Plot of ' + title[s])
+    plt.xticks(range(1, 13), month_names, rotation=45)
     plt.show()
-    #plt.close()
+    # plt.close()
+
 
 # Step 6 (hw4)
 # Using the monthly averages (averaged over 10 year blocks), is the weather
 # getting warmer or wetter?
-def warmerOrWetter():
+def warmer_or_wetter():
     # To implement this function requires rewriting the very crappy
     # implementation of step 5
     return None
 
+
 def main():
-    readDataset()
+    read_dataset()
 
-    precipitationNumber = findColumnNumber('precipitation amount')
-    hottestNumber = findColumnNumber('Maximum temperature')
-    coldestNumber = findColumnNumber('Minimum temperature')
+    rh_column_number = find_column_number('precipitation amount')
+    tx_column_number = find_column_number('Maximum temperature')
+    tn_column_number = find_column_number('Minimum temperature')
 
-    wettestDay = findMax(knmiData, precipitationNumber,  True)
-    print "The wettest day was at {0} in {1}({2}).".format(\
-            wettestDay[1],findStationName(wettestDay[0]),wettestDay[0]),
+    wettest = find_max(knmi_data, rh_column_number,  False)
+    print "The wettest day was at {0} in {1}({2}).".\
+        format([1], find_station_name(wettest[0]), wettest[0]),
     print "The precipitation amount was {} mm.\n"\
-            .format(wettestDay[precipitationNumber]/10.0)
+        .format(wettest[rh_column_number]/10.0)
 
-    hottestDay = findMax(knmiData, hottestNumber, True)
-    print "The hottest day was at {0} in {1}({2}).".format(\
-            hottestDay[1],findStationName(hottestDay[0]),hottestDay[0]),
+    hottest = find_max(knmi_data, tx_column_number, False)
+    print "The hottest day was at {0} in {1}({2}).".\
+        format(hottest[1], find_station_name(hottest[0]), hottest[0]),
     print "The temperature was {} degrees Centigrade.\n"\
-            .format(hottestDay[hottestNumber]/10.0)
+        .format(hottest[tx_column_number]/10.0)
 
-
-    hottestTimeSeries = createTimeSeries(knmiData, hottestNumber, 260, 1968)
+    hottest_time_series =\
+        create_time_series(knmi_data, tx_column_number, 260, 1968)
     print "Maximum temperature for station 260 in 1968 has the following",
-    print "first ten entries:\n{0}\n".format(hottestTimeSeries[0:10])
-    plotTimeSeries(hottestTimeSeries, 'TX')
+    print "first ten entries:\n{0}\n".format(hottest_time_series[0:10])
+    plot_time_series(hottest_time_series, 'TX')
 
-    #compareDeKooyValkenburg(knmiData)
+    # compare_dekooy_valkenburg(knmi_data)
 
-    #valkenburg, deKooy =compareDeKooyValkenburg(knmiData)
-    #print 'valkenburg'
-    #for k,v in valkenburg.items():
-    #    print k,v
-    #print 'deKooy'
-    #for k,v in deKooy.items():
-    #    print k,v
+    # valkenburg, dekooy =compare_dekooy_valkenburg(knmi_data)
+    # print 'valkenburg'
+    # for k, v in valkenburg.items():
+    #     print k, v
+    # print 'dekooy'
+    # for k, v in dekooy.items():
+    #     print k, v
 
 if __name__ == '__main__':
     main()
