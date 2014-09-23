@@ -187,7 +187,8 @@ def month_average_time_series(time_series):
 
     # Devide per-month sum by number of entries.
     for i in range(1, 13):
-        month_average[i] /= float(month_count[i])
+        if month_count[i]:
+            month_average[i] /= float(month_count[i])
 
     return month_average
 
@@ -220,6 +221,114 @@ def plot_time_series(time_series, chosen_column):
     plt.savefig('BLAC_hw5_TLRH_6126561_' + str(station_id) + '_' +
                 chosen_column + '_' + str(year) + '.pdf')
 
+
+# Question 4 (hw5)
+def plot_five_year_series(station_id1, station_id2, year_start,
+                          chosen_column, temp_west, temp_east):
+    """ Documenting this function should have been added... """
+
+    month_names = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug',
+                   'Sep', 'Oct', 'Nov', 'Dec']
+    y_label = {'TX': r'Maximum temperature TX ($^\circ$C)',
+               'TN': r'Minimum temperature TN ($^\circ$C)'}
+    pick_color = {0: 'r', 1: 'y', 2: 'g', 3: 'b', 4: 'c'}
+
+    station_name1 = find_station_name(station_id1)
+    station_name2 = find_station_name(station_id2)
+
+    width = 0.19
+    fig, ax = plt.subplots()
+    for year in range(year_start, year_start+5):
+        ax.bar([x + (year - year_start) * width for x in range(3)],
+               [temp_west[month]/10. for month in
+                range(year - year_start, year - year_start + 3)],
+               width, color=pick_color.get(year - year_start, 'k'),
+               alpha=0.3, label='West '+str(year))
+        ax.bar([x + (year - year_start) * width for x in range(3)],
+               [temp_east[month]/10. for month in
+                range(year - year_start, year - year_start + 3)],
+               width, color=pick_color.get(year - year_start, 'k'),
+               label='East '+str(year))
+    ax.set_xlabel('Month')
+    ax.set_ylabel(y_label.get(chosen_column, 'KeyError'))
+    # ax.legend(loc='center left', bbox_to_anchor=(1.0, 0.5))
+    ax.set_xlim(-0.5, 4.5)
+    ax.legend()
+    if chosen_column == 'TX':
+        ax.set_title(chosen_column + ' for ' + station_name1 + '(west) vs '
+                     + station_name2 + '(east) in the summer of ' +
+                     str(year_start) + ' - ' + str(year_start+5))
+        plt.xticks([0.5, 1.5, 2.5], month_names[6:9], rotation=45)
+        plt.savefig('BLAC_hw5_TLRH_6126561_' + str(station_id1) + 'vs' +
+                    str(station_id2) + '_' + chosen_column + '_summer_' +
+                    str(year_start) + '.pdf')
+    elif chosen_column == 'TN':
+        ax.set_title(chosen_column + ' for ' + station_name1 + '(west) vs '
+                     + station_name2 + '(east) in the winter of ' +
+                     str(year_start) + ' - ' + str(year_start+5))
+        plt.xticks([0.5, 1.5, 2.5], month_names[0:3], rotation=45)
+        plt.savefig('BLAC_hw5_TLRH_6126561_' + str(station_id1) + 'vs' +
+                    str(station_id2) + '_' + chosen_column + '_winter_' +
+                    str(year_start) + '.pdf')
+
+
+def compare_two_stations(station_west, station_east):
+    """
+    Function to compare two stations, one at the North Sea, one in East.
+
+    station_west : int. Station at the North Sea (West coast)
+    station_east : int. Station in the East of the Netherlands.
+
+    Creates plots and saves them to file.
+    """
+
+    tx_column_number = find_column_number('Maximum temperature')
+    tn_column_number = find_column_number('Minimum temperature')
+
+    summer_five_years_west = list()
+    summer_five_years_east = list()
+    winter_five_years_west = list()
+    winter_five_years_east = list()
+
+    # NB since we only work with month-averages, we ignore that seasons
+    # change 21/22th of month. Summer := Jul/Aug/Sep; Winter := Jan/Feb/Mar
+    for year in range(1991, 1996):
+        # The maximum temperature (for the hottest summer).
+        max_temp_west = create_time_series(knmi_data, tx_column_number,
+                                           station_west, year)
+        max_temp_west_avg = month_average_time_series(max_temp_west)
+        max_temp_east = create_time_series(knmi_data, tn_column_number,
+                                           station_east, year)
+        max_temp_east_avg = month_average_time_series(max_temp_east)
+        for month in range(7, 10):  # summer
+            print 'west', year, month, 'max', max_temp_west_avg[month]
+            print 'east', year, month, 'max', max_temp_east_avg[month]
+            summer_five_years_west.append(max_temp_west_avg[month])
+            summer_five_years_east.append(max_temp_east_avg[month])
+
+        # And for the minimum temperature (for the coldest winter).
+        min_temp_west = create_time_series(knmi_data, tx_column_number,
+                                           station_west, year)
+        min_temp_west_avg = month_average_time_series(min_temp_west)
+        # plot_time_series(min_temp_west, 'TN')
+        min_temp_east = create_time_series(knmi_data, tn_column_number,
+                                           station_east, year)
+        min_temp_east_avg = month_average_time_series(min_temp_east)
+        for month in range(1, 4):  # winter
+            print 'west', year, month, 'min', min_temp_west_avg[month]
+            print 'east', year, month, 'min', min_temp_east_avg[month]
+            winter_five_years_west.append(min_temp_west_avg[month])
+            winter_five_years_east.append(min_temp_east_avg[month])
+
+    print summer_five_years_west
+    print summer_five_years_east
+    plot_five_year_series(station_west, station_east, 1991, 'TX',
+                          summer_five_years_west, summer_five_years_east)
+
+    print winter_five_years_west
+    print winter_five_years_east
+    plot_five_year_series(station_west, station_east, 1991, 'TN',
+                          winter_five_years_west, winter_five_years_east)
 
 def monthly_decade_average(dataset, station_id, column_number):
     """
@@ -315,10 +424,6 @@ def compare_dekooy_valkenburg(dataset):
 
 
 def plot_comparison(valkenburgData, dekooyData, s):
-    """
-    REPLACEREPLACE
-    """
-
     # http://matplotlib.org/examples/api/barchart_demo.html
     title = {'TX': 'maximum temperature', 'TN': 'minimum temperature',
              'RH': 'daily precipitation'}
@@ -354,7 +459,6 @@ def main():
 
     rh_column_number = find_column_number('precipitation amount')
     tx_column_number = find_column_number('Maximum temperature')
-    tn_column_number = find_column_number('Minimum temperature')
 
     wettest = find_max(knmi_data, rh_column_number,  False)
     print "The wettest day was at {0} in {1}({2}).".\
@@ -373,6 +477,8 @@ def main():
     print "Maximum temperature for station 260 in 1968 has the following",
     print "first ten entries:\n{0}\n".format(hottest_time_series[0:10])
     plot_time_series(hottest_time_series, 'TX')
+
+    compare_two_stations(210, 283)
 
     # compare_dekooy_valkenburg(knmi_data)
 
