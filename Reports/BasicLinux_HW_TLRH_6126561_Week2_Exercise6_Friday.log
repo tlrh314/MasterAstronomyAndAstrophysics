@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.5.20)  29 SEP 2014 20:35
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.5.20)  29 SEP 2014 22:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -431,35 +431,95 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <7> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 25.
  [2] [3])
-(../Week4/BLAC_ex6_Friday_6126561_sobel.py)
-(../Week4/BLAC_ex6_Friday_6126561_gaussian_blur.py [4])
-(../Week4/BLAC_ex6_Friday_6126561_unsharp_mask.py) [5]
-(./BasicLinux_HW_TLRH_6126561_Week2_Exercise6_Friday.aux) ) 
+<../Week4/BLAC_hw6_TLRH_6126561_separate_channels.pdf, id=57, 578.16pt x 433.62
+pt>
+File: ../Week4/BLAC_hw6_TLRH_6126561_separate_channels.pdf Graphic file (type p
+df)
+ <use ../Week4/BLAC_hw6_TLRH_6126561_separate_channels.pdf>
+Package pdftex.def Info: ../Week4/BLAC_hw6_TLRH_6126561_separate_channels.pdf u
+sed on input line 94.
+(pdftex.def)             Requested size: 289.07928pt x 216.80946pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../Week4/BLAC_hw6_TLRH_6126561_greyscale.pdf, id=58, 578.16pt x 433.62pt>
+File: ../Week4/BLAC_hw6_TLRH_6126561_greyscale.pdf Graphic file (type pdf)
+
+<use ../Week4/BLAC_hw6_TLRH_6126561_greyscale.pdf>
+Package pdftex.def Info: ../Week4/BLAC_hw6_TLRH_6126561_greyscale.pdf used on i
+nput line 102.
+(pdftex.def)             Requested size: 289.07928pt x 216.80946pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[4] (../Week4/BLAC_ex6_Friday_6126561_sobel.py [5 <../Week4/BLAC_hw6_TLRH_61265
+61_separate_channels.pdf> <../Week4/BLAC_hw6_TLRH_6126561_greyscale.pdf
+
+pdfTeX warning: /usr/texbin/pdflatex (file ../Week4/BLAC_hw6_TLRH_6126561_greys
+cale.pdf): PDF inclusion: multiple pdfs with page group included in a single pa
+ge
+>]) <../Week4/BLAC_hw6_TLRH_6126561_edges.pdf, id=153, 578.16pt x 433.62pt>
+File: ../Week4/BLAC_hw6_TLRH_6126561_edges.pdf Graphic file (type pdf)
+
+<use ../Week4/BLAC_hw6_TLRH_6126561_edges.pdf>
+Package pdftex.def Info: ../Week4/BLAC_hw6_TLRH_6126561_edges.pdf used on input
+ line 113.
+(pdftex.def)             Requested size: 289.07928pt x 216.80946pt.
+ [6 <../Week4/BLAC_hw6_TLRH_6126561_edges.pdf>] (../Week4/BLAC_ex6_Friday_61265
+61_gaussian_blur.py)
+<../Week4/BLAC_hw6_TLRH_6126561_gaussian_blur.pdf, id=190, 578.16pt x 433.62pt>
+File: ../Week4/BLAC_hw6_TLRH_6126561_gaussian_blur.pdf Graphic file (type pdf)
+<use ../Week4/BLAC_hw6_TLRH_6126561_gaussian_blur.pdf>
+Package pdftex.def Info: ../Week4/BLAC_hw6_TLRH_6126561_gaussian_blur.pdf used 
+on input line 124.
+(pdftex.def)             Requested size: 289.07928pt x 216.80946pt.
+ [7 <../Week4/BLAC_hw6_TLRH_6126561_gaussian_blur.pdf>]
+(../Week4/BLAC_ex6_Friday_6126561_unsharp_mask.py)
+
+LaTeX Warning: File `../Week4/BLAC_hw6_TLRH_6126561_unsharp_mask.pdf' not found
+ on input line 134.
+
+
+./BasicLinux_HW_TLRH_6126561_Week2_Exercise6_Friday.tex:134: Package pdftex.def
+ Error: File `../Week4/BLAC_hw6_TLRH_6126561_unsharp_mask.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.134 ...4/BLAC_hw6_TLRH_6126561_unsharp_mask.pdf}
+                                                  
+? 
+[8] (./BasicLinux_HW_TLRH_6126561_Week2_Exercise6_Friday.aux) ) 
 Here is how much of TeX's memory you used:
- 5967 strings out of 493315
- 83670 string characters out of 6137904
- 441851 words of memory out of 5000000
- 9308 multiletter control sequences out of 15000+600000
- 6798 words of font info for 27 fonts, out of 8000000 for 9000
+ 6002 strings out of 493315
+ 84930 string characters out of 6137904
+ 420851 words of memory out of 5000000
+ 9336 multiletter control sequences out of 15000+600000
+ 8176 words of font info for 32 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,10n,49p,337b,1557s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/
-2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2
-013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/20
-13/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/20
-13/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2013
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2013/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2013/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2013/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2013/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2013/texmf-dist
-/fonts/type1/public/cm-super/sfrm0700.pfb>
-Output written on BasicLinux_HW_TLRH_6126561_Week2_Exercise6_Friday.pdf (5 page
-s, 290314 bytes).
+ 38i,10n,49p,337b,1559s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texl
+ive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texli
+ve/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texliv
+e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texliv
+e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive
+/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2
+013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/201
+3/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2013/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2013/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2013/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2013/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2013/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2013/texmf-di
+st/fonts/type1/public/cm-super/sfrm0700.pfb>
+Output written on BasicLinux_HW_TLRH_6126561_Week2_Exercise6_Friday.pdf (8 page
+s, 649034 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
+ 276 PDF objects out of 1000 (max. 8388607)
+ 119 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

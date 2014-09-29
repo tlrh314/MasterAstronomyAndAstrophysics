@@ -80,25 +80,60 @@ Timo Halbesma, 6126561 & & Dr. T. Coenen\\
 % End of titlepage
 
 \newpage
+\section*{Manipulating images}
+\subsection*{Step 3}
+shape:  (375, 500, 3) \\
+dtype:  float32  \\
+type:  $<$type 'numpy.ndarray'$>$
 
-%\begin{figure}[h!] 
-%\begin{center} 
-%\includegraphics[scale=0.5]{../Week4/BLAC_hw5_TLRH_6126561_344_TX_1960.pdf} 
-%\caption{Monthly averaged decade 1960 - 1969 for station Rotterdam (344).}
-%\end{center} 
-%\end{figure} 
-
-
-\newpage
-
+\subsection*{Step 4}
 \lstinputlisting[caption={TLRH's solution for the BLAC homework 6 (week 4).}]{../Week4/BLAC_ex6_Friday_6126561.py}
 
-\newpage
-\lstinputlisting[caption={TLRH's solution for the BLAC homework 6 (week 4) step 6.}]{../Week4/BLAC_ex6_Friday_6126561_sobel.py}
+\begin{figure}[h!] 
+\begin{center} 
+\includegraphics[scale=0.5]{../Week4/BLAC_hw6_TLRH_6126561_separate_channels.pdf} 
+\caption{Different channels of the RGB png image.}
+\end{center} 
+\end{figure} 
+
+\subsection*{Step 5}
+\begin{figure}[h!] 
+\begin{center} 
+\includegraphics[scale=0.5]{../Week4/BLAC_hw6_TLRH_6126561_greyscale.pdf} 
+\caption{Grayscale applied to png image.}
+\end{center} 
+\end{figure} 
 
 \newpage
+\subsection*{Step 6}
+\lstinputlisting[caption={TLRH's solution for the BLAC homework 6 (week 4) step 6.}]{../Week4/BLAC_ex6_Friday_6126561_sobel.py}
+
+\begin{figure}[h!] 
+\begin{center} 
+\includegraphics[scale=0.5]{../Week4/BLAC_hw6_TLRH_6126561_edges.pdf} 
+\caption{Sobel filter applied to png image to detect the edges.}
+\end{center} 
+\end{figure} 
+
+\newpage
+\subsection*{Step 7}
 \lstinputlisting[caption={TLRH's solution for the BLAC homework 6 (week 4) step 7.}]{../Week4/BLAC_ex6_Friday_6126561_gaussian_blur.py}
+
+\begin{figure}[h!] 
+\begin{center} 
+\includegraphics[scale=0.5]{../Week4/BLAC_hw6_TLRH_6126561_gaussian_blur.pdf} 
+\caption{Gaussian blur applied to png image to detect the edges.}
+\end{center} 
+\end{figure} 
 
 \newpage
 \lstinputlisting[caption={TLRH's solution for the BLAC homework 6 (week 4) step 8.}]{../Week4/BLAC_ex6_Friday_6126561_unsharp_mask.py}
+
+\begin{figure}[h!] 
+\begin{center} 
+\includegraphics[scale=0.5]{../Week4/BLAC_hw6_TLRH_6126561_unsharp_mask.pdf} 
+\caption{Unsharp Mask Technique applied to png image to detect the edges.}
+\end{center} 
+\end{figure}
+
 \end{document}

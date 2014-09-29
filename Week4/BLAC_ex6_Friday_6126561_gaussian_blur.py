@@ -5,7 +5,7 @@
 
 # Basic Linux and Coding for AA homework 6 (Friday week 4)
 # Usage: import into BLAC_ex6_Friday_6126561.py
-# TLR Halbesma, 6126561, september 26, 2015. Version 1.0; implemented
+# TLR Halbesma, 6126561, september 29, 2014. Version 1.0; implemented
 
 from scipy import signal as sg
 import numpy as np

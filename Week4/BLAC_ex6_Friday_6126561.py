@@ -5,7 +5,7 @@
 
 # Basic Linux and Coding for AA homework 6 (Friday week 4)
 # Usage: python BLAC_ex6_Friday_6126561.py
-# TLR Halbesma, 6126561, september 26, 2015. Version 1.0; implemented
+# TLR Halbesma, 6126561, september 26, 2014. Version 1.0; implemented
 
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
@@ -67,7 +67,7 @@ def plot_individual_channels(pngimage):
 
     fig.suptitle('RGB image and its separate channels')
 
-    plt.show()
+    plt.savefig('BLAC_hw6_TLRH_6126561_separate_channels.pdf')
 
 
 def lightness(img):
@@ -116,7 +116,7 @@ def plot_greyscale_images(pngimage):
     fig.suptitle('RGB image and three greyscale methods')
     # fig.subplots_adjust(hspace=.5)
 
-    plt.show()
+    plt.savefig('BLAC_hw6_TLRH_6126561_greyscale.pdf')
 
 
 def plot_sobel_filtered(pngimage):
@@ -129,7 +129,7 @@ def plot_sobel_filtered(pngimage):
     ax0.set_yticklabels([])
     ax0.set_title('Original')
 
-    # Edges are also visible in the grayscale image.
+    # Edges are also visible in the greyscale image.
     # sobel_filtered is in a different file, as requested.
     edges = sobel_filtered(luminosity(mpimg.imread(pngimage)))
     ax1.imshow(edges, cmap='binary')
@@ -138,7 +138,7 @@ def plot_sobel_filtered(pngimage):
     ax1.set_title('Sobel Filtered')
 
     fig.suptitle('Edge Detection: Sobel Method')
-    plt.show()
+    plt.savefig('BLAC_hw6_TLRH_6126561_edges.pdf')
 
 
 def plot_gaussian_blur(pngimage):
@@ -165,7 +165,8 @@ def plot_gaussian_blur(pngimage):
     ax1.set_title('Gaussian Blurred with kernel size {0} and sigma {1}'
                   .format(radius, sigma))
 
-    plt.show()
+    fig.suptitle('Gaussian blur')
+    plt.savefig('BLAC_hw6_TLRH_6126561_gaussian_blur.pdf')
 
 
 def main():
@@ -173,13 +174,13 @@ def main():
     inputfile = './stinkbug.png'
 
     # Step 4
-#    plot_individual_channels(inputfile)
+    plot_individual_channels(inputfile)
 
     # Step 5
-#    plot_greyscale_images(inputfile)
+    plot_greyscale_images(inputfile)
 
     # Step 6
-#     plot_sobel_filtered(inputfile)
+    plot_sobel_filtered(inputfile)
 
     # Step 7
     plot_gaussian_blur(inputfile)
