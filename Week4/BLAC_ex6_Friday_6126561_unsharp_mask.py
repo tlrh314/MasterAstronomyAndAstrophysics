@@ -7,9 +7,10 @@
 # Usage: import into BLAC_ex6_Friday_6126561.py
 # TLR Halbesma, 6126561, september 29, 2015. Version 1.0; implemented
 
-from scipy import signal as sg
 import numpy as np
 
-# http://en.wikipedia.org/wiki/Unsharp_masking
-# to implement...
 
+# https://en.wikipedia.org/wiki/Unsharp_masking
+def unsharp_mask(rgb, edges, blur, threshold, amount):
+    edges_rgb = np.dstack((edges, edges, edges))
+    return rgb - blur * threshold + edges_rgb * amount
