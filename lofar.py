@@ -4,7 +4,7 @@ lofar.py
 Radio Astronomy
 Function to set up LOFAR telescope
 Timo Halbesma, 6125661
-April 28, 2015. Version 1.0.
+April 29, 2015. Version 1.1.
 """
 
 from numpy.random import standard_normal

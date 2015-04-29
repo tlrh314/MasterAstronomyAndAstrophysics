@@ -4,7 +4,7 @@ simulateyourowninterferometer.py
 Radio Astronomy
 Create Your Own Interferometer
 Timo Halbesma, 6125661
-April 20, 2015. Version 1.0.
+April 29, 2015. Version 1.1.
 """
 
 import numpy
@@ -55,7 +55,8 @@ class Telescope(object):
                 pyplot.scatter(x, y)
             pyplot.title("Scatterplot of antenna positions for '{0}'"
                          .format(self.name))
-            pyplot.clf()
+            pyplot.savefig("Results/{0}/{0}_{1}_uv_plane_scatter.png"
+                            .format(self.name, self.setup))
 
         # Generate baselines for the telescope.
         self.baselines_x, self.baselines_y, self.baselines_z =\
@@ -131,24 +132,37 @@ class Telescope(object):
                     j/self.dish_size+grid_size/grid_multiplicationfactor] = 1
 
         elif self.name == 'VLA':
-            grid_size = 2*21000 / 25
+            grid_size = 2*21000 / self.dish_size
             ground_matrix = numpy.zeros([grid_size, grid_size])
 
             for i, j, k in self.antennas:
-                print i/25, j/25
-                ground_matrix[i/25, j/25] = 1
+                ground_matrix[i/self.dish_size, j/self.dish_size] = 1
+
+        elif self.name == "LOFAR":
+            grid_multiplicationfactor = 3.
+            maximum_baseline = self.calculate_max_baseline()
+            grid_size = 2 * maximum_baseline / self.dish_size
+            grid_size = grid_size * grid_multiplicationfactor
+
+            ground_matrix = numpy.zeros([grid_size, grid_size])
+
+            for i, j, k in self.antennas:
+                ground_matrix[i/self.dish_size+grid_size/grid_multiplicationfactor,
+                    j/self.dish_size+grid_size/grid_multiplicationfactor] = 1
+
+        # i are x values, but are written horizontally in matrix.
+        # j are y values, but are written vertically. => Transpose
+        ground_matrix = ground_matrix.T
 
         pyplot.figure()
-        pyplot.imshow(ground_matrix, cmap='binary', lw=100)
+        pyplot.imshow(ground_matrix, cmap='binary')
         pyplot.title("Ground Matrix for '{0}'".format(self.name))
         pyplot.xlabel("X [North South]")
         pyplot.ylabel("Y [East West]")
         pyplot.colorbar()
-        pyplot.clf()
 
-        # i are x values, but are written horizontally in matrix.
-        # j are y values, but are written vertically. => Transpose
-        # ground_matrix = ground_matrix.T
+        pyplot.savefig("Results/{0}/{0}_{1}_ground_matrix.png"
+                       .format(self.name, self.setup))
 
     def generate_synthesized_beam(self, source_HA=0, source_DEC=numpy.pi/2):
         """
@@ -159,7 +173,7 @@ class Telescope(object):
         """
 
         # Matrix given in lecture 6, slide 64.
-        # Blegh, this looks ugly as hell, but PEP8....
+        # Blegh, the formatting looks ugly as hell, but PEP8....
         converter = numpy.array([[numpy.sin(source_HA),
                                   numpy.cos(source_HA),
                                   0],
@@ -192,25 +206,21 @@ class Telescope(object):
             uv_grid[v_array[i]/self.dish_size + grid_size/2,
                     u_array[i]/self.dish_size + grid_size/2] = 1
 
-        # if SHOWPLOTS:
-        #     pyplot.figure()
-        #     pyplot.title("UV-plane")
-        #     pyplot.xlabel("u - East-West")
-        #     pyplot.ylabel("v - Noth-South")
-        #     pyplot.imshow(uv_grid, cmap='binary')
-        #     pyplot.colorbar()
-        #     pyplot.clf()
+        # pyplot.figure()
+        # pyplot.title("UV-plane")
+        # pyplot.xlabel("u - East-West")
+        # pyplot.ylabel("v - Noth-South")
+        # pyplot.imshow(uv_grid, cmap='binary')
+        # pyplot.colorbar()
 
         uv_fourier = numpy.absolute(numpy.fft.fft2(uv_grid))
         beam = numpy.roll(uv_fourier, uv_fourier.shape[0]/2, axis=0)
         beam = numpy.roll(beam, beam.shape[1]/2, axis=1)
 
-        # if SHOWPLOTS:
-        #     pyplot.figure()
-        #     pyplot.title("Fourier transformed UV-plane, rotated to get main beam in center")
-        #     pyplot.imshow(beam)
-        #     pyplot.colorbar()
-        #     pyplot.clf()
+        # pyplot.figure()
+        # pyplot.title("Fourier transformed UV-plane, rotated to get main beam in center")
+        # pyplot.imshow(beam)
+        # pyplot.colorbar()
 
         return uv_grid, beam
 
@@ -236,38 +246,61 @@ class Telescope(object):
 
             hour_angle += precision
 
-        if SHOWPLOTS:
-            # 2pi <--> 24h
-            total_angle = 24 * (ha_max - ha_min) / (2*numpy.pi)
+        # 2pi <--> 24h
+        total_angle = 24 * (ha_max - ha_min) / (2*numpy.pi)
 
-            pyplot.figure()
-            pyplot.title("{0} uv-plane over {1}h period"
-                         .format(self.name,total_angle))
-            pyplot.xlabel("u")
-            pyplot.ylabel("v")
-            pyplot.imshow(sum_of_uv_plane, cmap='binary')
-            pyplot.colorbar()
-            pyplot.clf()
+        pyplot.figure()
+        pyplot.title("{0} uv-plane over {1}h period"
+                     .format(self.name,total_angle))
+        pyplot.xlabel("u")
+        pyplot.ylabel("v")
+        pyplot.imshow(sum_of_uv_plane, cmap='binary')
+        pyplot.colorbar()
+        pyplot.savefig("Results/{0}/{0}_{1}_uv_plane_{2}h.png"
+                       .format(self.name, self.setup, total_angle))
 
-            pyplot.figure()
-            pyplot.title("{0} synthesized beam over {1}h period"
-                         .format(self.name, total_angle))
-            pyplot.xlabel("l")
-            pyplot.ylabel("m")
-            pyplot.imshow(sum_of_beams)
-            pyplot.colorbar()
-            pyplot.clf()
+        pyplot.figure()
+        pyplot.title("{0} synthesized beam over {1}h period"
+                     .format(self.name, total_angle))
+        pyplot.xlabel("l")
+        pyplot.ylabel("m")
+        pyplot.imshow(sum_of_beams)
+        pyplot.colorbar()
+        pyplot.savefig("Results/{0}/{0}_{1}_synthesized_beam_{2}h.png"
+                       .format(self.name, self.setup, total_angle))
 
 
 if __name__ in '__main__':
+    # Westerbork setup = 'default' gives only the inner ten antennas. Question 1-1
     westerbork = Telescope("Westerbork")
-    westerbork.rotate_synthesized_beam()
+    westerbork.plot_ground_grid()
+    # Rotating with ha_min and ha_max set to zero gives the instantaneous uv-coverage. Question 1-2
+    westerbork.rotate_synthesized_beam(0, 0)
+
+    # Rotate over 12 hour period. Question 1-3
+    westerbork.rotate_synthesized_beam(-numpy.pi, 0)
+
+    # Add the four outer dishes in traditional setup with 36 meter separation
+    # between RT9 -> RTA (thus RTC -> RTD is also 36 meter). Question 1-4.
+    westerbork = Telescope("Westerbork", "traditional36")
+    westerbork.rotate_synthesized_beam(-numpy.pi, 0)
 
     vla = Telescope("VLA")
-    vla.rotate_synthesized_beam(0, 2*numpy.pi/3)
+    # vla.plot_ground_grid()
+    # Question 2-2
+    vla.rotate_synthesized_beam(0, 0)
+    vla.rotate_synthesized_beam(0, numpy.pi)
 
+    # Question 2-3
+    vla = Telescope("VLA", "A")
+    vla.rotate_synthesized_beam(0, numpy.pi)
+
+    vla = Telescope("VLA", "D")
+    vla.rotate_synthesized_beam(0, numpy.pi)
+
+    # Question 3-2
     lofar = Telescope("LOFAR")
-    lofar.rotate_synthesized_beam()
+    lofar.rotate_synthesized_beam(0, 0)
 
     if SHOWPLOTS:
         pyplot.show()
@@ -275,11 +308,6 @@ if __name__ in '__main__':
     import sys; sys.exit(0)
 
     for setup in ['maxi-short', 'traditional36', '2x48', 'mini-short', '2x96']:
-    # antenna_positions = set_up_westerbork('traditional90')
-        antenna_positions = set_up_westerbork(setup)
-        westerbork.plot_ground_grid()
+        westerbork_instance = Telescope("Westerbork", setup)
+        # westerbork.plot_ground_grid()
         westerbork.rotate_synthesized_beam()
-        pyplot.show()
-        break
-
-    # print set_up_uv_plane(antenna_positions)

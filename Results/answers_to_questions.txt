@@ -1,0 +1,36 @@
+answers_to_questions.txt
+Radio Astronomy
+Create Your Own Interferometer
+Timo Halbesma, 6126561
+April 29, 2015
+
+NB, the assignment specifies certain approximations. Keep this in mind when the results are interpreted.
+"We use some approximations in order to obtain the so-called synthesized beam: we suppose a constant and uniform response of the antennas (and give them equal weighting) and a constant, uniform source illuminating all the antennas equally. We also implicitly assume some other approximations, e.g. all the antennas are at the same altitude, the source is monochromatic, etc."
+
+Part 1: Westerbork. 
+Q) How many antennas form the telescope? What is their configuration?. 
+A) There are ten atennas in a fixed position along the West-East line with a 144 meter separation between antennas. The dish size is 25 meter. Moreover, there are four movable dishes located at9*144 meter +- user-chosen distance East of the ten base antennas. They can be in several different configurations. The setup options are maxi-short, traditional, 2x48, mini-short, 2x96. Min you, traditional has several setup options too. I refer you to the implementation of westerbork.py for the full details of the four movable antennas. 
+
+Q) Do you think the instantaneous uv-coverage of the Westerbork telescope is adequate? How would you image a source with this coverage?
+A) I think for a point source the instantaneous uv-coverage might be adequate if and only if the telescope is pointed such that the source is located exactly in the middle. If the source is bigger, one would like image for a 12 hour period such that the entire uv-plane is covered.
+
+Q) Briefly explain why Jason's code works. 
+A) I have not used Jason's code because I found it somewhat confusing. Moreover, I had implemented the code in such a way that it could easily be implemented as a function of the hour angle and declination, so I just loop over the hour angle.
+
+Q) How does the uv-coverage and synthesized beam compare between the 10-telescope and 14-telescope array?
+A) Note that I scale the plots with the maximum baseline in the array. Keep this in mind when interpreting the images. Since there is a significant distance between the RT9 and RTA telescope, the number of baselines is bigger. The 10-telescope array has a length of 9*144 meter and the distance between RT9 and RTA is that same amount. Also, the RTA/B/C/D telescopes are closer together increasing sensitivity for shorter baselines. The uv-coverage depends on the baseline, thus, the uv-coverage is much broader for the 14-telescope array than for the 10-telescope array.
+
+Part 2: VLA.
+Q) Why do you think this particular design (Y shape) has been chosen?
+A) The Y-shape decreases the observation time from 12 hours (Westerbork) down to 8 hours (VLA), which could result in a 50% increase in observations. So changing the shape enables observing more objects in the same amount of time. Moreover, there are more antenna's (27 in the case of VLA, in contrast to 14 at Westerbork). This increases the number of possible baselines significantly and yields a better uv-coverage.
+
+Q) In what way is this design better with respect to the in-line
+design of the Westerbork array?
+A) There is a dimension more. Also, see previous answer.
+
+Q) One of the peculiar characteristics of VLA is that its antennas are mobile, and can move closer or more distant from the center of the telescope along tracks. Why do you think so much money and efforts have been spent to enable this feature?
+A) More baselines means that more scales on the sky can be distinguished. Depending on the objects, different setups are more suitable to achieve the science goals.
+
+Part 3: LOFAR
+Q) Let's simulate one of the LOFAR lowband stations. It is composed by 96 antennas roughly randomly distributed in a circle with a higher density in the center. Simulate an instantaneous observation and compare it with the previous cases. What has changed and why?
+A) LOFAR's instantaneous uv-plane already seems like a point, the way Westerbork and the VLA seem like a point after rotating. This implies that LOFAR does not need longer period rotations to obtain full coverage of the uv-plane.

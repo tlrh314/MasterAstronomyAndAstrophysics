@@ -4,7 +4,7 @@ vla.py
 Radio Astronomy
 Function to set up VLA telescope
 Timo Halbesma, 6125661
-April 20, 2015. Version 1.0.
+April 29, 2015. Version 1.1.
 """
 
 
