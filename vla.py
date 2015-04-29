@@ -27,39 +27,43 @@ def set_up_vla(setup='default'):
     telescope = []
 
     if setup == 'default':
-        # All of these parameters are not necessary, but they increase
-        # readability a lot.
-        number_of_antennas = 27
         arm_length = 21000  # meters
-        number_of_arms = 3
-
-        antennas_per_arm = number_of_antennas / number_of_arms
-        antenna_separation = arm_length / antennas_per_arm
-
-        # Here, the chosen center happens to equal the arm_length.
-        center = arm_length
-
-        for i in range(1, antennas_per_arm+1):
-            # 'arm straight up'
-            telescope.append((center,
-                             center+antenna_separation*i, 0))
-
-            # 'arm downwards to the right'
-            telescope.append((center+antenna_separation*i/2,
-                             center-antenna_separation*i*sqrt(3)/2, 0))
-            # 'arm downward to the left'
-            telescope.append((center-antenna_separation*i/2,
-                             center-antenna_separation*i*sqrt(3)/2, 0))
     elif setup == 'A':
-        print 'not implemented'
-
+        arm_length = 21000  # meters
     elif setup == 'B':
         print 'not implemented'
     elif setup == 'C':
         print 'not implemented'
     elif setup == 'D':
-        print 'not implemented'
+        # In the A configuration, the dimension of the telescope is 35.5 times
+        # larger than in the D configuration.
+        arm_length = 21000/35.5  # meters
     elif setup == 'DnC' or setup == 'CnB' or setup == 'BnA':
         print 'Hybrid configurations are not implemented.'
+    else:
+        print "Invalid setup option '{0}'".format(setup)
+        return telescope
 
+    # All of these parameters are not necessary, but they increase
+    # readability a lot.
+    number_of_antennas = 27
+    number_of_arms = 3
+
+    antennas_per_arm = number_of_antennas / number_of_arms
+    antenna_separation = arm_length / antennas_per_arm
+
+    # Here, the chosen center happens to equal the arm_length.
+    center = arm_length
+
+    for i in range(1, antennas_per_arm+1):
+        # 'arm straight up'
+        telescope.append((center,
+                         center+antenna_separation*i, 0))
+
+        # 'arm downwards to the right'
+        telescope.append((center+antenna_separation*i/2,
+                         center-antenna_separation*i*sqrt(3)/2, 0))
+        # 'arm downward to the left'
+        telescope.append((center-antenna_separation*i/2,
+                         center-antenna_separation*i*sqrt(3)/2, 0))
     return telescope
