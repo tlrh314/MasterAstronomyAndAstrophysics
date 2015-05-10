@@ -1,0 +1,63 @@
+Commands run
+ssh -X cep3 (@ MBP)
+	ssh lhd002 (@ portal)
+
+	# Now at lhd002, I should run
+		use Slurm; srun -A TUTORIALS --reservation=TUTORIALS_150 -N1 -u bash -i
+		# then, from different terminal ssh -Y lof009, but srun says the reservation is invalid.
+
+			cd Practicum2/Imaging/plots
+			wget http://casa.nrao.edu/Data/EVLA/3C391/3c391_ctm_mosaic_10s_spw0.ms.tgz
+			tar -zxvf 3c391_ctm_mosaic_10s_spw0.ms.tgz
+			rm 3c391_ctm_mosaic_10s_spw0.ms.tgz
+			use Casa; casapy
+				# Within CASA
+			vis = '3c391_ctm_mosaic_10s_spw0.ms'
+			listobs()
+			plotants()
+			plotms()
+
+Answers to questions
+10 a) What are the sources that have been observed? Find out which one of them are the calibrators?
+There are ten sources observed:  J1331+3030, J1822-0938, 3C391 C1, 3C391 C2, 3C391 C3, 3C391 C4, 3C391 C5, 3C391 C6, 3C391 C7, J0319+4130
+
+Based on the name of the dataset, I deducted that this observations probably consists of a mosaic observation of a source. Therefore, I will assume the actual observed source should be 3C391 since there are seven seemingly different observations in very close vicinity of one another. It stands to reason that  the other three sources could very well be the calibration sources: J1331+3030, J1822-0938, and J0319+4130. The reason to use three sources could, for instance be, to calibrate the amplitude, phase, and flux using one source for each parameter.
+
+10 b) How many antennas have been used in the observation? What were their dimensions?
+ The number of antennas is 26. All of the antennas are 25.0 meter in diameter, which I assume are the dimensions asked for in this question.
+
+10 c) What was the total observation duration? How many sky fields have been observed? How many different sources were present and why the two numbers don’t coincide in your opinion?
+
+The total integration time is 28671.5 seconds, which is almost 8 hours. The number of sky fields is ten, of which three are calibration source sky fields, and seven make up the source mosaic. This means that probably four different sources were present assuming that one sky field contains at most one source, but there could be multiple (unresolved) sources per skyfield.
+
+12) ea08 is the antenna in the middle of the array.
+
+14) plotsms(vis = '3c391_ctm_mosaic_10s_spw0.ms')
+1) Amp vs. time --> amp_vs_time_vraag15.png. Used display/colorize by Baseline. 
+2) Phase vs. time
+3) Frequency vs. time
+4) Amplitude vs. UVdist
+5) Amplitude vs. UVdist setting the item 'field' in the header 'data' to a value of 3
+6) Amplitude vs. UVwave. 
+
+16) From the plot in question 10 we can see the outermost station names are ea18, ea01, and ea03. So we can then obtain the baselines between ea18 - ea01, ea01 - ea03, ea03 - ea18 by looking at the East and North positions from the logfile saved in question 10. By using Pythagoras theorem we can obtain three baseline values  1031.18, 971.11, and 967.096. Now we can see that the largest baseline B is 1031.8.
+
+From the lecture 6 slide 6 we obtain the equation theta = lambda/B. Again from the logfile from question 10 we obtain Ch0 (MHz), the starting frequency of the dataset lambda is 4536.000 MHz. The channel width ChanWid (kHz) is 2000.000, so the central frequency of the channel is Ch0 + ChanWid/2.
+
+We obtain lambda = 3e8/(1031.18m*(4536 MHz + 1000 kHz)) = 6.4e-5 radians, or 13.227 arc seconds.
+
+17) Plot 5 only uses field in the header 'data' set equal to 3. This means that only a single sky field is shown (number 3), which is one of the parts of the mosaic. This is in contrast to plot 4, where all sources are shown, including the calibration sources.
+
+18) For this we take a look at the CASA User Reference & Cookbook (http://casa.nrao.edu/Doc/Cookbook/casa_cookbook.pdf).
+
+According to the cookbook: "UVwave -- Projected baseline separations in units of the observing wavelength (lambda, not kilolambda). UVDist_L is a function of frequency, and therefore, there will be a different data point for each frequency channel."
+
+19) Here, in the Amp vs. Antenna1 plot, it looks as if number 10 is not working because the amplitude seems to be like 0.02 in contrast to the other antennas that have an amplitude of roughly 0.5.
+
+Part2 - Flagging
+Commands run
+flagdata(vis = '3c391_ctm_mosaic_10s_spw0.ms', scan='1')
+flagdata(vis = '3c391_ctm_mosaic_10s_spw0.ms', mode='quack', quackmode='beg', quackinterval=10.0, quackincrement=False)
+flagdata(vis = '3c391_ctm_mosaic_10s_spw0.ms', antenna='ea15')
+# The 11th antenna plotted in amp_vs_antenna1 corresponds to ea13, so we flag it
+flagdata(vis = '3c391_ctm_mosaic_10s_spw0.ms', antenna='ea13)
