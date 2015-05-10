@@ -1,0 +1,902 @@
+2015-05-10 13:18:47	INFO	casa::::casa	---
+2015-05-10 13:18:47	INFO	casa::::casa	CASA Version 4.2.1 (release r29047)
+2015-05-10 13:18:47	INFO	casa::::casa	  Tagged on: Thu, 27 Mar 2014
+2015-05-10 13:19:46	INFO	listobs::::casa	
+2015-05-10 13:19:46	INFO	listobs::::casa+	##########################################
+2015-05-10 13:19:46	INFO	listobs::::casa+	##### Begin Task: listobs            #####
+2015-05-10 13:19:46	INFO	listobs::::casa	listobs(vis="3c391_ctm_mosaic_10s_spw0.ms",selectdata=True,spw="",field="",
+2015-05-10 13:19:46	INFO	listobs::::casa+	        antenna="",uvrange="",timerange="",correlation="",scan="",
+2015-05-10 13:19:46	INFO	listobs::::casa+	        intent="",feed="",array="",observation="",verbose=True,
+2015-05-10 13:19:46	INFO	listobs::::casa+	        listfile="",listunfl=False,cachesize=50)
+2015-05-10 13:19:47	INFO	listobs::ms::summary	================================================================================
+2015-05-10 13:19:47	INFO	listobs::ms::summary+	           MeasurementSet Name:  /cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms      MS Version 2
+2015-05-10 13:19:47	INFO	listobs::ms::summary+	================================================================================
+2015-05-10 13:19:47	INFO	listobs::ms::summary+	   Observer: Dr. James Miller-Jones     Project: T.B.D.  
+2015-05-10 13:19:47	INFO	listobs::ms::summary+	Observation: EVLA
+2015-05-10 13:19:47	INFO	listobs::ms::summary	Data records: 845379       Total integration time = 28671.5 seconds
+2015-05-10 13:19:47	INFO	listobs::ms::summary+	   Observed from   24-Apr-2010/08:02:15.0   to   24-Apr-2010/16:00:06.5 (UTC)
+2015-05-10 13:19:48	INFO	listobs::ms::summary	
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	   ObservationID = 0         ArrayID = 0
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  Date        Timerange (UTC)          Scan  FldId FieldName             nRows     SpwIds   Average Interval(s)    ScanIntent
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  24-Apr-2010/08:02:10.4 - 08:02:29.5     1      0 J1331+3030                 650  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              08:02:24.5 - 08:09:29.1     2      0 J1331+3030               13975  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              08:09:24.0 - 08:16:28.0     3      0 J1331+3030               13975  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              08:19:38.0 - 08:24:26.5     4      1 J1822-0938                7035  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              08:24:48.0 - 08:29:46.5     5      2 3C391 C1                  7590  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              08:29:41.5 - 08:34:46.0     6      3 3C391 C2                  7821  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              08:34:41.0 - 08:39:45.5     7      4 3C391 C3                  7821  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              08:39:39.0 - 08:44:45.0     8      5 3C391 C4                  7821  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              08:44:40.0 - 08:49:44.5     9      6 3C391 C5                  7843  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              08:49:39.4 - 08:54:44.5    10      7 3C391 C6                  7843  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              08:54:39.5 - 08:59:43.5    11      8 3C391 C7                  7843  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              09:00:03.0 - 09:01:31.0    12      1 J1822-0938                2925  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              09:01:52.0 - 09:06:50.5    13      2 3C391 C1                  7941  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              09:06:45.5 - 09:11:50.0    14      3 3C391 C2                  9801  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              09:11:45.0 - 09:16:49.5    15      4 3C391 C3                 10075  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              09:16:44.5 - 09:21:49.0    16      5 3C391 C4                 10050  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              09:21:44.0 - 09:26:48.5    17      6 3C391 C5                 10075  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              09:26:43.5 - 09:31:48.5    18      7 3C391 C6                 10075  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              09:31:43.5 - 09:36:47.5    19      8 3C391 C7                 10075  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              09:37:07.0 - 09:38:35.0    20      1 J1822-0938                2900  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              09:38:57.0 - 09:43:55.0    21      2 3C391 C1                  9700  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              09:43:50.0 - 09:48:54.5    22      3 3C391 C2                 10050  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              09:48:49.5 - 09:53:54.0    23      4 3C391 C3                 10075  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              09:53:49.0 - 09:58:53.5    24      5 3C391 C4                 10075  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              09:58:48.5 - 10:03:53.0    25      6 3C391 C5                 10075  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              10:03:48.0 - 10:08:52.5    26      7 3C391 C6                 10075  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              10:08:47.5 - 10:13:47.0    27      8 3C391 C7                  9750  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              10:14:12.0 - 10:15:39.5    28      1 J1822-0938                2925  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              10:16:01.0 - 10:20:58.5    29      2 3C391 C1                  9000  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              10:20:53.5 - 10:25:58.6    30      3 3C391 C2                 10050  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              10:25:53.5 - 10:30:58.0    31      4 3C391 C3                 10075  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              10:30:53.0 - 10:35:57.5    32      5 3C391 C4                 10075  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              10:35:52.5 - 10:40:57.0    33      6 3C391 C5                 10075  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              10:40:52.0 - 10:45:56.5    34      7 3C391 C6                 10075  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              10:45:51.5 - 10:50:51.0    35      8 3C391 C7                  9750  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              10:51:15.0 - 10:52:42.5    36      1 J1822-0938                2925  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              10:55:14.0 - 10:57:42.0    37      0 J1331+3030                3364  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              11:00:13.0 - 11:02:41.0    38      1 J1822-0938                3883  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              11:03:03.0 - 11:08:01.0    39      2 3C391 C1                  9750  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              11:07:56.0 - 11:12:50.5    40      3 3C391 C2                  9725  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              11:12:45.5 - 11:17:40.1    41      4 3C391 C3                  9750  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              11:17:35.0 - 11:22:29.5    42      5 3C391 C4                  9750  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              11:22:24.5 - 11:27:19.5    43      6 3C391 C5                  9750  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              11:27:14.5 - 11:32:09.0    44      7 3C391 C6                  9750  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              11:32:04.0 - 11:36:53.0    45      8 3C391 C7                  9425  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              11:37:21.0 - 11:38:47.0    46      1 J1822-0938                2700  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              11:39:11.0 - 11:44:07.0    47      2 3C391 C1                  9750  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              11:44:02.0 - 11:48:56.5    48      3 3C391 C2                  9700  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              11:48:51.5 - 11:53:41.0    49      4 3C391 C3                  8355  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              11:53:41.0 - 11:58:30.5    50      5 3C391 C4                  9425  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              11:58:25.5 - 12:03:20.5    51      6 3C391 C5                  9725  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              12:03:15.5 - 12:08:10.0    52      7 3C391 C6                  9701  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              12:08:05.0 - 12:12:59.0    53      8 3C391 C7                  9725  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              12:13:29.0 - 12:14:48.0    54      1 J1822-0938                2600  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              12:15:18.0 - 12:20:07.5    55      2 3C391 C1                  9425  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              12:20:02.5 - 12:24:57.0    56      3 3C391 C2                  9750  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              12:24:51.5 - 12:29:46.5    57      4 3C391 C3                  9750  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              12:29:41.5 - 12:34:36.5    58      5 3C391 C4                  9725  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              12:34:31.5 - 12:39:26.0    59      6 3C391 C5                  9725  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              12:39:19.5 - 12:44:15.5    60      7 3C391 C6                  9750  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              12:44:10.5 - 12:49:04.5    61      8 3C391 C7                  9750  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              12:49:34.9 - 12:50:53.0    62      1 J1822-0938                2600  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              12:51:24.0 - 12:56:12.5    63      2 3C391 C1                  9425  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              12:56:07.5 - 13:01:02.0    64      3 3C391 C2                  9000  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              13:00:57.0 - 13:05:51.5    65      4 3C391 C3                  9750  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              13:05:46.5 - 13:10:41.5    66      5 3C391 C4                  9750  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              13:10:36.5 - 13:15:31.0    67      6 3C391 C5                  9725  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              13:15:25.9 - 13:20:20.5    68      7 3C391 C6                  9750  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              13:20:15.5 - 13:25:10.0    69      8 3C391 C7                  9000  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              13:25:40.0 - 13:26:57.5    70      1 J1822-0938                2600  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              13:27:28.0 - 13:32:16.5    71      2 3C391 C1                  9425  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              13:32:10.5 - 13:37:06.0    72      3 3C391 C2                  9750  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              13:37:01.0 - 13:41:55.5    73      4 3C391 C3                  9750  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              13:41:50.5 - 13:46:45.5    74      5 3C391 C4                  9750  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              13:46:40.5 - 13:51:35.0    75      6 3C391 C5                  9725  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              13:51:30.0 - 13:56:24.5    76      7 3C391 C6                  9750  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              13:56:19.5 - 14:01:14.0    77      8 3C391 C7                  9750  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              14:01:44.0 - 14:03:01.5    78      1 J1822-0938                2024  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              14:03:33.0 - 14:08:21.0    79      2 3C391 C1                  8900  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              14:08:14.5 - 14:13:10.5    80      3 3C391 C2                  9750  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              14:13:05.3 - 14:18:00.5    81      4 3C391 C3                  9750  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              14:17:55.5 - 14:22:50.0    82      5 3C391 C4                  9350  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              14:22:45.0 - 14:27:39.5    83      6 3C391 C5                  9000  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              14:27:34.5 - 14:32:29.0    84      7 3C391 C6                  8595  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              14:32:24.0 - 14:37:18.5    85      8 3C391 C7                  7590  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              14:37:48.0 - 14:39:05.5    86      1 J1822-0938                1848  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              14:39:36.0 - 14:44:24.5    87      2 3C391 C1                  7337  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              14:44:18.5 - 14:49:14.0    88      3 3C391 C2                  7568  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              14:49:09.0 - 14:54:04.0    89      4 3C391 C3                  7590  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              14:53:59.0 - 14:58:54.5    90      5 3C391 C4                  7527  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              14:58:48.5 - 15:03:43.0    91      6 3C391 C5                  7568  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              15:03:38.0 - 15:08:32.5    92      7 3C391 C6                  7590  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              15:08:27.5 - 15:13:22.0    93      8 3C391 C7                  7590  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              15:13:51.0 - 15:15:09.0    94      1 J1822-0938                1680  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              15:15:40.0 - 15:20:28.5    95      2 3C391 C1                  7337  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              15:20:22.5 - 15:25:18.0    96      3 3C391 C2                  7568  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              15:25:12.0 - 15:30:08.0    97      4 3C391 C3                  7590  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              15:30:01.5 - 15:34:57.5    98      5 3C391 C4                  7564  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              15:34:52.5 - 15:39:47.0    99      6 3C391 C5                  7260  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              15:39:42.0 - 15:44:36.5   100      7 3C391 C6                  6930  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              15:44:31.5 - 15:49:26.0   101      8 3C391 C7                  6930  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              15:49:55.0 - 15:51:13.5   102      1 J1822-0938                1088  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	              15:54:52.0 - 16:00:11.5   103      9 J0319+4130                8768  [0]  [10] 
+2015-05-10 13:19:48	INFO	listobs::ms::summary	           (nRows = Total number of rows per scan) 
+2015-05-10 13:19:48	INFO	listobs::ms::summary	Fields: 10
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  ID   Code Name                RA               Decl           Epoch   SrcId      nRows
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  0    N    J1331+3030          13:31:08.287984 +30.30.32.95886 J2000   0          31964
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  1    J    J1822-0938          18:22:28.704200 -09.38.56.83501 J2000   1          39733
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  2    NONE 3C391 C1            18:49:24.244000 -00.55.40.58001 J2000   2         105580
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  3    NONE 3C391 C2            18:49:29.149001 -00.57.48.00001 J2000   3         110533
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  4    NONE 3C391 C3            18:49:19.339000 -00.57.48.00001 J2000   4         110331
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  5    NONE 3C391 C4            18:49:14.434001 -00.55.40.58001 J2000   5         110862
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  6    NONE 3C391 C5            18:49:19.339000 -00.53.33.16000 J2000   6         110546
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  7    NONE 3C391 C6            18:49:29.149001 -00.53.33.16000 J2000   7         109884
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  8    NONE 3C391 C7            18:49:34.054000 -00.55.40.58001 J2000   8         107178
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  9    Z    J0319+4130          03:19:48.160102 +41.30.42.10305 J2000   9           8768
+2015-05-10 13:19:48	INFO	listobs::ms::summary	Spectral Windows:  (1 unique spectral windows and 1 unique polarization setups)
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  SpwID  Name      #Chans   Frame   Ch0(MHz)  ChanWid(kHz)  TotBW(kHz)  Corrs          
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  0      Subband:0     64   TOPO    4536.000      2000.000    128000.0  RR  RL  LR  LL
+2015-05-10 13:19:48	INFO	listobs::ms::summary	Sources: 10
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  ID   Name                SpwId RestFreq(MHz)  SysVel(km/s) 
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  0    J1331+3030          0     -              -            
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  1    J1822-0938          0     -              -            
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  2    3C391 C1            0     -              -            
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  3    3C391 C2            0     -              -            
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  4    3C391 C3            0     -              -            
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  5    3C391 C4            0     -              -            
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  6    3C391 C5            0     -              -            
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  7    3C391 C6            0     -              -            
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  8    3C391 C7            0     -              -            
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  9    J0319+4130          0     -              -            
+2015-05-10 13:19:48	INFO	listobs::ms::summary	Antennas: 26:
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  ID   Name  Station   Diam.    Long.         Lat.                Offset from array center (m)                ITRF Geocentric coordinates (m)        
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	                                                                     East         North     Elevation               x               y               z
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  0    ea01  W09       25.0 m   -107.37.25.2  +33.53.51.0       -521.9407     -332.7782       -1.1977 -1601710.017000 -5042006.928200  3554602.355600
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  1    ea02  E02       25.0 m   -107.37.04.4  +33.54.01.1          9.8247      -20.4292       -2.7808 -1601150.059500 -5042000.619800  3554860.729400
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  2    ea03  E09       25.0 m   -107.36.45.1  +33.53.53.6        506.0591     -251.8666       -3.5832 -1600715.948000 -5042273.187000  3554668.184500
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  3    ea04  W01       25.0 m   -107.37.05.9  +33.54.00.5        -27.3562      -41.3030       -2.7418 -1601189.030140 -5042000.493300  3554843.425700
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  4    ea05  W08       25.0 m   -107.37.21.6  +33.53.53.0       -432.1158     -272.1493       -1.5032 -1601614.091000 -5042001.655700  3554652.509300
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  5    ea07  N06       25.0 m   -107.37.06.9  +33.54.10.3        -54.0667      263.8720       -4.2292 -1601162.593200 -5041829.000000  3555095.890500
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  6    ea08  N01       25.0 m   -107.37.06.0  +33.54.01.8        -30.8810       -1.4664       -2.8597 -1601185.634945 -5041978.156586  3554876.424700
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  7    ea09  E06       25.0 m   -107.36.55.6  +33.53.57.7        236.9058     -126.3369       -2.4443 -1600951.588000 -5042125.911000  3554773.012300
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  8    ea11  E04       25.0 m   -107.37.00.8  +33.53.59.7        102.8046      -63.7684       -2.6412 -1601068.791200 -5042051.910200  3554824.835300
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  9    ea12  E08       25.0 m   -107.36.48.9  +33.53.55.1        407.8394     -206.0057       -3.2252 -1600801.916000 -5042219.371000  3554706.449900
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  10   ea13  N07       25.0 m   -107.37.07.2  +33.54.12.9        -61.1040      344.2335       -4.6144 -1601155.635800 -5041783.843000  3555162.374100
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  11   ea14  E05       25.0 m   -107.36.58.4  +33.53.58.8        164.9788      -92.8032       -2.5268 -1601014.462000 -5042086.252000  3554800.799800
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  12   ea15  W06       25.0 m   -107.37.15.6  +33.53.56.4       -275.8288     -166.7451       -2.0590 -1601447.198000 -5041992.502500  3554739.687600
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  13   ea16  W02       25.0 m   -107.37.07.5  +33.54.00.9        -67.9687      -26.5614       -2.7175 -1601225.255200 -5041980.383590  3554855.675000
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  14   ea17  W07       25.0 m   -107.37.18.4  +33.53.54.8       -349.9866     -216.7507       -1.7978 -1601526.386100 -5041996.840100  3554698.327400
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  15   ea18  N09       25.0 m   -107.37.07.8  +33.54.19.0        -77.4352      530.6274       -5.5867 -1601139.485500 -5041679.036000  3555316.532800
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  16   ea19  W04       25.0 m   -107.37.10.8  +33.53.59.1       -152.8599      -83.8054       -2.4614 -1601315.893000 -5041985.320170  3554808.304600
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  17   ea20  N05       25.0 m   -107.37.06.7  +33.54.08.0        -47.8454      192.6015       -3.8723 -1601168.786100 -5041869.054000  3555036.936000
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  18   ea21  E01       25.0 m   -107.37.05.7  +33.53.59.2        -23.8638      -81.1510       -2.5851 -1601192.467800 -5042022.856800  3554810.438800
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  19   ea22  N04       25.0 m   -107.37.06.5  +33.54.06.1        -42.5986      132.8623       -3.5431 -1601173.953700 -5041902.660400  3554987.536500
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  20   ea23  E07       25.0 m   -107.36.52.4  +33.53.56.5        318.0523     -164.1848       -2.6960 -1600880.570000 -5042170.388000  3554741.457400
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  21   ea24  W05       25.0 m   -107.37.13.0  +33.53.57.8       -210.0944     -122.3885       -2.2581 -1601377.008000 -5041988.665500  3554776.393400
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  22   ea25  N02       25.0 m   -107.37.06.2  +33.54.03.5        -35.6245       53.1806       -3.1345 -1601180.861480 -5041947.453400  3554921.628700
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  23   ea26  W03       25.0 m   -107.37.08.9  +33.54.00.1       -105.3429      -51.7191       -2.6054 -1601265.151700 -5041982.533050  3554834.856300
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  24   ea27  E03       25.0 m   -107.37.02.8  +33.54.00.5         50.6647      -39.4832       -2.7249 -1601114.365500 -5042023.153700  3554844.945600
+2015-05-10 13:19:48	INFO	listobs::ms::summary+	  25   ea28  N08       25.0 m   -107.37.07.5  +33.54.15.8        -68.9057      433.1889       -5.0602 -1601147.940400 -5041733.837000  3555235.956000
+2015-05-10 13:19:48	INFO	listobs::::casa	##### End Task: listobs              #####
+2015-05-10 13:19:48	INFO	listobs::::casa+	##########################################
+2015-05-10 13:19:54	INFO	plotants::::casa	
+2015-05-10 13:19:54	INFO	plotants::::casa+	##########################################
+2015-05-10 13:19:54	INFO	plotants::::casa+	##### Begin Task: plotants           #####
+2015-05-10 13:19:54	INFO	plotants::::casa	plotants(vis="3c391_ctm_mosaic_10s_spw0.ms",figfile="")
+2015-05-10 13:19:55	INFO		Preparing data ...      
+2015-05-10 13:19:55	INFO		Now get the data
+2015-05-10 13:19:55	INFO		Done Processing data ... 
+2015-05-10 13:19:56	INFO		msplot clear cache: 
+2015-05-10 13:19:56	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/WEATHER
+2015-05-10 13:19:56	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/STATE
+2015-05-10 13:19:56	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/SPECTRAL_WINDOW
+2015-05-10 13:19:56	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/SOURCE
+2015-05-10 13:19:56	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/PROCESSOR
+2015-05-10 13:19:56	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/POLARIZATION
+2015-05-10 13:19:56	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/POINTING
+2015-05-10 13:19:56	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/OBSERVATION
+2015-05-10 13:19:56	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/HISTORY
+2015-05-10 13:19:56	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/FLAG_CMD
+2015-05-10 13:19:56	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/FIELD
+2015-05-10 13:19:56	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/FEED
+2015-05-10 13:19:56	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/DATA_DESCRIPTION
+2015-05-10 13:19:56	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/ANTENNA
+2015-05-10 13:19:56	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms
+2015-05-10 13:19:56	INFO	plotants::::casa	##### End Task: plotants             #####
+2015-05-10 13:19:56	INFO	plotants::::casa+	##########################################
+2015-05-10 13:20:27	INFO	plotms::::casa	
+2015-05-10 13:20:27	INFO	plotms::::casa+	##########################################
+2015-05-10 13:20:27	INFO	plotms::::casa+	##### Begin Task: plotms             #####
+2015-05-10 13:20:27	INFO	plotms::::casa	plotms(vis="3c391_ctm_mosaic_10s_spw0.ms",xaxis="",xdatacolumn="",yaxis="",
+2015-05-10 13:20:27	INFO	plotms::::casa+	        ydatacolumn="",selectdata=True,field="",spw="",timerange="",
+2015-05-10 13:20:27	INFO	plotms::::casa+	        uvrange="",antenna="",scan="",correlation="",array="",
+2015-05-10 13:20:27	INFO	plotms::::casa+	        observation="",msselect="",averagedata=True,avgchannel="",avgtime="",
+2015-05-10 13:20:27	INFO	plotms::::casa+	        avgscan=False,avgfield=False,avgbaseline=False,avgantenna=False,avgspw=False,
+2015-05-10 13:20:27	INFO	plotms::::casa+	        scalar=False,transform=False,freqframe="",restfreq="",veldef="RADIO",
+2015-05-10 13:20:27	INFO	plotms::::casa+	        shift=[0.0, 0.0],extendflag=False,extcorr=False,extchannel=False,iteraxis="",
+2015-05-10 13:20:27	INFO	plotms::::casa+	        xselfscale=False,yselfscale=False,customsymbol=True,symbolshape="autoscaling",symbolsize=2,
+2015-05-10 13:20:27	INFO	plotms::::casa+	        symbolcolor="0000ff",symbolfill="fill",symboloutline=False,coloraxis="",customflaggedsymbol=False,
+2015-05-10 13:20:27	INFO	plotms::::casa+	        flaggedsymbolshape="nosymbol",flaggedsymbolsize=2,flaggedsymbolcolor="ff0000",flaggedsymbolfill="fill",flaggedsymboloutline=False,
+2015-05-10 13:20:27	INFO	plotms::::casa+	        plotrange=[],title="",xlabel="",ylabel="",showmajorgrid=False,
+2015-05-10 13:20:27	INFO	plotms::::casa+	        majorwidth=1,majorstyle="",majorcolor="B0B0B0",showminorgrid=False,minorwidth=1,
+2015-05-10 13:20:27	INFO	plotms::::casa+	        minorstyle="",minorcolor="D0D0D0",plotfile="",expformat="",highres=False,
+2015-05-10 13:20:27	INFO	plotms::::casa+	        interactive=False,overwrite=False,showgui=True)
+2015-05-10 13:20:28	INFO	PlotMS::params_changed	Updating: REDRAW, MSDATA, CACHE, AXES, CANVAS, DISPLAY, ITERATION, LOG, PLOTMS_OPTIONS.
+2015-05-10 13:20:28	INFO	PlotMS::load_cache	Clearing the existing plotms cache.
+2015-05-10 13:20:28	INFO	PlotMS::load_cache	Clearing the existing plotms cache.
+2015-05-10 13:20:29	INFO	PlotMS::params_changed	Updating: REDRAW, MSDATA, DISPLAY.
+2015-05-10 13:20:29	INFO	PlotMS::load_cache	Clearing the existing plotms cache.
+2015-05-10 13:20:29	INFO	PlotMS::load_cache	START     Current memory usage: 8347.97 kilobytes.
+2015-05-10 13:20:30	INFO	PlotMS::load_cache	Plot Data Transformations:
+2015-05-10 13:20:30	INFO	PlotMS::load_cache+	 Frame      = 
+2015-05-10 13:20:30	INFO	PlotMS::load_cache+	 VelDef     = RADIO
+2015-05-10 13:20:30	INFO	PlotMS::load_cache+	 RestFreq   = 0 MHz
+2015-05-10 13:20:30	INFO	PlotMS::load_cache+	 dX         = 0 arcsec
+2015-05-10 13:20:30	INFO	PlotMS::load_cache+	 dY         = 0 arcsec
+2015-05-10 13:20:30	INFO	PlotMS::load_cache+	 formStokes = false
+2015-05-10 13:20:30	INFO	PlotMS::load_cache	Data Averaging: None.
+2015-05-10 13:20:30	INFO	PlotMS::load_cache	Caching for the new plot: Amp(13) vs. Time(2)...
+2015-05-10 13:20:32	INFO	PlotMS::load_cache	Data selection will yield a total of 216417024 plottable points (flagged and unflagged).
+2015-05-10 13:20:32	INFO	PlotMS::load_cache+	The plotms cache will require an estimated 1.31091 GB of memory (6.05733 bytes/point).
+2015-05-10 13:20:32	INFO	PlotMS::load_cache+	This is 1.93777% of the memory avail. to CASA (free=67.6505 GB).
+2015-05-10 13:20:32	INFO	PlotMS::load_cache	Loading chunks......
+2015-05-10 13:20:59	INFO	PlotMS::load_cache	Generating the plot mask.
+2015-05-10 13:21:00	INFO	PlotMS::load_cache	refTime = 2010/04/24/00:00:00.0
+2015-05-10 13:21:00	INFO	PlotMS::load_cache	Finished loading.
+2015-05-10 13:21:00	INFO	PlotMS::load_cache	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-05-10 13:21:07	INFO	PlotMS::load_cache	Global ranges:
+2015-05-10 13:21:07	INFO	PlotMS::load_cache+	Time: 4.77881e+09-4.77884e+09 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-05-10 13:21:07	INFO	PlotMS::load_cache+	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-05-10 13:21:07	INFO	PlotMS::load_cache	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-05-10 13:21:14	INFO	PlotMS::load_cache	Global ranges:
+2015-05-10 13:21:14	INFO	PlotMS::load_cache+	Time: 4.77881e+09-4.77884e+09 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-05-10 13:21:14	INFO	PlotMS::load_cache+	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-05-10 13:21:14	INFO	QPCanvas::drawItems	START     Current memory usage: 1.31931e+06 kilobytes.
+2015-05-10 13:21:15	INFO	PlotMS::plot	Plotting 216417024 unflagged points.
+2015-05-10 13:21:14	INFO	QPCanvas::drawItems	END       Time: +0 seconds.  Memory: +154.547 kilobytes.
+2015-05-10 13:21:15	INFO	PlotMS::plot	Plotting 216417024 unflagged points.
+2015-05-10 13:21:15	INFO	plotms::::casa	Plot file 
+2015-05-10 13:21:15	INFO	plotms::::casa	##### End Task: plotms               #####
+2015-05-10 13:21:15	INFO	plotms::::casa+	##########################################
+2015-05-10 13:20:29	INFO	PlotMS::load_cache	END       Time: +46 seconds.  Memory: +1.31111e+06 kilobytes.
+2015-05-10 13:21:16	INFO	QPCanvas::drawItems	START     Current memory usage: 1.32009e+06 kilobytes.
+2015-05-10 13:21:16	INFO	QPCanvas::drawItems	END       Time: +59 seconds.  Memory: -722.375 kilobytes.
+2015-05-10 13:30:40	INFO	flagdata::::casa	
+2015-05-10 13:30:40	INFO	flagdata::::casa+	##########################################
+2015-05-10 13:30:40	INFO	flagdata::::casa+	##### Begin Task: flagdata           #####
+2015-05-10 13:30:40	INFO	flagdata::::casa	flagdata(vis="3c391_ctm_mosaic_10s_spw0.ms",mode="manual",autocorr=False,inpfile="",
+2015-05-10 13:30:40	INFO	flagdata::::casa+	        reason="any",spw="",field="",antenna="",uvrange="",
+2015-05-10 13:30:40	INFO	flagdata::::casa+	        timerange="",correlation="",scan="1",intent="",array="",
+2015-05-10 13:30:40	INFO	flagdata::::casa+	        observation="",feed="",clipminmax=[],datacolumn="DATA",clipoutside=True,
+2015-05-10 13:30:40	INFO	flagdata::::casa+	        channelavg=False,clipzeros=False,quackinterval=1.0,quackmode="beg",quackincrement=False,
+2015-05-10 13:30:40	INFO	flagdata::::casa+	        tolerance=0.0,addantenna="",lowerlimit=0.0,upperlimit=90.0,ntime="scan",
+2015-05-10 13:30:40	INFO	flagdata::::casa+	        combinescans=False,timecutoff=4.0,freqcutoff=3.0,timefit="line",freqfit="poly",
+2015-05-10 13:30:40	INFO	flagdata::::casa+	        maxnpieces=7,flagdimension="freqtime",usewindowstats="none",halfwin=1,extendflags=True,
+2015-05-10 13:30:40	INFO	flagdata::::casa+	        winsize=3,timedev="",freqdev="",timedevscale=5.0,freqdevscale=5.0,
+2015-05-10 13:30:40	INFO	flagdata::::casa+	        spectralmax=1000000.0,spectralmin=0.0,extendpols=True,growtime=50.0,growfreq=50.0,
+2015-05-10 13:30:40	INFO	flagdata::::casa+	        growaround=False,flagneartime=False,flagnearfreq=False,minrel=0.0,maxrel=1.0,
+2015-05-10 13:30:40	INFO	flagdata::::casa+	        minabs=0,maxabs=-1,spwchan=False,spwcorr=False,basecnt=False,
+2015-05-10 13:30:40	INFO	flagdata::::casa+	        action="apply",display="",flagbackup=True,savepars=False,cmdreason="",
+2015-05-10 13:30:40	INFO	flagdata::::casa+	        outfile="")
+2015-05-10 13:30:40	INFO	flagdata::::casa	Backup original flags before applying new flags
+2015-05-10 13:30:40	INFO	AgentFlagger::open	Table type is Measurement Set
+2015-05-10 13:30:40	INFO		Creating new backup flag file called flagdata_1
+2015-05-10 13:30:42	INFO	AgentFlagger::open	Table type is Measurement Set
+2015-05-10 13:30:42	INFO	flagdata::::casa	Manual mode is active
+2015-05-10 13:30:42	INFO	flagdata::::casa	Initializing the agents
+2015-05-10 13:30:42	INFO	Manual::setAgentParameters 	autocorr is 0
+2015-05-10 13:30:42	INFO	AgentFlagger::initAgents	There are 1 valid agents in list
+2015-05-10 13:30:42	INFO	flagdata::::casa	Running the agentflagger tool
+2015-05-10 13:30:42	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 13:30:42	INFO	FlagMSHandler::	Chunk = 1 [progress: 100%], Observation = 0, Array = 0, Scan = 1, Field = 0 (J1331+3030), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 650
+2015-05-10 13:30:42	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-10 13:30:42	INFO	FlagMSHandler::nextChunk 	==================================================================================== 
+2015-05-10 13:30:42	INFO	Manual::tableSummary	=> Percentage of data flagged in table selection: 100%
+2015-05-10 13:30:42	INFO	AgentFlagger::run	=> Writing flags to the MS
+2015-05-10 13:30:42	INFO	flagdata::::casa	##### End Task: flagdata             #####
+2015-05-10 13:30:42	INFO	flagdata::::casa+	##########################################
+2015-05-10 13:30:50	INFO	PlotMS::params_changed	Updating: REDRAW, DISPLAY.
+2015-05-10 13:30:50	INFO	QPCanvas::drawItems	START     Current memory usage: 1.31989e+06 kilobytes.
+2015-05-10 13:30:50	INFO	PlotMS::plot	Plotting 216417024 unflagged points.
+2015-05-10 13:30:50	INFO	QPCanvas::drawItems	END       Time: +0 seconds.  Memory: -582.781 kilobytes.
+2015-05-10 13:30:51	INFO	QPCanvas::drawItems	START     Current memory usage: 1.31998e+06 kilobytes.
+2015-05-10 13:30:51	INFO	QPCanvas::drawItems	END       Time: +60 seconds.  Memory: -664.969 kilobytes.
+2015-05-10 13:37:59	INFO	flagdata::::casa	
+2015-05-10 13:37:59	INFO	flagdata::::casa+	##########################################
+2015-05-10 13:37:59	INFO	flagdata::::casa+	##### Begin Task: flagdata           #####
+2015-05-10 13:37:59	INFO	flagdata::::casa	flagdata(vis="3c391_ctm_mosaic_10s_spw0.ms",mode="manual",autocorr=False,inpfile="",
+2015-05-10 13:37:59	INFO	flagdata::::casa+	        reason="any",spw="",field="",antenna="ea15",uvrange="",
+2015-05-10 13:37:59	INFO	flagdata::::casa+	        timerange="",correlation="",scan="",intent="",array="",
+2015-05-10 13:37:59	INFO	flagdata::::casa+	        observation="",feed="",clipminmax=[],datacolumn="DATA",clipoutside=True,
+2015-05-10 13:37:59	INFO	flagdata::::casa+	        channelavg=False,clipzeros=False,quackinterval=1.0,quackmode="beg",quackincrement=False,
+2015-05-10 13:37:59	INFO	flagdata::::casa+	        tolerance=0.0,addantenna="",lowerlimit=0.0,upperlimit=90.0,ntime="scan",
+2015-05-10 13:37:59	INFO	flagdata::::casa+	        combinescans=False,timecutoff=4.0,freqcutoff=3.0,timefit="line",freqfit="poly",
+2015-05-10 13:37:59	INFO	flagdata::::casa+	        maxnpieces=7,flagdimension="freqtime",usewindowstats="none",halfwin=1,extendflags=True,
+2015-05-10 13:37:59	INFO	flagdata::::casa+	        winsize=3,timedev="",freqdev="",timedevscale=5.0,freqdevscale=5.0,
+2015-05-10 13:37:59	INFO	flagdata::::casa+	        spectralmax=1000000.0,spectralmin=0.0,extendpols=True,growtime=50.0,growfreq=50.0,
+2015-05-10 13:37:59	INFO	flagdata::::casa+	        growaround=False,flagneartime=False,flagnearfreq=False,minrel=0.0,maxrel=1.0,
+2015-05-10 13:37:59	INFO	flagdata::::casa+	        minabs=0,maxabs=-1,spwchan=False,spwcorr=False,basecnt=False,
+2015-05-10 13:37:59	INFO	flagdata::::casa+	        action="apply",display="",flagbackup=True,savepars=False,cmdreason="",
+2015-05-10 13:37:59	INFO	flagdata::::casa+	        outfile="")
+2015-05-10 13:37:59	INFO	flagdata::::casa	Backup original flags before applying new flags
+2015-05-10 13:37:59	INFO	AgentFlagger::open	Table type is Measurement Set
+2015-05-10 13:37:59	INFO		Creating new backup flag file called flagdata_2
+2015-05-10 13:38:02	INFO	AgentFlagger::open	Table type is Measurement Set
+2015-05-10 13:38:02	INFO	flagdata::::casa	Manual mode is active
+2015-05-10 13:38:02	INFO	flagdata::::casa	Initializing the agents
+2015-05-10 13:38:02	INFO	Manual::setAgentParameters 	autocorr is 0
+2015-05-10 13:38:02	INFO	AgentFlagger::initAgents	There are 1 valid agents in list
+2015-05-10 13:38:02	INFO	flagdata::::casa	Running the agentflagger tool
+2015-05-10 13:38:02	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 13:38:02	INFO	FlagMSHandler::	Chunk = 1 [progress: 0%], Observation = 0, Array = 0, Scan = 1, Field = 0 (J1331+3030), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 50
+2015-05-10 13:38:02	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-10 13:38:02	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 13:38:02	INFO	FlagMSHandler::	Chunk = 11 [progress: 11%], Observation = 0, Array = 0, Scan = 11, Field = 8 (3C391 C7), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 682
+2015-05-10 13:38:02	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-10 13:38:02	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 13:38:02	INFO	FlagMSHandler::	Chunk = 22 [progress: 22%], Observation = 0, Array = 0, Scan = 22, Field = 3 (3C391 C2), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 774
+2015-05-10 13:38:02	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-10 13:38:02	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 13:38:02	INFO	FlagMSHandler::	Chunk = 31 [progress: 31%], Observation = 0, Array = 0, Scan = 31, Field = 4 (3C391 C3), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 775
+2015-05-10 13:38:03	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-10 13:38:03	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 13:38:03	INFO	FlagMSHandler::	Chunk = 42 [progress: 41%], Observation = 0, Array = 0, Scan = 42, Field = 5 (3C391 C4), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 750
+2015-05-10 13:38:03	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-10 13:38:03	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 13:38:03	INFO	FlagMSHandler::	Chunk = 52 [progress: 51%], Observation = 0, Array = 0, Scan = 52, Field = 7 (3C391 C6), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 748
+2015-05-10 13:38:03	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-10 13:38:03	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 13:38:03	INFO	FlagMSHandler::	Chunk = 61 [progress: 61%], Observation = 0, Array = 0, Scan = 61, Field = 8 (3C391 C7), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 750
+2015-05-10 13:38:03	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-10 13:38:03	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 13:38:03	INFO	FlagMSHandler::	Chunk = 72 [progress: 71%], Observation = 0, Array = 0, Scan = 72, Field = 3 (3C391 C2), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 750
+2015-05-10 13:38:03	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-10 13:38:03	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 13:38:03	INFO	FlagMSHandler::	Chunk = 82 [progress: 81%], Observation = 0, Array = 0, Scan = 82, Field = 5 (3C391 C4), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 734
+2015-05-10 13:38:04	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-10 13:38:04	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 13:38:04	INFO	FlagMSHandler::	Chunk = 92 [progress: 91%], Observation = 0, Array = 0, Scan = 92, Field = 7 (3C391 C6), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 660
+2015-05-10 13:38:04	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-10 13:38:04	INFO	FlagMSHandler::nextChunk 	==================================================================================== 
+2015-05-10 13:38:04	INFO	Manual::tableSummary	=> Percentage of data flagged in table selection: 100%
+2015-05-10 13:38:04	INFO	AgentFlagger::run	=> Writing flags to the MS
+2015-05-10 13:38:04	INFO	flagdata::::casa	##### End Task: flagdata             #####
+2015-05-10 13:38:04	INFO	flagdata::::casa+	##########################################
+2015-05-10 13:38:31	INFO	QPCanvas::drawItems	START     Current memory usage: 1.32307e+06 kilobytes.
+2015-05-10 13:38:31	INFO	QPCanvas::drawItems	END       Time: +2 seconds.  Memory: +4519.11 kilobytes.
+2015-05-10 13:38:33	INFO	QPCanvas::drawItems	START     Current memory usage: 1.33127e+06 kilobytes.
+2015-05-10 13:38:33	INFO	QPCanvas::drawItems	END       Time: +3 seconds.  Memory: -1622.58 kilobytes.
+2015-05-10 13:38:36	INFO	QPCanvas::drawItems	START     Current memory usage: 1.33312e+06 kilobytes.
+2015-05-10 13:38:36	INFO	QPCanvas::drawItems	END       Time: +58 seconds.  Memory: -3711.91 kilobytes.
+2015-05-10 13:39:55	INFO	PlotMS::params_changed	Updating: REDRAW, DISPLAY.
+2015-05-10 13:39:55	INFO	QPCanvas::drawItems	START     Current memory usage: 1.33304e+06 kilobytes.
+2015-05-10 13:39:56	INFO	PlotMS::plot	Plotting 216417024 unflagged points.
+2015-05-10 13:39:56	INFO	QPCanvas::drawItems	END       Time: +2 seconds.  Memory: -3487.91 kilobytes.
+2015-05-10 13:39:58	INFO	QPCanvas::drawItems	START     Current memory usage: 1.33302e+06 kilobytes.
+2015-05-10 13:39:58	INFO	QPCanvas::drawItems	END       Time: +128 seconds.  Memory: -3590.94 kilobytes.
+2015-05-10 13:44:44	INFO	plotants::::casa	
+2015-05-10 13:44:44	INFO	plotants::::casa+	##########################################
+2015-05-10 13:44:44	INFO	plotants::::casa+	##### Begin Task: plotants           #####
+2015-05-10 13:44:44	INFO	plotants::::casa	plotants(vis="3c391_ctm_mosaic_10s_spw0.ms",figfile="")
+2015-05-10 13:44:48	INFO		Preparing data ...      
+2015-05-10 13:44:48	INFO		Now get the data
+2015-05-10 13:44:48	INFO		Done Processing data ... 
+2015-05-10 13:44:49	INFO		msplot clear cache: 
+2015-05-10 13:44:49	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/WEATHER
+2015-05-10 13:44:49	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/STATE
+2015-05-10 13:44:49	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/SPECTRAL_WINDOW
+2015-05-10 13:44:49	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/SOURCE
+2015-05-10 13:44:49	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/PROCESSOR
+2015-05-10 13:44:49	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/POLARIZATION
+2015-05-10 13:44:49	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/POINTING
+2015-05-10 13:44:49	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/OBSERVATION
+2015-05-10 13:44:49	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/HISTORY
+2015-05-10 13:44:49	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/FLAG_CMD
+2015-05-10 13:44:49	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/FIELD
+2015-05-10 13:44:49	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/FEED
+2015-05-10 13:44:49	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/DATA_DESCRIPTION
+2015-05-10 13:44:49	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms/ANTENNA
+2015-05-10 13:44:49	INFO	+	/cep3home/lods08/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms
+2015-05-10 13:44:49	INFO	plotants::::casa	##### End Task: plotants             #####
+2015-05-10 13:44:49	INFO	plotants::::casa+	##########################################
+2015-05-10 13:46:54	INFO	PlotMS::params_changed	Updating: REDRAW, CACHE, DISPLAY.
+2015-05-10 13:46:54	INFO	PlotMS::load_cache	START     Current memory usage: 1.32987e+06 kilobytes.
+2015-05-10 13:46:55	INFO	PlotMS::load_cache	Plot Data Transformations:
+2015-05-10 13:46:55	INFO	PlotMS::load_cache+	 Frame      = 
+2015-05-10 13:46:55	INFO	PlotMS::load_cache+	 VelDef     = RADIO
+2015-05-10 13:46:55	INFO	PlotMS::load_cache+	 RestFreq   = 0 MHz
+2015-05-10 13:46:55	INFO	PlotMS::load_cache+	 dX         = 0 arcsec
+2015-05-10 13:46:55	INFO	PlotMS::load_cache+	 dY         = 0 arcsec
+2015-05-10 13:46:55	INFO	PlotMS::load_cache+	 formStokes = false
+2015-05-10 13:46:55	INFO	PlotMS::load_cache	Data Averaging: None.
+2015-05-10 13:46:55	INFO	PlotMS::load_cache	Caching for the new plot: Antenna1(9) vs. Baseline(11)...
+2015-05-10 13:46:56	INFO	PlotMS::load_cache	Generating the plot mask.
+2015-05-10 13:46:57	INFO	PlotMS::load_cache	refTime = 2010/04/24/00:00:00.0
+2015-05-10 13:46:57	INFO	PlotMS::load_cache	Finished loading.
+2015-05-10 13:46:57	INFO	PlotMS::load_cache	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-05-10 13:46:57	INFO	PlotMS::load_cache	Global ranges:
+2015-05-10 13:46:57	INFO	PlotMS::load_cache+	Baseline: 0.99999-373 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-05-10 13:46:57	INFO	PlotMS::load_cache+	Antenna1: -1e-05-24 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-05-10 13:46:57	INFO	PlotMS::load_cache	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-05-10 13:46:57	INFO	PlotMS::load_cache	Global ranges:
+2015-05-10 13:46:57	INFO	PlotMS::load_cache+	Baseline: 0.99999-373 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-05-10 13:46:57	INFO	PlotMS::load_cache+	Antenna1: -1e-05-24 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-05-10 13:46:57	INFO	QPCanvas::drawItems	START     Current memory usage: 1.12298e+06 kilobytes.
+2015-05-10 13:46:57	INFO	PlotMS::plot	Plotting 845379 unflagged points.
+2015-05-10 13:46:57	INFO	QPCanvas::drawItems	END       Time: +0 seconds.  Memory: -7.3125 kilobytes.
+2015-05-10 13:46:59	INFO	PlotMS::plot	Plotting 845379 unflagged points.
+2015-05-10 13:46:54	INFO	PlotMS::load_cache	END       Time: +5 seconds.  Memory: -210377 kilobytes.
+2015-05-10 13:47:00	INFO	QPCanvas::drawItems	START     Current memory usage: 1.12308e+06 kilobytes.
+2015-05-10 13:47:00	INFO	QPCanvas::drawItems	END       Time: +0 seconds.  Memory: -3531.14 kilobytes.
+2015-05-10 13:47:43	INFO	PlotMS::params_changed	Updating: REDRAW, CACHE.
+2015-05-10 13:47:43	INFO	PlotMS::load_cache	START     Current memory usage: 1.11953e+06 kilobytes.
+2015-05-10 13:47:43	INFO	PlotMS::load_cache	Plot Data Transformations:
+2015-05-10 13:47:43	INFO	PlotMS::load_cache+	 Frame      = 
+2015-05-10 13:47:43	INFO	PlotMS::load_cache+	 VelDef     = RADIO
+2015-05-10 13:47:43	INFO	PlotMS::load_cache+	 RestFreq   = 0 MHz
+2015-05-10 13:47:43	INFO	PlotMS::load_cache+	 dX         = 0 arcsec
+2015-05-10 13:47:43	INFO	PlotMS::load_cache+	 dY         = 0 arcsec
+2015-05-10 13:47:43	INFO	PlotMS::load_cache+	 formStokes = false
+2015-05-10 13:47:43	INFO	PlotMS::load_cache	Data Averaging: None.
+2015-05-10 13:47:43	INFO	PlotMS::load_cache	Caching for the new plot: Amp(13) vs. Antenna1(9)...
+2015-05-10 13:47:45	INFO	PlotMS::load_cache	Generating the plot mask.
+2015-05-10 13:47:46	INFO	PlotMS::load_cache	refTime = 2010/04/24/00:00:00.0
+2015-05-10 13:47:46	INFO	PlotMS::load_cache	Finished loading.
+2015-05-10 13:47:46	INFO	PlotMS::load_cache	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-05-10 13:47:55	INFO	PlotMS::load_cache	Global ranges:
+2015-05-10 13:47:55	INFO	PlotMS::load_cache+	Antenna1: -1e-05-24 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-05-10 13:47:55	INFO	PlotMS::load_cache+	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-05-10 13:47:55	INFO	PlotMS::load_cache	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-05-10 13:48:04	INFO	PlotMS::load_cache	Global ranges:
+2015-05-10 13:48:04	INFO	PlotMS::load_cache+	Antenna1: -1e-05-24 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-05-10 13:48:04	INFO	PlotMS::load_cache+	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-05-10 13:48:05	INFO	QPCanvas::drawItems	START     Current memory usage: 1.33355e+06 kilobytes.
+2015-05-10 13:48:05	INFO	PlotMS::plot	Plotting 216417024 unflagged points.
+2015-05-10 13:48:05	INFO	QPCanvas::drawItems	END       Time: +0 seconds.  Memory: -12.8281 kilobytes.
+2015-05-10 13:48:06	INFO	PlotMS::plot	Plotting 216417024 unflagged points.
+2015-05-10 13:47:43	INFO	PlotMS::load_cache	END       Time: +24 seconds.  Memory: +210480 kilobytes.
+2015-05-10 13:48:07	INFO	QPCanvas::drawItems	START     Current memory usage: 1.33354e+06 kilobytes.
+2015-05-10 13:48:07	INFO	QPCanvas::drawItems	END       Time: +60 seconds.  Memory: -3603.2 kilobytes.
+2015-05-10 13:53:11	INFO	plotms::::casa	
+2015-05-10 13:53:11	INFO	plotms::::casa+	##########################################
+2015-05-10 13:53:11	INFO	plotms::::casa+	##### Begin Task: plotms             #####
+2015-05-10 13:53:11	INFO	plotms::::casa	plotms(vis="3c391_ctm_mosaic_10s_spw0.ms",xaxis="",xdatacolumn="",yaxis="",
+2015-05-10 13:53:11	INFO	plotms::::casa+	        ydatacolumn="",selectdata=True,field="",spw="",timerange="",
+2015-05-10 13:53:11	INFO	plotms::::casa+	        uvrange="",antenna="",scan="",correlation="",array="",
+2015-05-10 13:53:11	INFO	plotms::::casa+	        observation="",msselect="",averagedata=True,avgchannel="",avgtime="",
+2015-05-10 13:53:11	INFO	plotms::::casa+	        avgscan=False,avgfield=False,avgbaseline=False,avgantenna=False,avgspw=False,
+2015-05-10 13:53:11	INFO	plotms::::casa+	        scalar=False,transform=False,freqframe="",restfreq="",veldef="RADIO",
+2015-05-10 13:53:11	INFO	plotms::::casa+	        shift=[0.0, 0.0],extendflag=False,extcorr=False,extchannel=False,iteraxis="",
+2015-05-10 13:53:11	INFO	plotms::::casa+	        xselfscale=False,yselfscale=False,customsymbol=True,symbolshape="autoscaling",symbolsize=2,
+2015-05-10 13:53:11	INFO	plotms::::casa+	        symbolcolor="0000ff",symbolfill="fill",symboloutline=False,coloraxis="",customflaggedsymbol=False,
+2015-05-10 13:53:11	INFO	plotms::::casa+	        flaggedsymbolshape="nosymbol",flaggedsymbolsize=2,flaggedsymbolcolor="ff0000",flaggedsymbolfill="fill",flaggedsymboloutline=False,
+2015-05-10 13:53:11	INFO	plotms::::casa+	        plotrange=[],title="",xlabel="",ylabel="",showmajorgrid=False,
+2015-05-10 13:53:11	INFO	plotms::::casa+	        majorwidth=1,majorstyle="",majorcolor="B0B0B0",showminorgrid=False,minorwidth=1,
+2015-05-10 13:53:11	INFO	plotms::::casa+	        minorstyle="",minorcolor="D0D0D0",plotfile="",expformat="",highres=False,
+2015-05-10 13:53:11	INFO	plotms::::casa+	        interactive=False,overwrite=False,showgui=True)
+2015-05-10 13:53:11	INFO	PlotMS::params_changed	Updating: REDRAW, CACHE, DISPLAY.
+2015-05-10 13:53:11	INFO	PlotMS::load_cache	START     Current memory usage: 1.32991e+06 kilobytes.
+2015-05-10 13:53:11	INFO	PlotMS::load_cache	Plot Data Transformations:
+2015-05-10 13:53:11	INFO	PlotMS::load_cache+	 Frame      = 
+2015-05-10 13:53:11	INFO	PlotMS::load_cache+	 VelDef     = RADIO
+2015-05-10 13:53:11	INFO	PlotMS::load_cache+	 RestFreq   = 0 MHz
+2015-05-10 13:53:11	INFO	PlotMS::load_cache+	 dX         = 0 arcsec
+2015-05-10 13:53:11	INFO	PlotMS::load_cache+	 dY         = 0 arcsec
+2015-05-10 13:53:11	INFO	PlotMS::load_cache+	 formStokes = false
+2015-05-10 13:53:11	INFO	PlotMS::load_cache	Data Averaging: None.
+2015-05-10 13:53:11	INFO	PlotMS::load_cache	Caching for the new plot: Amp(13) vs. Time(2)...
+2015-05-10 13:53:13	INFO	PlotMS::load_cache	Generating the plot mask.
+2015-05-10 13:53:14	INFO	PlotMS::load_cache	refTime = 2010/04/24/00:00:00.0
+2015-05-10 13:53:14	INFO	PlotMS::load_cache	Finished loading.
+2015-05-10 13:53:14	INFO	PlotMS::load_cache	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-05-10 13:53:21	INFO	PlotMS::load_cache	Global ranges:
+2015-05-10 13:53:21	INFO	PlotMS::load_cache+	Time: 4.77881e+09-4.77884e+09 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-05-10 13:53:21	INFO	PlotMS::load_cache+	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-05-10 13:53:21	INFO	PlotMS::load_cache	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-05-10 13:53:28	INFO	PlotMS::load_cache	Global ranges:
+2015-05-10 13:53:28	INFO	PlotMS::load_cache+	Time: 4.77881e+09-4.77884e+09 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-05-10 13:53:28	INFO	PlotMS::load_cache+	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-05-10 13:53:28	INFO	QPCanvas::drawItems	START     Current memory usage: 1.33342e+06 kilobytes.
+2015-05-10 13:53:28	INFO	PlotMS::plot	Plotting 216417024 unflagged points.
+2015-05-10 13:53:28	INFO	QPCanvas::drawItems	END       Time: +0 seconds.  Memory: -7.53125 kilobytes.
+2015-05-10 13:53:29	INFO	PlotMS::plot	Plotting 216417024 unflagged points.
+2015-05-10 13:53:29	INFO	plotms::::casa	Plot file 
+2015-05-10 13:53:29	INFO	plotms::::casa	##### End Task: plotms               #####
+2015-05-10 13:53:29	INFO	plotms::::casa+	##########################################
+2015-05-10 13:53:11	INFO	PlotMS::load_cache	END       Time: +18 seconds.  Memory: -21.6406 kilobytes.
+2015-05-10 13:53:29	INFO	QPCanvas::drawItems	START     Current memory usage: 1.33341e+06 kilobytes.
+2015-05-10 13:53:29	INFO	QPCanvas::drawItems	END       Time: +57 seconds.  Memory: -3554.8 kilobytes.
+2015-05-10 13:54:46	INFO	PlotMS::params_changed	Updating: REDRAW, CACHE, DISPLAY.
+2015-05-10 13:54:46	INFO	PlotMS::load_cache	START     Current memory usage: 1.32992e+06 kilobytes.
+2015-05-10 13:54:46	INFO	PlotMS::load_cache	Plot Data Transformations:
+2015-05-10 13:54:46	INFO	PlotMS::load_cache+	 Frame      = 
+2015-05-10 13:54:46	INFO	PlotMS::load_cache+	 VelDef     = RADIO
+2015-05-10 13:54:46	INFO	PlotMS::load_cache+	 RestFreq   = 0 MHz
+2015-05-10 13:54:46	INFO	PlotMS::load_cache+	 dX         = 0 arcsec
+2015-05-10 13:54:46	INFO	PlotMS::load_cache+	 dY         = 0 arcsec
+2015-05-10 13:54:46	INFO	PlotMS::load_cache+	 formStokes = false
+2015-05-10 13:54:46	INFO	PlotMS::load_cache	Data Averaging: None.
+2015-05-10 13:54:46	INFO	PlotMS::load_cache	Caching for the new plot: Amp(13) vs. Antenna1(9)...
+2015-05-10 13:54:47	INFO	PlotMS::load_cache	Generating the plot mask.
+2015-05-10 13:54:48	INFO	PlotMS::load_cache	refTime = 2010/04/24/00:00:00.0
+2015-05-10 13:54:48	INFO	PlotMS::load_cache	Finished loading.
+2015-05-10 13:54:48	INFO	PlotMS::load_cache	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-05-10 13:54:58	INFO	PlotMS::load_cache	Global ranges:
+2015-05-10 13:54:58	INFO	PlotMS::load_cache+	Antenna1: -1e-05-24 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-05-10 13:54:58	INFO	PlotMS::load_cache+	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-05-10 13:54:58	INFO	PlotMS::load_cache	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-05-10 13:55:08	INFO	PlotMS::load_cache	Global ranges:
+2015-05-10 13:55:08	INFO	PlotMS::load_cache+	Antenna1: -1e-05-24 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-05-10 13:55:08	INFO	PlotMS::load_cache+	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-05-10 13:55:08	INFO	QPCanvas::drawItems	START     Current memory usage: 1.33348e+06 kilobytes.
+2015-05-10 13:55:08	INFO	PlotMS::plot	Plotting 216417024 unflagged points.
+2015-05-10 13:55:08	INFO	QPCanvas::drawItems	END       Time: +0 seconds.  Memory: -10.125 kilobytes.
+2015-05-10 13:55:09	INFO	PlotMS::plot	Plotting 216417024 unflagged points.
+2015-05-10 13:54:46	INFO	PlotMS::load_cache	END       Time: +24 seconds.  Memory: +97.5156 kilobytes.
+2015-05-10 13:55:09	INFO	QPCanvas::drawItems	START     Current memory usage: 1.33354e+06 kilobytes.
+2015-05-10 13:55:09	INFO	QPCanvas::drawItems	END       Time: +62 seconds.  Memory: -3564.16 kilobytes.
+2015-05-10 14:00:28	INFO	PlotMS::params_changed	Updating: REDRAW, CACHE.
+2015-05-10 14:00:28	INFO	PlotMS::load_cache	START     Current memory usage: 1.33006e+06 kilobytes.
+2015-05-10 14:00:28	INFO	PlotMS::load_cache	Plot Data Transformations:
+2015-05-10 14:00:28	INFO	PlotMS::load_cache+	 Frame      = 
+2015-05-10 14:00:28	INFO	PlotMS::load_cache+	 VelDef     = RADIO
+2015-05-10 14:00:28	INFO	PlotMS::load_cache+	 RestFreq   = 0 MHz
+2015-05-10 14:00:28	INFO	PlotMS::load_cache+	 dX         = 0 arcsec
+2015-05-10 14:00:28	INFO	PlotMS::load_cache+	 dY         = 0 arcsec
+2015-05-10 14:00:28	INFO	PlotMS::load_cache+	 formStokes = false
+2015-05-10 14:00:28	INFO	PlotMS::load_cache	Data Averaging: None.
+2015-05-10 14:00:28	INFO	PlotMS::load_cache	Caching for the new plot: Amp(13) vs. Antenna1(9)...
+2015-05-10 14:00:31	INFO	PlotMS::load_cache	Data selection will yield a total of 216417024 plottable points (flagged and unflagged).
+2015-05-10 14:00:31	INFO	PlotMS::load_cache+	The plotms cache will require an estimated 1.31091 GB of memory (6.05733 bytes/point).
+2015-05-10 14:00:31	INFO	PlotMS::load_cache+	This is 2.01324% of the memory avail. to CASA (free=65.1145 GB).
+2015-05-10 14:00:31	INFO	PlotMS::load_cache	Loading chunks......
+2015-05-10 14:00:53	INFO	PlotMS::load_cache	Generating the plot mask.
+2015-05-10 14:00:54	INFO	PlotMS::load_cache	refTime = 2010/04/24/00:00:00.0
+2015-05-10 14:00:54	INFO	PlotMS::load_cache	Finished loading.
+2015-05-10 14:00:54	INFO	PlotMS::load_cache	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-05-10 14:01:04	INFO	PlotMS::load_cache	Global ranges:
+2015-05-10 14:01:04	INFO	PlotMS::load_cache+	Antenna1: -1e-05-24 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-05-10 14:01:04	INFO	PlotMS::load_cache+	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-05-10 14:01:04	INFO	PlotMS::load_cache	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-05-10 14:01:14	INFO	PlotMS::load_cache	Global ranges:
+2015-05-10 14:01:14	INFO	PlotMS::load_cache+	Antenna1: -1e-05-24 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-05-10 14:01:14	INFO	PlotMS::load_cache+	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-05-10 14:01:14	INFO	QPCanvas::drawItems	START     Current memory usage: 1.33363e+06 kilobytes.
+2015-05-10 14:01:14	INFO	PlotMS::plot	Plotting 216417024 unflagged points.
+2015-05-10 14:01:14	INFO	QPCanvas::drawItems	END       Time: +0 seconds.  Memory: -8.85938 kilobytes.
+2015-05-10 14:01:15	INFO	PlotMS::plot	Plotting 216417024 unflagged points.
+2015-05-10 14:00:28	INFO	PlotMS::load_cache	END       Time: +48 seconds.  Memory: +47.4219 kilobytes.
+2015-05-10 14:01:15	INFO	QPCanvas::drawItems	START     Current memory usage: 1.33368e+06 kilobytes.
+2015-05-10 14:01:15	INFO	QPCanvas::drawItems	END       Time: +61 seconds.  Memory: -3611.69 kilobytes.
+2015-05-10 14:13:19	INFO	PlotMS::params_changed	Updating: REDRAW, CACHE, DISPLAY.
+2015-05-10 14:13:19	INFO	PlotMS::load_cache	START     Current memory usage: 1.33058e+06 kilobytes.
+2015-05-10 14:13:19	INFO	PlotMS::load_cache	Plot Data Transformations:
+2015-05-10 14:13:19	INFO	PlotMS::load_cache+	 Frame      = 
+2015-05-10 14:13:19	INFO	PlotMS::load_cache+	 VelDef     = RADIO
+2015-05-10 14:13:19	INFO	PlotMS::load_cache+	 RestFreq   = 0 MHz
+2015-05-10 14:13:19	INFO	PlotMS::load_cache+	 dX         = 0 arcsec
+2015-05-10 14:13:19	INFO	PlotMS::load_cache+	 dY         = 0 arcsec
+2015-05-10 14:13:19	INFO	PlotMS::load_cache+	 formStokes = false
+2015-05-10 14:13:19	INFO	PlotMS::load_cache	Data Averaging: None.
+2015-05-10 14:13:19	INFO	PlotMS::load_cache	Caching for the new plot: Amp(13) vs. Time(2)...
+2015-05-10 14:13:22	INFO	PlotMS::load_cache	Data selection will yield a total of 216417024 plottable points (flagged and unflagged).
+2015-05-10 14:13:22	INFO	PlotMS::load_cache+	The plotms cache will require an estimated 1.31091 GB of memory (6.05733 bytes/point).
+2015-05-10 14:13:22	INFO	PlotMS::load_cache+	This is 2.05286% of the memory avail. to CASA (free=63.8578 GB).
+2015-05-10 14:13:22	INFO	PlotMS::load_cache	Loading chunks......
+2015-05-10 14:13:38	INFO	PlotMS::load_cache	Generating the plot mask.
+2015-05-10 14:13:39	INFO	PlotMS::load_cache	refTime = 2010/04/24/00:00:00.0
+2015-05-10 14:13:39	INFO	PlotMS::load_cache	Finished loading.
+2015-05-10 14:13:39	INFO	PlotMS::load_cache	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-05-10 14:13:47	INFO	PlotMS::load_cache	Global ranges:
+2015-05-10 14:13:47	INFO	PlotMS::load_cache+	Time: 4.77881e+09-4.77884e+09 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-05-10 14:13:47	INFO	PlotMS::load_cache+	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-05-10 14:13:47	INFO	PlotMS::load_cache	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-05-10 14:13:54	INFO	PlotMS::load_cache	Global ranges:
+2015-05-10 14:13:54	INFO	PlotMS::load_cache+	Time: 4.77881e+09-4.77884e+09 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-05-10 14:13:54	INFO	PlotMS::load_cache+	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-05-10 14:13:54	INFO	QPCanvas::drawItems	START     Current memory usage: 1.3341e+06 kilobytes.
+2015-05-10 14:13:54	INFO	PlotMS::plot	Plotting 216417024 unflagged points.
+2015-05-10 14:13:54	INFO	QPCanvas::drawItems	END       Time: +0 seconds.  Memory: -8.89062 kilobytes.
+2015-05-10 14:13:55	INFO	PlotMS::plot	Plotting 216417024 unflagged points.
+2015-05-10 14:13:19	INFO	PlotMS::load_cache	END       Time: +37 seconds.  Memory: -27.2344 kilobytes.
+2015-05-10 14:13:56	INFO	QPCanvas::drawItems	START     Current memory usage: 1.33406e+06 kilobytes.
+2015-05-10 14:13:56	INFO	QPCanvas::drawItems	END       Time: +127 seconds.  Memory: -3576.31 kilobytes.
+2015-05-10 14:17:05	INFO	flagdata::::casa	
+2015-05-10 14:17:05	INFO	flagdata::::casa+	##########################################
+2015-05-10 14:17:05	INFO	flagdata::::casa+	##### Begin Task: flagdata           #####
+2015-05-10 14:17:05	INFO	flagdata::::casa	flagdata(vis="3c391_ctm_mosaic_10s_spw0.ms",mode="quack",autocorr=False,inpfile="",
+2015-05-10 14:17:05	INFO	flagdata::::casa+	        reason="any",spw="",field="",antenna="",uvrange="",
+2015-05-10 14:17:05	INFO	flagdata::::casa+	        timerange="",correlation="",scan="",intent="",array="",
+2015-05-10 14:17:05	INFO	flagdata::::casa+	        observation="",feed="",clipminmax=[],datacolumn="DATA",clipoutside=True,
+2015-05-10 14:17:05	INFO	flagdata::::casa+	        channelavg=False,clipzeros=False,quackinterval=10.0,quackmode="beg",quackincrement=False,
+2015-05-10 14:17:05	INFO	flagdata::::casa+	        tolerance=0.0,addantenna="",lowerlimit=0.0,upperlimit=90.0,ntime="scan",
+2015-05-10 14:17:05	INFO	flagdata::::casa+	        combinescans=False,timecutoff=4.0,freqcutoff=3.0,timefit="line",freqfit="poly",
+2015-05-10 14:17:05	INFO	flagdata::::casa+	        maxnpieces=7,flagdimension="freqtime",usewindowstats="none",halfwin=1,extendflags=True,
+2015-05-10 14:17:05	INFO	flagdata::::casa+	        winsize=3,timedev="",freqdev="",timedevscale=5.0,freqdevscale=5.0,
+2015-05-10 14:17:05	INFO	flagdata::::casa+	        spectralmax=1000000.0,spectralmin=0.0,extendpols=True,growtime=50.0,growfreq=50.0,
+2015-05-10 14:17:05	INFO	flagdata::::casa+	        growaround=False,flagneartime=False,flagnearfreq=False,minrel=0.0,maxrel=1.0,
+2015-05-10 14:17:05	INFO	flagdata::::casa+	        minabs=0,maxabs=-1,spwchan=False,spwcorr=False,basecnt=False,
+2015-05-10 14:17:05	INFO	flagdata::::casa+	        action="apply",display="",flagbackup=True,savepars=False,cmdreason="",
+2015-05-10 14:17:05	INFO	flagdata::::casa+	        outfile="")
+2015-05-10 14:17:05	INFO	flagdata::::casa	Backup original flags before applying new flags
+2015-05-10 14:17:05	INFO	AgentFlagger::open	Table type is Measurement Set
+2015-05-10 14:17:05	INFO		Creating new backup flag file called flagdata_3
+2015-05-10 14:17:07	INFO	AgentFlagger::open	Table type is Measurement Set
+2015-05-10 14:17:07	INFO	flagdata::::casa	Quack mode is active
+2015-05-10 14:17:07	INFO	flagdata::::casa	Initializing the agents
+2015-05-10 14:17:07	INFO	Quack::setAgentParameters 	 quackinterval is 10
+2015-05-10 14:17:07	INFO	Quack::setAgentParameters 	 quackmode is beg
+2015-05-10 14:17:07	INFO	Quack::setAgentParameters 	 quackincrement is 0
+2015-05-10 14:17:07	INFO	AgentFlagger::initAgents	There are 1 valid agents in list
+2015-05-10 14:17:07	INFO	flagdata::::casa	Running the agentflagger tool
+2015-05-10 14:17:08	INFO	FlagMSHandler::preSweep 	 103 Scans found in MS
+2015-05-10 14:17:08	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 14:17:08	INFO	FlagMSHandler::	Chunk = 1 [progress: 0%], Observation = 0, Array = 0, Scan = 1, Field = 0 (J1331+3030), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 650
+2015-05-10 14:17:09	INFO	Quack::chunkSummary	=> Data flagged so far 6.26489%
+2015-05-10 14:17:09	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 14:17:09	INFO	FlagMSHandler::	Chunk = 12 [progress: 11%], Observation = 0, Array = 0, Scan = 12, Field = 1 (J1822-0938), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 2925
+2015-05-10 14:17:09	INFO	Quack::chunkSummary	=> Data flagged so far 7.42313%
+2015-05-10 14:17:09	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 14:17:09	INFO	FlagMSHandler::	Chunk = 22 [progress: 21%], Observation = 0, Array = 0, Scan = 22, Field = 3 (3C391 C2), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 10050
+2015-05-10 14:17:10	INFO	Quack::chunkSummary	=> Data flagged so far 7.00579%
+2015-05-10 14:17:10	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 14:17:10	INFO	FlagMSHandler::	Chunk = 31 [progress: 31%], Observation = 0, Array = 0, Scan = 31, Field = 4 (3C391 C3), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 10075
+2015-05-10 14:17:10	INFO	Quack::chunkSummary	=> Data flagged so far 6.8957%
+2015-05-10 14:17:10	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 14:17:10	INFO	FlagMSHandler::	Chunk = 42 [progress: 42%], Observation = 0, Array = 0, Scan = 42, Field = 5 (3C391 C4), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 9750
+2015-05-10 14:17:11	INFO	Quack::chunkSummary	=> Data flagged so far 7.37867%
+2015-05-10 14:17:11	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 14:17:11	INFO	FlagMSHandler::	Chunk = 51 [progress: 51%], Observation = 0, Array = 0, Scan = 51, Field = 6 (3C391 C5), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 9725
+2015-05-10 14:17:11	INFO	Quack::chunkSummary	=> Data flagged so far 7.0664%
+2015-05-10 14:17:11	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 14:17:11	INFO	FlagMSHandler::	Chunk = 61 [progress: 61%], Observation = 0, Array = 0, Scan = 61, Field = 8 (3C391 C7), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 9750
+2015-05-10 14:17:12	INFO	Quack::chunkSummary	=> Data flagged so far 7.26984%
+2015-05-10 14:17:12	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 14:17:12	INFO	FlagMSHandler::	Chunk = 70 [progress: 70%], Observation = 0, Array = 0, Scan = 70, Field = 1 (J1822-0938), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 2600
+2015-05-10 14:17:12	INFO	Quack::chunkSummary	=> Data flagged so far 7.60195%
+2015-05-10 14:17:12	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 14:17:12	INFO	FlagMSHandler::	Chunk = 81 [progress: 82%], Observation = 0, Array = 0, Scan = 81, Field = 4 (3C391 C3), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 9750
+2015-05-10 14:17:13	INFO	Quack::chunkSummary	=> Data flagged so far 7.0363%
+2015-05-10 14:17:13	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 14:17:13	INFO	FlagMSHandler::	Chunk = 92 [progress: 91%], Observation = 0, Array = 0, Scan = 92, Field = 7 (3C391 C6), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 7590
+2015-05-10 14:17:13	INFO	Quack::chunkSummary	=> Data flagged so far 6.54599%
+2015-05-10 14:17:13	INFO	FlagMSHandler::nextChunk 	==================================================================================== 
+2015-05-10 14:17:13	INFO	Quack::tableSummary	=> Percentage of data flagged in table selection: 7.04702%
+2015-05-10 14:17:13	INFO	AgentFlagger::run	=> Writing flags to the MS
+2015-05-10 14:17:14	INFO	flagdata::::casa	##### End Task: flagdata             #####
+2015-05-10 14:17:14	INFO	flagdata::::casa+	##########################################
+2015-05-10 14:18:09	INFO	PlotMS::params_changed	Updating: REDRAW, MSDATA.
+2015-05-10 14:18:09	INFO	PlotMS::load_cache	Clearing the existing plotms cache.
+2015-05-10 14:18:09	INFO	PlotMS::load_cache	START     Current memory usage: 21094.1 kilobytes.
+2015-05-10 14:18:09	INFO	PlotMS::load_cache	Plot Data Transformations:
+2015-05-10 14:18:09	INFO	PlotMS::load_cache+	 Frame      = 
+2015-05-10 14:18:09	INFO	PlotMS::load_cache+	 VelDef     = RADIO
+2015-05-10 14:18:09	INFO	PlotMS::load_cache+	 RestFreq   = 0 MHz
+2015-05-10 14:18:09	INFO	PlotMS::load_cache+	 dX         = 0 arcsec
+2015-05-10 14:18:09	INFO	PlotMS::load_cache+	 dY         = 0 arcsec
+2015-05-10 14:18:09	INFO	PlotMS::load_cache+	 formStokes = false
+2015-05-10 14:18:09	INFO	PlotMS::load_cache	Data Averaging: None.
+2015-05-10 14:18:09	INFO	PlotMS::load_cache	Caching for the new plot: Amp(13) vs. Time(2)...
+2015-05-10 14:18:11	INFO	PlotMS::load_cache	Data selection will yield a total of 216417024 plottable points (flagged and unflagged).
+2015-05-10 14:18:11	INFO	PlotMS::load_cache+	The plotms cache will require an estimated 1.31091 GB of memory (6.05733 bytes/point).
+2015-05-10 14:18:11	INFO	PlotMS::load_cache+	This is 2.04913% of the memory avail. to CASA (free=63.974 GB).
+2015-05-10 14:18:11	INFO	PlotMS::load_cache	Loading chunks......
+2015-05-10 14:18:23	INFO	PlotMS::load_cache	Generating the plot mask.
+2015-05-10 14:18:24	INFO	PlotMS::load_cache	refTime = 2010/04/24/00:00:00.0
+2015-05-10 14:18:24	INFO	PlotMS::load_cache	Finished loading.
+2015-05-10 14:18:24	INFO	PlotMS::load_cache	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-05-10 14:18:31	INFO	PlotMS::load_cache	Global ranges:
+2015-05-10 14:18:31	INFO	PlotMS::load_cache+	Time: 4.77881e+09-4.77884e+09 (unflagged); 4.77881e+09-4.77884e+09 (flagged).
+2015-05-10 14:18:31	INFO	PlotMS::load_cache+	Amp: -9.90746e-06-0.500666 (unflagged); -9.87355e-06-0.433695(flagged).
+2015-05-10 14:18:31	INFO	PlotMS::load_cache	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-05-10 14:18:38	INFO	PlotMS::load_cache	Global ranges:
+2015-05-10 14:18:38	INFO	PlotMS::load_cache+	Time: 4.77881e+09-4.77884e+09 (unflagged); 4.77881e+09-4.77884e+09 (flagged).
+2015-05-10 14:18:38	INFO	PlotMS::load_cache+	Amp: -9.90746e-06-0.500666 (unflagged); -9.87355e-06-0.433695(flagged).
+2015-05-10 14:18:38	INFO	QPCanvas::drawItems	START     Current memory usage: 1.334e+06 kilobytes.
+2015-05-10 14:18:38	INFO	PlotMS::plot	Plotting 185173248 unflagged points.
+2015-05-10 14:18:38	INFO	QPCanvas::drawItems	END       Time: +0 seconds.  Memory: -6.4375 kilobytes.
+2015-05-10 14:18:40	INFO	PlotMS::plot	Plotting 185173248 unflagged points.
+2015-05-10 14:18:09	INFO	PlotMS::load_cache	END       Time: +32 seconds.  Memory: +1.30945e+06 kilobytes.
+2015-05-10 14:18:41	INFO	QPCanvas::drawItems	START     Current memory usage: 1.33406e+06 kilobytes.
+2015-05-10 14:18:41	INFO	QPCanvas::drawItems	END       Time: +115 seconds.  Memory: -3555.34 kilobytes.
+2015-05-10 14:21:41	INFO	PlotMS::params_changed	Updating: REDRAW, MSDATA, CACHE, DISPLAY.
+2015-05-10 14:21:41	INFO	PlotMS::load_cache	Clearing the existing plotms cache.
+2015-05-10 14:21:41	INFO	PlotMS::load_cache	START     Current memory usage: 21160.3 kilobytes.
+2015-05-10 14:21:41	INFO	PlotMS::load_cache	Plot Data Transformations:
+2015-05-10 14:21:41	INFO	PlotMS::load_cache+	 Frame      = 
+2015-05-10 14:21:41	INFO	PlotMS::load_cache+	 VelDef     = RADIO
+2015-05-10 14:21:41	INFO	PlotMS::load_cache+	 RestFreq   = 0 MHz
+2015-05-10 14:21:41	INFO	PlotMS::load_cache+	 dX         = 0 arcsec
+2015-05-10 14:21:41	INFO	PlotMS::load_cache+	 dY         = 0 arcsec
+2015-05-10 14:21:41	INFO	PlotMS::load_cache+	 formStokes = false
+2015-05-10 14:21:41	INFO	PlotMS::load_cache	Data Averaging: None.
+2015-05-10 14:21:41	INFO	PlotMS::load_cache	Caching for the new plot: Time(2) vs. Antenna1(9)...
+2015-05-10 14:21:43	INFO	PlotMS::load_cache	Data selection will yield a total of 845379 plottable points (flagged and unflagged).
+2015-05-10 14:21:43	INFO	PlotMS::load_cache+	The plotms cache will require an estimated 0.229669 GB of memory (271.675 bytes/point).
+2015-05-10 14:21:43	INFO	PlotMS::load_cache+	This is 0.35902% of the memory avail. to CASA (free=63.9709 GB).
+2015-05-10 14:21:43	INFO	PlotMS::load_cache	Loading chunks......
+2015-05-10 14:21:44	INFO	PlotMS::load_cache	Generating the plot mask.
+2015-05-10 14:21:44	INFO	PlotMS::load_cache	refTime = 2010/04/24/00:00:00.0
+2015-05-10 14:21:44	INFO	PlotMS::load_cache	Finished loading.
+2015-05-10 14:21:44	INFO	PlotMS::load_cache	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-05-10 14:21:44	INFO	PlotMS::load_cache	Global ranges:
+2015-05-10 14:21:44	INFO	PlotMS::load_cache+	Antenna1: -1e-05-24 (unflagged); -1e-05-24 (flagged).
+2015-05-10 14:21:44	INFO	PlotMS::load_cache+	Time: 4.77881e+09-4.77884e+09 (unflagged); 4.77881e+09-4.77884e+09(flagged).
+2015-05-10 14:21:44	INFO	PlotMS::load_cache	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-05-10 14:21:44	INFO	PlotMS::load_cache	Global ranges:
+2015-05-10 14:21:44	INFO	PlotMS::load_cache+	Antenna1: -1e-05-24 (unflagged); -1e-05-24 (flagged).
+2015-05-10 14:21:44	INFO	PlotMS::load_cache+	Time: 4.77881e+09-4.77884e+09 (unflagged); 4.77881e+09-4.77884e+09(flagged).
+2015-05-10 14:21:44	INFO	QPCanvas::drawItems	START     Current memory usage: 277988 kilobytes.
+2015-05-10 14:21:44	INFO	PlotMS::plot	Plotting 723333 unflagged, 122046 flagged points.
+2015-05-10 14:21:44	INFO	QPCanvas::drawItems	END       Time: +0 seconds.  Memory: -9.60938 kilobytes.
+2015-05-10 14:21:46	INFO	PlotMS::plot	Plotting 723333 unflagged, 122046 flagged points.
+2015-05-10 14:21:41	INFO	PlotMS::load_cache	END       Time: +6 seconds.  Memory: +253361 kilobytes.
+2015-05-10 14:21:47	INFO	QPCanvas::drawItems	START     Current memory usage: 277953 kilobytes.
+2015-05-10 14:21:47	INFO	QPCanvas::drawItems	END       Time: +2 seconds.  Memory: -3437.48 kilobytes.
+2015-05-10 14:22:32	INFO	PlotMS::params_changed	Updating: REDRAW, MSDATA, CACHE.
+2015-05-10 14:22:32	INFO	PlotMS::load_cache	Clearing the existing plotms cache.
+2015-05-10 14:22:32	INFO	PlotMS::load_cache	START     Current memory usage: 21071.2 kilobytes.
+2015-05-10 14:22:32	INFO	PlotMS::load_cache	Plot Data Transformations:
+2015-05-10 14:22:32	INFO	PlotMS::load_cache+	 Frame      = 
+2015-05-10 14:22:32	INFO	PlotMS::load_cache+	 VelDef     = RADIO
+2015-05-10 14:22:32	INFO	PlotMS::load_cache+	 RestFreq   = 0 MHz
+2015-05-10 14:22:32	INFO	PlotMS::load_cache+	 dX         = 0 arcsec
+2015-05-10 14:22:32	INFO	PlotMS::load_cache+	 dY         = 0 arcsec
+2015-05-10 14:22:32	INFO	PlotMS::load_cache+	 formStokes = false
+2015-05-10 14:22:32	INFO	PlotMS::load_cache	Data Averaging: None.
+2015-05-10 14:22:32	INFO	PlotMS::load_cache	Caching for the new plot: Antenna1(9) vs. Amp(13)...
+2015-05-10 14:22:35	INFO	PlotMS::load_cache	Data selection will yield a total of 216417024 plottable points (flagged and unflagged).
+2015-05-10 14:22:35	INFO	PlotMS::load_cache+	The plotms cache will require an estimated 1.31091 GB of memory (6.05733 bytes/point).
+2015-05-10 14:22:35	INFO	PlotMS::load_cache+	This is 2.04923% of the memory avail. to CASA (free=63.9708 GB).
+2015-05-10 14:22:35	INFO	PlotMS::load_cache	Loading chunks......
+2015-05-10 14:22:46	INFO	PlotMS::load_cache	Generating the plot mask.
+2015-05-10 14:22:47	INFO	PlotMS::load_cache	refTime = 2010/04/24/00:00:00.0
+2015-05-10 14:22:47	INFO	PlotMS::load_cache	Finished loading.
+2015-05-10 14:22:47	INFO	PlotMS::load_cache	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-05-10 14:22:56	INFO	PlotMS::load_cache	Global ranges:
+2015-05-10 14:22:56	INFO	PlotMS::load_cache+	Amp: -9.90746e-06-0.500666 (unflagged); -9.87355e-06-0.433695 (flagged).
+2015-05-10 14:22:56	INFO	PlotMS::load_cache+	Antenna1: -1e-05-24 (unflagged); -1e-05-24(flagged).
+2015-05-10 14:22:56	INFO	PlotMS::load_cache	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-05-10 14:23:05	INFO	PlotMS::load_cache	Global ranges:
+2015-05-10 14:23:05	INFO	PlotMS::load_cache+	Amp: -9.90746e-06-0.500666 (unflagged); -9.87355e-06-0.433695 (flagged).
+2015-05-10 14:23:05	INFO	PlotMS::load_cache+	Antenna1: -1e-05-24 (unflagged); -1e-05-24(flagged).
+2015-05-10 14:23:05	INFO	QPCanvas::drawItems	START     Current memory usage: 1.33413e+06 kilobytes.
+2015-05-10 14:23:05	INFO	PlotMS::plot	Plotting 185173248 unflagged, 31243776 flagged points.
+2015-05-10 14:23:05	INFO	QPCanvas::drawItems	END       Time: +0 seconds.  Memory: -10.1094 kilobytes.
+2015-05-10 14:23:06	INFO	PlotMS::plot	Plotting 185173248 unflagged, 31243776 flagged points.
+2015-05-10 14:22:32	INFO	PlotMS::load_cache	END       Time: +34 seconds.  Memory: +1.30964e+06 kilobytes.
+2015-05-10 14:23:06	INFO	QPCanvas::drawItems	START     Current memory usage: 1.33425e+06 kilobytes.
+2015-05-10 14:23:06	INFO	QPCanvas::drawItems	END       Time: +323 seconds.  Memory: -3662.66 kilobytes.
+2015-05-10 14:29:48	INFO	PlotMS::params_changed	Updating: REDRAW, MSDATA, CACHE, DISPLAY.
+2015-05-10 14:29:48	INFO	PlotMS::load_cache	Clearing the existing plotms cache.
+2015-05-10 14:29:48	INFO	PlotMS::load_cache	START     Current memory usage: 21266.8 kilobytes.
+2015-05-10 14:29:48	INFO	PlotMS::load_cache	Plot Data Transformations:
+2015-05-10 14:29:48	INFO	PlotMS::load_cache+	 Frame      = 
+2015-05-10 14:29:48	INFO	PlotMS::load_cache+	 VelDef     = RADIO
+2015-05-10 14:29:48	INFO	PlotMS::load_cache+	 RestFreq   = 0 MHz
+2015-05-10 14:29:48	INFO	PlotMS::load_cache+	 dX         = 0 arcsec
+2015-05-10 14:29:48	INFO	PlotMS::load_cache+	 dY         = 0 arcsec
+2015-05-10 14:29:48	INFO	PlotMS::load_cache+	 formStokes = false
+2015-05-10 14:29:48	INFO	PlotMS::load_cache	Data Averaging: None.
+2015-05-10 14:29:48	INFO	PlotMS::load_cache	Caching for the new plot: Amp(13) vs. Antenna1(9)...
+2015-05-10 14:29:50	INFO	PlotMS::load_cache	Data selection will yield a total of 216417024 plottable points (flagged and unflagged).
+2015-05-10 14:29:50	INFO	PlotMS::load_cache+	The plotms cache will require an estimated 1.31091 GB of memory (6.05733 bytes/point).
+2015-05-10 14:29:50	INFO	PlotMS::load_cache+	This is 2.04924% of the memory avail. to CASA (free=63.9706 GB).
+2015-05-10 14:29:50	INFO	PlotMS::load_cache	Loading chunks......
+2015-05-10 14:30:02	INFO	PlotMS::load_cache	Generating the plot mask.
+2015-05-10 14:30:03	INFO	PlotMS::load_cache	refTime = 2010/04/24/00:00:00.0
+2015-05-10 14:30:03	INFO	PlotMS::load_cache	Finished loading.
+2015-05-10 14:30:03	INFO	PlotMS::load_cache	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-05-10 14:30:13	INFO	PlotMS::load_cache	Global ranges:
+2015-05-10 14:30:13	INFO	PlotMS::load_cache+	Antenna1: -1e-05-24 (unflagged); -1e-05-24 (flagged).
+2015-05-10 14:30:13	INFO	PlotMS::load_cache+	Amp: -9.90746e-06-0.500666 (unflagged); -9.87355e-06-0.433695(flagged).
+2015-05-10 14:30:13	INFO	PlotMS::load_cache	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-05-10 14:30:22	INFO	PlotMS::load_cache	Global ranges:
+2015-05-10 14:30:22	INFO	PlotMS::load_cache+	Antenna1: -1e-05-24 (unflagged); -1e-05-24 (flagged).
+2015-05-10 14:30:22	INFO	PlotMS::load_cache+	Amp: -9.90746e-06-0.500666 (unflagged); -9.87355e-06-0.433695(flagged).
+2015-05-10 14:30:23	INFO	QPCanvas::drawItems	START     Current memory usage: 1.33421e+06 kilobytes.
+2015-05-10 14:30:23	INFO	PlotMS::plot	Plotting 185173248 unflagged, 31243776 flagged points.
+2015-05-10 14:30:23	INFO	QPCanvas::drawItems	END       Time: +0 seconds.  Memory: -9.89062 kilobytes.
+2015-05-10 14:30:24	INFO	PlotMS::plot	Plotting 185173248 unflagged, 31243776 flagged points.
+2015-05-10 14:29:48	INFO	PlotMS::load_cache	END       Time: +36 seconds.  Memory: +1.30939e+06 kilobytes.
+2015-05-10 14:30:25	INFO	QPCanvas::drawItems	START     Current memory usage: 1.33419e+06 kilobytes.
+2015-05-10 14:30:25	INFO	QPCanvas::drawItems	END       Time: +69 seconds.  Memory: -3613.98 kilobytes.
+2015-05-10 14:36:19	INFO	flagdata::::casa	
+2015-05-10 14:36:19	INFO	flagdata::::casa+	##########################################
+2015-05-10 14:36:19	INFO	flagdata::::casa+	##### Begin Task: flagdata           #####
+2015-05-10 14:36:19	INFO	flagdata::::casa	flagdata(vis="3c391_ctm_mosaic_10s_spw0.ms",mode="manual",autocorr=False,inpfile="",
+2015-05-10 14:36:19	INFO	flagdata::::casa+	        reason="any",spw="",field="",antenna="ea13",uvrange="",
+2015-05-10 14:36:19	INFO	flagdata::::casa+	        timerange="",correlation="",scan="",intent="",array="",
+2015-05-10 14:36:19	INFO	flagdata::::casa+	        observation="",feed="",clipminmax=[],datacolumn="DATA",clipoutside=True,
+2015-05-10 14:36:19	INFO	flagdata::::casa+	        channelavg=False,clipzeros=False,quackinterval=1.0,quackmode="beg",quackincrement=False,
+2015-05-10 14:36:19	INFO	flagdata::::casa+	        tolerance=0.0,addantenna="",lowerlimit=0.0,upperlimit=90.0,ntime="scan",
+2015-05-10 14:36:19	INFO	flagdata::::casa+	        combinescans=False,timecutoff=4.0,freqcutoff=3.0,timefit="line",freqfit="poly",
+2015-05-10 14:36:19	INFO	flagdata::::casa+	        maxnpieces=7,flagdimension="freqtime",usewindowstats="none",halfwin=1,extendflags=True,
+2015-05-10 14:36:19	INFO	flagdata::::casa+	        winsize=3,timedev="",freqdev="",timedevscale=5.0,freqdevscale=5.0,
+2015-05-10 14:36:19	INFO	flagdata::::casa+	        spectralmax=1000000.0,spectralmin=0.0,extendpols=True,growtime=50.0,growfreq=50.0,
+2015-05-10 14:36:19	INFO	flagdata::::casa+	        growaround=False,flagneartime=False,flagnearfreq=False,minrel=0.0,maxrel=1.0,
+2015-05-10 14:36:19	INFO	flagdata::::casa+	        minabs=0,maxabs=-1,spwchan=False,spwcorr=False,basecnt=False,
+2015-05-10 14:36:19	INFO	flagdata::::casa+	        action="apply",display="",flagbackup=True,savepars=False,cmdreason="",
+2015-05-10 14:36:19	INFO	flagdata::::casa+	        outfile="")
+2015-05-10 14:36:19	INFO	flagdata::::casa	Backup original flags before applying new flags
+2015-05-10 14:36:19	INFO	AgentFlagger::open	Table type is Measurement Set
+2015-05-10 14:36:19	INFO		Creating new backup flag file called flagdata_4
+2015-05-10 14:36:21	INFO	AgentFlagger::open	Table type is Measurement Set
+2015-05-10 14:36:21	INFO	flagdata::::casa	Manual mode is active
+2015-05-10 14:36:21	INFO	flagdata::::casa	Initializing the agents
+2015-05-10 14:36:21	INFO	Manual::setAgentParameters 	autocorr is 0
+2015-05-10 14:36:21	INFO	AgentFlagger::initAgents	There are 1 valid agents in list
+2015-05-10 14:36:21	INFO	flagdata::::casa	Running the agentflagger tool
+2015-05-10 14:36:21	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 14:36:21	INFO	FlagMSHandler::	Chunk = 1 [progress: 0%], Observation = 0, Array = 0, Scan = 1, Field = 0 (J1331+3030), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 50
+2015-05-10 14:36:21	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-10 14:36:21	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 14:36:21	INFO	FlagMSHandler::	Chunk = 11 [progress: 11%], Observation = 0, Array = 0, Scan = 11, Field = 8 (3C391 C7), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 682
+2015-05-10 14:36:21	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-10 14:36:21	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 14:36:21	INFO	FlagMSHandler::	Chunk = 21 [progress: 21%], Observation = 0, Array = 0, Scan = 21, Field = 2 (3C391 C1), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 748
+2015-05-10 14:36:22	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-10 14:36:22	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 14:36:22	INFO	FlagMSHandler::	Chunk = 31 [progress: 31%], Observation = 0, Array = 0, Scan = 32, Field = 5 (3C391 C4), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 775
+2015-05-10 14:36:22	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-10 14:36:22	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 14:36:22	INFO	FlagMSHandler::	Chunk = 41 [progress: 41%], Observation = 0, Array = 0, Scan = 42, Field = 5 (3C391 C4), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 750
+2015-05-10 14:36:22	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-10 14:36:22	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 14:36:22	INFO	FlagMSHandler::	Chunk = 50 [progress: 51%], Observation = 0, Array = 0, Scan = 52, Field = 7 (3C391 C6), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 748
+2015-05-10 14:36:22	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-10 14:36:22	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 14:36:22	INFO	FlagMSHandler::	Chunk = 60 [progress: 60%], Observation = 0, Array = 0, Scan = 62, Field = 1 (J1822-0938), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 200
+2015-05-10 14:36:22	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-10 14:36:22	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 14:36:22	INFO	FlagMSHandler::	Chunk = 71 [progress: 72%], Observation = 0, Array = 0, Scan = 73, Field = 4 (3C391 C3), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 750
+2015-05-10 14:36:22	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-10 14:36:22	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 14:36:22	INFO	FlagMSHandler::	Chunk = 80 [progress: 81%], Observation = 0, Array = 0, Scan = 82, Field = 5 (3C391 C4), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 734
+2015-05-10 14:36:23	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-10 14:36:23	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-10 14:36:23	INFO	FlagMSHandler::	Chunk = 91 [progress: 91%], Observation = 0, Array = 0, Scan = 93, Field = 8 (3C391 C7), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 660
+2015-05-10 14:36:23	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-10 14:36:23	INFO	FlagMSHandler::nextChunk 	==================================================================================== 
+2015-05-10 14:36:23	INFO	Manual::tableSummary	=> Percentage of data flagged in table selection: 100%
+2015-05-10 14:36:23	INFO	AgentFlagger::run	=> Writing flags to the MS
+2015-05-10 14:36:23	INFO	flagdata::::casa	##### End Task: flagdata             #####
+2015-05-10 14:36:23	INFO	flagdata::::casa+	##########################################
+2015-05-10 14:38:34	INFO	PlotMS::params_changed	Updating: REDRAW, MSDATA.
+2015-05-10 14:38:34	INFO	PlotMS::load_cache	Clearing the existing plotms cache.
+2015-05-10 14:38:34	INFO	PlotMS::load_cache	START     Current memory usage: 21156 kilobytes.
+2015-05-10 14:38:34	INFO	PlotMS::load_cache	Plot Data Transformations:
+2015-05-10 14:38:34	INFO	PlotMS::load_cache+	 Frame      = 
+2015-05-10 14:38:34	INFO	PlotMS::load_cache+	 VelDef     = RADIO
+2015-05-10 14:38:34	INFO	PlotMS::load_cache+	 RestFreq   = 0 MHz
+2015-05-10 14:38:34	INFO	PlotMS::load_cache+	 dX         = 0 arcsec
+2015-05-10 14:38:34	INFO	PlotMS::load_cache+	 dY         = 0 arcsec
+2015-05-10 14:38:34	INFO	PlotMS::load_cache+	 formStokes = false
+2015-05-10 14:38:34	INFO	PlotMS::load_cache	Data Averaging: None.
+2015-05-10 14:38:34	INFO	PlotMS::load_cache	Caching for the new plot: Amp(13) vs. Antenna1(9)...
+2015-05-10 14:38:36	INFO	PlotMS::load_cache	Data selection will yield a total of 216417024 plottable points (flagged and unflagged).
+2015-05-10 14:38:36	INFO	PlotMS::load_cache+	The plotms cache will require an estimated 1.31091 GB of memory (6.05733 bytes/point).
+2015-05-10 14:38:36	INFO	PlotMS::load_cache+	This is 2.04946% of the memory avail. to CASA (free=63.9637 GB).
+2015-05-10 14:38:36	INFO	PlotMS::load_cache	Loading chunks......
+2015-05-10 14:38:48	INFO	PlotMS::load_cache	Generating the plot mask.
+2015-05-10 14:38:48	INFO	PlotMS::load_cache	refTime = 2010/04/24/00:00:00.0
+2015-05-10 14:38:48	INFO	PlotMS::load_cache	Finished loading.
+2015-05-10 14:38:48	INFO	PlotMS::load_cache	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-05-10 14:38:58	INFO	PlotMS::load_cache	Global ranges:
+2015-05-10 14:38:58	INFO	PlotMS::load_cache+	Antenna1: -1e-05-24 (unflagged); -1e-05-24 (flagged).
+2015-05-10 14:38:58	INFO	PlotMS::load_cache+	Amp: -9.85252e-06-0.500666 (unflagged); -9.90746e-06-0.433695(flagged).
+2015-05-10 14:38:58	INFO	PlotMS::load_cache	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-05-10 14:39:07	INFO	PlotMS::load_cache	Global ranges:
+2015-05-10 14:39:07	INFO	PlotMS::load_cache+	Antenna1: -1e-05-24 (unflagged); -1e-05-24 (flagged).
+2015-05-10 14:39:07	INFO	PlotMS::load_cache+	Amp: -9.85252e-06-0.500666 (unflagged); -9.90746e-06-0.433695(flagged).
+2015-05-10 14:39:07	INFO	QPCanvas::drawItems	START     Current memory usage: 1.33413e+06 kilobytes.
+2015-05-10 14:39:07	INFO	PlotMS::plot	Plotting 170028544 unflagged, 46388480 flagged points.
+2015-05-10 14:39:07	INFO	QPCanvas::drawItems	END       Time: +0 seconds.  Memory: -8.8125 kilobytes.
+2015-05-10 14:39:09	INFO	PlotMS::plot	Plotting 170028544 unflagged, 46388480 flagged points.
+2015-05-10 14:38:34	INFO	PlotMS::load_cache	END       Time: +36 seconds.  Memory: +1.30945e+06 kilobytes.
+2015-05-10 14:39:10	INFO	QPCanvas::drawItems	START     Current memory usage: 1.33418e+06 kilobytes.
+2015-05-10 14:39:10	INFO	QPCanvas::drawItems	END       Time: +73 seconds.  Memory: -3574.59 kilobytes.
+2015-05-10 14:45:09	INFO	QPCanvas::export	START     Current memory usage: 1.33078e+06 kilobytes.
+2015-05-10 14:45:09	INFO	QPCanvas::export	END       Time: +74 seconds.  Memory: +14.4062 kilobytes.
+2015-05-10 14:46:23	INFO	PlotMS::showError()	Successfully exported plot to /cep3home/lods08/Practicum2/Imaging/plots/hankmoody.png!

@@ -1,0 +1,414 @@
+2015-04-29 17:52:09 INFO casa	---
+2015-04-29 17:52:09 INFO casa	CASA Version 4.2.1 (release r29047)
+2015-04-29 17:52:09 INFO casa	  Tagged on: Thu, 27 Mar 2014
+2015-04-29 17:52:33 INFO plotms	   
+2015-04-29 17:52:33 INFO plotms	##########################################
+2015-04-29 17:52:33 INFO plotms	##### Begin Task: plotms             #####
+2015-04-29 17:52:33 INFO plotms	plotms(vis="3c391_ctm_mosaic_10s_spw0.ms",xaxis="",xdatacolumn="",yaxis="",
+2015-04-29 17:52:33 INFO plotms	        ydatacolumn="",selectdata=True,field="",spw="",timerange="",
+2015-04-29 17:52:33 INFO plotms	        uvrange="",antenna="",scan="",correlation="",array="",
+2015-04-29 17:52:33 INFO plotms	        observation="",msselect="",averagedata=True,avgchannel="",avgtime="",
+2015-04-29 17:52:33 INFO plotms	        avgscan=False,avgfield=False,avgbaseline=False,avgantenna=False,avgspw=False,
+2015-04-29 17:52:33 INFO plotms	        scalar=False,transform=False,freqframe="",restfreq="",veldef="RADIO",
+2015-04-29 17:52:33 INFO plotms	        shift=[0.0, 0.0],extendflag=False,extcorr=False,extchannel=False,iteraxis="",
+2015-04-29 17:52:33 INFO plotms	        xselfscale=False,yselfscale=False,customsymbol=True,symbolshape="autoscaling",symbolsize=2,
+2015-04-29 17:52:33 INFO plotms	        symbolcolor="0000ff",symbolfill="fill",symboloutline=False,coloraxis="",customflaggedsymbol=False,
+2015-04-29 17:52:33 INFO plotms	        flaggedsymbolshape="nosymbol",flaggedsymbolsize=2,flaggedsymbolcolor="ff0000",flaggedsymbolfill="fill",flaggedsymboloutline=False,
+2015-04-29 17:52:33 INFO plotms	        plotrange=[],title="",xlabel="",ylabel="",showmajorgrid=False,
+2015-04-29 17:52:33 INFO plotms	        majorwidth=1,majorstyle="",majorcolor="B0B0B0",showminorgrid=False,minorwidth=1,
+2015-04-29 17:52:33 INFO plotms	        minorstyle="",minorcolor="D0D0D0",plotfile="",expformat="",highres=False,
+2015-04-29 17:52:33 INFO plotms	        interactive=False,overwrite=False,showgui=True)
+2015-04-29 17:52:33 INFO PlotMS	Updating: REDRAW, MSDATA, CACHE, AXES, CANVAS, DISPLAY, ITERATION, LOG, PLOTMS_OPTIONS.
+2015-04-29 17:52:33 INFO PlotMS	Clearing the existing plotms cache.
+2015-04-29 17:52:33 INFO PlotMS	Clearing the existing plotms cache.
+2015-04-29 17:52:34 INFO PlotMS	Updating: REDRAW, MSDATA, DISPLAY.
+2015-04-29 17:52:34 INFO PlotMS	Clearing the existing plotms cache.
+2015-04-29 17:52:34 INFO PlotMS	START     Current memory usage: 8348.23 kilobytes.
+2015-04-29 17:52:34 INFO PlotMS	Plot Data Transformations:
+2015-04-29 17:52:34 INFO PlotMS	 Frame      = 
+2015-04-29 17:52:34 INFO PlotMS	 VelDef     = RADIO
+2015-04-29 17:52:34 INFO PlotMS	 RestFreq   = 0 MHz
+2015-04-29 17:52:34 INFO PlotMS	 dX         = 0 arcsec
+2015-04-29 17:52:34 INFO PlotMS	 dY         = 0 arcsec
+2015-04-29 17:52:34 INFO PlotMS	 formStokes = false
+2015-04-29 17:52:34 INFO PlotMS	Data Averaging: None.
+2015-04-29 17:52:34 INFO PlotMS	Caching for the new plot: Amp(13) vs. Time(2)...
+2015-04-29 17:52:36 INFO PlotMS	Data selection will yield a total of 216417024 plottable points (flagged and unflagged).
+2015-04-29 17:52:36 INFO PlotMS	The plotms cache will require an estimated 1.31091 GB of memory (6.05733 bytes/point).
+2015-04-29 17:52:36 INFO PlotMS	This is 1.10964% of the memory avail. to CASA (free=118.138 GB).
+2015-04-29 17:52:36 INFO PlotMS	Loading chunks......
+2015-04-29 17:52:49 INFO PlotMS	Generating the plot mask.
+2015-04-29 17:52:50 INFO PlotMS	refTime = 2010/04/24/00:00:00.0
+2015-04-29 17:52:50 INFO PlotMS	Finished loading.
+2015-04-29 17:52:50 INFO PlotMS	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-04-29 17:52:57 INFO PlotMS	Global ranges:
+2015-04-29 17:52:57 INFO PlotMS	Time: 4.77881e+09-4.77884e+09 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-04-29 17:52:57 INFO PlotMS	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-04-29 17:52:57 INFO PlotMS	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-04-29 17:53:04 INFO PlotMS	Global ranges:
+2015-04-29 17:53:04 INFO PlotMS	Time: 4.77881e+09-4.77884e+09 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-04-29 17:53:04 INFO PlotMS	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-04-29 17:53:04 INFO QPCanvas	START     Current memory usage: 1.31932e+06 kilobytes.
+2015-04-29 17:53:04 INFO PlotMS	Plotting 216417024 unflagged points.
+2015-04-29 17:53:04 INFO QPCanvas	END       Time: +1 seconds.  Memory: +155.25 kilobytes.
+2015-04-29 17:53:05 INFO PlotMS	Plotting 216417024 unflagged points.
+2015-04-29 17:53:05 INFO plotms	Plot file 
+2015-04-29 17:53:05 INFO plotms	##### End Task: plotms               #####
+2015-04-29 17:53:05 INFO plotms	##########################################
+2015-04-29 17:52:34 INFO PlotMS	END       Time: +30 seconds.  Memory: +1.31112e+06 kilobytes.
+2015-04-29 17:53:05 INFO QPCanvas	START     Current memory usage: 1.3201e+06 kilobytes.
+2015-04-29 17:53:05 INFO QPCanvas	END       Time: +57 seconds.  Memory: -724.547 kilobytes.
+2015-04-29 17:55:00 INFO PlotMS	Updating: REDRAW, DISPLAY.
+2015-04-29 17:55:01 INFO QPCanvas	START     Current memory usage: 1.32009e+06 kilobytes.
+2015-04-29 17:55:01 INFO PlotMS	Plotting 216417024 unflagged points.
+2015-04-29 17:55:01 INFO QPCanvas	END       Time: +1 seconds.  Memory: -612.453 kilobytes.
+2015-04-29 17:55:02 INFO QPCanvas	START     Current memory usage: 1.32011e+06 kilobytes.
+2015-04-29 17:55:02 INFO QPCanvas	END       Time: +126 seconds.  Memory: -748.281 kilobytes.
+2015-04-29 17:57:26 INFO QPCanvas	START     Current memory usage: 1.31963e+06 kilobytes.
+2015-04-29 17:57:26 INFO QPCanvas	END       Time: +129 seconds.  Memory: +8.14062 kilobytes.
+2015-04-29 17:59:36 INFO PlotMS	Successfully exported plot to /cep3home/lods08/Practicum2/amp_vs_time_vraag15.png!
+2015-04-29 18:01:38 INFO PlotMS	Updating: REDRAW, CACHE.
+2015-04-29 18:01:38 INFO PlotMS	START     Current memory usage: 1.32093e+06 kilobytes.
+2015-04-29 18:01:38 INFO PlotMS	Plot Data Transformations:
+2015-04-29 18:01:38 INFO PlotMS	 Frame      = 
+2015-04-29 18:01:38 INFO PlotMS	 VelDef     = RADIO
+2015-04-29 18:01:38 INFO PlotMS	 RestFreq   = 0 MHz
+2015-04-29 18:01:38 INFO PlotMS	 dX         = 0 arcsec
+2015-04-29 18:01:38 INFO PlotMS	 dY         = 0 arcsec
+2015-04-29 18:01:38 INFO PlotMS	 formStokes = false
+2015-04-29 18:01:38 INFO PlotMS	Data Averaging: None.
+2015-04-29 18:01:38 INFO PlotMS	Caching for the new plot: Phase(14) vs. Time(2)...
+2015-04-29 18:01:41 INFO PlotMS	Data selection will yield a total of 216417024 plottable points (flagged and unflagged).
+2015-04-29 18:01:41 INFO PlotMS	The plotms cache will require an estimated 2.17658 GB of memory (10.0573 bytes/point).
+2015-04-29 18:01:41 INFO PlotMS	This is 1.86159% of the memory avail. to CASA (free=116.92 GB).
+2015-04-29 18:01:41 INFO PlotMS	Loading chunks......
+2015-04-29 18:01:56 INFO PlotMS	Generating the plot mask.
+2015-04-29 18:01:57 INFO PlotMS	refTime = 2010/04/24/00:00:00.0
+2015-04-29 18:01:57 INFO PlotMS	Finished loading.
+2015-04-29 18:01:57 INFO PlotMS	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-04-29 18:02:04 INFO PlotMS	Global ranges:
+2015-04-29 18:02:04 INFO PlotMS	Time: 4.77881e+09-4.77884e+09 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-04-29 18:02:04 INFO PlotMS	Phase: -180-180 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-04-29 18:02:04 INFO PlotMS	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-04-29 18:02:11 INFO PlotMS	Global ranges:
+2015-04-29 18:02:11 INFO PlotMS	Time: 4.77881e+09-4.77884e+09 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-04-29 18:02:11 INFO PlotMS	Phase: -180-180 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-04-29 18:02:11 INFO QPCanvas	START     Current memory usage: 1.80144e+16 kilobytes.
+2015-04-29 18:02:11 INFO PlotMS	Plotting 216417024 unflagged points.
+2015-04-29 18:02:11 INFO QPCanvas	END       Time: +0 seconds.  Memory: +1.80144e+16 kilobytes.
+2015-04-29 18:02:12 INFO PlotMS	Plotting 216417024 unflagged points.
+2015-04-29 18:01:38 INFO PlotMS	END       Time: +34 seconds.  Memory: +1.80144e+16 kilobytes.
+2015-04-29 18:02:12 INFO QPCanvas	START     Current memory usage: 1.80144e+16 kilobytes.
+2015-04-29 18:02:12 INFO QPCanvas	END       Time: +127 seconds.  Memory: +1.80144e+16 kilobytes.
+2015-04-29 18:05:14 INFO PlotMS	Updating: REDRAW, DISPLAY.
+2015-04-29 18:05:14 INFO QPCanvas	START     Current memory usage: 1.80144e+16 kilobytes.
+2015-04-29 18:05:14 INFO PlotMS	Plotting 216417024 unflagged points.
+2015-04-29 18:05:14 INFO QPCanvas	END       Time: +1 seconds.  Memory: +1.80144e+16 kilobytes.
+2015-04-29 18:05:14 INFO QPCanvas	START     Current memory usage: 1.80144e+16 kilobytes.
+2015-04-29 18:05:14 INFO QPCanvas	END       Time: +59 seconds.  Memory: +1.80144e+16 kilobytes.
+2015-04-29 18:07:36 INFO QPCanvas	START     Current memory usage: 1.80144e+16 kilobytes.
+2015-04-29 18:07:36 INFO QPCanvas	END       Time: +60 seconds.  Memory: +1.80144e+16 kilobytes.
+2015-04-29 18:08:37 INFO PlotMS	Successfully exported plot to /cep3home/lods08/Practicum2/phase_vs_time_vraag15.png!
+2015-04-29 18:09:02 INFO PlotMS	Updating: REDRAW, CACHE.
+2015-04-29 18:09:02 INFO PlotMS	START     Current memory usage: 1.80144e+16 kilobytes.
+2015-04-29 18:09:02 INFO PlotMS	Plot Data Transformations:
+2015-04-29 18:09:02 INFO PlotMS	 Frame      = 
+2015-04-29 18:09:02 INFO PlotMS	 VelDef     = RADIO
+2015-04-29 18:09:02 INFO PlotMS	 RestFreq   = 0 MHz
+2015-04-29 18:09:02 INFO PlotMS	 dX         = 0 arcsec
+2015-04-29 18:09:02 INFO PlotMS	 dY         = 0 arcsec
+2015-04-29 18:09:02 INFO PlotMS	 formStokes = false
+2015-04-29 18:09:02 INFO PlotMS	Data Averaging: None.
+2015-04-29 18:09:02 INFO PlotMS	Caching for the new plot: Frequency(6) vs. Time(2)...
+2015-04-29 18:09:03 INFO PlotMS	Generating the plot mask.
+2015-04-29 18:09:04 INFO PlotMS	refTime = 2010/04/24/00:00:00.0
+2015-04-29 18:09:04 INFO PlotMS	Finished loading.
+2015-04-29 18:09:04 INFO PlotMS	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-04-29 18:09:04 INFO PlotMS	Global ranges:
+2015-04-29 18:09:04 INFO PlotMS	Time: 4.77881e+09-4.77884e+09 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-04-29 18:09:04 INFO PlotMS	Frequency: 4.53599-4.66201 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-04-29 18:09:04 INFO PlotMS	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-04-29 18:09:04 INFO PlotMS	Global ranges:
+2015-04-29 18:09:04 INFO PlotMS	Time: 4.77881e+09-4.77884e+09 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-04-29 18:09:04 INFO PlotMS	Frequency: 4.53599-4.66201 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-04-29 18:09:04 INFO QPCanvas	START     Current memory usage: 1.95607e+06 kilobytes.
+2015-04-29 18:09:04 INFO PlotMS	Plotting 180032 unflagged points.
+2015-04-29 18:09:04 INFO QPCanvas	END       Time: +0 seconds.  Memory: -10.0156 kilobytes.
+2015-04-29 18:09:04 INFO PlotMS	Plotting 180032 unflagged points.
+2015-04-29 18:09:02 INFO PlotMS	END       Time: +3 seconds.  Memory: -211164 kilobytes.
+2015-04-29 18:09:05 INFO QPCanvas	START     Current memory usage: 1.95607e+06 kilobytes.
+2015-04-29 18:09:05 INFO QPCanvas	END       Time: +1 seconds.  Memory: -611.953 kilobytes.
+2015-04-29 18:09:39 INFO QPCanvas	START     Current memory usage: 1.95545e+06 kilobytes.
+2015-04-29 18:09:39 INFO QPCanvas	END       Time: +0 seconds.  Memory: +1.85938 kilobytes.
+2015-04-29 18:09:40 INFO PlotMS	Successfully exported plot to /cep3home/lods08/Practicum2/frequency_vs_time_vraag15.png!
+2015-04-29 18:10:26 INFO PlotMS	Updating: REDRAW, CACHE.
+2015-04-29 18:10:26 INFO PlotMS	START     Current memory usage: 1.95543e+06 kilobytes.
+2015-04-29 18:10:27 INFO PlotMS	Plot Data Transformations:
+2015-04-29 18:10:27 INFO PlotMS	 Frame      = 
+2015-04-29 18:10:27 INFO PlotMS	 VelDef     = RADIO
+2015-04-29 18:10:27 INFO PlotMS	 RestFreq   = 0 MHz
+2015-04-29 18:10:27 INFO PlotMS	 dX         = 0 arcsec
+2015-04-29 18:10:27 INFO PlotMS	 dY         = 0 arcsec
+2015-04-29 18:10:27 INFO PlotMS	 formStokes = false
+2015-04-29 18:10:27 INFO PlotMS	Data Averaging: None.
+2015-04-29 18:10:27 INFO PlotMS	Caching for the new plot: Amp(13) vs. UVdist(21)...
+2015-04-29 18:10:30 INFO PlotMS	Data selection will yield a total of 216417024 plottable points (flagged and unflagged).
+2015-04-29 18:10:30 INFO PlotMS	The plotms cache will require an estimated 2.18334 GB of memory (10.0886 bytes/point).
+2015-04-29 18:10:30 INFO PlotMS	This is 1.88092% of the memory avail. to CASA (free=116.078 GB).
+2015-04-29 18:10:30 INFO PlotMS	Loading chunks......
+2015-04-29 18:10:31 INFO PlotMS	Generating the plot mask.
+2015-04-29 18:10:32 INFO PlotMS	refTime = 2010/04/24/00:00:00.0
+2015-04-29 18:10:32 INFO PlotMS	Finished loading.
+2015-04-29 18:10:32 INFO PlotMS	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-04-29 18:10:41 INFO PlotMS	Global ranges:
+2015-04-29 18:10:41 INFO PlotMS	UVdist: 28.0018-1031.21 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-04-29 18:10:41 INFO PlotMS	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-04-29 18:10:41 INFO PlotMS	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-04-29 18:10:50 INFO PlotMS	Global ranges:
+2015-04-29 18:10:50 INFO PlotMS	UVdist: 28.0018-1031.21 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-04-29 18:10:50 INFO PlotMS	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-04-29 18:10:51 INFO QPCanvas	START     Current memory usage: 1.80144e+16 kilobytes.
+2015-04-29 18:10:51 INFO PlotMS	Plotting 216417024 unflagged points.
+2015-04-29 18:10:51 INFO QPCanvas	END       Time: +0 seconds.  Memory: +1.80144e+16 kilobytes.
+2015-04-29 18:10:51 INFO PlotMS	Plotting 216417024 unflagged points.
+2015-04-29 18:10:26 INFO PlotMS	END       Time: +25 seconds.  Memory: +1.80144e+16 kilobytes.
+2015-04-29 18:10:51 INFO QPCanvas	START     Current memory usage: 1.80144e+16 kilobytes.
+2015-04-29 18:10:51 INFO QPCanvas	END       Time: +62 seconds.  Memory: +1.80144e+16 kilobytes.
+2015-04-29 18:12:14 INFO QPCanvas	START     Current memory usage: 1.80144e+16 kilobytes.
+2015-04-29 18:12:14 INFO QPCanvas	END       Time: +62 seconds.  Memory: +1.80144e+16 kilobytes.
+2015-04-29 18:13:16 INFO PlotMS	Successfully exported plot to /cep3home/lods08/Practicum2/frequency_vs_time_vraag15.png!
+2015-04-29 18:14:01 INFO QPCanvas	START     Current memory usage: 1.80144e+16 kilobytes.
+2015-04-29 18:14:01 INFO QPCanvas	END       Time: +61 seconds.  Memory: +1.80144e+16 kilobytes.
+2015-04-29 18:15:03 INFO PlotMS	Successfully exported plot to /cep3home/lods08/Practicum2/Ampltide_vs_UVdist_vraag15.png!
+2015-04-29 18:15:13 INFO PlotMS	Updating: REDRAW, MSDATA.
+2015-04-29 18:15:13 INFO PlotMS	Clearing the existing plotms cache.
+2015-04-29 18:15:13 INFO PlotMS	START     Current memory usage: 11812.2 kilobytes.
+2015-04-29 18:15:13 INFO PlotMS	Plot Data Transformations:
+2015-04-29 18:15:13 INFO PlotMS	 Frame      = 
+2015-04-29 18:15:13 INFO PlotMS	 VelDef     = RADIO
+2015-04-29 18:15:13 INFO PlotMS	 RestFreq   = 0 MHz
+2015-04-29 18:15:13 INFO PlotMS	 dX         = 0 arcsec
+2015-04-29 18:15:13 INFO PlotMS	 dY         = 0 arcsec
+2015-04-29 18:15:13 INFO PlotMS	 formStokes = false
+2015-04-29 18:15:13 INFO PlotMS	Data Averaging: None.
+2015-04-29 18:15:13 INFO PlotMS	Caching for the new plot: Amp(13) vs. UVdist(21)...
+2015-04-29 18:15:14 INFO PlotMS	Data selection will yield a total of 28296448 plottable points (flagged and unflagged).
+2015-04-29 18:15:14 INFO PlotMS	The plotms cache will require an estimated 0.172282 GB of memory (6.08847 bytes/point).
+2015-04-29 18:15:14 INFO PlotMS	This is 0.148596% of the memory avail. to CASA (free=115.94 GB).
+2015-04-29 18:15:14 INFO PlotMS	Loading chunks......
+2015-04-29 18:15:16 INFO PlotMS	Generating the plot mask.
+2015-04-29 18:15:16 INFO PlotMS	refTime = 2010/04/24/00:00:00.0
+2015-04-29 18:15:16 INFO PlotMS	Finished loading.
+2015-04-29 18:15:16 INFO PlotMS	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-04-29 18:15:17 INFO PlotMS	Global ranges:
+2015-04-29 18:15:17 INFO PlotMS	UVdist: 28.0018-1031.06 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-04-29 18:15:17 INFO PlotMS	Amp: -9.87355e-06-0.133027 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-04-29 18:15:17 INFO PlotMS	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-04-29 18:15:18 INFO PlotMS	Global ranges:
+2015-04-29 18:15:18 INFO PlotMS	UVdist: 28.0018-1031.06 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-04-29 18:15:18 INFO PlotMS	Amp: -9.87355e-06-0.133027 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-04-29 18:15:18 INFO QPCanvas	START     Current memory usage: 184435 kilobytes.
+2015-04-29 18:15:18 INFO PlotMS	Plotting 28296448 unflagged points.
+2015-04-29 18:15:18 INFO QPCanvas	END       Time: +0 seconds.  Memory: -8.92188 kilobytes.
+2015-04-29 18:15:19 INFO PlotMS	Plotting 28296448 unflagged points.
+2015-04-29 18:15:13 INFO PlotMS	END       Time: +5 seconds.  Memory: +171982 kilobytes.
+2015-04-29 18:15:19 INFO QPCanvas	START     Current memory usage: 184427 kilobytes.
+2015-04-29 18:15:19 INFO QPCanvas	END       Time: +9 seconds.  Memory: -638.75 kilobytes.
+2015-04-29 18:16:24 INFO QPCanvas	START     Current memory usage: 183750 kilobytes.
+2015-04-29 18:16:24 INFO QPCanvas	END       Time: +9 seconds.  Memory: +1.51562 kilobytes.
+2015-04-29 18:16:33 INFO PlotMS	Successfully exported plot to /cep3home/lods08/Practicum2/Ampltide_vs_UVdist_data-field-3_vraag15.png!
+2015-04-29 18:17:03 INFO PlotMS	Updating: REDRAW, CACHE.
+2015-04-29 18:17:03 INFO PlotMS	START     Current memory usage: 183796 kilobytes.
+2015-04-29 18:17:03 INFO PlotMS	Plot Data Transformations:
+2015-04-29 18:17:03 INFO PlotMS	 Frame      = 
+2015-04-29 18:17:03 INFO PlotMS	 VelDef     = RADIO
+2015-04-29 18:17:03 INFO PlotMS	 RestFreq   = 0 MHz
+2015-04-29 18:17:03 INFO PlotMS	 dX         = 0 arcsec
+2015-04-29 18:17:03 INFO PlotMS	 dY         = 0 arcsec
+2015-04-29 18:17:03 INFO PlotMS	 formStokes = false
+2015-04-29 18:17:03 INFO PlotMS	Data Averaging: None.
+2015-04-29 18:17:03 INFO PlotMS	Caching for the new plot: Amp(13) vs. UVwave(22)...
+2015-04-29 18:17:05 INFO PlotMS	Data selection will yield a total of 28296448 plottable points (flagged and unflagged).
+2015-04-29 18:17:05 INFO PlotMS	The plotms cache will require an estimated 0.228875 GB of memory (8.08847 bytes/point).
+2015-04-29 18:17:05 INFO PlotMS	This is 0.197173% of the memory avail. to CASA (free=116.078 GB).
+2015-04-29 18:17:05 INFO PlotMS	Loading chunks......
+2015-04-29 18:17:05 INFO PlotMS	Generating the plot mask.
+2015-04-29 18:17:05 INFO PlotMS	refTime = 2010/04/24/00:00:00.0
+2015-04-29 18:17:05 INFO PlotMS	Finished loading.
+2015-04-29 18:17:05 INFO PlotMS	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-04-29 18:17:06 INFO PlotMS	Global ranges:
+2015-04-29 18:17:06 INFO PlotMS	UVwave: 423.68-16033.8 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-04-29 18:17:06 INFO PlotMS	Amp: -9.87355e-06-0.133027 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-04-29 18:17:06 INFO PlotMS	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-04-29 18:17:08 INFO PlotMS	Global ranges:
+2015-04-29 18:17:08 INFO PlotMS	UVwave: 423.68-16033.8 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-04-29 18:17:08 INFO PlotMS	Amp: -9.87355e-06-0.133027 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-04-29 18:17:08 INFO QPCanvas	START     Current memory usage: 239691 kilobytes.
+2015-04-29 18:17:08 INFO PlotMS	Plotting 28296448 unflagged points.
+2015-04-29 18:17:08 INFO QPCanvas	END       Time: +0 seconds.  Memory: -12.0625 kilobytes.
+2015-04-29 18:17:08 INFO PlotMS	Plotting 28296448 unflagged points.
+2015-04-29 18:17:03 INFO PlotMS	END       Time: +5 seconds.  Memory: +55265.2 kilobytes.
+2015-04-29 18:17:08 INFO QPCanvas	START     Current memory usage: 239685 kilobytes.
+2015-04-29 18:17:08 INFO QPCanvas	END       Time: +8 seconds.  Memory: -629.688 kilobytes.
+2015-04-29 18:17:25 INFO PlotMS	Updating: REDRAW, MSDATA.
+2015-04-29 18:17:25 INFO PlotMS	Clearing the existing plotms cache.
+2015-04-29 18:17:25 INFO PlotMS	START     Current memory usage: 11755.5 kilobytes.
+2015-04-29 18:17:26 INFO PlotMS	Plot Data Transformations:
+2015-04-29 18:17:26 INFO PlotMS	 Frame      = 
+2015-04-29 18:17:26 INFO PlotMS	 VelDef     = RADIO
+2015-04-29 18:17:26 INFO PlotMS	 RestFreq   = 0 MHz
+2015-04-29 18:17:26 INFO PlotMS	 dX         = 0 arcsec
+2015-04-29 18:17:26 INFO PlotMS	 dY         = 0 arcsec
+2015-04-29 18:17:26 INFO PlotMS	 formStokes = false
+2015-04-29 18:17:26 INFO PlotMS	Data Averaging: None.
+2015-04-29 18:17:26 INFO PlotMS	Caching for the new plot: Amp(13) vs. UVwave(22)...
+2015-04-29 18:17:29 INFO PlotMS	Data selection will yield a total of 216417024 plottable points (flagged and unflagged).
+2015-04-29 18:17:29 INFO PlotMS	The plotms cache will require an estimated 1.74374 GB of memory (8.05733 bytes/point).
+2015-04-29 18:17:29 INFO PlotMS	This is 1.50219% of the memory avail. to CASA (free=116.08 GB).
+2015-04-29 18:17:29 INFO PlotMS	Loading chunks......
+2015-04-29 18:17:41 INFO PlotMS	Generating the plot mask.
+2015-04-29 18:17:42 INFO PlotMS	refTime = 2010/04/24/00:00:00.0
+2015-04-29 18:17:42 INFO PlotMS	Finished loading.
+2015-04-29 18:17:42 INFO PlotMS	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-04-29 18:17:51 INFO PlotMS	Global ranges:
+2015-04-29 18:17:51 INFO PlotMS	UVwave: 423.68-16036.1 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-04-29 18:17:51 INFO PlotMS	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-04-29 18:17:51 INFO PlotMS	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-04-29 18:18:01 INFO PlotMS	Global ranges:
+2015-04-29 18:18:01 INFO PlotMS	UVwave: 423.68-16036.1 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-04-29 18:18:01 INFO PlotMS	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-04-29 18:18:01 INFO QPCanvas	START     Current memory usage: 1.74459e+06 kilobytes.
+2015-04-29 18:18:01 INFO PlotMS	Plotting 216417024 unflagged points.
+2015-04-29 18:18:01 INFO QPCanvas	END       Time: +0 seconds.  Memory: -9.73438 kilobytes.
+2015-04-29 18:18:01 INFO PlotMS	Plotting 216417024 unflagged points.
+2015-04-29 18:17:25 INFO PlotMS	END       Time: +36 seconds.  Memory: +1.73222e+06 kilobytes.
+2015-04-29 18:18:01 INFO QPCanvas	START     Current memory usage: 1.74461e+06 kilobytes.
+2015-04-29 18:18:01 INFO QPCanvas	END       Time: +63 seconds.  Memory: -749.594 kilobytes.
+2015-04-29 18:19:33 INFO QPCanvas	START     Current memory usage: 1.74392e+06 kilobytes.
+2015-04-29 18:19:33 INFO QPCanvas	END       Time: +64 seconds.  Memory: +1.51562 kilobytes.
+2015-04-29 18:20:36 INFO PlotMS	Successfully exported plot to /cep3home/lods08/Practicum2/Ampltide_vs_UVwave_vraag15.png!
+2015-04-29 18:39:28 INFO PlotMS	Updating: REDRAW, CACHE.
+2015-04-29 18:39:28 INFO PlotMS	START     Current memory usage: 1.74388e+06 kilobytes.
+2015-04-29 18:39:29 INFO PlotMS	Plot Data Transformations:
+2015-04-29 18:39:29 INFO PlotMS	 Frame      = 
+2015-04-29 18:39:29 INFO PlotMS	 VelDef     = RADIO
+2015-04-29 18:39:29 INFO PlotMS	 RestFreq   = 0 MHz
+2015-04-29 18:39:29 INFO PlotMS	 dX         = 0 arcsec
+2015-04-29 18:39:29 INFO PlotMS	 dY         = 0 arcsec
+2015-04-29 18:39:29 INFO PlotMS	 formStokes = false
+2015-04-29 18:39:29 INFO PlotMS	Data Averaging: None.
+2015-04-29 18:39:29 INFO PlotMS	Caching for the new plot: Time(2) vs. Amp(13)...
+2015-04-29 18:39:30 INFO PlotMS	Generating the plot mask.
+2015-04-29 18:39:31 INFO PlotMS	refTime = 2010/04/24/00:00:00.0
+2015-04-29 18:39:31 INFO PlotMS	Finished loading.
+2015-04-29 18:39:31 INFO PlotMS	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-04-29 18:39:39 INFO PlotMS	Global ranges:
+2015-04-29 18:39:39 INFO PlotMS	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-04-29 18:39:39 INFO PlotMS	Time: 4.77881e+09-4.77884e+09 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-04-29 18:39:39 INFO PlotMS	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-04-29 18:39:46 INFO PlotMS	Global ranges:
+2015-04-29 18:39:46 INFO PlotMS	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-04-29 18:39:46 INFO PlotMS	Time: 4.77881e+09-4.77884e+09 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-04-29 18:39:46 INFO QPCanvas	START     Current memory usage: 1.74447e+06 kilobytes.
+2015-04-29 18:39:46 INFO PlotMS	Plotting 216417024 unflagged points.
+2015-04-29 18:39:46 INFO QPCanvas	END       Time: +0 seconds.  Memory: -7.875 kilobytes.
+2015-04-29 18:39:47 INFO PlotMS	Plotting 216417024 unflagged points.
+2015-04-29 18:39:28 INFO PlotMS	END       Time: +19 seconds.  Memory: -42.7344 kilobytes.
+2015-04-29 18:39:47 INFO QPCanvas	START     Current memory usage: 1.74449e+06 kilobytes.
+2015-04-29 18:39:47 INFO QPCanvas	END       Time: +60 seconds.  Memory: -661.625 kilobytes.
+2015-04-29 18:43:39 INFO PlotMS	Updating: REDRAW, CACHE.
+2015-04-29 18:43:39 INFO PlotMS	START     Current memory usage: 1.74379e+06 kilobytes.
+2015-04-29 18:43:39 INFO PlotMS	Plot Data Transformations:
+2015-04-29 18:43:39 INFO PlotMS	 Frame      = 
+2015-04-29 18:43:39 INFO PlotMS	 VelDef     = RADIO
+2015-04-29 18:43:39 INFO PlotMS	 RestFreq   = 0 MHz
+2015-04-29 18:43:39 INFO PlotMS	 dX         = 0 arcsec
+2015-04-29 18:43:39 INFO PlotMS	 dY         = 0 arcsec
+2015-04-29 18:43:39 INFO PlotMS	 formStokes = false
+2015-04-29 18:43:39 INFO PlotMS	Data Averaging: None.
+2015-04-29 18:43:39 INFO PlotMS	Caching for the new plot: Amp(13) vs. Time(2)...
+2015-04-29 18:43:41 INFO PlotMS	Generating the plot mask.
+2015-04-29 18:43:42 INFO PlotMS	refTime = 2010/04/24/00:00:00.0
+2015-04-29 18:43:42 INFO PlotMS	Finished loading.
+2015-04-29 18:43:42 INFO PlotMS	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-04-29 18:43:49 INFO PlotMS	Global ranges:
+2015-04-29 18:43:49 INFO PlotMS	Time: 4.77881e+09-4.77884e+09 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-04-29 18:43:49 INFO PlotMS	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-04-29 18:43:49 INFO PlotMS	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-04-29 18:43:56 INFO PlotMS	Global ranges:
+2015-04-29 18:43:56 INFO PlotMS	Time: 4.77881e+09-4.77884e+09 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-04-29 18:43:56 INFO PlotMS	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-04-29 18:43:56 INFO QPCanvas	START     Current memory usage: 1.74452e+06 kilobytes.
+2015-04-29 18:43:56 INFO PlotMS	Plotting 216417024 unflagged points.
+2015-04-29 18:43:56 INFO QPCanvas	END       Time: +0 seconds.  Memory: -8 kilobytes.
+2015-04-29 18:43:57 INFO PlotMS	Plotting 216417024 unflagged points.
+2015-04-29 18:43:39 INFO PlotMS	END       Time: +17 seconds.  Memory: +131.031 kilobytes.
+2015-04-29 18:43:57 INFO QPCanvas	START     Current memory usage: 1.74459e+06 kilobytes.
+2015-04-29 18:43:57 INFO QPCanvas	END       Time: +60 seconds.  Memory: -697.859 kilobytes.
+2015-04-29 18:45:31 INFO QPCanvas	START     Current memory usage: 1.74402e+06 kilobytes.
+2015-04-29 18:45:31 INFO QPCanvas	END       Time: +61 seconds.  Memory: +2.46875 kilobytes.
+2015-04-29 18:46:32 INFO PlotMS	Successfully exported plot to /cep3home/lods08/Practicum2/amp_vs_time_vraag14.png!
+2015-04-29 19:06:24 INFO PlotMS	Updating: REDRAW, CACHE.
+2015-04-29 19:06:24 INFO PlotMS	START     Current memory usage: 1.74389e+06 kilobytes.
+2015-04-29 19:06:24 INFO PlotMS	Plot Data Transformations:
+2015-04-29 19:06:24 INFO PlotMS	 Frame      = 
+2015-04-29 19:06:24 INFO PlotMS	 VelDef     = RADIO
+2015-04-29 19:06:24 INFO PlotMS	 RestFreq   = 0 MHz
+2015-04-29 19:06:24 INFO PlotMS	 dX         = 0 arcsec
+2015-04-29 19:06:24 INFO PlotMS	 dY         = 0 arcsec
+2015-04-29 19:06:24 INFO PlotMS	 formStokes = false
+2015-04-29 19:06:24 INFO PlotMS	Data Averaging: None.
+2015-04-29 19:06:24 INFO PlotMS	Caching for the new plot: Amp(13) vs. Baseline(11)...
+2015-04-29 19:06:26 INFO PlotMS	Generating the plot mask.
+2015-04-29 19:06:27 INFO PlotMS	refTime = 2010/04/24/00:00:00.0
+2015-04-29 19:06:27 INFO PlotMS	Finished loading.
+2015-04-29 19:06:27 INFO PlotMS	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-04-29 19:06:36 INFO PlotMS	Global ranges:
+2015-04-29 19:06:36 INFO PlotMS	Baseline: 0.99999-373 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-04-29 19:06:36 INFO PlotMS	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-04-29 19:06:36 INFO PlotMS	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-04-29 19:06:45 INFO PlotMS	Global ranges:
+2015-04-29 19:06:45 INFO PlotMS	Baseline: 0.99999-373 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-04-29 19:06:45 INFO PlotMS	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-04-29 19:06:47 INFO QPCanvas	START     Current memory usage: 1.74459e+06 kilobytes.
+2015-04-29 19:06:47 INFO PlotMS	Plotting 216417024 unflagged points.
+2015-04-29 19:06:47 INFO QPCanvas	END       Time: +0 seconds.  Memory: -9.03125 kilobytes.
+2015-04-29 19:06:47 INFO PlotMS	Plotting 216417024 unflagged points.
+2015-04-29 19:06:24 INFO PlotMS	END       Time: +23 seconds.  Memory: +78.0938 kilobytes.
+2015-04-29 19:06:47 INFO QPCanvas	START     Current memory usage: 1.74467e+06 kilobytes.
+2015-04-29 19:06:47 INFO QPCanvas	END       Time: +61 seconds.  Memory: -730.797 kilobytes.
+2015-04-29 19:08:19 INFO QPCanvas	START     Current memory usage: 1.744e+06 kilobytes.
+2015-04-29 19:08:19 INFO QPCanvas	END       Time: +65 seconds.  Memory: +3.375 kilobytes.
+2015-04-29 19:09:24 INFO PlotMS	Successfully exported plot to /cep3home/lods08/Practicum2/amp_vs_baseline_vraag19.png!
+2015-04-29 19:10:18 INFO PlotMS	Updating: REDRAW, CACHE.
+2015-04-29 19:10:18 INFO PlotMS	START     Current memory usage: 1.744e+06 kilobytes.
+2015-04-29 19:10:18 INFO PlotMS	Plot Data Transformations:
+2015-04-29 19:10:18 INFO PlotMS	 Frame      = 
+2015-04-29 19:10:18 INFO PlotMS	 VelDef     = RADIO
+2015-04-29 19:10:18 INFO PlotMS	 RestFreq   = 0 MHz
+2015-04-29 19:10:18 INFO PlotMS	 dX         = 0 arcsec
+2015-04-29 19:10:18 INFO PlotMS	 dY         = 0 arcsec
+2015-04-29 19:10:18 INFO PlotMS	 formStokes = false
+2015-04-29 19:10:18 INFO PlotMS	Data Averaging: None.
+2015-04-29 19:10:18 INFO PlotMS	Caching for the new plot: Amp(13) vs. Antenna1(9)...
+2015-04-29 19:10:20 INFO PlotMS	Generating the plot mask.
+2015-04-29 19:10:21 INFO PlotMS	refTime = 2010/04/24/00:00:00.0
+2015-04-29 19:10:21 INFO PlotMS	Finished loading.
+2015-04-29 19:10:21 INFO PlotMS	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-04-29 19:10:30 INFO PlotMS	Global ranges:
+2015-04-29 19:10:30 INFO PlotMS	Antenna1: -1e-05-24 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-04-29 19:10:30 INFO PlotMS	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-04-29 19:10:30 INFO PlotMS	Setting up iteration indexing (if necessary), and calculating plot ranges.
+2015-04-29 19:10:39 INFO PlotMS	Global ranges:
+2015-04-29 19:10:39 INFO PlotMS	Antenna1: -1e-05-24 (unflagged); 1.79769e+308--1.79769e+308 (flagged).
+2015-04-29 19:10:39 INFO PlotMS	Amp: -9.90746e-06-0.500666 (unflagged); 1.79769e+308--1.79769e+308(flagged).
+2015-04-29 19:10:39 INFO QPCanvas	START     Current memory usage: 1.74469e+06 kilobytes.
+2015-04-29 19:10:40 INFO PlotMS	Plotting 216417024 unflagged points.
+2015-04-29 19:10:39 INFO QPCanvas	END       Time: +0 seconds.  Memory: -11.4531 kilobytes.
+2015-04-29 19:10:40 INFO PlotMS	Plotting 216417024 unflagged points.
+2015-04-29 19:10:18 INFO PlotMS	END       Time: +22 seconds.  Memory: +34.4688 kilobytes.
+2015-04-29 19:10:40 INFO QPCanvas	START     Current memory usage: 1.7447e+06 kilobytes.
+2015-04-29 19:10:40 INFO QPCanvas	END       Time: +62 seconds.  Memory: -675.422 kilobytes.
+2015-04-29 19:14:25 INFO QPCanvas	START     Current memory usage: 1.74392e+06 kilobytes.
+2015-04-29 19:14:25 INFO QPCanvas	END       Time: +64 seconds.  Memory: +5.96875 kilobytes.
+2015-04-29 19:15:29 INFO PlotMS	Successfully exported plot to /cep3home/lods08/Practicum2/amp_vs_antenna1_vraag19.png!
