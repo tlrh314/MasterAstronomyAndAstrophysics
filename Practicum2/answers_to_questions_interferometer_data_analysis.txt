@@ -260,3 +260,41 @@ gaincal(vis='3c391_ctm_mosaic_10s_spw0.ms',caltable='3c391_ctm_mosaic_10s_spw0.K
 plotcal(caltable='3c391_ctm_mosaic_10s_spw0.K0',xaxis='antenna',yaxis='delay', figfile='plotcal_3c391-K0-delay.png')
 
 Part E - Bandpass Calibration
+
+1) REPLACE
+2)
+bandpass(vis='3c391_ctm_mosaic_10s_spw0.ms',caltable='3c391_ctm_mosaic_10s_spw0.B0', field='J1331+3030',spw='',refant='ea21',solnorm=True,combine='scan', solint='inf',bandtype='B', gaintable=['3c391_ctm_mosaic_10s_spw0.antpos', '3c391_ctm_mosaic_10s_spw0.G0', '3c391_ctm_mosaic_10s_spw0.K0'])
+
+3)
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.B0', poln='R', xaxis='chan', yaxis='amp', field='J1331+3030', subplot=221, iteration='antenna', figfile='part4-subE-question3a_amp_pol-R.png')
+
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.B0', poln='L', xaxis='chan', yaxis='amp', field='J1331+3030', subplot=221, iteration='antenna', figfile='part4-subE-question3a_amp_pol-L.png')
+
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.B0', poln='R', xaxis='chan', yaxis='phase', field='J1331+3030', subplot=221, iteration='antenna', figfile='part4-subE-question3b_phase_pol-R.png')
+
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.B0', poln='L', xaxis='chan', yaxis='phase', field='J1331+3030', subplot=221, iteration='antenna', figfile='part4-subE-question3b_phase_pol-L.png')
+
+
+Part F - Gain Calibration
+1)
+gaincal(vis='3c391_ctm_mosaic_10s_spw0.ms', caltable='3c391_ctm_mosaic_10s_spw0.G1', field='J1331+3030', spw='0:5~58', solint='inf', refant='ea21', gaintype='G', calmode='ap', solnorm=F, gaintable=['3c391_ctm_mosaic_10s_spw0.antpos', '3c391_ctm_mosaic_10s_spw0.K0', '3c391_ctm_mosaic_10s_spw0.B0'])
+
+2)
+gaincal(vis='3c391_ctm_mosaic_10s_spw0.ms', caltable='3c391_ctm_mosaic_10s_spw0.G1', field='J1822-0938', spw='0:5~58', solint='inf', refant='ea21', gaintype='G', calmode='ap', gaintable=['3c391_ctm_mosaic_10s_spw0.antpos', '3c391_ctm_mosaic_10s_spw0.K0', '3c391_ctm_mosaic_10s_spw0.B0'], append=True)
+
+3) The polarization calibration source is J0319+4130, or 3C 84.
+gaincal(vis='3c391_ctm_mosaic_10s_spw0.ms', caltable='3c391_ctm_mosaic_10s_spw0.G1', field='J0319+4130', spw='0:5~58', solint='inf', refant='ea21', gaintype='G', calmode='ap', gaintable=['3c391_ctm_mosaic_10s_spw0.antpos', '3c391_ctm_mosaic_10s_spw0.K0', '3c391_ctm_mosaic_10s_spw0.B0'], append=True)
+
+4)
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.G1', xaxis='time', yaxis='amp', poln='L', figfile='part4-subF-question4_amp_pol-L.png')
+
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.G1', xaxis='time', yaxis='amp', poln='R', figfile='part4-subF-question4_amp_pol-R.png')
+
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.G1', xaxis='time', yaxis='phase', poln='L', plotrange=[-1,-1,-180,180], figfile='part4-subF-question4_phase_pol-L.png')
+
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.G1', xaxis='time', yaxis='phase', poln='R', plotrange=[-1,-1,-180,180], figfile='part4-subF-question4_phase_pol-R.png')
+
+Part G - Scaling the amplitude gains 
+
+
+

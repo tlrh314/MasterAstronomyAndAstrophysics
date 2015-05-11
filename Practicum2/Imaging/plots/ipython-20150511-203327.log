@@ -1,0 +1,26 @@
+#log# Automatic Logger file. *** THIS MUST BE THE FIRST LINE ***
+#log# DO NOT CHANGE THIS LINE OR THE TWO BELOW -* coding: UTF-8 *-
+#log# opts = Struct({'__allownew': True,
+ 'autocall': 2,
+ 'banner': 0,
+ 'colors': 'LightBG',
+ 'ipythondir': '/home/lods08/.casa/ipython',
+ 'logfile': 'ipython-20150511-203327.log',
+ 'messages': 0,
+ 'prompt_in1': 'CASA <\\#>: '})
+#log# args = []
+#log# It is safe to make manual edits below here.
+#log#-----------------------------------------------------------------------
+execfile("/opt/cep/Casa/casapy-42.1.29047-001-1-64b/lib64/python2.7/assignmentFilter.py")
+vis = '3c391_ctm_mosaic_10s_spw0.ms'
+listobs()
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.B0', poln='L', xaxis='chan', yaxis='amp', field='J1331+3030', subplot=221, iteration='antenna', figfile='part4-subE-question3b_amp_phase_pol-L_HANK2.png')
+gaincal(vis='3c391_ctm_mosaic_10s_spw0.ms', caltable='3c391_ctm_mosaic_10s_spw0.G1', field='J1331+3030', spw='0:5~58', solint='inf', refant='ea21', gaintype='G', calmode='ap', solnorm=F, gaintable=['3c391_ctm_mosaic_10s_spw0.antpos', '3c391_ctm_mosaic_10s_spw0.K0', '3c391_ctm_mosaic_10s_spw0.B0'])
+gaincal(vis='3c391_ctm_mosaic_10s_spw0.ms', caltable='3c391_ctm_mosaic_10s_spw0.G1', field='J1822-0938', spw='0:5~58', solint='inf', refant='ea21', gaintype='G', calmode='ap', gaintable=['3c391_ctm_mosaic_10s_spw0.antpos', '3c391_ctm_mosaic_10s_spw0.K0', '3c391_ctm_mosaic_10s_spw0.B0'], append=True)
+gaincal(vis='3c391_ctm_mosaic_10s_spw0.ms', caltable='3c391_ctm_mosaic_10s_spw0.G1', field='J0319+4130', spw='0:5~58', solint='inf', refant='ea21', gaintype='G', calmode='ap', gaintable=['3c391_ctm_mosaic_10s_spw0.antpos', '3c391_ctm_mosaic_10s_spw0.K0', '3c391_ctm_mosaic_10s_spw0.B0'], append=True)
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.B0', poln='L', xaxis='chan', yaxis='amp', field='J1331+3030', subplot=221, iteration='antenna', figfile='part4-subE-question3b_amp_pol-L.png')
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.B0', poln='L', xaxis='chan', yaxis='phase', field='J1331+3030', subplot=221, iteration='antenna', figfile='part4-subE-question3b_phase_pol-L.png')
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.G1', xaxis='time', yaxis='amp', poln='L', figfile='part4-subF-question4_amp_pol-L.png')
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.G1', xaxis='time', yaxis='amp', poln='R', figfile='part4-subF-question4_amp_pol-R.png')
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.G1', xaxis='time', yaxis='phase', poln='L', plotrange=[-1,-1,-180,180], figfile='part4-subF-question4_phase_pol-L.png')
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.G1', xaxis='time', yaxis='phase', poln='R', plotrange=[-1,-1,-180,180], figfile='part4-subF-question4_phase_pol-R.png')
