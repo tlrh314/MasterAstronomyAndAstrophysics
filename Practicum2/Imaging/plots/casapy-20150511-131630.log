@@ -887,3 +887,503 @@
 2015-05-11 15:05:14	INFO	imager::data selection	Selected 31964 out of 845379 rows.
 2015-05-11 15:05:14	INFO	setjy::::casa	##### End Task: setjy                #####
 2015-05-11 15:05:14	INFO	setjy::::casa+	##########################################
+2015-05-11 15:38:13	INFO	gaincal::::casa	
+2015-05-11 15:38:13	INFO	gaincal::::casa+	##########################################
+2015-05-11 15:38:13	INFO	gaincal::::casa+	##### Begin Task: gaincal            #####
+2015-05-11 15:38:13	INFO	gaincal::::casa	gaincal(vis="3c391_ctm_mosaic_10s_spw0.ms",caltable="3c391_ctm_mosaic_10s_spw0.G0all",field="0, 1, 9",spw="0:27~36",
+2015-05-11 15:38:13	INFO	gaincal::::casa+	        intent="",selectdata=True,timerange="",uvrange="",antenna="",
+2015-05-11 15:38:13	INFO	gaincal::::casa+	        scan="",observation="",msselect="",solint="int",combine="",
+2015-05-11 15:38:13	INFO	gaincal::::casa+	        preavg=-1.0,refant="ea21",minblperant=4,minsnr=5,solnorm=False,
+2015-05-11 15:38:13	INFO	gaincal::::casa+	        gaintype="G",smodel=[],calmode="p",append=False,splinetime=3600.0,
+2015-05-11 15:38:13	INFO	gaincal::::casa+	        npointaver=3,phasewrap=180.0,docallib=False,callib="",gaintable=['3c391_ctm_mosaic_10s_spw0.antpos'],
+2015-05-11 15:38:13	INFO	gaincal::::casa+	        gainfield=[''],interp=[],spwmap=[],parang=False)
+2015-05-11 15:38:13	INFO	gaincal::calibrater::open	Opening MS: 3c391_ctm_mosaic_10s_spw0.ms for calibration.
+2015-05-11 15:38:13	INFO	gaincal::Calibrater::	Initializing nominal selection to the whole MS.
+2015-05-11 15:38:13	INFO	gaincal::calibrater::setdata	Beginning selectvis--(MSSelection version)-------
+2015-05-11 15:38:13	INFO	gaincal::calibrater::reset	Reseting solve/apply state
+2015-05-11 15:38:13	INFO	gaincal::Calibrater::selectvis	Performing selection on MeasurementSet
+2015-05-11 15:38:13	INFO	gaincal::Calibrater::selectvis+	 Selecting on spw: '0:27~36'
+2015-05-11 15:38:13	INFO	gaincal::Calibrater::selectvis+	 Selecting on field: '0, 1, 9'
+2015-05-11 15:38:13	INFO	gaincal::Calibrater::selectvis	By selection 845379 rows are reduced to 80465
+2015-05-11 15:38:13	INFO	gaincal::Calibrater::selectvis	Frequency selection: 
+2015-05-11 15:38:13	INFO	gaincal::Calibrater::selectvis	.  Spw 0:27~36 (10 channels, step by 1)
+2015-05-11 15:38:13	INFO	gaincal::calibrater::setapply	Beginning setapply--(MSSelection version)-------
+2015-05-11 15:38:13	INFO	gaincal::Calibrater::setapply(type, applypar)	Arranging to APPLY:
+2015-05-11 15:38:13	INFO	gaincal::::	 (KAntPos Jones: Overriding with spwmap=[0] since KAntPos Jones is not spw-dependent)
+2015-05-11 15:38:13	INFO	gaincal::::	 (KAntPos Jones: Enforcing calWt()=False for phase/delay-like terms)
+2015-05-11 15:38:13	INFO	gaincal::Calibrater::setapply(type, applypar)	.   KAntPos Jones: table=3c391_ctm_mosaic_10s_spw0.antpos select= interp=linear spwmap=[0] calWt=false
+2015-05-11 15:38:13	INFO	gaincal::calibrater::setsolve	Beginning setsolve--(MSSelection version)-------
+2015-05-11 15:38:13	INFO	gaincal::Calibrater::setsolve	Arranging to SOLVE:
+2015-05-11 15:38:13	INFO	gaincal::Calibrater::setsolve	.   G Jones: table=3c391_ctm_mosaic_10s_spw0.G0all append=false solint=int refant='ea21' minsnr=5 apmode=P solnorm=false
+2015-05-11 15:38:13	INFO	gaincal::calibrater::solve	Beginning solve-----------------------------
+2015-05-11 15:38:13	INFO	gaincal::Calibrater::solve	The following calibration terms are arranged for apply:
+2015-05-11 15:38:13	INFO	gaincal::Calibrater::solve	.   KAntPos Jones: table=3c391_ctm_mosaic_10s_spw0.antpos select= interp=linear spwmap=[0] calWt=false
+2015-05-11 15:38:13	INFO	gaincal::Calibrater::solve	The following calibration term is arranged for solve:
+2015-05-11 15:38:13	INFO	gaincal::Calibrater::solve	.   G Jones: table=3c391_ctm_mosaic_10s_spw0.G0all append=false solint=int refant='ea21' minsnr=5 apmode=P solnorm=false
+2015-05-11 15:38:13	INFO	gaincal::Calibrater::solve	Solving for G Jones
+2015-05-11 15:38:14	INFO	gaincal::::	For solint = int, found 280 solution intervals.
+2015-05-11 15:38:18	INFO	gaincal::Calibrater::solve	  Found good G Jones solutions in 242 slots.
+2015-05-11 15:38:18	INFO	gaincal::::	Applying refant: ea21
+2015-05-11 15:38:19	INFO	gaincal::::	Enforcing apmode on solutions.
+2015-05-11 15:38:23	INFO	gaincal::::	Writing solutions to table: 3c391_ctm_mosaic_10s_spw0.G0all
+2015-05-11 15:38:23	INFO	gaincal::calibrater::solve	Finished solving.
+2015-05-11 15:38:23	INFO	gaincal::::casa	Calibration solve statistics per spw:  (expected/attempted/succeeded):
+2015-05-11 15:38:23	INFO	gaincal::::casa	  Spw 0: 280/242/242
+2015-05-11 15:38:23	INFO	gaincal::::casa	##### End Task: gaincal              #####
+2015-05-11 15:38:23	INFO	gaincal::::casa+	##########################################
+2015-05-11 15:41:37	INFO	plotcal::::casa	
+2015-05-11 15:41:37	INFO	plotcal::::casa+	##########################################
+2015-05-11 15:41:37	INFO	plotcal::::casa+	##### Begin Task: plotcal            #####
+2015-05-11 15:41:37	INFO	plotcal::::casa	plotcal(caltable="3c391_ctm_mosaic_10s_spw0.G0all",xaxis="time",yaxis="phase",poln="R",
+2015-05-11 15:41:37	INFO	plotcal::::casa+	        field="",antenna="",spw="",timerange="",subplot=111,
+2015-05-11 15:41:37	INFO	plotcal::::casa+	        overplot=False,clearpanel="Auto",iteration="antenna",plotrange=[-1, -1, -180, 180],showflags=False,
+2015-05-11 15:41:37	INFO	plotcal::::casa+	        plotsymbol="o",plotcolor="blue",markersize=5.0,fontsize=10.0,showgui=True,
+2015-05-11 15:41:37	INFO	plotcal::::casa+	        figfile="")
+2015-05-11 15:41:37	INFO	tableplot::setgui	Switching to GUI mode. All current plots  will be reset.
+2015-05-11 15:41:39	INFO	plotcal::createCalTab 	Detected a NewCalTable!
+2015-05-11 15:41:39	INFO		Now get the data
+2015-05-11 15:41:39	INFO		Done Processing data ... 
+2015-05-11 15:41:40	INFO	plotcal::::casa	##### End Task: plotcal              #####
+2015-05-11 15:41:40	INFO	plotcal::::casa+	##########################################
+2015-05-11 15:42:12	INFO		Now get the data
+2015-05-11 15:42:12	INFO		Done Processing data ... 
+2015-05-11 15:42:15	INFO		Now get the data
+2015-05-11 15:42:15	INFO		Done Processing data ... 
+2015-05-11 15:42:16	INFO		Now get the data
+2015-05-11 15:42:16	INFO		Done Processing data ... 
+2015-05-11 15:42:17	INFO		Now get the data
+2015-05-11 15:42:17	INFO		Done Processing data ... 
+2015-05-11 15:43:03	INFO	plotcal::::casa	
+2015-05-11 15:43:03	INFO	plotcal::::casa+	##########################################
+2015-05-11 15:43:03	INFO	plotcal::::casa+	##### Begin Task: plotcal            #####
+2015-05-11 15:43:03	INFO	plotcal::::casa	plotcal(caltable="3c391_ctm_mosaic_10s_spw0.G0all",xaxis="time",yaxis="phase",poln="R",
+2015-05-11 15:43:03	INFO	plotcal::::casa+	        field="",antenna="",spw="",timerange="",subplot=111,
+2015-05-11 15:43:03	INFO	plotcal::::casa+	        overplot=False,clearpanel="Auto",iteration="antenna",plotrange=[-1, -1, -180, 180],showflags=False,
+2015-05-11 15:43:03	INFO	plotcal::::casa+	        plotsymbol="o",plotcolor="blue",markersize=5.0,fontsize=10.0,showgui=True,
+2015-05-11 15:43:03	INFO	plotcal::::casa+	        figfile="")
+2015-05-11 15:43:03	INFO	tableplot::setgui	Switching to GUI mode. All current plots  will be reset.
+2015-05-11 15:43:03	INFO	plotcal::createCalTab 	Detected a NewCalTable!
+2015-05-11 15:43:05	INFO		Now get the data
+2015-05-11 15:43:05	INFO		Done Processing data ... 
+2015-05-11 15:43:06	INFO	plotcal::::casa	##### End Task: plotcal              #####
+2015-05-11 15:43:06	INFO	plotcal::::casa+	##########################################
+2015-05-11 15:44:07	INFO		Now get the data
+2015-05-11 15:44:07	INFO		Done Processing data ... 
+2015-05-11 15:44:27	INFO		Now get the data
+2015-05-11 15:44:27	INFO		Done Processing data ... 
+2015-05-11 15:44:46	INFO		Now get the data
+2015-05-11 15:44:46	INFO		Done Processing data ... 
+2015-05-11 15:44:56	INFO		Now get the data
+2015-05-11 15:44:56	INFO		Done Processing data ... 
+2015-05-11 15:45:06	INFO		Now get the data
+2015-05-11 15:45:06	INFO		Done Processing data ... 
+2015-05-11 15:45:19	INFO		Now get the data
+2015-05-11 15:45:19	INFO		Done Processing data ... 
+2015-05-11 15:45:29	INFO		Now get the data
+2015-05-11 15:45:29	INFO		Done Processing data ... 
+2015-05-11 15:45:43	INFO		Now get the data
+2015-05-11 15:45:43	INFO		Done Processing data ... 
+2015-05-11 15:45:52	INFO		Now get the data
+2015-05-11 15:45:52	INFO		Done Processing data ... 
+2015-05-11 15:46:00	INFO		Now get the data
+2015-05-11 15:46:00	INFO		Done Processing data ... 
+2015-05-11 15:46:08	INFO		Now get the data
+2015-05-11 15:46:08	INFO		Done Processing data ... 
+2015-05-11 15:46:17	INFO		Now get the data
+2015-05-11 15:46:17	INFO		Done Processing data ... 
+2015-05-11 15:46:31	INFO		Now get the data
+2015-05-11 15:46:31	INFO		Done Processing data ... 
+2015-05-11 15:46:41	INFO		Now get the data
+2015-05-11 15:46:41	INFO		Done Processing data ... 
+2015-05-11 15:46:51	INFO		Now get the data
+2015-05-11 15:46:51	INFO		Done Processing data ... 
+2015-05-11 15:47:20	INFO		Now get the data
+2015-05-11 15:47:20	INFO		Done Processing data ... 
+2015-05-11 15:47:30	INFO		Now get the data
+2015-05-11 15:47:30	INFO		Done Processing data ... 
+2015-05-11 15:47:45	INFO		Now get the data
+2015-05-11 15:47:45	INFO		Done Processing data ... 
+2015-05-11 15:47:54	INFO		Now get the data
+2015-05-11 15:47:54	INFO		Done Processing data ... 
+2015-05-11 15:48:03	INFO		Now get the data
+2015-05-11 15:48:03	INFO		Done Processing data ... 
+2015-05-11 15:48:12	INFO		Now get the data
+2015-05-11 15:48:12	INFO		Done Processing data ... 
+2015-05-11 15:48:14	INFO		Now get the data
+2015-05-11 15:48:14	INFO		Done Processing data ... 
+2015-05-11 15:48:25	INFO		Now get the data
+2015-05-11 15:48:25	INFO		Done Processing data ... 
+2015-05-11 15:48:35	INFO		Now get the data
+2015-05-11 15:48:35	INFO		Done Processing data ... 
+2015-05-11 15:48:46	INFO		Now get the data
+2015-05-11 15:48:46	INFO		Done Processing data ... 
+2015-05-11 15:48:55	INFO		End of iterations
+2015-05-11 15:49:03	INFO	plotcal::::casa	
+2015-05-11 15:49:03	INFO	plotcal::::casa+	##########################################
+2015-05-11 15:49:03	INFO	plotcal::::casa+	##### Begin Task: plotcal            #####
+2015-05-11 15:49:03	INFO	plotcal::::casa	plotcal(caltable="3c391_ctm_mosaic_10s_spw0.G0all",xaxis="time",yaxis="phase",poln="R",
+2015-05-11 15:49:03	INFO	plotcal::::casa+	        field="",antenna="",spw="",timerange="",subplot=111,
+2015-05-11 15:49:03	INFO	plotcal::::casa+	        overplot=False,clearpanel="Auto",iteration="antenna",plotrange=[-1, -1, -180, 180],showflags=False,
+2015-05-11 15:49:03	INFO	plotcal::::casa+	        plotsymbol="o",plotcolor="blue",markersize=5.0,fontsize=10.0,showgui=True,
+2015-05-11 15:49:03	INFO	plotcal::::casa+	        figfile="")
+2015-05-11 15:49:03	INFO	tableplot::setgui	Switching to GUI mode. All current plots  will be reset.
+2015-05-11 15:49:03	INFO	plotcal::createCalTab 	Detected a NewCalTable!
+2015-05-11 15:49:05	INFO		Now get the data
+2015-05-11 15:49:05	INFO		Done Processing data ... 
+2015-05-11 15:49:06	INFO	plotcal::::casa	##### End Task: plotcal              #####
+2015-05-11 15:49:06	INFO	plotcal::::casa+	##########################################
+2015-05-11 15:49:07	INFO		Now get the data
+2015-05-11 15:49:07	INFO		Done Processing data ... 
+2015-05-11 15:49:08	INFO		Now get the data
+2015-05-11 15:49:08	INFO		Done Processing data ... 
+2015-05-11 15:49:08	INFO		Now get the data
+2015-05-11 15:49:08	INFO		Done Processing data ... 
+2015-05-11 15:49:09	INFO		Now get the data
+2015-05-11 15:49:09	INFO		Done Processing data ... 
+2015-05-11 15:49:09	INFO		Now get the data
+2015-05-11 15:49:09	INFO		Done Processing data ... 
+2015-05-11 15:49:09	INFO		Now get the data
+2015-05-11 15:49:09	INFO		Done Processing data ... 
+2015-05-11 15:49:10	INFO		Now get the data
+2015-05-11 15:49:10	INFO		Done Processing data ... 
+2015-05-11 15:49:10	INFO		Now get the data
+2015-05-11 15:49:10	INFO		Done Processing data ... 
+2015-05-11 15:49:12	INFO		Now get the data
+2015-05-11 15:49:12	INFO		Done Processing data ... 
+2015-05-11 15:49:13	INFO		Now get the data
+2015-05-11 15:49:13	INFO		Done Processing data ... 
+2015-05-11 15:49:13	INFO		Now get the data
+2015-05-11 15:49:13	INFO		Done Processing data ... 
+2015-05-11 15:49:14	INFO		Now get the data
+2015-05-11 15:49:14	INFO		Done Processing data ... 
+2015-05-11 15:49:15	INFO		Now get the data
+2015-05-11 15:49:15	INFO		Done Processing data ... 
+2015-05-11 15:49:16	INFO		Now get the data
+2015-05-11 15:49:16	INFO		Done Processing data ... 
+2015-05-11 15:49:17	INFO		Now get the data
+2015-05-11 15:49:17	INFO		Done Processing data ... 
+2015-05-11 15:49:18	INFO		Now get the data
+2015-05-11 15:49:18	INFO		Done Processing data ... 
+2015-05-11 15:49:19	INFO		Now get the data
+2015-05-11 15:49:19	INFO		Done Processing data ... 
+2015-05-11 15:49:20	INFO		Now get the data
+2015-05-11 15:49:20	INFO		Done Processing data ... 
+2015-05-11 15:49:21	INFO		Now get the data
+2015-05-11 15:49:21	INFO		Done Processing data ... 
+2015-05-11 15:49:23	INFO		Now get the data
+2015-05-11 15:49:23	INFO		Done Processing data ... 
+2015-05-11 15:49:39	INFO		Now get the data
+2015-05-11 15:49:39	INFO		Done Processing data ... 
+2015-05-11 16:38:19	INFO	plotcal::::casa	
+2015-05-11 16:38:19	INFO	plotcal::::casa+	##########################################
+2015-05-11 16:38:19	INFO	plotcal::::casa+	##### Begin Task: plotcal            #####
+2015-05-11 16:38:19	INFO	plotcal::::casa	plotcal(caltable="3c391_ctm_mosaic_10s_spw0.G0all",xaxis="time",yaxis="phase",poln="R",
+2015-05-11 16:38:19	INFO	plotcal::::casa+	        field="",antenna="",spw="",timerange="",subplot=111,
+2015-05-11 16:38:19	INFO	plotcal::::casa+	        overplot=False,clearpanel="Auto",iteration="antenna",plotrange=[-1, -1, -180, 180],showflags=False,
+2015-05-11 16:38:19	INFO	plotcal::::casa+	        plotsymbol="o",plotcolor="blue",markersize=5.0,fontsize=10.0,showgui=True,
+2015-05-11 16:38:19	INFO	plotcal::::casa+	        figfile="")
+2015-05-11 16:38:19	INFO	tableplot::setgui	Switching to GUI mode. All current plots  will be reset.
+2015-05-11 16:38:19	INFO	plotcal::createCalTab 	Detected a NewCalTable!
+2015-05-11 16:38:21	INFO		Now get the data
+2015-05-11 16:38:21	INFO		Done Processing data ... 
+2015-05-11 16:38:22	INFO	plotcal::::casa	##### End Task: plotcal              #####
+2015-05-11 16:38:22	INFO	plotcal::::casa+	##########################################
+2015-05-11 16:38:32	INFO		Now get the data
+2015-05-11 16:38:32	INFO		Done Processing data ... 
+2015-05-11 16:38:34	INFO		Now get the data
+2015-05-11 16:38:34	INFO		Done Processing data ... 
+2015-05-11 16:38:42	INFO		Now get the data
+2015-05-11 16:38:42	INFO		Done Processing data ... 
+2015-05-11 16:38:43	INFO		Now get the data
+2015-05-11 16:38:43	INFO		Done Processing data ... 
+2015-05-11 16:38:48	INFO		Now get the data
+2015-05-11 16:38:48	INFO		Done Processing data ... 
+2015-05-11 16:39:03	INFO		Now get the data
+2015-05-11 16:39:03	INFO		Done Processing data ... 
+2015-05-11 16:39:05	INFO		Now get the data
+2015-05-11 16:39:05	INFO		Done Processing data ... 
+2015-05-11 16:39:08	INFO		Now get the data
+2015-05-11 16:39:08	INFO		Done Processing data ... 
+2015-05-11 16:39:10	INFO		Now get the data
+2015-05-11 16:39:10	INFO		Done Processing data ... 
+2015-05-11 16:39:11	INFO		Now get the data
+2015-05-11 16:39:11	INFO		Done Processing data ... 
+2015-05-11 16:39:12	INFO		Now get the data
+2015-05-11 16:39:12	INFO		Done Processing data ... 
+2015-05-11 16:39:15	INFO		Now get the data
+2015-05-11 16:39:15	INFO		Done Processing data ... 
+2015-05-11 16:39:18	INFO		Now get the data
+2015-05-11 16:39:18	INFO		Done Processing data ... 
+2015-05-11 16:39:25	INFO		Now get the data
+2015-05-11 16:39:25	INFO		Done Processing data ... 
+2015-05-11 16:39:26	INFO		Now get the data
+2015-05-11 16:39:26	INFO		Done Processing data ... 
+2015-05-11 16:39:31	INFO		Now get the data
+2015-05-11 16:39:31	INFO		Done Processing data ... 
+2015-05-11 16:39:32	INFO		Now get the data
+2015-05-11 16:39:32	INFO		Done Processing data ... 
+2015-05-11 16:39:33	INFO		Now get the data
+2015-05-11 16:39:33	INFO		Done Processing data ... 
+2015-05-11 16:39:36	INFO		Now get the data
+2015-05-11 16:39:36	INFO		Done Processing data ... 
+2015-05-11 16:39:38	INFO		Now get the data
+2015-05-11 16:39:38	INFO		Done Processing data ... 
+2015-05-11 16:39:40	INFO		Now get the data
+2015-05-11 16:39:40	INFO		Done Processing data ... 
+2015-05-11 16:39:51	INFO		Now get the data
+2015-05-11 16:39:51	INFO		Done Processing data ... 
+2015-05-11 16:39:53	INFO		Now get the data
+2015-05-11 16:39:53	INFO		Done Processing data ... 
+2015-05-11 16:39:54	INFO		Now get the data
+2015-05-11 16:39:54	INFO		Done Processing data ... 
+2015-05-11 16:39:55	INFO		Now get the data
+2015-05-11 16:39:55	INFO		Done Processing data ... 
+2015-05-11 16:39:57	INFO		End of iterations
+2015-05-11 16:45:16	INFO	flagdata::::casa	
+2015-05-11 16:45:16	INFO	flagdata::::casa+	##########################################
+2015-05-11 16:45:16	INFO	flagdata::::casa+	##### Begin Task: flagdata           #####
+2015-05-11 16:45:16	INFO	flagdata::::casa	flagdata(vis="3c391_ctm_mosaic_10s_spw0.ms",mode="manual",autocorr=False,inpfile="",
+2015-05-11 16:45:16	INFO	flagdata::::casa+	        reason="any",spw="",field="",antenna="ea05",uvrange="",
+2015-05-11 16:45:16	INFO	flagdata::::casa+	        timerange="",correlation="",scan="",intent="",array="",
+2015-05-11 16:45:16	INFO	flagdata::::casa+	        observation="",feed="",clipminmax=[],datacolumn="DATA",clipoutside=True,
+2015-05-11 16:45:16	INFO	flagdata::::casa+	        channelavg=False,clipzeros=False,quackinterval=1.0,quackmode="beg",quackincrement=False,
+2015-05-11 16:45:16	INFO	flagdata::::casa+	        tolerance=0.0,addantenna="",lowerlimit=0.0,upperlimit=90.0,ntime="scan",
+2015-05-11 16:45:16	INFO	flagdata::::casa+	        combinescans=False,timecutoff=4.0,freqcutoff=3.0,timefit="line",freqfit="poly",
+2015-05-11 16:45:16	INFO	flagdata::::casa+	        maxnpieces=7,flagdimension="freqtime",usewindowstats="none",halfwin=1,extendflags=True,
+2015-05-11 16:45:16	INFO	flagdata::::casa+	        winsize=3,timedev="",freqdev="",timedevscale=5.0,freqdevscale=5.0,
+2015-05-11 16:45:16	INFO	flagdata::::casa+	        spectralmax=1000000.0,spectralmin=0.0,extendpols=True,growtime=50.0,growfreq=50.0,
+2015-05-11 16:45:16	INFO	flagdata::::casa+	        growaround=False,flagneartime=False,flagnearfreq=False,minrel=0.0,maxrel=1.0,
+2015-05-11 16:45:16	INFO	flagdata::::casa+	        minabs=0,maxabs=-1,spwchan=False,spwcorr=False,basecnt=False,
+2015-05-11 16:45:16	INFO	flagdata::::casa+	        action="apply",display="",flagbackup=True,savepars=False,cmdreason="",
+2015-05-11 16:45:16	INFO	flagdata::::casa+	        outfile="")
+2015-05-11 16:45:16	INFO	flagdata::::casa	Backup original flags before applying new flags
+2015-05-11 16:45:16	INFO	AgentFlagger::open	Table type is Measurement Set
+2015-05-11 16:45:16	INFO		Creating new backup flag file called flagdata_10
+2015-05-11 16:45:18	INFO	AgentFlagger::open	Table type is Measurement Set
+2015-05-11 16:45:18	INFO	flagdata::::casa	Manual mode is active
+2015-05-11 16:45:19	INFO	flagdata::::casa	Initializing the agents
+2015-05-11 16:45:19	INFO	Manual::setAgentParameters 	autocorr is 0
+2015-05-11 16:45:19	INFO	AgentFlagger::initAgents	There are 1 valid agents in list
+2015-05-11 16:45:19	INFO	flagdata::::casa	Running the agentflagger tool
+2015-05-11 16:45:19	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:45:19	INFO	FlagMSHandler::	Chunk = 1 [progress: 0%], Observation = 0, Array = 0, Scan = 1, Field = 0 (J1331+3030), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 50
+2015-05-11 16:45:19	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:45:19	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:45:19	INFO	FlagMSHandler::	Chunk = 11 [progress: 11%], Observation = 0, Array = 0, Scan = 11, Field = 8 (3C391 C7), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 682
+2015-05-11 16:45:19	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:45:19	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:45:19	INFO	FlagMSHandler::	Chunk = 22 [progress: 22%], Observation = 0, Array = 0, Scan = 22, Field = 3 (3C391 C2), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 774
+2015-05-11 16:45:19	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:45:19	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:45:19	INFO	FlagMSHandler::	Chunk = 31 [progress: 31%], Observation = 0, Array = 0, Scan = 31, Field = 4 (3C391 C3), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 775
+2015-05-11 16:45:20	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:45:20	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:45:20	INFO	FlagMSHandler::	Chunk = 42 [progress: 41%], Observation = 0, Array = 0, Scan = 42, Field = 5 (3C391 C4), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 750
+2015-05-11 16:45:20	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:45:20	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:45:20	INFO	FlagMSHandler::	Chunk = 52 [progress: 51%], Observation = 0, Array = 0, Scan = 52, Field = 7 (3C391 C6), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 748
+2015-05-11 16:45:20	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:45:20	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:45:20	INFO	FlagMSHandler::	Chunk = 62 [progress: 61%], Observation = 0, Array = 0, Scan = 62, Field = 1 (J1822-0938), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 200
+2015-05-11 16:45:20	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:45:20	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:45:20	INFO	FlagMSHandler::	Chunk = 72 [progress: 71%], Observation = 0, Array = 0, Scan = 72, Field = 3 (3C391 C2), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 750
+2015-05-11 16:45:20	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:45:20	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:45:20	INFO	FlagMSHandler::	Chunk = 82 [progress: 81%], Observation = 0, Array = 0, Scan = 82, Field = 5 (3C391 C4), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 734
+2015-05-11 16:45:20	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:45:20	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:45:20	INFO	FlagMSHandler::	Chunk = 93 [progress: 91%], Observation = 0, Array = 0, Scan = 93, Field = 8 (3C391 C7), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 660
+2015-05-11 16:45:21	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:45:21	INFO	FlagMSHandler::nextChunk 	==================================================================================== 
+2015-05-11 16:45:21	INFO	Manual::tableSummary	=> Percentage of data flagged in table selection: 100%
+2015-05-11 16:45:21	INFO	AgentFlagger::run	=> Writing flags to the MS
+2015-05-11 16:45:21	INFO	flagdata::::casa	##### End Task: flagdata             #####
+2015-05-11 16:45:21	INFO	flagdata::::casa+	##########################################
+2015-05-11 16:45:50	INFO	flagdata::::casa	
+2015-05-11 16:45:50	INFO	flagdata::::casa+	##########################################
+2015-05-11 16:45:50	INFO	flagdata::::casa+	##### Begin Task: flagdata           #####
+2015-05-11 16:45:50	INFO	flagdata::::casa	flagdata(vis="3c391_ctm_mosaic_10s_spw0.ms",mode="manual",autocorr=False,inpfile="",
+2015-05-11 16:45:50	INFO	flagdata::::casa+	        reason="any",spw="",field="",antenna="ea12",uvrange="",
+2015-05-11 16:45:50	INFO	flagdata::::casa+	        timerange="",correlation="",scan="",intent="",array="",
+2015-05-11 16:45:50	INFO	flagdata::::casa+	        observation="",feed="",clipminmax=[],datacolumn="DATA",clipoutside=True,
+2015-05-11 16:45:50	INFO	flagdata::::casa+	        channelavg=False,clipzeros=False,quackinterval=1.0,quackmode="beg",quackincrement=False,
+2015-05-11 16:45:50	INFO	flagdata::::casa+	        tolerance=0.0,addantenna="",lowerlimit=0.0,upperlimit=90.0,ntime="scan",
+2015-05-11 16:45:50	INFO	flagdata::::casa+	        combinescans=False,timecutoff=4.0,freqcutoff=3.0,timefit="line",freqfit="poly",
+2015-05-11 16:45:50	INFO	flagdata::::casa+	        maxnpieces=7,flagdimension="freqtime",usewindowstats="none",halfwin=1,extendflags=True,
+2015-05-11 16:45:50	INFO	flagdata::::casa+	        winsize=3,timedev="",freqdev="",timedevscale=5.0,freqdevscale=5.0,
+2015-05-11 16:45:50	INFO	flagdata::::casa+	        spectralmax=1000000.0,spectralmin=0.0,extendpols=True,growtime=50.0,growfreq=50.0,
+2015-05-11 16:45:50	INFO	flagdata::::casa+	        growaround=False,flagneartime=False,flagnearfreq=False,minrel=0.0,maxrel=1.0,
+2015-05-11 16:45:50	INFO	flagdata::::casa+	        minabs=0,maxabs=-1,spwchan=False,spwcorr=False,basecnt=False,
+2015-05-11 16:45:50	INFO	flagdata::::casa+	        action="apply",display="",flagbackup=True,savepars=False,cmdreason="",
+2015-05-11 16:45:50	INFO	flagdata::::casa+	        outfile="")
+2015-05-11 16:45:50	INFO	flagdata::::casa	Backup original flags before applying new flags
+2015-05-11 16:45:50	INFO	AgentFlagger::open	Table type is Measurement Set
+2015-05-11 16:45:50	INFO		Creating new backup flag file called flagdata_11
+2015-05-11 16:45:53	INFO	AgentFlagger::open	Table type is Measurement Set
+2015-05-11 16:45:53	INFO	flagdata::::casa	Manual mode is active
+2015-05-11 16:45:53	INFO	flagdata::::casa	Initializing the agents
+2015-05-11 16:45:53	INFO	Manual::setAgentParameters 	autocorr is 0
+2015-05-11 16:45:53	INFO	AgentFlagger::initAgents	There are 1 valid agents in list
+2015-05-11 16:45:53	INFO	flagdata::::casa	Running the agentflagger tool
+2015-05-11 16:45:53	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:45:53	INFO	FlagMSHandler::	Chunk = 1 [progress: 0%], Observation = 0, Array = 0, Scan = 1, Field = 0 (J1331+3030), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 50
+2015-05-11 16:45:54	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:45:54	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:45:54	INFO	FlagMSHandler::	Chunk = 11 [progress: 11%], Observation = 0, Array = 0, Scan = 11, Field = 8 (3C391 C7), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 682
+2015-05-11 16:45:54	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:45:54	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:45:54	INFO	FlagMSHandler::	Chunk = 22 [progress: 22%], Observation = 0, Array = 0, Scan = 22, Field = 3 (3C391 C2), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 774
+2015-05-11 16:45:54	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:45:54	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:45:54	INFO	FlagMSHandler::	Chunk = 31 [progress: 31%], Observation = 0, Array = 0, Scan = 31, Field = 4 (3C391 C3), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 775
+2015-05-11 16:45:54	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:45:54	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:45:54	INFO	FlagMSHandler::	Chunk = 42 [progress: 41%], Observation = 0, Array = 0, Scan = 42, Field = 5 (3C391 C4), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 750
+2015-05-11 16:45:55	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:45:55	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:45:55	INFO	FlagMSHandler::	Chunk = 52 [progress: 51%], Observation = 0, Array = 0, Scan = 52, Field = 7 (3C391 C6), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 725
+2015-05-11 16:45:55	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:45:55	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:45:55	INFO	FlagMSHandler::	Chunk = 62 [progress: 61%], Observation = 0, Array = 0, Scan = 62, Field = 1 (J1822-0938), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 200
+2015-05-11 16:45:55	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:45:55	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:45:55	INFO	FlagMSHandler::	Chunk = 72 [progress: 71%], Observation = 0, Array = 0, Scan = 72, Field = 3 (3C391 C2), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 750
+2015-05-11 16:45:55	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:45:55	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:45:55	INFO	FlagMSHandler::	Chunk = 82 [progress: 81%], Observation = 0, Array = 0, Scan = 82, Field = 5 (3C391 C4), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 734
+2015-05-11 16:45:55	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:45:55	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:45:55	INFO	FlagMSHandler::	Chunk = 93 [progress: 91%], Observation = 0, Array = 0, Scan = 93, Field = 8 (3C391 C7), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 660
+2015-05-11 16:45:56	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:45:56	INFO	FlagMSHandler::nextChunk 	==================================================================================== 
+2015-05-11 16:45:56	INFO	Manual::tableSummary	=> Percentage of data flagged in table selection: 100%
+2015-05-11 16:45:56	INFO	AgentFlagger::run	=> Writing flags to the MS
+2015-05-11 16:45:56	INFO	flagdata::::casa	##### End Task: flagdata             #####
+2015-05-11 16:45:56	INFO	flagdata::::casa+	##########################################
+2015-05-11 16:46:08	INFO	flagdata::::casa	
+2015-05-11 16:46:08	INFO	flagdata::::casa+	##########################################
+2015-05-11 16:46:08	INFO	flagdata::::casa+	##### Begin Task: flagdata           #####
+2015-05-11 16:46:08	INFO	flagdata::::casa	flagdata(vis="3c391_ctm_mosaic_10s_spw0.ms",mode="manual",autocorr=False,inpfile="",
+2015-05-11 16:46:08	INFO	flagdata::::casa+	        reason="any",spw="",field="",antenna="ea05",uvrange="",
+2015-05-11 16:46:08	INFO	flagdata::::casa+	        timerange="",correlation="",scan="",intent="",array="",
+2015-05-11 16:46:08	INFO	flagdata::::casa+	        observation="",feed="",clipminmax=[],datacolumn="DATA",clipoutside=True,
+2015-05-11 16:46:08	INFO	flagdata::::casa+	        channelavg=False,clipzeros=False,quackinterval=1.0,quackmode="beg",quackincrement=False,
+2015-05-11 16:46:08	INFO	flagdata::::casa+	        tolerance=0.0,addantenna="",lowerlimit=0.0,upperlimit=90.0,ntime="scan",
+2015-05-11 16:46:08	INFO	flagdata::::casa+	        combinescans=False,timecutoff=4.0,freqcutoff=3.0,timefit="line",freqfit="poly",
+2015-05-11 16:46:08	INFO	flagdata::::casa+	        maxnpieces=7,flagdimension="freqtime",usewindowstats="none",halfwin=1,extendflags=True,
+2015-05-11 16:46:08	INFO	flagdata::::casa+	        winsize=3,timedev="",freqdev="",timedevscale=5.0,freqdevscale=5.0,
+2015-05-11 16:46:08	INFO	flagdata::::casa+	        spectralmax=1000000.0,spectralmin=0.0,extendpols=True,growtime=50.0,growfreq=50.0,
+2015-05-11 16:46:08	INFO	flagdata::::casa+	        growaround=False,flagneartime=False,flagnearfreq=False,minrel=0.0,maxrel=1.0,
+2015-05-11 16:46:08	INFO	flagdata::::casa+	        minabs=0,maxabs=-1,spwchan=False,spwcorr=False,basecnt=False,
+2015-05-11 16:46:08	INFO	flagdata::::casa+	        action="apply",display="",flagbackup=True,savepars=False,cmdreason="",
+2015-05-11 16:46:08	INFO	flagdata::::casa+	        outfile="")
+2015-05-11 16:46:08	INFO	flagdata::::casa	Backup original flags before applying new flags
+2015-05-11 16:46:08	INFO	AgentFlagger::open	Table type is Measurement Set
+2015-05-11 16:46:08	INFO		Creating new backup flag file called flagdata_12
+2015-05-11 16:46:10	INFO	AgentFlagger::open	Table type is Measurement Set
+2015-05-11 16:46:10	INFO	flagdata::::casa	Manual mode is active
+2015-05-11 16:46:10	INFO	flagdata::::casa	Initializing the agents
+2015-05-11 16:46:10	INFO	Manual::setAgentParameters 	autocorr is 0
+2015-05-11 16:46:10	INFO	AgentFlagger::initAgents	There are 1 valid agents in list
+2015-05-11 16:46:10	INFO	flagdata::::casa	Running the agentflagger tool
+2015-05-11 16:46:10	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:46:10	INFO	FlagMSHandler::	Chunk = 1 [progress: 0%], Observation = 0, Array = 0, Scan = 1, Field = 0 (J1331+3030), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 50
+2015-05-11 16:46:11	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:46:11	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:46:11	INFO	FlagMSHandler::	Chunk = 11 [progress: 11%], Observation = 0, Array = 0, Scan = 11, Field = 8 (3C391 C7), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 682
+2015-05-11 16:46:11	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:46:11	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:46:11	INFO	FlagMSHandler::	Chunk = 22 [progress: 22%], Observation = 0, Array = 0, Scan = 22, Field = 3 (3C391 C2), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 774
+2015-05-11 16:46:11	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:46:11	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:46:11	INFO	FlagMSHandler::	Chunk = 31 [progress: 31%], Observation = 0, Array = 0, Scan = 31, Field = 4 (3C391 C3), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 775
+2015-05-11 16:46:11	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:46:11	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:46:11	INFO	FlagMSHandler::	Chunk = 42 [progress: 41%], Observation = 0, Array = 0, Scan = 42, Field = 5 (3C391 C4), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 750
+2015-05-11 16:46:12	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:46:12	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:46:12	INFO	FlagMSHandler::	Chunk = 52 [progress: 51%], Observation = 0, Array = 0, Scan = 52, Field = 7 (3C391 C6), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 748
+2015-05-11 16:46:12	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:46:12	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:46:12	INFO	FlagMSHandler::	Chunk = 62 [progress: 61%], Observation = 0, Array = 0, Scan = 62, Field = 1 (J1822-0938), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 200
+2015-05-11 16:46:12	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:46:12	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:46:12	INFO	FlagMSHandler::	Chunk = 72 [progress: 71%], Observation = 0, Array = 0, Scan = 72, Field = 3 (3C391 C2), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 750
+2015-05-11 16:46:12	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:46:12	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:46:12	INFO	FlagMSHandler::	Chunk = 82 [progress: 81%], Observation = 0, Array = 0, Scan = 82, Field = 5 (3C391 C4), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 734
+2015-05-11 16:46:12	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:46:12	INFO	FlagMSHandler::	------------------------------------------------------------------------------------ 
+2015-05-11 16:46:12	INFO	FlagMSHandler::	Chunk = 93 [progress: 91%], Observation = 0, Array = 0, Scan = 93, Field = 8 (3C391 C7), Spw = 0, Channels = 64, Corrs = [ RR RL LR LL ], Total Rows = 660
+2015-05-11 16:46:12	INFO	Manual::chunkSummary	=> Data flagged so far 100%
+2015-05-11 16:46:12	INFO	FlagMSHandler::nextChunk 	==================================================================================== 
+2015-05-11 16:46:12	INFO	Manual::tableSummary	=> Percentage of data flagged in table selection: 100%
+2015-05-11 16:46:12	INFO	AgentFlagger::run	=> Writing flags to the MS
+2015-05-11 16:46:14	INFO	flagdata::::casa	##### End Task: flagdata             #####
+2015-05-11 16:46:14	INFO	flagdata::::casa+	##########################################
+2015-05-11 16:47:16	INFO	plotcal::::casa	
+2015-05-11 16:47:16	INFO	plotcal::::casa+	##########################################
+2015-05-11 16:47:16	INFO	plotcal::::casa+	##### Begin Task: plotcal            #####
+2015-05-11 16:47:16	INFO	plotcal::::casa	plotcal(caltable="3c391_ctm_mosaic_10s_spw0.G0all",xaxis="time",yaxis="phase",poln="L",
+2015-05-11 16:47:16	INFO	plotcal::::casa+	        field="",antenna="",spw="",timerange="",subplot=111,
+2015-05-11 16:47:16	INFO	plotcal::::casa+	        overplot=False,clearpanel="Auto",iteration="antenna",plotrange=[-1, -1, -180, 180],showflags=False,
+2015-05-11 16:47:16	INFO	plotcal::::casa+	        plotsymbol="o",plotcolor="blue",markersize=5.0,fontsize=10.0,showgui=True,
+2015-05-11 16:47:16	INFO	plotcal::::casa+	        figfile="")
+2015-05-11 16:47:16	INFO	tableplot::setgui	Switching to GUI mode. All current plots  will be reset.
+2015-05-11 16:47:16	INFO	plotcal::createCalTab 	Detected a NewCalTable!
+2015-05-11 16:47:18	INFO		Now get the data
+2015-05-11 16:47:18	INFO		Done Processing data ... 
+2015-05-11 16:47:19	INFO	plotcal::::casa	##### End Task: plotcal              #####
+2015-05-11 16:47:19	INFO	plotcal::::casa+	##########################################
+2015-05-11 16:47:30	INFO		Now get the data
+2015-05-11 16:47:30	INFO		Done Processing data ... 
+2015-05-11 16:47:31	INFO		Now get the data
+2015-05-11 16:47:31	INFO		Done Processing data ... 
+2015-05-11 16:47:32	INFO		Now get the data
+2015-05-11 16:47:32	INFO		Done Processing data ... 
+2015-05-11 16:47:33	INFO		Now get the data
+2015-05-11 16:47:33	INFO		Done Processing data ... 
+2015-05-11 16:47:34	INFO		Now get the data
+2015-05-11 16:47:34	INFO		Done Processing data ... 
+2015-05-11 16:47:35	INFO		Now get the data
+2015-05-11 16:47:35	INFO		Done Processing data ... 
+2015-05-11 16:47:36	INFO		Now get the data
+2015-05-11 16:47:36	INFO		Done Processing data ... 
+2015-05-11 16:47:37	INFO		Now get the data
+2015-05-11 16:47:37	INFO		Done Processing data ... 
+2015-05-11 16:47:38	INFO		Now get the data
+2015-05-11 16:47:38	INFO		Done Processing data ... 
+2015-05-11 16:47:52	INFO		Now get the data
+2015-05-11 16:47:52	INFO		Done Processing data ... 
+2015-05-11 16:47:53	INFO		Now get the data
+2015-05-11 16:47:53	INFO		Done Processing data ... 
+2015-05-11 16:47:54	INFO		Now get the data
+2015-05-11 16:47:54	INFO		Done Processing data ... 
+2015-05-11 16:47:55	INFO		Now get the data
+2015-05-11 16:47:55	INFO		Done Processing data ... 
+2015-05-11 16:47:59	INFO		Now get the data
+2015-05-11 16:47:59	INFO		Done Processing data ... 
+2015-05-11 16:48:00	INFO		Now get the data
+2015-05-11 16:48:00	INFO		Done Processing data ... 
+2015-05-11 16:48:01	INFO		Now get the data
+2015-05-11 16:48:01	INFO		Done Processing data ... 
+2015-05-11 16:48:02	INFO		Now get the data
+2015-05-11 16:48:02	INFO		Done Processing data ... 
+2015-05-11 16:48:03	INFO		Now get the data
+2015-05-11 16:48:03	INFO		Done Processing data ... 
+2015-05-11 16:48:04	INFO		Now get the data
+2015-05-11 16:48:04	INFO		Done Processing data ... 
+2015-05-11 16:48:05	INFO		Now get the data
+2015-05-11 16:48:05	INFO		Done Processing data ... 
+2015-05-11 16:48:06	INFO		Now get the data
+2015-05-11 16:48:06	INFO		Done Processing data ... 
+2015-05-11 16:48:10	INFO		Now get the data
+2015-05-11 16:48:10	INFO		Done Processing data ... 
+2015-05-11 16:48:11	INFO		Now get the data
+2015-05-11 16:48:11	INFO		Done Processing data ... 
+2015-05-11 16:48:13	INFO		Now get the data
+2015-05-11 16:48:13	INFO		Done Processing data ... 
+2015-05-11 16:48:14	INFO		Now get the data
+2015-05-11 16:48:14	INFO		Done Processing data ... 
+2015-05-11 16:48:15	INFO		End of iterations

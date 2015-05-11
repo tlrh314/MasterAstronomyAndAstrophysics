@@ -37,7 +37,7 @@ The total integration time is 28671.5 seconds, which is almost 8 hours. The numb
 
 11) Filename = 'list_obs_log'
 
-12) ea08 is the antenna in the middle of the array.
+12) ea21 is the antenna in the middle of the array.
     Filename = 'plotants_vraag12.png'
 
 14) plotsms(vis = '3c391_ctm_mosaic_10s_spw0.ms')
@@ -222,3 +222,41 @@ So, the spectral window used is 0. The maximum is 7.81908 and the minimum 7.6830
 c) Find the phase offset of image w.r.t amplitude calibrator. 
 The model image's reference pixel is 0.00302169 arcsec from J1331+3030's phase center.
 
+
+Part C - Phase Calibration
+
+2)
+gaincal(vis='3c391_ctm_mosaic_10s_spw0.ms',caltable='3c391_ctm_mosaic_10s_spw0.G0all', field='0, 1, 9', refant='ea21', spw='0:27~36',  gaintype='G', calmode='p', solint='int', minsnr=5, gaintable=['3c391_ctm_mosaic_10s_spw0.antpos'])
+
+3) We give minsnr=5 as input for the gaincal method. This will be the flagging SNR.
+
+4)
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.G0all',xaxis='time',yaxis='phase', poln='R',iteration='antenna',plotrange=[-1,-1,-180,180])
+
+5) Antenna ea05 in R polarization has a variation of 150. The other antennas have variations of at most 50. There are some plots where it seems as if there are two populations, but they lie at roughly the same value with either a plus or a minus sign. I think this might be oke, although I have no idea if I should flag this. But if I do flag all of these antenna's, almost no data is left.
+
+ and ea12 in L polarization
+
+
+6)
+flagdata(vis='3c391_ctm_mosaic_10s_spw0.ms', flagbackup=T, mode='manual', antenna='ea05')
+flagdata(vis='3c391_ctm_mosaic_10s_spw0.ms', flagbackup=T, mode='manual', antenna='ea12')
+
+7) plotcal(caltable='3c391_ctm_mosaic_10s_spw0.G0all',xaxis='time',yaxis='phase', poln='L',iteration='antenna',plotrange=[-1,-1,-180,180])
+
+8) The plot is empty.
+
+9) 
+gaincal(vis='3c391_ctm_mosaic_10s_spw0.ms', caltable='3c391_ctm_mosaic_10s_spw0.G0', field='J1331+3030', refant='ea21', spw='0:27~36', calmode='p', solint='int', minsnr=5, gaintable=['3c391_ctm_mosaic_10s_spw0.antpos'])
+
+10) 
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.G0', xaxis='time',yaxis='phase',poln='R',field='J1331+3030',iteration='antenna', plotrange=[-1,-1,-180,180],timerange='08:02:00~08:17:00')
+
+Part D - Delay Calibration
+1)
+gaincal(vis='3c391_ctm_mosaic_10s_spw0.ms',caltable='3c391_ctm_mosaic_10s_spw0.K0', field='J1331+3030',refant='ea21',spw='0:5~58',gaintype='K', solint='inf',combine='scan',minsnr=5, gaintable=['3c391_ctm_mosaic_10s_spw0.antpos', '3c391_ctm_mosaic_10s_spw0.G0'])
+
+2)
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.K0',xaxis='antenna',yaxis='delay', figfile='plotcal_3c391-K0-delay.png')
+
+Part E - Bandpass Calibration

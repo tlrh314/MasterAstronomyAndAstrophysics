@@ -1,0 +1,177 @@
+2015-05-11 16:49:43	INFO	casa::::casa	---
+2015-05-11 16:49:43	INFO	casa::::casa	CASA Version 4.2.1 (release r29047)
+2015-05-11 16:49:43	INFO	casa::::casa	  Tagged on: Thu, 27 Mar 2014
+2015-05-11 16:52:35	INFO	gaincal::::casa	
+2015-05-11 16:52:35	INFO	gaincal::::casa+	##########################################
+2015-05-11 16:52:35	INFO	gaincal::::casa+	##### Begin Task: gaincal            #####
+2015-05-11 16:52:35	INFO	gaincal::::casa	gaincal(vis="3c391_ctm_mosaic_10s_spw0.ms",caltable="3c391_ctm_mosaic_10s_spw0.G0",field="J1331+3030",spw="0:27~36",
+2015-05-11 16:52:35	INFO	gaincal::::casa+	        intent="",selectdata=True,timerange="",uvrange="",antenna="",
+2015-05-11 16:52:35	INFO	gaincal::::casa+	        scan="",observation="",msselect="",solint="int",combine="",
+2015-05-11 16:52:35	INFO	gaincal::::casa+	        preavg=-1.0,refant="ea21",minblperant=4,minsnr=5,solnorm=False,
+2015-05-11 16:52:35	INFO	gaincal::::casa+	        gaintype="G",smodel=[],calmode="p",append=False,splinetime=3600.0,
+2015-05-11 16:52:35	INFO	gaincal::::casa+	        npointaver=3,phasewrap=180.0,docallib=False,callib="",gaintable=['3c391_ctm_mosaic_10s_spw0.antpos'],
+2015-05-11 16:52:35	INFO	gaincal::::casa+	        gainfield=[''],interp=[],spwmap=[],parang=False)
+2015-05-11 16:52:35	INFO	gaincal::calibrater::open	Opening MS: 3c391_ctm_mosaic_10s_spw0.ms for calibration.
+2015-05-11 16:52:35	INFO	gaincal::Calibrater::	Initializing nominal selection to the whole MS.
+2015-05-11 16:52:36	INFO	gaincal::calibrater::setdata	Beginning selectvis--(MSSelection version)-------
+2015-05-11 16:52:36	INFO	gaincal::calibrater::reset	Reseting solve/apply state
+2015-05-11 16:52:36	INFO	gaincal::Calibrater::selectvis	Performing selection on MeasurementSet
+2015-05-11 16:52:36	INFO	gaincal::Calibrater::selectvis+	 Selecting on spw: '0:27~36'
+2015-05-11 16:52:36	INFO	gaincal::Calibrater::selectvis+	 Selecting on field: 'J1331+3030'
+2015-05-11 16:52:37	INFO	gaincal::Calibrater::selectvis	By selection 845379 rows are reduced to 31964
+2015-05-11 16:52:37	INFO	gaincal::Calibrater::selectvis	Frequency selection: 
+2015-05-11 16:52:37	INFO	gaincal::Calibrater::selectvis	.  Spw 0:27~36 (10 channels, step by 1)
+2015-05-11 16:52:37	INFO	gaincal::calibrater::setapply	Beginning setapply--(MSSelection version)-------
+2015-05-11 16:52:37	INFO	gaincal::Calibrater::setapply(type, applypar)	Arranging to APPLY:
+2015-05-11 16:52:37	INFO	gaincal::::	 (KAntPos Jones: Overriding with spwmap=[0] since KAntPos Jones is not spw-dependent)
+2015-05-11 16:52:37	INFO	gaincal::::	 (KAntPos Jones: Enforcing calWt()=False for phase/delay-like terms)
+2015-05-11 16:52:37	INFO	gaincal::Calibrater::setapply(type, applypar)	.   KAntPos Jones: table=3c391_ctm_mosaic_10s_spw0.antpos select= interp=linear spwmap=[0] calWt=false
+2015-05-11 16:52:37	INFO	gaincal::calibrater::setsolve	Beginning setsolve--(MSSelection version)-------
+2015-05-11 16:52:37	INFO	gaincal::Calibrater::setsolve	Arranging to SOLVE:
+2015-05-11 16:52:37	INFO	gaincal::Calibrater::setsolve	.   G Jones: table=3c391_ctm_mosaic_10s_spw0.G0 append=false solint=int refant='ea21' minsnr=5 apmode=P solnorm=false
+2015-05-11 16:52:37	INFO	gaincal::calibrater::solve	Beginning solve-----------------------------
+2015-05-11 16:52:37	INFO	gaincal::Calibrater::solve	The following calibration terms are arranged for apply:
+2015-05-11 16:52:37	INFO	gaincal::Calibrater::solve	.   KAntPos Jones: table=3c391_ctm_mosaic_10s_spw0.antpos select= interp=linear spwmap=[0] calWt=false
+2015-05-11 16:52:37	INFO	gaincal::Calibrater::solve	The following calibration term is arranged for solve:
+2015-05-11 16:52:37	INFO	gaincal::Calibrater::solve	.   G Jones: table=3c391_ctm_mosaic_10s_spw0.G0 append=false solint=int refant='ea21' minsnr=5 apmode=P solnorm=false
+2015-05-11 16:52:37	INFO	gaincal::Calibrater::solve	Solving for G Jones
+2015-05-11 16:52:37	INFO	gaincal::::	For solint = int, found 103 solution intervals.
+2015-05-11 16:52:37	SEVERE	gaincal::MeasTable::dUTC(Double) (file /var/rpmbuild/BUILD/casapy421/casapy421-42.1.29047/casacore/measures/Measures/MeasTable.cc, line 6657)	Leap second table TAI_UTC seems out-of-date. 
+2015-05-11 16:52:37	SEVERE	gaincal::MeasTable::dUTC(Double) (file /var/rpmbuild/BUILD/casapy421/casapy421-42.1.29047/casacore/measures/Measures/MeasTable.cc, line 6657)+	Until table is updated (see aips++ manager) times and coordinates
+2015-05-11 16:52:37	SEVERE	gaincal::MeasTable::dUTC(Double) (file /var/rpmbuild/BUILD/casapy421/casapy421-42.1.29047/casacore/measures/Measures/MeasTable.cc, line 6657)+	derived from UTC could be wrong by 1s or more.
+2015-05-11 16:52:38	INFO	gaincal::Calibrater::solve	  Found good G Jones solutions in 95 slots.
+2015-05-11 16:52:38	INFO	gaincal::::	Applying refant: ea21
+2015-05-11 16:52:38	INFO	gaincal::::	Enforcing apmode on solutions.
+2015-05-11 16:52:40	INFO	gaincal::::	Writing solutions to table: 3c391_ctm_mosaic_10s_spw0.G0
+2015-05-11 16:52:40	INFO	gaincal::calibrater::solve	Finished solving.
+2015-05-11 16:52:40	INFO	gaincal::::casa	Calibration solve statistics per spw:  (expected/attempted/succeeded):
+2015-05-11 16:52:40	INFO	gaincal::::casa	  Spw 0: 103/95/95
+2015-05-11 16:52:40	INFO	gaincal::::casa	##### End Task: gaincal              #####
+2015-05-11 16:52:40	INFO	gaincal::::casa+	##########################################
+2015-05-11 16:54:07	INFO	plotcal::::casa	
+2015-05-11 16:54:07	INFO	plotcal::::casa+	##########################################
+2015-05-11 16:54:07	INFO	plotcal::::casa+	##### Begin Task: plotcal            #####
+2015-05-11 16:54:07	INFO	plotcal::::casa	plotcal(caltable="3c391_ctm_mosaic_10s_spw0.G0",xaxis="time",yaxis="phase",poln="R",
+2015-05-11 16:54:07	INFO	plotcal::::casa+	        field="J1331+3030",antenna="",spw="",timerange="08:02:00~08:17:00",subplot=111,
+2015-05-11 16:54:07	INFO	plotcal::::casa+	        overplot=False,clearpanel="Auto",iteration="antenna",plotrange=[-1, -1, -180, 180],showflags=False,
+2015-05-11 16:54:07	INFO	plotcal::::casa+	        plotsymbol="o",plotcolor="blue",markersize=5.0,fontsize=10.0,showgui=True,
+2015-05-11 16:54:07	INFO	plotcal::::casa+	        figfile="")
+2015-05-11 16:54:07	INFO	tableplot::setgui	Switching to GUI mode. All current plots  will be reset.
+2015-05-11 16:54:08	INFO	plotcal::createCalTab 	Detected a NewCalTable!
+2015-05-11 16:54:08	INFO		Now get the data
+2015-05-11 16:54:08	INFO		Done Processing data ... 
+2015-05-11 16:54:09	INFO	plotcal::::casa	##### End Task: plotcal              #####
+2015-05-11 16:54:09	INFO	plotcal::::casa+	##########################################
+2015-05-11 16:54:41	INFO		Now get the data
+2015-05-11 16:54:41	INFO		Done Processing data ... 
+2015-05-11 16:54:42	INFO		Now get the data
+2015-05-11 16:54:42	INFO		Done Processing data ... 
+2015-05-11 16:54:43	INFO		Now get the data
+2015-05-11 16:54:43	INFO		Done Processing data ... 
+2015-05-11 16:54:44	INFO		Now get the data
+2015-05-11 16:54:44	INFO		Done Processing data ... 
+2015-05-11 16:54:46	INFO		Now get the data
+2015-05-11 16:54:46	INFO		Done Processing data ... 
+2015-05-11 16:54:48	INFO		Now get the data
+2015-05-11 16:54:48	INFO		Done Processing data ... 
+2015-05-11 16:54:49	INFO		Now get the data
+2015-05-11 16:54:49	INFO		Done Processing data ... 
+2015-05-11 16:54:50	INFO		Now get the data
+2015-05-11 16:54:50	INFO		Done Processing data ... 
+2015-05-11 16:54:51	INFO		Now get the data
+2015-05-11 16:54:51	INFO		Done Processing data ... 
+2015-05-11 16:54:52	INFO		Now get the data
+2015-05-11 16:54:52	INFO		Done Processing data ... 
+2015-05-11 16:54:53	INFO		Now get the data
+2015-05-11 16:54:53	INFO		Done Processing data ... 
+2015-05-11 16:54:54	INFO		Now get the data
+2015-05-11 16:54:54	INFO		Done Processing data ... 
+2015-05-11 16:54:55	INFO		Now get the data
+2015-05-11 16:54:55	INFO		Done Processing data ... 
+2015-05-11 16:54:57	INFO		Now get the data
+2015-05-11 16:54:57	INFO		Done Processing data ... 
+2015-05-11 16:54:59	INFO		Now get the data
+2015-05-11 16:54:59	INFO		Done Processing data ... 
+2015-05-11 16:55:16	INFO		Now get the data
+2015-05-11 16:55:16	INFO		Done Processing data ... 
+2015-05-11 16:55:17	INFO		Now get the data
+2015-05-11 16:55:17	INFO		Done Processing data ... 
+2015-05-11 16:55:18	INFO		Now get the data
+2015-05-11 16:55:18	INFO		Done Processing data ... 
+2015-05-11 16:55:19	INFO		Now get the data
+2015-05-11 16:55:19	INFO		Done Processing data ... 
+2015-05-11 16:55:20	INFO		Now get the data
+2015-05-11 16:55:20	INFO		Done Processing data ... 
+2015-05-11 16:55:21	INFO		Now get the data
+2015-05-11 16:55:21	INFO		Done Processing data ... 
+2015-05-11 16:55:22	INFO		Now get the data
+2015-05-11 16:55:22	INFO		Done Processing data ... 
+2015-05-11 16:55:24	INFO		Now get the data
+2015-05-11 16:55:24	INFO		Done Processing data ... 
+2015-05-11 16:55:25	INFO		Now get the data
+2015-05-11 16:55:25	INFO		Done Processing data ... 
+2015-05-11 16:55:26	INFO		Now get the data
+2015-05-11 16:55:26	INFO		Done Processing data ... 
+2015-05-11 16:55:27	INFO		End of iterations
+2015-05-11 16:57:53	INFO	gaincal::::casa	
+2015-05-11 16:57:53	INFO	gaincal::::casa+	##########################################
+2015-05-11 16:57:53	INFO	gaincal::::casa+	##### Begin Task: gaincal            #####
+2015-05-11 16:57:53	INFO	gaincal::::casa	gaincal(vis="3c391_ctm_mosaic_10s_spw0.ms",caltable="3c391_ctm_mosaic_10s_spw0.K0",field="J1331+3030",spw="0:5~58",
+2015-05-11 16:57:53	INFO	gaincal::::casa+	        intent="",selectdata=True,timerange="",uvrange="",antenna="",
+2015-05-11 16:57:53	INFO	gaincal::::casa+	        scan="",observation="",msselect="",solint="inf",combine="scan",
+2015-05-11 16:57:53	INFO	gaincal::::casa+	        preavg=-1.0,refant="ea21",minblperant=4,minsnr=5,solnorm=False,
+2015-05-11 16:57:53	INFO	gaincal::::casa+	        gaintype="K",smodel=[],calmode="ap",append=False,splinetime=3600.0,
+2015-05-11 16:57:53	INFO	gaincal::::casa+	        npointaver=3,phasewrap=180.0,docallib=False,callib="",gaintable=['3c391_ctm_mosaic_10s_spw0.antpos', '3c391_ctm_mosaic_10s_spw0.G0'],
+2015-05-11 16:57:53	INFO	gaincal::::casa+	        gainfield=[''],interp=[],spwmap=[],parang=False)
+2015-05-11 16:57:53	INFO	gaincal::calibrater::open	Opening MS: 3c391_ctm_mosaic_10s_spw0.ms for calibration.
+2015-05-11 16:57:53	INFO	gaincal::Calibrater::	Initializing nominal selection to the whole MS.
+2015-05-11 16:57:54	INFO	gaincal::calibrater::setdata	Beginning selectvis--(MSSelection version)-------
+2015-05-11 16:57:54	INFO	gaincal::calibrater::reset	Reseting solve/apply state
+2015-05-11 16:57:54	INFO	gaincal::Calibrater::selectvis	Performing selection on MeasurementSet
+2015-05-11 16:57:54	INFO	gaincal::Calibrater::selectvis+	 Selecting on spw: '0:5~58'
+2015-05-11 16:57:54	INFO	gaincal::Calibrater::selectvis+	 Selecting on field: 'J1331+3030'
+2015-05-11 16:57:54	INFO	gaincal::Calibrater::selectvis	By selection 845379 rows are reduced to 31964
+2015-05-11 16:57:54	INFO	gaincal::Calibrater::selectvis	Frequency selection: 
+2015-05-11 16:57:54	INFO	gaincal::Calibrater::selectvis	.  Spw 0:5~58 (54 channels, step by 1)
+2015-05-11 16:57:54	INFO	gaincal::calibrater::setapply	Beginning setapply--(MSSelection version)-------
+2015-05-11 16:57:54	INFO	gaincal::Calibrater::setapply(type, applypar)	Arranging to APPLY:
+2015-05-11 16:57:54	INFO	gaincal::::	 (KAntPos Jones: Overriding with spwmap=[0] since KAntPos Jones is not spw-dependent)
+2015-05-11 16:57:54	INFO	gaincal::::	 (KAntPos Jones: Enforcing calWt()=False for phase/delay-like terms)
+2015-05-11 16:57:54	INFO	gaincal::Calibrater::setapply(type, applypar)	.   KAntPos Jones: table=3c391_ctm_mosaic_10s_spw0.antpos select= interp=linear spwmap=[0] calWt=false
+2015-05-11 16:57:54	INFO	gaincal::calibrater::setapply	Beginning setapply--(MSSelection version)-------
+2015-05-11 16:57:54	INFO	gaincal::Calibrater::setapply(type, applypar)	Arranging to APPLY:
+2015-05-11 16:57:54	INFO	gaincal::Calibrater::setapply(type, applypar)	.   G Jones: table=3c391_ctm_mosaic_10s_spw0.G0 select= interp=linear spwmap=[-1] calWt=true
+2015-05-11 16:57:54	INFO	gaincal::calibrater::setsolve	Beginning setsolve--(MSSelection version)-------
+2015-05-11 16:57:54	INFO	gaincal::Calibrater::setsolve	Arranging to SOLVE:
+2015-05-11 16:57:54	INFO	gaincal::Calibrater::setsolve	.   K Jones: table=3c391_ctm_mosaic_10s_spw0.K0 append=false solint=inf refant='ea21' minsnr=5 apmode=AP solnorm=false
+2015-05-11 16:57:54	INFO	gaincal::calibrater::solve	Beginning solve-----------------------------
+2015-05-11 16:57:54	INFO	gaincal::Calibrater::solve	The following calibration terms are arranged for apply:
+2015-05-11 16:57:54	INFO	gaincal::Calibrater::solve	.   KAntPos Jones: table=3c391_ctm_mosaic_10s_spw0.antpos select= interp=linear spwmap=[0] calWt=false
+2015-05-11 16:57:54	INFO	gaincal::Calibrater::solve	.   G Jones: table=3c391_ctm_mosaic_10s_spw0.G0 select= interp=linear spwmap=[-1] calWt=true
+2015-05-11 16:57:54	INFO	gaincal::Calibrater::solve	The following calibration term is arranged for solve:
+2015-05-11 16:57:54	INFO	gaincal::Calibrater::solve	.   K Jones: table=3c391_ctm_mosaic_10s_spw0.K0 append=false solint=inf refant='ea21' minsnr=5 apmode=AP solnorm=false
+2015-05-11 16:57:54	INFO	gaincal::Calibrater::solve	Solving for K Jones
+2015-05-11 16:57:55	INFO	gaincal::::	Combining scans.
+2015-05-11 16:57:55	INFO	gaincal::::	For solint = inf, found 1 solution intervals.
+2015-05-11 16:57:56	INFO	gaincal::Calibrater::solve	  Found good K Jones solutions in 1 slots.
+2015-05-11 16:57:56	INFO	gaincal::::	Writing solutions to table: 3c391_ctm_mosaic_10s_spw0.K0
+2015-05-11 16:57:56	INFO	gaincal::calibrater::solve	Finished solving.
+2015-05-11 16:57:56	INFO	gaincal::::casa	Calibration solve statistics per spw:  (expected/attempted/succeeded):
+2015-05-11 16:57:56	INFO	gaincal::::casa	  Spw 0: 1/1/1
+2015-05-11 16:57:56	INFO	gaincal::::casa	##### End Task: gaincal              #####
+2015-05-11 16:57:56	INFO	gaincal::::casa+	##########################################
+2015-05-11 16:58:21	INFO	plotcal::::casa	
+2015-05-11 16:58:21	INFO	plotcal::::casa+	##########################################
+2015-05-11 16:58:21	INFO	plotcal::::casa+	##### Begin Task: plotcal            #####
+2015-05-11 16:58:21	INFO	plotcal::::casa	plotcal(caltable="3c391_ctm_mosaic_10s_spw0.K0",xaxis="antenna",yaxis="delay",poln="",
+2015-05-11 16:58:21	INFO	plotcal::::casa+	        field="",antenna="",spw="",timerange="",subplot=111,
+2015-05-11 16:58:21	INFO	plotcal::::casa+	        overplot=False,clearpanel="Auto",iteration="",plotrange=[],showflags=False,
+2015-05-11 16:58:21	INFO	plotcal::::casa+	        plotsymbol="o",plotcolor="blue",markersize=5.0,fontsize=10.0,showgui=True,
+2015-05-11 16:58:21	INFO	plotcal::::casa+	        figfile="plotcal_3c391-K0-delay.png")
+2015-05-11 16:58:21	INFO	tableplot::setgui	Switching to GUI mode. All current plots  will be reset.
+2015-05-11 16:58:21	INFO	plotcal::createCalTab 	Detected a NewCalTable!
+2015-05-11 16:58:23	INFO		Now get the data
+2015-05-11 16:58:23	INFO		Done Processing data ... 
+2015-05-11 16:58:24	INFO		Saving plot to file plotcal_3c391-K0-delay.png
+2015-05-11 16:58:25	INFO	plotcal::::casa	##### End Task: plotcal              #####
+2015-05-11 16:58:25	INFO	plotcal::::casa+	##########################################
