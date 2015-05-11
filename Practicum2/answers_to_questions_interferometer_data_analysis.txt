@@ -294,7 +294,82 @@ plotcal(caltable='3c391_ctm_mosaic_10s_spw0.G1', xaxis='time', yaxis='phase', po
 
 plotcal(caltable='3c391_ctm_mosaic_10s_spw0.G1', xaxis='time', yaxis='phase', poln='R', plotrange=[-1,-1,-180,180], figfile='part4-subF-question4_phase_pol-R.png')
 
+
 Part G - Scaling the amplitude gains 
+2) 
+myscale = fluxscale(vis='3c391_ctm_mosaic_10s_spw0.ms', caltable='3c391_ctm_mosaic_10s_spw0.G1', fluxtable='3c391_ctm_mosaic_10s_spw0.fluxscale1', reference=['J1331+3030'], transfer=['J1822-0938, J0319+4130'], incremental=False)
+
+3) 
+From the logfile we obtain (if we only keep the two relevant lines):
+
+2015-05-11 21:49:18     INFO    fluxscale::::    Flux density for J1822-0938 in SpW=0 (freq=4.536e+09 Hz) is: 2.34094 +/- 0.00625394 (SNR = 374.314, N = 42)
+2015-05-11 21:49:18     INFO    fluxscale::::    Flux density for J0319+4130 in SpW=0 (freq=4.536e+09 Hz) is: 13.9306 +/- 0.0331459 (SNR = 420.281, N = 42)
+
+From this, we can easily read the SNR value. For J1822-0938 the SNR = 374.314, N=42; for J0319+4130 the SNR = 420.281, N=42.
+
+4) Using http://www.vla.nrao.edu/astro/calib/manual/csource.html
+For J1822-0938 we obtain
+1822-096   J2000  T 18h22m28.7042s   -09d38'56.835"
+1819-096   B1950  T 18h19m43.5900s   -09d40'29.000"
+-----------------------------------------------------
+BAND        A B C D    FLUX(Jy)    UVMIN(kL)  UVMAX(kL)
+=====================================================
+ 90cm    P  S S S S         13
+ 20cm    L  X P P P        5.6                       50
+3.7cm    X  X X S P        1.3                       50
+0.7cm    Q  W W W W       0.20
+
+Here, we use the C band. However, the C band is not represented in this table, but the X band of 3.7 cm is closest to 6 cm. So the value we find should be above 1.3 Jy but well below 5.6 Jy. The obtained value of 2.34094 Jy does not look too weird or surprising, I think.
+ 
+
+For J0319+4130 we obtain
+0319+415   J2000  B 03h19m48.160102s  41d30'42.103050"  Aug01  3C84   
+0316+413   B1950  B 03h16m29.567300s  41d19'51.916000"
+-----------------------------------------------------
+BAND        A B C D    FLUX(Jy)    UVMIN(kL)  UVMAX(kL)
+=====================================================
+ 90cm    P  S X X X          8           13
+ 20cm    L  P P X X      23.9            12
+  6cm    C  P P P P      23.3
+3.7cm    X  P P P P      21.70                       visplot
+  2cm    U  P P P P      20.70                       visplot
+1.3cm    K  X S S S      16.4 
+0.7cm    Q  X S S S       9.00                      1800   visplot
+
+Here, we use the C band, so we expect the FLUX to be 23.3 Jy? We obtain 13.9306, however, which is like 10 lower. This slightly concerns me, although I do not know what difference should be considered worrysome. I mean, it is the same order of magnitide, right?
+ 
+
+5)
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.fluxscale1', xaxis='time', yaxis='amp', poln='R', figfile='part4-subG-question5_amp_pol-R.png')
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.fluxscale1', xaxis='time', yaxis='amp', poln='L', figfile='part4-subG-question5_amp_pol-L.png')
 
 
+Part H? - Applying Calibrations
+1) From the assignment: "Using this task we will first apply calibrations to each of the calibrator by merely changing the field name in following command to the given calibrators field name".
+This means we should run the same command trhice, where each run the field name is changed to a different calibrator, right?
 
+applycal(vis='3c391_ctm_mosaic_10s_spw0.ms', field='J1331+3030', gaintable=['3c391_ctm_mosaic_10s_spw0.antpos', '3c391_ctm_mosaic_10s_spw0.fluxscale1', '3c391_ctm_mosaic_10s_spw0.K0', '3c391_ctm_mosaic_10s_spw0.B0'], gainfield=['', 'J1331+3030', '', '', '', '', ''], interp=['', 'nearest', '', '', '', '', ''], calwt=[False], parang=True)
+
+applycal(vis='3c391_ctm_mosaic_10s_spw0.ms', field='J0319+4130', gaintable=['3c391_ctm_mosaic_10s_spw0.antpos', '3c391_ctm_mosaic_10s_spw0.fluxscale1', '3c391_ctm_mosaic_10s_spw0.K0', '3c391_ctm_mosaic_10s_spw0.B0'], gainfield=['', 'J0319+4130', '', '', '', '', ''], interp=['', 'nearest', '', '', '', '', ''], calwt=[False], parang=True)
+
+applycal(vis='3c391_ctm_mosaic_10s_spw0.ms', field='J1822-0938', gaintable=['3c391_ctm_mosaic_10s_spw0.antpos', '3c391_ctm_mosaic_10s_spw0.fluxscale1', '3c391_ctm_mosaic_10s_spw0.K0', '3c391_ctm_mosaic_10s_spw0.B0'], gainfield=['', 'J1822-0938', '', '', '', '', ''], interp=['', 'nearest', '', '', '', '', ''], calwt=[False], parang=True)
+
+2)
+applycal(vis='3c391_ctm_mosaic_10s_spw0.ms', field='2~8', gaintable=['3c391_ctm_mosaic_10s_spw0.antpos', '3c391_ctm_mosaic_10s_spw0.fluxscale1', '3c391_ctm_mosaic_10s_spw0.K0', '3c391_ctm_mosaic_10s_spw0.B0'], gainfield=['', 'J1822-0938', '', '', '', '', ''], interp=['', 'linear', '', '', '', '', ''], calwt=[False], parang=True)
+
+
+3)
+plotms(vis='3c391_ctm_mosaic_10s_spw0.ms', field='0', correlation='', timerange='08:02:00~08:17:00', antenna='', avgtime='60s', xaxis='channel', yaxis='amp', ydatacolumn='corrected', plotfile='part4-subH-question3_fld0-corrected-amp.png')
+
+plotms(vis='3c391_ctm_mosaic_10s_spw0.ms', field='0', correlation='', timerange='08:02:00~08:17:00', antenna='', avgtime='60s', xaxis='channel', yaxis='phase', ydatacolumn='corrected', plotfile='part4-subH-question3_fld0-corrected-phase.png')
+
+plotms(vis='3c391_ctm_mosaic_10s_spw0.ms', field='1', correlation='RR,LL', timerange='08:02:00~08:17:00', antenna='', avgtime='60s', xaxis='channel', yaxis='amp', ydatacolumn='corrected', plotfile='part4-subH-question3_fld1-corrected-amp.png')
+
+plotms(vis='3c391_ctm_mosaic_10s_spw0.ms', field='1', correlation='RR,LL', timerange='08:02:00~08:17:00', antenna='', avgtime='60s', xaxis='channel', yaxis='phase', ydatacolumn='corrected', plotfile='part4-subH-question3_fld1-corrected-phase.png')
+
+The fourth plot looks strange? And the fourth plot gives an error "Error during cache loading: MSSelectionNullSelection : The selected table has zero rows.".
+
+4)
+plotms(vis='3c391_ctm_mosaic_10s_spw0.ms', field='1', correlation='RR,LL', timerange='', antenna='', avgtime='60s', xaxis='phase', xdatacolumn='corrected', yaxis='amp', ydatacolumn='corrected', plotrange=[-180, 180, 0, 3], coloraxis='corr', plotfile='part4-subH-question4_fld1-corrected-ampvsphase.png')
+
+Well, this does not look like a ball. More like an ellips, but it is centered around phase 0 so I've got that going for me, which is nice.
