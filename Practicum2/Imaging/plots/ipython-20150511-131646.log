@@ -1,0 +1,32 @@
+#log# Automatic Logger file. *** THIS MUST BE THE FIRST LINE ***
+#log# DO NOT CHANGE THIS LINE OR THE TWO BELOW -* coding: UTF-8 *-
+#log# opts = Struct({'__allownew': True,
+ 'autocall': 2,
+ 'banner': 0,
+ 'colors': 'LightBG',
+ 'ipythondir': '/home/lods08/.casa/ipython',
+ 'logfile': 'ipython-20150511-131646.log',
+ 'messages': 0,
+ 'prompt_in1': 'CASA <\\#>: '})
+#log# args = []
+#log# It is safe to make manual edits below here.
+#log#-----------------------------------------------------------------------
+execfile("/opt/cep/Casa/casapy-42.1.29047-001-1-64b/lib64/python2.7/assignmentFilter.py")
+vis = '3c391_ctm_mosaic_10s_spw0.ms'
+listobs()
+plotants()
+plotms()
+flagdata(vis = '3c391_ctm_mosaic_10s_spw0.ms', scan='1')
+flagdata(vis = '3c391_ctm_mosaic_10s_spw0.ms', mode='quack', quackmode='beg', quackinterval=10.0, quackincrement=False)
+flagdata(vis = '3c391_ctm_mosaic_10s_spw0.ms', antenna='ea15')
+listobs()
+flagdata(vis = '3c391_ctm_mosaic_10s_spw0.ms', antenna='ea13)
+flagdata(vis = '3c391_ctm_mosaic_10s_spw0.ms', antenna='ea13')
+flagdata(vis = '3c391_ctm_mosaic_10s_spw0.ms', antenna='ea04')
+plotms()
+gencal(vis='3c391_ctm_mosaic_10s_spw0.ms',caltable='3c391_ctm_mosaic_10s_spw0.antpos',caltype='antpos',spw="",antenna="",pol="",parameter=[])
+gencal(vis='3c391_ctm_mosaic_10s_spw0.ms', caltable='3c391_ctm_mosaic_10s_spw0.antpos', caltype='antpos', spw="", antenna="", pol="", parameter=[])
+setjy(vis='3c391_ctm_mosaic_10s_spw0.ms', listmodels=T)
+setjy(vis='3c391_ctm_mosaic_10s_spw0.ms',field='J1331+3030',standard='Perley-Butler 2010',model= ‘3C286_C.im',usescratch=False,scalebychan=True,spw='')
+setjy(vis='3c391_ctm_mosaic_10s_spw0.ms', field='J1331+3030', standard='Perley-Butler 2010', model=‘3C286_C.im', usescratch=False, scalebychan=True, spw='')
+setjy(vis='3c391_ctm_mosaic_10s_spw0.ms', field='J1331+3030', standard='Perley-Butler 2010', model='3C286_C.im', usescratch=False, scalebychan=True, spw='')

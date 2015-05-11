@@ -105,3 +105,120 @@ imsize=[480,480], cell=['2.5arcsec', '2.5arcsec'],
 stokes='I',
 weighting='briggs', robust=0.5,
 usescratch=False)
+
+
+Part 4 - Calibration
+a Antenna Position
+1) REPLACE
+
+2) 
+gencal(vis='3c391_ctm_mosaic_10s_spw0.ms', caltable='3c391_ctm_mosaic_10s_spw0.antpos', caltype='antpos', spw="", antenna="", pol="", parameter=[])
+
+3)
+caltable = The new/existing calibration table
+caltype='antpos'
+    For antenna position corrections (caltype=’antpos’), the antenna  
+    position offsets are specified in the ITRF frame. For EVLA, automated  
+    lookup of the antenna position corrections is enabled when antenna is  
+    unspecified (antenna=’’) for this caltype. Note that this requires  
+    internet connection to access the EVLA antenna position correction  
+    site.  
+    For VLA position corrections in the VLA-centric frame, use  
+    caltype=’antposvla’, and gencal will rotate them to ITRF before  
+    storing them in the output caltable.  
+spw=''
+    Spectral window selection for specified parameters.  
+    default: spw=’’ (specified parameters apply to all spws)  
+antenna=''
+    Antenna selection for specified parameters.  
+    default: antenna=’’ (specified parameters apply to all antennas)  
+pol=''
+    Polarization selection for specified parameters.  
+    default: pol=’’ (specified parameters apply to all polarizations)  
+parameter=[]
+    The calibration parameters, specified as a list, to  
+    store in the caltable for the spw, antenna, and pol  
+    selection.  The required length of the list is  
+    determined by the caltype and the spw, antenna, pol  
+    selection.  One "set" of parameters (e.g., one value  
+    for ’amp’, ’ph’, etc., three values for ’antpos’)  
+    specified the same value for all indicated spw, antenna,  
+    and pol.  
+    OR,  
+    When specifying a long list of calibration parameter values,  
+    these should be ordered first (fastest) by pol (if pol!=’’),  
+    then by antenna (if antenna!=’’), and finally (sloweset) by  
+    spw (if spw!=’’).  Unspecified selection axes must not be  
+    enumerated in the parameter list  
+
+4)
+2015-05-11 13:59:48	INFO	gencal::::casa	 Determine antenna position offests from the baseline correction database
+2015-05-11 13:59:51	INFO	gencal::::casa	offsets for antenna ea01 :  0.00000   0.00300   0.00000
+2015-05-11 13:59:51	INFO	gencal::::casa	offsets for antenna ea02 : -0.00080   0.00000   0.00000
+2015-05-11 13:59:51	INFO	gencal::::casa	offsets for antenna ea03 : -0.00280   0.00000   0.00000
+2015-05-11 13:59:51	INFO	gencal::::casa	offsets for antenna ea05 :  0.00000   0.00280   0.00000
+2015-05-11 13:59:51	INFO	gencal::::casa	offsets for antenna ea11 :  0.00090   0.00000   0.00000
+2015-05-11 13:59:51	INFO	gencal::::casa	offsets for antenna ea12 : -0.01000   0.00450  -0.00170
+2015-05-11 13:59:51	INFO	gencal::::casa	offsets for antenna ea13 :  0.00000  -0.00080   0.00000
+2015-05-11 13:59:51	INFO	gencal::::casa	offsets for antenna ea17 : -0.00120   0.00000   0.00000
+2015-05-11 13:59:51	INFO	gencal::::casa	offsets for antenna ea18 :  0.00040  -0.00080   0.00040
+2015-05-11 13:59:51	INFO	gencal::::casa	offsets for antenna ea22 : -0.02570   0.00270  -0.01900
+2015-05-11 13:59:51	INFO	gencal::::casa	offsets for antenna ea23 : -0.00140   0.00000   0.00000
+2015-05-11 13:59:51	INFO	gencal::::casa	offsets for antenna ea24 : -0.00150   0.00000   0.00000
+2015-05-11 13:59:51	INFO	gencal::::casa	offsets for antenna ea26 : -0.00190   0.00000   0.00210
+2015-05-11 13:59:51	INFO	gencal::::casa	offsets for antenna ea27 :  0.00000   0.00190  -0.00160
+
+From the documentation:
+    Antenna position corrections (in the traditional VLA-centric  
+    frame) will be introduced in meters for  
+    antenna ea09 (dBx=0.01, dBy=0.02, dBz=0.03) and for  
+    antenna ea10 (dBx=-0.03, dBy=-0.01, dBz=-0.02)  
+    These offsets will be rotated to the ITRF frame before  
+
+So, the three fields are, respectively, dBx, dBy, dBz. The minimal value is 0.000000. The maximum dBx = -0.02570, dBy = 0.00450, dBz = -0.01900. These values are in meters. ITRF stands for International Terrestrial Reference Frame.
+
+
+b) Flux Density Calibration
+1) 
+CASA <19>: setjy(vis='3c391_ctm_mosaic_10s_spw0.ms', listmodels=T)                                                                        
+
+Candidate modimages (*.im* *.mod*) in .:
+ls: cannot access *.im*: No such file or directory
+MeLoveSomeMosaicPleaseMakeThisForMeDearCasa.model
+
+Candidate modimages (*) in /opt/cep/Casa/casapy-42.1.29047-001-1-64b/data/nrao/VLA/CalModels:
+3C138_A.im  3C138_L.im	3C138_U.im  3C147_C.im	3C147_Q.im  3C147_X.im	3C286_K.im  3C286_S.im	3C48_A.im  3C48_L.im  3C48_U.im
+3C138_C.im  3C138_Q.im	3C138_X.im  3C147_K.im	3C147_S.im  3C286_A.im	3C286_L.im  3C286_U.im	3C48_C.im  3C48_Q.im  3C48_X.im
+3C138_K.im  3C138_S.im	3C147_A.im  3C147_L.im	3C147_U.im  3C286_C.im	3C286_Q.im  3C286_X.im	3C48_K.im  3C48_S.im  README
+    storing them in the caltable.  
+
+In the listobs() output we see three calibration objects identified by their field names. We have Googled these and found 
+http://casaguides.nrao.edu/index.php?title=EVLA_Continuum_Tutorial_3C391, where we see J1331+3030 corresponds to 3C286. This is the only 3C-name for which we have a model in the setjy output, so here I will assume this is the model to be used. The model name consists of the sourcename dash a letter that corresponds to the frequency band. According to http://casaguides.nrao.edu/index.php?title=EVLA_Continuum_Tutorial_3C391 in the IEEE system our observed frequency of 4536.000 MHz correspons to the C band. It is concluded that we should use the model 3C286_C.im
+
+3) The amplitude calibrator is J1331+3030. The field ID (from listobs)
+
+4)
+setjy(vis='3c391_ctm_mosaic_10s_spw0.ms', field='J1331+3030', standard='Perley-Butler 2010', model='3C286_C.im', usescratch=False, scalebychan=True, spw='')
+
+The output is:
+
+{'0': {'0': {'fluxd': array([ 7.68301298,  0.        ,  0.        ,  0.        ])},
+       'fieldName': 'J1331+3030'},
+ 'format': "{field Id: {spw Id: {fluxd: [I,Q,U,V] in Jy}, 'fieldName':field name }}"}
+
+5) 
+a) find out what is the flux density for channel 0 for every Stoke’s parameter? 
+Stokes Parameter I: 7.68301298 Jy
+Stokes Parameter Q: 0. Jy
+Stokes Parameter U: 0. Jy
+Stokes Parameter V: 0. Jy
+
+b) Find out which spectral window is used? For this window an output of scaling values for every channel corresponding to the Stoke’s parameter is given. Here, what is the maximum and minimum flux density scale ? 
+
+2015-05-11 15:05:13     INFO    imager::setjy() Scaling spw 0's model image by channel to I = [7.81908, 7.81688, 7.81468, 7.81248, 7.81028, 7.80808, 7.80588, 7.80369, 7.80149, 7.7993, 7.79711, 7.79492, 7.79273, 7.79055, 7.78836, 7.78618, 7.784, 7.78182, 7.77964, 7.77746, 7.77528, 7.77311, 7.77093, 7.76876, 7.76659, 7.76442, 7.76225, 7.76009, 7.75792, 7.75576, 7.7536, 7.75143, 7.74927, 7.74712, 7.74496, 7.7428, 7.74065, 7.7385, 7.73635, 7.7342, 7.73205, 7.7299, 7.72776, 7.72561, 7.72347, 7.72133, 7.71919, 7.71705, 7.71491, 7.71277, 7.71064, 7.70851, 7.70637, 7.70424, 7.70211, 7.69999, 7.69786, 7.69574, 7.69361, 7.69149, 7.68937, 7.68725, 7.68513, 7.68301] Jy (ch 0) for visibility prediction.
+
+So, the spectral window used is 0. The maximum is 7.81908 and the minimum 7.68301
+
+c) Find the phase offset of image w.r.t amplitude calibrator. 
+The model image's reference pixel is 0.00302169 arcsec from J1331+3030's phase center.
+
