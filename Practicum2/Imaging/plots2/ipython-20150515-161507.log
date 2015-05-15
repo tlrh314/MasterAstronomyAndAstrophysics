@@ -1,0 +1,88 @@
+#log# Automatic Logger file. *** THIS MUST BE THE FIRST LINE ***
+#log# DO NOT CHANGE THIS LINE OR THE TWO BELOW -* coding: UTF-8 *-
+#log# opts = Struct({'__allownew': True,
+ 'autocall': 2,
+ 'banner': 0,
+ 'colors': 'LightBG',
+ 'ipythondir': '/home/lods08/.casa/ipython',
+ 'logfile': 'ipython-20150515-161507.log',
+ 'messages': 0,
+ 'prompt_in1': 'CASA <\\#>: '})
+#log# args = []
+#log# It is safe to make manual edits below here.
+#log#-----------------------------------------------------------------------
+execfile("/opt/cep/Casa/casapy-42.1.29047-001-1-64b/lib64/python2.7/assignmentFilter.py")
+vis = '3c391_ctm_mosaic_10s_spw0.ms'
+listobs()
+plotants()
+flagdata(vis = '3c391_ctm_mosaic_10s_spw0.ms', scan='1')
+flagdata(vis = '3c391_ctm_mosaic_10s_spw0.ms', mode='quack', quackmode='beg', quackinterval=10.0, quackincrement=False)
+flagdata(vis = '3c391_ctm_mosaic_10s_spw0.ms', antenna='ea15')
+flagdata(vis = '3c391_ctm_mosaic_10s_spw0.ms', antenna='ea13)
+flagdata(vis = '3c391_ctm_mosaic_10s_spw0.ms', antenna='ea13')
+flagdata(vis = '3c391_ctm_mosaic_10s_spw0.ms', antenna='ea04')
+plotsms(vis = '3c391_ctm_mosaic_10s_spw0.ms')
+plotms(vis = '3c391_ctm_mosaic_10s_spw0.ms')
+gencal(vis='3c391_ctm_mosaic_10s_spw0.ms', caltable='3c391_ctm_mosaic_10s_spw0.antpos', caltype='antpos', spw="", antenna="", pol="", parameter=[])
+clean(vis = '3c391_ctm_mosaic_10s_spw0.ms',
+imagename = 'precal',
+field='', spw='',
+mode='mfs',
+niter=5000,
+gain=0.1, threshold='1.0mJy',
+psfmode='clark',
+imagermode='mosaic', ftmachine='mosaic',
+multiscale=[0],
+interactive=True,
+imsize=[480,480], cell=['2.5arcsec', '2.5arcsec'],
+stokes='I',
+weighting='briggs', robust=0.5,
+usescratch=False)
+viewer('precal.image')
+setjy(vis='3c391_ctm_mosaic_10s_spw0.ms', field='J1331+3030', standard='Perley-Butler 2010', model='3C286_C.im', usescratch=False, scalebychan=True, spw='')
+gaincal(vis='3c391_ctm_mosaic_10s_spw0.ms',caltable='3c391_ctm_mosaic_10s_spw0.G0all', field='0, 1, 9', refant='ea21', spw='0:27~36',  gaintype='G', calmode='p', solint='int', minsnr=5, gaintable=['3c391_ctm_mosaic_10s_spw0.antpos'])
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.G0all',xaxis='time',yaxis='phase', poln='R',iteration='antenna',plotrange=[-1,-1,-180,180])
+flagdata(vis='3c391_ctm_mosaic_10s_spw0.ms', flagbackup=T, mode='manual', antenna='ea05')
+flagdata(vis='3c391_ctm_mosaic_10s_spw0.ms', flagbackup=T, mode='manual', antenna='ea12')
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.G0all',xaxis='time',yaxis='phase', poln='L',iteration='antenna',plotrange=[-1,-1,-180,180])
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.G0all',xaxis='time',yaxis='phase', poln='L',iteration='antenna',plotrange=[-1,-1,-180,180])
+gaincal(vis='3c391_ctm_mosaic_10s_spw0.ms',caltable='3c391_ctm_mosaic_10s_spw0.G0all', field='0, 1, 9', refant='ea21', spw='0:27~36',  gaintype='G', calmode='p', solint='int', minsnr=5, gaintable=['3c391_ctm_mosaic_10s_spw0.antpos'])
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.G0all',xaxis='time',yaxis='phase', poln='L',iteration='antenna',plotrange=[-1,-1,-180,180])
+gaincal(vis='3c391_ctm_mosaic_10s_spw0.ms', caltable='3c391_ctm_mosaic_10s_spw0.G0', field='J1331+3030', refant='ea21', spw='0:27~36', calmode='p', solint='int', minsnr=5, gaintable=['3c391_ctm_mosaic_10s_spw0.antpos'])
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.G0', xaxis='time',yaxis='phase',poln='R',field='J1331+3030',iteration='antenna', plotrange=[-1,-1,-180,180],timerange='08:02:00~08:17:00')
+gaincal(vis='3c391_ctm_mosaic_10s_spw0.ms',caltable='3c391_ctm_mosaic_10s_spw0.K0', field='J1331+3030',refant='ea21',spw='0:5~58',gaintype='K', solint='inf',combine='scan',minsnr=5, gaintable=['3c391_ctm_mosaic_10s_spw0.antpos', '3c391_ctm_mosaic_10s_spw0.G0'])
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.K0',xaxis='antenna',yaxis='delay', figfile='plotcal_3c391-K0-delay.png')
+bandpass(vis='3c391_ctm_mosaic_10s_spw0.ms',caltable='3c391_ctm_mosaic_10s_spw0.B0', field='J1331+3030',spw='',refant='ea21',solnorm=True,combine='scan', solint='inf',bandtype='B', gaintable=['3c391_ctm_mosaic_10s_spw0.antpos', '3c391_ctm_mosaic_10s_spw0.G0', '3c391_ctm_mosaic_10s_spw0.K0'])
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.B0', poln='R', xaxis='chan', yaxis='amp', field='J1331+3030', subplot=221, iteration='antenna', figfile='part4-subE-question3a_amp_pol-R.png')
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.B0', poln='L', xaxis='chan', yaxis='amp', field='J1331+3030', subplot=221, iteration='antenna', figfile='part4-subE-question3a_amp_pol-L.png')
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.B0', poln='R', xaxis='chan', yaxis='phase', field='J1331+3030', subplot=221, iteration='antenna', figfile='part4-subE-question3b_phase_pol-R.png')
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.B0', poln='L', xaxis='chan', yaxis='phase', field='J1331+3030', subplot=221, iteration='antenna', figfile='part4-subE-question3b_phase_pol-L.png')
+gaincal(vis='3c391_ctm_mosaic_10s_spw0.ms', caltable='3c391_ctm_mosaic_10s_spw0.G1', field='J1331+3030', spw='0:5~58', solint='inf', refant='ea21', gaintype='G', calmode='ap', solnorm=F, gaintable=['3c391_ctm_mosaic_10s_spw0.antpos', '3c391_ctm_mosaic_10s_spw0.K0', '3c391_ctm_mosaic_10s_spw0.B0'])
+gaincal(vis='3c391_ctm_mosaic_10s_spw0.ms', caltable='3c391_ctm_mosaic_10s_spw0.G1', field='J1822-0938', spw='0:5~58', solint='inf', refant='ea21', gaintype='G', calmode='ap', gaintable=['3c391_ctm_mosaic_10s_spw0.antpos', '3c391_ctm_mosaic_10s_spw0.K0', '3c391_ctm_mosaic_10s_spw0.B0'], append=True)
+gaincal(vis='3c391_ctm_mosaic_10s_spw0.ms', caltable='3c391_ctm_mosaic_10s_spw0.G1', field='J0319+4130', spw='0:5~58', solint='inf', refant='ea21', gaintype='G', calmode='ap', gaintable=['3c391_ctm_mosaic_10s_spw0.antpos', '3c391_ctm_mosaic_10s_spw0.K0', '3c391_ctm_mosaic_10s_spw0.B0'], append=True)
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.G1', xaxis='time', yaxis='amp', poln='L', figfile='part4-subF-question4_amp_pol-L.png')
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.G1', xaxis='time', yaxis='amp', poln='R', figfile='part4-subF-question4_amp_pol-R.png')
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.G1', xaxis='time', yaxis='phase', poln='L', plotrange=[-1,-1,-180,180], figfile='part4-subF-question4_phase_pol-L.png')
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.G1', xaxis='time', yaxis='phase', poln='R', plotrange=[-1,-1,-180,180], figfile='part4-subF-question4_phase_pol-R.png')
+myscale = fluxscale(vis='3c391_ctm_mosaic_10s_spw0.ms', caltable='3c391_ctm_mosaic_10s_spw0.G1', fluxtable='3c391_ctm_mosaic_10s_spw0.fluxscale1', reference=['J1331+3030'], transfer=['J1822-0938, J0319+4130'], incremental=False)
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.fluxscale1', xaxis='time', yaxis='amp', poln='R', figfile='part4-subG-question5_amp_pol-R.png')
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.fluxscale1', xaxis='time', yaxis='amp', poln='L', figfile='part4-subG-question5_amp_pol-L.png')
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.fluxscale1', xaxis='time', yaxis='phase', poln='R', figfile='part4-subG-question5_phase_pol-R.png')
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.fluxscale1', xaxis='time', yaxis='phase', poln='L', figfile='part4-subG-question5_phase_pol-L.png')
+applycal(vis='3c391_ctm_mosaic_10s_spw0.ms', field='J1331+3030', gaintable=['3c391_ctm_mosaic_10s_spw0.antpos', '3c391_ctm_mosaic_10s_spw0.fluxscale1', '3c391_ctm_mosaic_10s_spw0.K0', '3c391_ctm_mosaic_10s_spw0.B0'], gainfield=['', 'J1331+3030', '', '', '', '', ''], interp=['', 'nearest', '', '', '', '', ''], calwt=[False], parang=True)
+applycal(vis='3c391_ctm_mosaic_10s_spw0.ms', field='J0319+4130', gaintable=['3c391_ctm_mosaic_10s_spw0.antpos', '3c391_ctm_mosaic_10s_spw0.fluxscale1', '3c391_ctm_mosaic_10s_spw0.K0', '3c391_ctm_mosaic_10s_spw0.B0'], gainfield=['', 'J0319+4130', '', '', '', '', ''], interp=['', 'nearest', '', '', '', '', ''], calwt=[False], parang=True)
+applycal(vis='3c391_ctm_mosaic_10s_spw0.ms', field='J1822-0938', gaintable=['3c391_ctm_mosaic_10s_spw0.antpos', '3c391_ctm_mosaic_10s_spw0.fluxscale1', '3c391_ctm_mosaic_10s_spw0.K0', '3c391_ctm_mosaic_10s_spw0.B0'], gainfield=['', 'J1822-0938', '', '', '', '', ''], interp=['', 'nearest', '', '', '', '', ''], calwt=[False], parang=True)
+applycal(vis='3c391_ctm_mosaic_10s_spw0.ms', field='2~8', gaintable=['3c391_ctm_mosaic_10s_spw0.antpos', '3c391_ctm_mosaic_10s_spw0.fluxscale1', '3c391_ctm_mosaic_10s_spw0.K0', '3c391_ctm_mosaic_10s_spw0.B0'], gainfield=['', 'J1822-0938', '', '', '', '', ''], interp=['', 'linear', '', '', '', '', ''], calwt=[False], parang=True)
+plotms(vis='3c391_ctm_mosaic_10s_spw0.ms', field='0', correlation='', timerange='08:02:00~08:17:00', antenna='', avgtime='60s', xaxis='channel', yaxis='amp', ydatacolumn='corrected', plotfile='part4-subH-question3_fld0-corrected-amp.png')
+plotms(vis='3c391_ctm_mosaic_10s_spw0.ms', field='0', correlation='', timerange='08:02:00~08:17:00', antenna='', avgtime='60s', xaxis='channel', yaxis='phase', ydatacolumn='corrected', plotfile='part4-subH-question3_fld0-corrected-phase.png')
+plotms(vis='3c391_ctm_mosaic_10s_spw0.ms', field='1', correlation='RR,LL', timerange='08:02:00~08:17:00', antenna='', avgtime='60s', xaxis='channel', yaxis='amp', ydatacolumn='corrected', plotfile='part4-subH-question3_fld1-corrected-amp.png')
+plotms(vis='3c391_ctm_mosaic_10s_spw0.ms', field='1', correlation='RR,LL', timerange='08:02:00~08:17:00', antenna='', avgtime='60s', xaxis='channel', yaxis='phase', ydatacolumn='corrected', plotfile='part4-subH-question3_fld1-corrected-phase.png')
+plotms(vis='3c391_ctm_mosaic_10s_spw0.ms', field='1', correlation='RR,LL', timerange='', antenna='', avgtime='60s', xaxis='phase', xdatacolumn='corrected', yaxis='amp', ydatacolumn='corrected', plotrange=[-180, 180, 0, 3], coloraxis='corr', plotfile='part4-subH-question4_fld1-corrected-ampvsphase.png')
+plotms(vis='3c391_ctm_mosaic_10s_spw0.ms', field='1', correlation='RR,LL', timerange='08:02:00~08:17:00', antenna='', avgtime='60s', xaxis='channel', yaxis='amp', ydatacolumn='corrected', plotfile='part4-subH-question3_fld1-corrected-amp.png')
+plotms(vis='3c391_ctm_mosaic_10s_spw0.ms', field='1', correlation='RR,LL', timerange='', antenna='', avgtime='60s', xaxis='channel', yaxis='amp', ydatacolumn='corrected', plotfile='part4-subH-question3_fld1-corrected-amp.png')
+plotms(vis='3c391_ctm_mosaic_10s_spw0.ms', field='1', correlation='RR,LL', timerange='', antenna='', avgtime='60s', xaxis='channel', yaxis='phase', ydatacolumn='corrected', plotfile='part4-subH-question3_fld1-corrected-phase.png')
+split(vis='3c391_ctm_mosaic_10s_spw0.ms', outputvis='3c391_ctm_mosaic_spw0_output.ms', datacolumn='corrected', field='2~8')
+clean(vis='3c391_ctm_mosaic_spw0_output.ms', imagename='part5-question2_initial', field='', spw='', mode='mfs', niter=5000, gain=0.1, threshold='1.0mJy', psfmode='clark', imagermode='mosaic', ftmachine='mosaic', multiscale=[0], interactive=True, imsize=[480, 480], cell=['2.5arcsec', '2.5arcsec'], stokes='I', weighting='briggs', robust=0.5, usescratch=False)
+viewer('3c391_ctm_mosaic_spw0_output.image')
+viewer('part5-question2_initial')
+viewer('part5-question2_initial.image')

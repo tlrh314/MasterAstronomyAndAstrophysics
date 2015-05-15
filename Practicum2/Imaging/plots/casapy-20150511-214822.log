@@ -784,3 +784,77 @@
 2015-05-11 22:58:49	INFO	PlotMS::showError()	Successfully exported plot to !
 2015-05-11 22:58:49	INFO	plotms::::casa	##### End Task: plotms               #####
 2015-05-11 22:58:49	INFO	plotms::::casa+	##########################################
+2015-05-11 23:02:10	INFO	split::::casa	
+2015-05-11 23:02:10	INFO	split::::casa+	##########################################
+2015-05-11 23:02:10	INFO	split::::casa+	##### Begin Task: split              #####
+2015-05-11 23:02:10	INFO	split::::casa	split(vis="3c391_ctm_mosaic_10s_spw0.ms",outputvis="3c391_ctm_mosaic_spw0_output.ms",datacolumn="corrected",field="2~8",
+2015-05-11 23:02:10	INFO	split::::casa+	        spw="",width=1,antenna="",timebin="0s",timerange="",
+2015-05-11 23:02:10	INFO	split::::casa+	        scan="",intent="",array="",uvrange="",correlation="",
+2015-05-11 23:02:10	INFO	split::::casa+	        observation="",combine="",keepflags=True,keepmms=False)
+2015-05-11 23:02:11	INFO	split::SubMS::parseColumnNames()	Using CORRECTED_DATA column.
+2015-05-11 23:02:12	INFO	split::SubMS::makeSelection()	764914 out of 845379 rows are going to be considered due to the selection criteria.
+2015-05-11 23:02:55	INFO	split::::casa	##### End Task: split                #####
+2015-05-11 23:02:55	INFO	split::::casa+	##########################################
+2015-05-11 23:07:02	INFO	clean::utils::verify	Verifying arguments....File existence checking failed for vis 3c391_ctm_mosaic_spw0.ms
+2015-05-11 23:07:02	WARN	clean::utils::verify	Argument vis failed to verify.
+2015-05-11 23:07:02	SEVERE	clean::::casa	An error occurred running task clean.
+2015-05-11 23:07:55	INFO	clean::::casa	
+2015-05-11 23:07:55	INFO	clean::::casa+	##########################################
+2015-05-11 23:07:55	INFO	clean::::casa+	##### Begin Task: clean              #####
+2015-05-11 23:07:55	INFO	clean::::casa	clean(vis="3c391_ctm_mosaic_10s_spw0.ms",imagename="part5-question2_initial",outlierfile="",field="",
+2015-05-11 23:07:55	INFO	clean::::casa+	        spw="",selectdata=True,timerange="",uvrange="",antenna="",
+2015-05-11 23:07:55	INFO	clean::::casa+	        scan="",observation="",intent="",mode="mfs",resmooth=False,
+2015-05-11 23:07:55	INFO	clean::::casa+	        gridmode="",wprojplanes=1,facets=1,cfcache="cfcache.dir",rotpainc=5.0,
+2015-05-11 23:07:55	INFO	clean::::casa+	        painc=360.0,aterm=True,psterm=False,mterm=True,wbawp=False,
+2015-05-11 23:07:55	INFO	clean::::casa+	        conjbeams=True,epjtable="",interpolation="linear",niter=5000,gain=0.1,
+2015-05-11 23:07:55	INFO	clean::::casa+	        threshold="1.0mJy",psfmode="clark",imagermode="mosaic",ftmachine="mosaic",mosweight=False,
+2015-05-11 23:07:55	INFO	clean::::casa+	        scaletype="SAULT",multiscale=[0],negcomponent=-1,smallscalebias=0.6,interactive=True,
+2015-05-11 23:07:55	INFO	clean::::casa+	        mask=[],nchan=-1,start=0,width=1,outframe="",
+2015-05-11 23:07:55	INFO	clean::::casa+	        veltype="radio",imsize=[480, 480],cell=['2.5arcsec', '2.5arcsec'],phasecenter="",restfreq="",
+2015-05-11 23:07:55	INFO	clean::::casa+	        stokes="I",weighting="briggs",robust=0.5,uvtaper=False,outertaper=[''],
+2015-05-11 23:07:55	INFO	clean::::casa+	        innertaper=['1.0'],modelimage="",restoringbeam=[''],pbcor=False,minpb=0.2,
+2015-05-11 23:07:55	INFO	clean::::casa+	        usescratch=False,noise="1.0Jy",npixels=0,npercycle=100,cyclefactor=1.5,
+2015-05-11 23:07:55	INFO	clean::::casa+	        cyclespeedup=-1,nterms=1,reffreq="",chaniter=False,flatnoise=True,
+2015-05-11 23:07:55	INFO	clean::::casa+	        allowchunk=False)
+2015-05-11 23:07:55	INFO	clean::::casa	nchan=-1 start=0 width=1
+2015-05-11 23:07:55	INFO	clean::::casa	Use default channelization for clean
+2015-05-11 23:07:55	INFO	clean::::casa	clean image: part5-question2_initial
+2015-05-11 23:07:55	INFO	Imager::open() 	Opening MeasurementSet /home/lods08/Assignments/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms
+2015-05-11 23:07:56	INFO	clean::::casa	FTMachine used is  mosaic 
+2015-05-11 23:07:56	INFO	Imager::setvp() 	Setting voltage pattern parameters
+2015-05-11 23:07:56	INFO	Imager::setvp() 	Sky position tolerance is 180 degrees
+2015-05-11 23:07:56	INFO	Imager::setvp() 	Using system default voltage patterns for each telescope
+2015-05-11 23:07:56	INFO	imager::data selection	Performing selection on MeasurementSet : /home/lods08/Assignments/Practicum2/Imaging/plots/3c391_ctm_mosaic_10s_spw0.ms
+2015-05-11 23:07:56	INFO	imager::data selection	Selecting on spectral windows expression : *
+2015-05-11 23:07:56	INFO	imager::data selection	Selected all 845379 rows
+2015-05-11 23:07:56	INFO	imager::data selection	Selected: [64 chans in spw 0]
+2015-05-11 23:07:56	INFO	imager::defineimage()	Defining image properties:nx=480 ny=480 cellx='2.5arcsec' celly='2.5arcsec' stokes=I' mode=MFS nchan=-1 start=0 step=1 spwids=[-1] fieldid=0 facets=1 frame=5 distance='0'
+2015-05-11 23:07:56	INFO	imager::defineimage()	 phaseCenter='field-0 ' mStart='Radialvelocity: 0' qStep='0 '' mFreqStart='Frequency: 0
+2015-05-11 23:07:57	INFO	imager::weight()	Weighting MS: Imaging weights will be changed
+2015-05-11 23:07:57	INFO	imager::weight()	Briggs weighting: sidelobes will be suppressed over full image
+2015-05-11 23:08:01	INFO	VisSetUtil::VisImagingWeight() 	Normal robustness, robust = 0.5
+2015-05-11 23:08:01	INFO	clean::::casa	Used mask(s) : [''] to create mask image(s) : part5-question2_initial.mask
+2015-05-11 23:08:01	INFO	imager::setoptions() 	Setting processing options
+2015-05-11 23:08:01	INFO	clean::::casa	No model found. Making empty initial model : part5-question2_initial.model
+2015-05-11 23:08:02	INFO	imager::clean()	Using multifield Clark clean
+2015-05-11 23:08:02	INFO	imager::createFTMachine() 	Multiple fields or facets: transforms will be padded by a factor 1.2
+2015-05-11 23:08:02	INFO	imager::createFTMachine() 	Performing mosaic gridding
+2015-05-11 23:08:02	INFO	Imager::setmosaicftmachine 	Using defaults for primary beams used in gridding
+2015-05-11 23:08:02	INFO	VPSkyJones::VPSkyJones	PB used VLA
+2015-05-11 23:08:02	INFO	imager::clean()	Clean gain = 0.1, Niter = 0, Threshold = 1 mJy
+2015-05-11 23:08:02	INFO	imager::clean()	Continuing deconvolution
+2015-05-11 23:10:01	INFO	SimplePBConv::findConvFunction	Convolution support = 6 pixels in Fourier plane
+2015-05-11 23:12:22	INFO	CubeSkyEquation::makeSimplePSF	Maximum of approximate PSF for field 0 = 0.0719665 : renormalizing to unity
+2015-05-11 23:12:22	INFO	ImageSkyModel::makeApproxPSFs	bmaj: 15.8454", bmin: 14.3188", bpa: 60.47 deg
+2015-05-11 23:13:49	INFO	MFCleanImageSkyModel::solve	Final maximum residual = 0.644889
+2015-05-11 23:13:49	INFO	MFCleanImageSkyModel::solve	Model 0: max, min residuals = 0.644889, -0.0484251 clean flux 0
+2015-05-11 23:13:49	INFO	imager::clean()	Threshhold not reached yet.
+2015-05-11 23:13:49	INFO	imager::clean()	Fitted beam used in restoration: 15.8454 by 14.3188 (arcsec) at pa 60.47 (deg) 
+2015-05-11 23:23:44	INFO	imager::iClean()	Restoring Image(s) with the clean-beam
+2015-05-11 23:23:44	INFO	imager::approximatepsfs() 	Calculating approximate PSFs using full sky equation
+2015-05-11 23:25:48	INFO	CubeSkyEquation::makeSimplePSF	Maximum of approximate PSF for field 0 = 0.0719665 : renormalizing to unity
+2015-05-11 23:25:48	INFO	ImageSkyModel::makeApproxPSFs	bmaj: 15.8454", bmin: 14.3188", bpa: 60.47 deg
+2015-05-11 23:25:48	INFO	imager::approximatepsfs() 	Approximate PSF  : size 15.8454 by 14.3188 (arcsec) at pa 60.47 (deg)
+2015-05-11 23:25:48	INFO	imager::approximatepsfs() +	and volume = 1.41569 pixels 
+2015-05-11 23:25:48	INFO	clean::::casa	##### End Task: clean                #####
+2015-05-11 23:25:48	INFO	clean::::casa+	##########################################

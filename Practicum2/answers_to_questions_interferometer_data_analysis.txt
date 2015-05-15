@@ -238,7 +238,7 @@ plotcal(caltable='3c391_ctm_mosaic_10s_spw0.G0all',xaxis='time',yaxis='phase', p
 
 5) Antenna ea05 in R polarization has a variation of 150. The other antennas have variations of at most 50. There are some plots where it seems as if there are two populations, but they lie at roughly the same value with either a plus or a minus sign. I think this might be oke, although I have no idea if I should flag this. But if I do flag all of these antenna's, almost no data is left.
 
- and ea12 in L polarization
+ and ea12 in L polarization because it looks like a bird.
 
 
 6)
@@ -247,7 +247,7 @@ flagdata(vis='3c391_ctm_mosaic_10s_spw0.ms', flagbackup=T, mode='manual', antenn
 
 7) plotcal(caltable='3c391_ctm_mosaic_10s_spw0.G0all',xaxis='time',yaxis='phase', poln='L',iteration='antenna',plotrange=[-1,-1,-180,180])
 
-8) The plot is empty.
+8) The plot looks exactly the same as before. After reading the documentation I have hypothesized that, since the G0all directory is plotted but it is created in part 4 sub C question 2 using the gaincal command, we should simply run the gaincal command again.
 
 9) 
 gaincal(vis='3c391_ctm_mosaic_10s_spw0.ms', caltable='3c391_ctm_mosaic_10s_spw0.G0', field='J1331+3030', refant='ea21', spw='0:27~36', calmode='p', solint='int', minsnr=5, gaintable=['3c391_ctm_mosaic_10s_spw0.antpos'])
@@ -392,3 +392,5 @@ Part 5 - Imaging
 clean(vis='3c391_ctm_mosaic_spw0_output.ms', imagename='part5-question2_initial', field='', spw='', mode='mfs', niter=5000, gain=0.1, threshold='1.0mJy', psfmode='clark', imagermode='mosaic', ftmachine='mosaic', multiscale=[0], interactive=True, imsize=[480, 480], cell=['2.5arcsec', '2.5arcsec'], stokes='I', weighting='briggs', robust=0.5, usescratch=False)
 
 3)
+
+This image is probably not good, because the VLA is visible :-(...
