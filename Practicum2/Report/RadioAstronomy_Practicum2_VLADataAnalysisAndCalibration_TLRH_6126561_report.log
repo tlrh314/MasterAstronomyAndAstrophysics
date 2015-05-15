@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.5.20)  15 MAY 2015 18:29
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.5.20)  15 MAY 2015 21:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -297,6 +297,32 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 16.
 
+(/usr/local/texlive/2013/texmf-dist/tex/latex/morefloats/morefloats.sty
+Package: morefloats 2012/01/28 v1.0f Raise limit of unprocessed floats (HMM; DH
+)
+Package morefloats Info: Maximum number of possible floats asked for: 36.
+(morefloats)             LaTeX might run out of memory before this
+(morefloats)             (in which case it will notify you).
+(morefloats)              on input line 171.
+\bx@S=\insert233
+\bx@T=\insert232
+\bx@U=\insert231
+\bx@V=\insert230
+\bx@W=\insert229
+\bx@X=\insert228
+\bx@Y=\insert227
+\bx@Z=\insert226
+\bx@AA=\insert225
+\bx@AB=\insert224
+\bx@AC=\insert223
+\bx@AD=\insert222
+\bx@AE=\insert221
+\bx@AF=\insert220
+\bx@AG=\insert219
+\bx@AH=\insert218
+\bx@AI=\insert217
+\bx@AJ=\insert216
+)
 (./RadioAstronomy_Practicum2_VLADataAnalysisAndCalibration_TLRH_6126561_report.
 aux)
 \openout1 = `RadioAstronomy_Practicum2_VLADataAnalysisAndCalibration_TLRH_61265
@@ -384,15 +410,23 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 29.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+<../Imaging/plots2/postcal.png, id=56, 358.33875pt x 496.85625pt>
+File: ../Imaging/plots2/postcal.png Graphic file (type png)
 
-{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 38--39
+<use ../Imaging/plots2/postcal.png>
+Package pdftex.def Info: ../Imaging/plots2/postcal.png used on input line 33.
+(pdftex.def)             Requested size: 179.16893pt x 248.4275pt.
+ [1
+
+{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../Imag
+ing/plots2/postcal.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 44--45
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--42
+Underfull \hbox (badness 10000) in paragraph at lines 46--48
 
  []
 
@@ -400,85 +434,85 @@ Missing character: There is no â in font cmti10!
 Missing character: There is no € in font cmti10!
 Missing character: There is no ™ in font cmti10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--45
+Underfull \hbox (badness 10000) in paragraph at lines 49--51
 
  []
 
-<../Imaging/plots/plotants_vraag12.png, id=66, 586.8324pt x 442.2924pt>
+<../Imaging/plots/plotants_vraag12.png, id=67, 586.8324pt x 442.2924pt>
 File: ../Imaging/plots/plotants_vraag12.png Graphic file (type png)
 
 <use ../Imaging/plots/plotants_vraag12.png>
 Package pdftex.def Info: ../Imaging/plots/plotants_vraag12.png used on input li
-ne 50.
+ne 56.
 (pdftex.def)             Requested size: 410.77988pt x 309.60257pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--56
+Underfull \hbox (badness 10000) in paragraph at lines 60--62
 
  []
 
 [2] [3 <../Imaging/plots/plotants_vraag12.png>] [4]
-<../Imaging/plots/amp_vs_time_vraag14-1.png, id=102, 350.05782pt x 391.4625pt>
+<../Imaging/plots/amp_vs_time_vraag14-1.png, id=103, 350.05782pt x 391.4625pt>
 File: ../Imaging/plots/amp_vs_time_vraag14-1.png Graphic file (type png)
 
 <use ../Imaging/plots/amp_vs_time_vraag14-1.png>
 Package pdftex.def Info: ../Imaging/plots/amp_vs_time_vraag14-1.png used on inp
-ut line 73.
+ut line 79.
 (pdftex.def)             Requested size: 227.53487pt x 254.4476pt.
 
-<../Imaging/plots/phase_vs_time_vraag14-2.png, id=103, 350.05782pt x 391.4625pt
+<../Imaging/plots/phase_vs_time_vraag14-2.png, id=104, 350.05782pt x 391.4625pt
 >
 File: ../Imaging/plots/phase_vs_time_vraag14-2.png Graphic file (type png)
  <use ../Imaging/plots/phase_vs_time_vraag14-2.png>
 Package pdftex.def Info: ../Imaging/plots/phase_vs_time_vraag14-2.png used on i
-nput line 80.
+nput line 86.
 (pdftex.def)             Requested size: 227.53487pt x 254.4476pt.
 
-<../Imaging/plots/frequency_vs_time_vraag14-3.png, id=104, 350.05782pt x 391.46
+<../Imaging/plots/frequency_vs_time_vraag14-3.png, id=105, 350.05782pt x 391.46
 25pt>
 File: ../Imaging/plots/frequency_vs_time_vraag14-3.png Graphic file (type png)
  <use ../Imaging/plots/frequency_vs_time_vraag14-3.png>
 Package pdftex.def Info: ../Imaging/plots/frequency_vs_time_vraag14-3.png used 
-on input line 88.
+on input line 94.
 (pdftex.def)             Requested size: 227.53487pt x 254.4476pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<../Imaging/plots/Ampltide_vs_UVdist_vraag14-4.png, id=105, 350.05782pt x 391.4
+<../Imaging/plots/Ampltide_vs_UVdist_vraag14-4.png, id=106, 350.05782pt x 391.4
 625pt>
 File: ../Imaging/plots/Ampltide_vs_UVdist_vraag14-4.png Graphic file (type png)
 
  <use ../Imaging/plots/Ampltide_vs_UVdist_vraag14-4.png>
 Package pdftex.def Info: ../Imaging/plots/Ampltide_vs_UVdist_vraag14-4.png used
- on input line 96.
+ on input line 102.
 (pdftex.def)             Requested size: 227.53487pt x 254.4476pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<../Imaging/plots/Ampltide_vs_UVdist_data-field-3_vraag14-5.png, id=106, 350.05
+<../Imaging/plots/Ampltide_vs_UVdist_data-field-3_vraag14-5.png, id=107, 350.05
 782pt x 391.4625pt>
 File: ../Imaging/plots/Ampltide_vs_UVdist_data-field-3_vraag14-5.png Graphic fi
 le (type png)
 
 <use ../Imaging/plots/Ampltide_vs_UVdist_data-field-3_vraag14-5.png>
 Package pdftex.def Info: ../Imaging/plots/Ampltide_vs_UVdist_data-field-3_vraag
-14-5.png used on input line 104.
+14-5.png used on input line 110.
 (pdftex.def)             Requested size: 227.53487pt x 254.4476pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<../Imaging/plots/Ampltide_vs_UVwave_vraag14-6.png, id=107, 350.05782pt x 391.4
+<../Imaging/plots/Ampltide_vs_UVwave_vraag14-6.png, id=108, 350.05782pt x 391.4
 625pt>
 File: ../Imaging/plots/Ampltide_vs_UVwave_vraag14-6.png Graphic file (type png)
 
  <use ../Imaging/plots/Ampltide_vs_UVwave_vraag14-6.png>
 Package pdftex.def Info: ../Imaging/plots/Ampltide_vs_UVwave_vraag14-6.png used
- on input line 111.
+ on input line 117.
 (pdftex.def)             Requested size: 227.53487pt x 254.4476pt.
 
 
@@ -500,151 +534,145 @@ Overfull \vbox (3.44531pt too high) has occurred while \output is active []
 
 [7 <../Imaging/plots/Ampltide_vs_UVdist_data-field-3_vraag14-5.png> <../Imaging
 /plots/Ampltide_vs_UVwave_vraag14-6.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 117--119
+Underfull \hbox (badness 10000) in paragraph at lines 123--125
 
  []
 
-<../Imaging/plots/amp_vs_time_vraag15.png, id=128, 350.05782pt x 391.4625pt>
+<../Imaging/plots/amp_vs_time_vraag15.png, id=129, 350.05782pt x 391.4625pt>
 File: ../Imaging/plots/amp_vs_time_vraag15.png Graphic file (type png)
 
 <use ../Imaging/plots/amp_vs_time_vraag15.png>
 Package pdftex.def Info: ../Imaging/plots/amp_vs_time_vraag15.png used on input
- line 123.
+ line 129.
 (pdftex.def)             Requested size: 227.53487pt x 254.4476pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--133
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
  []
 
 [8 <../Imaging/plots/amp_vs_time_vraag15.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 134--136
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 137--139
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 140--142
 
  []
 
 
-<../Imaging/plots/amp_vs_antenna1_vraag19.png, id=143, 350.05782pt x 391.4625pt
+Underfull \hbox (badness 10000) in paragraph at lines 143--145
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 146--148
+
+ []
+
+
+<../Imaging/plots/amp_vs_antenna1_vraag19.png, id=144, 350.05782pt x 391.4625pt
 >
 File: ../Imaging/plots/amp_vs_antenna1_vraag19.png Graphic file (type png)
  <use ../Imaging/plots/amp_vs_antenna1_vraag19.png>
 Package pdftex.def Info: ../Imaging/plots/amp_vs_antenna1_vraag19.png used on i
-nput line 145.
+nput line 151.
 (pdftex.def)             Requested size: 245.03879pt x 274.02187pt.
 
-<../Imaging/plots/amp_vs_baseline_vraag19.png, id=144, 350.05782pt x 391.4625pt
+<../Imaging/plots/amp_vs_baseline_vraag19.png, id=145, 350.05782pt x 391.4625pt
 >
 File: ../Imaging/plots/amp_vs_baseline_vraag19.png Graphic file (type png)
  <use ../Imaging/plots/amp_vs_baseline_vraag19.png>
 Package pdftex.def Info: ../Imaging/plots/amp_vs_baseline_vraag19.png used on i
-nput line 151.
+nput line 157.
 (pdftex.def)             Requested size: 245.03879pt x 274.02187pt.
 
 
-LaTeX Warning: Reference `ig:19-ant1' on page 9 undefined on input line 158.
+LaTeX Warning: Reference `ig:19-ant1' on page 9 undefined on input line 164.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--159
+Underfull \hbox (badness 10000) in paragraph at lines 163--165
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 160.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 166.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 160.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 166.
 
-Overfull \hbox (14.86633pt too wide) in paragraph at lines 161--162
+Overfull \hbox (14.86633pt too wide) in paragraph at lines 167--168
 []\OT1/cmr/m/n/10.95 flagdata(vis = `3c391[]ctm[]mosaic[]10s[]spw0.ms', mode=`q
 uack', quack-mode=`beg',
  []
 
 
-<../Imaging/plots/amp_vs_antenna1_part2_vraag6_with_display-FlaggedPointsSymbol
--custom.png, id=146, 1006.51031pt x 607.51968pt>
-File: ../Imaging/plots/amp_vs_antenna1_part2_vraag6_with_display-FlaggedPointsS
-ymbol-custom.png Graphic file (type png)
+<../Imaging/plots2/amp_vs_antenna1_part2_vraag6_with_display-FlaggedPointsSymbo
+l-custom.png, id=147, 350.05782pt x 391.4625pt>
+File: ../Imaging/plots2/amp_vs_antenna1_part2_vraag6_with_display-FlaggedPoints
+Symbol-custom.png Graphic file (type png)
 
-<use ../Imaging/plots/amp_vs_antenna1_part2_vraag6_with_display-FlaggedPointsSy
-mbol-custom.png>
-Package pdftex.def Info: ../Imaging/plots/amp_vs_antenna1_part2_vraag6_with_dis
-play-FlaggedPointsSymbol-custom.png used on input line 171.
-(pdftex.def)             Requested size: 301.95543pt x 182.25731pt.
+<use ../Imaging/plots2/amp_vs_antenna1_part2_vraag6_with_display-FlaggedPointsS
+ymbol-custom.png>
+Package pdftex.def Info: ../Imaging/plots2/amp_vs_antenna1_part2_vraag6_with_di
+splay-FlaggedPointsSymbol-custom.png used on input line 177.
+(pdftex.def)             Requested size: 227.53487pt x 254.4476pt.
  [9] [10 <../Imaging/plots/amp_vs_antenna1_vraag19.png>]
 [11 <../Imaging/plots/amp_vs_baseline_vraag19.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 175--177
+Underfull \hbox (badness 10000) in paragraph at lines 181--183
 
  []
 
-[12 <../Imaging/plots/amp_vs_antenna1_part2_vraag6_with_display-FlaggedPointsSy
-mbol-custom.png>]
-Overfull \hbox (7.07204pt too wide) in paragraph at lines 181--182
+[12 <../Imaging/plots2/amp_vs_antenna1_part2_vraag6_with_display-FlaggedPointsS
+ymbol-custom.png>]
+Overfull \hbox (7.07204pt too wide) in paragraph at lines 187--188
 \OT1/cmr/m/n/10.95 Please-MakeTh-is-ForMeDearCasa', field=`', spw=`', mode=`mfs
 ', niter=5000, gain=0.1,
  []
 
 
-Overfull \hbox (12.54709pt too wide) in paragraph at lines 181--182
+Overfull \hbox (12.54709pt too wide) in paragraph at lines 187--188
 \OT1/cmr/m/n/10.95 thresh-old=`1.0mJy', psf-mode=`clark', im-ager-mode=`mosaic'
 , ft-ma-chine=`mosaic', mul-
  []
 
 
-Overfull \hbox (23.07117pt too wide) in paragraph at lines 181--182
+Overfull \hbox (23.07117pt too wide) in paragraph at lines 187--188
 \OT1/cmr/m/n/10.95 ti-scale= [0], in-ter-ac-tive=True, im-size=[480, 480], cell
 = [`2.5arc-sec', `2.5arc-sec'], stokes=`I',
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--182
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
 
  []
 
-<../Imaging/plots/MosaicImagedPart3.png, id=170, 210.03468pt x 192.72pt>
-File: ../Imaging/plots/MosaicImagedPart3.png Graphic file (type png)
+<../Imaging/plots2/precal.png, id=171, 358.33875pt x 496.85625pt>
+File: ../Imaging/plots2/precal.png Graphic file (type png)
 
-<use ../Imaging/plots/MosaicImagedPart3.png>
-Package pdftex.def Info: ../Imaging/plots/MosaicImagedPart3.png used on input l
-ine 187.
-(pdftex.def)             Requested size: 147.02327pt x 134.90306pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 193--195
-
- []
-
-[13 <../Imaging/plots/MosaicImagedPart3.png>]
-Overfull \hbox (35.20132pt too wide) in paragraph at lines 196--198
-\OT1/cmr/m/n/10.95 gencal(vis=`3c391[]ctm[]mosaic[]10s[]spw0.ms', caltable=`3c3
-91[]ctm[]mosaic[]10s[]spw0.antpos',
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 196--198
-
- []
-
+<use ../Imaging/plots2/precal.png>
+Package pdftex.def Info: ../Imaging/plots2/precal.png used on input line 193.
+(pdftex.def)             Requested size: 250.83542pt x 347.797pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 199--201
 
  []
 
+[13 <../Imaging/plots2/precal.png>]
+Overfull \hbox (35.20132pt too wide) in paragraph at lines 202--204
+\OT1/cmr/m/n/10.95 gencal(vis=`3c391[]ctm[]mosaic[]10s[]spw0.ms', caltable=`3c3
+91[]ctm[]mosaic[]10s[]spw0.antpos',
+ []
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--257
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--204
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--260
+Underfull \hbox (badness 10000) in paragraph at lines 205--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--263
 
  []
 
@@ -654,392 +682,982 @@ Underfull \hbox (badness 10000) in paragraph at lines 264--266
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--272
+Underfull \hbox (badness 10000) in paragraph at lines 270--272
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--274
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 275--277
+Underfull \hbox (badness 10000) in paragraph at lines 273--278
 
  []
 
 [15]
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--283
+
+ []
+
 Missing character: There is no â in font cmti10!
 Missing character: There is no € in font cmti10!
 Missing character: There is no ™ in font cmti10!
 
-Overfull \hbox (53.98674pt too wide) in paragraph at lines 278--280
+Overfull \hbox (53.98674pt too wide) in paragraph at lines 284--286
 \OT1/cmr/m/n/10.95 Here, we run setjy(vis=`3c391[]ctm[]mosaic[]10s[]spw0.ms', f
 ield=`J1331+3030', standard=`Perley-
  []
 
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 283.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 289.
 
-Underfull \hbox (badness 10000) in paragraph at lines 296--298
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 299--300
+Underfull \hbox (badness 10000) in paragraph at lines 302--304
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--303
+Underfull \hbox (badness 10000) in paragraph at lines 305--306
 
  []
 
 [16]
-Overfull \hbox (18.17361pt too wide) in paragraph at lines 315--318
+Underfull \hbox (badness 10000) in paragraph at lines 307--309
+
+ []
+
+
+Overfull \hbox (18.17361pt too wide) in paragraph at lines 321--324
 \OT1/cmr/m/n/10.95 We run \OT1/cmr/m/n/6 gain-cal(vis=`3c391[]ctm[]mosaic[]10s[
 ]spw0.ms',caltable=`3c391[]ctm[]mosaic[]10s[]spw0.G0all', field=`0, 1, 9', re-f
 ant=`ea21',
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 315--318
+Underfull \hbox (badness 10000) in paragraph at lines 321--324
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 319--321
+Underfull \hbox (badness 10000) in paragraph at lines 325--327
 
  []
 
-
-Overfull \hbox (31.2858pt too wide) in paragraph at lines 322--325
+[17]
+Overfull \hbox (31.2858pt too wide) in paragraph at lines 328--331
 \OT1/cmr/m/n/10.95 We run \OT1/cmr/m/n/6 plot-cal(caltable=`3c391[]ctm[]mosaic[
 ]10s[]spw0.G0all',xaxis=`time',yaxis=`phase', poln=`R',iteration=`antenna',plot
 range=[-
  []
 
-[17]
-<../Imaging/plots/phase_calibration_part4c_question5_ea01.png, id=207, 586.8324
+[18]
+<../Imaging/plots/phase_calibration_part4c_question5_ea01.png, id=211, 586.8324
 pt x 442.2924pt>
 File: ../Imaging/plots/phase_calibration_part4c_question5_ea01.png Graphic file
  (type png)
 
 <use ../Imaging/plots/phase_calibration_part4c_question5_ea01.png>
 Package pdftex.def Info: ../Imaging/plots/phase_calibration_part4c_question5_ea
-01.png used on input line 331.
+01.png used on input line 337.
 (pdftex.def)             Requested size: 293.41548pt x 221.14566pt.
 
-<../Imaging/plots/phase_calibration_part4c_question5_ea21.png, id=208, 586.8324
+<../Imaging/plots/phase_calibration_part4c_question5_ea21.png, id=212, 586.8324
 pt x 442.2924pt>
 File: ../Imaging/plots/phase_calibration_part4c_question5_ea21.png Graphic file
  (type png)
 
 <use ../Imaging/plots/phase_calibration_part4c_question5_ea21.png>
 Package pdftex.def Info: ../Imaging/plots/phase_calibration_part4c_question5_ea
-21.png used on input line 338.
+21.png used on input line 344.
 (pdftex.def)             Requested size: 293.41548pt x 221.14566pt.
 
-<../Imaging/plots/phase_calibration_part4c_question5_ea05.png, id=209, 586.8324
+<../Imaging/plots/phase_calibration_part4c_question5_ea05.png, id=213, 586.8324
 pt x 442.2924pt>
 File: ../Imaging/plots/phase_calibration_part4c_question5_ea05.png Graphic file
  (type png)
 
 <use ../Imaging/plots/phase_calibration_part4c_question5_ea05.png>
 Package pdftex.def Info: ../Imaging/plots/phase_calibration_part4c_question5_ea
-05.png used on input line 345.
+05.png used on input line 351.
 (pdftex.def)             Requested size: 293.41548pt x 221.14566pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<../Imaging/plots/phase_calibration_part4c_question5_ea24.png, id=210, 586.8324
+<../Imaging/plots/phase_calibration_part4c_question5_ea24.png, id=214, 586.8324
 pt x 442.2924pt>
 File: ../Imaging/plots/phase_calibration_part4c_question5_ea24.png Graphic file
  (type png)
 
 <use ../Imaging/plots/phase_calibration_part4c_question5_ea24.png>
 Package pdftex.def Info: ../Imaging/plots/phase_calibration_part4c_question5_ea
-24.png used on input line 352.
+24.png used on input line 358.
 (pdftex.def)             Requested size: 293.41548pt x 221.14566pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[18 <../Imaging/plots/phase_calibration_part4c_question5_ea01.png> <../Imaging/
+[19 <../Imaging/plots/phase_calibration_part4c_question5_ea01.png> <../Imaging/
 plots/phase_calibration_part4c_question5_ea21.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 358--360
+Underfull \hbox (badness 10000) in paragraph at lines 364--366
 
  []
 
-[19 <../Imaging/plots/phase_calibration_part4c_question5_ea05.png> <../Imaging/
+[20 <../Imaging/plots/phase_calibration_part4c_question5_ea05.png> <../Imaging/
 plots/phase_calibration_part4c_question5_ea24.png>]
-Overfull \hbox (112.53156pt too wide) in paragraph at lines 370--374
+Underfull \hbox (badness 10000) in paragraph at lines 367--373
+
+ []
+
+[21]
+<../Imaging/plots2/phase_calibration_part4c_question5_ea01_pol-L.png, id=233, 5
+86.8324pt x 442.2924pt>
+File: ../Imaging/plots2/phase_calibration_part4c_question5_ea01_pol-L.png Graph
+ic file (type png)
+
+<use ../Imaging/plots2/phase_calibration_part4c_question5_ea01_pol-L.png>
+Package pdftex.def Info: ../Imaging/plots2/phase_calibration_part4c_question5_e
+a01_pol-L.png used on input line 378.
+(pdftex.def)             Requested size: 293.41548pt x 221.14566pt.
+
+<../Imaging/plots2/phase_calibration_part4c_question5_ea21_pol-L.png, id=234, 5
+86.8324pt x 442.2924pt>
+File: ../Imaging/plots2/phase_calibration_part4c_question5_ea21_pol-L.png Graph
+ic file (type png)
+
+<use ../Imaging/plots2/phase_calibration_part4c_question5_ea21_pol-L.png>
+Package pdftex.def Info: ../Imaging/plots2/phase_calibration_part4c_question5_e
+a21_pol-L.png used on input line 385.
+(pdftex.def)             Requested size: 293.41548pt x 221.14566pt.
+
+<../Imaging/plots2/phase_calibration_part4c_question5_ea16_pol-L.png, id=235, 5
+86.8324pt x 442.2924pt>
+File: ../Imaging/plots2/phase_calibration_part4c_question5_ea16_pol-L.png Graph
+ic file (type png)
+
+<use ../Imaging/plots2/phase_calibration_part4c_question5_ea16_pol-L.png>
+Package pdftex.def Info: ../Imaging/plots2/phase_calibration_part4c_question5_e
+a16_pol-L.png used on input line 392.
+(pdftex.def)             Requested size: 293.41548pt x 221.14566pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../Imaging/plots2/phase_calibration_part4c_question5_ea24_pol-L.png, id=236, 5
+86.8324pt x 442.2924pt>
+File: ../Imaging/plots2/phase_calibration_part4c_question5_ea24_pol-L.png Graph
+ic file (type png)
+
+<use ../Imaging/plots2/phase_calibration_part4c_question5_ea24_pol-L.png>
+Package pdftex.def Info: ../Imaging/plots2/phase_calibration_part4c_question5_e
+a24_pol-L.png used on input line 399.
+(pdftex.def)             Requested size: 293.41548pt x 221.14566pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[22 <../Imaging/plots2/phase_calibration_part4c_question5_ea01_pol-L.png> <../I
+maging/plots2/phase_calibration_part4c_question5_ea21_pol-L.png>]
+Overfull \hbox (112.53156pt too wide) in paragraph at lines 405--409
 \OT1/cmr/m/n/10.95 First, we run \OT1/cmr/m/n/6 gain-cal(vis=`3c391[]ctm[]mosai
 c[]10s[]spw0.ms',caltable=`3c391[]ctm[]mosaic[]10s[]spw0.K0', field=`J1331+3030
 ',refant=`ea21',spw=`0:5 58',gain-
  []
 
 
-Overfull \hbox (26.06493pt too wide) in paragraph at lines 370--374
+Overfull \hbox (26.06493pt too wide) in paragraph at lines 405--409
 \OT1/cmr/m/n/6 type=`K', solint=`inf',combine=`scan',minsnr=5, gaintable=[`3c39
 1[]ctm[]mosaic[]10s[]spw0.antpos', `3c391[]ctm[]mosaic[]10s[]spw0.G0'])\OT1/cmr
 /m/n/10.95 . 
  []
 
-
-<../Imaging/plots/plotcal_3c391-K0-delay.png, id=226, 586.8324pt x 442.2924pt>
+[23 <../Imaging/plots2/phase_calibration_part4c_question5_ea16_pol-L.png> <../I
+maging/plots2/phase_calibration_part4c_question5_ea24_pol-L.png>]
+<../Imaging/plots/plotcal_3c391-K0-delay.png, id=254, 586.8324pt x 442.2924pt>
 File: ../Imaging/plots/plotcal_3c391-K0-delay.png Graphic file (type png)
 
 <use ../Imaging/plots/plotcal_3c391-K0-delay.png>
 Package pdftex.def Info: ../Imaging/plots/plotcal_3c391-K0-delay.png used on in
-put line 378.
+put line 413.
+(pdftex.def)             Requested size: 381.43654pt x 287.48665pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 418--420
+
+ []
+
+
+LaTeX Warning: Reference `fig:part4subE-q3a-R' on page 24 undefined on input li
+ne 422.
+
+
+LaTeX Warning: Reference `fig:part4subE-q3a-L' on page 24 undefined on input li
+ne 422.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 421--423
+
+ []
+
+[24 <../Imaging/plots/plotcal_3c391-K0-delay.png>] [25]
+<../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea01-ea04.png, id=266, 586.8
+324pt x 442.2924pt>
+File: ../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea01-ea04.png Graphic f
+ile (type png)
+
+<use ../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea01-ea04.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea01
+-ea04.png used on input line 428.
+(pdftex.def)             Requested size: 381.43654pt x 287.48665pt.
+
+<../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea05-ea09.png, id=267, 586.8
+324pt x 442.2924pt>
+File: ../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea05-ea09.png Graphic f
+ile (type png)
+
+<use ../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea05-ea09.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea05
+-ea09.png used on input line 429.
 (pdftex.def)             Requested size: 381.43654pt x 287.48665pt.
 
 
+LaTeX Warning: Float too large for page by 2.67337pt on input line 431.
+
+
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 383--385
+<../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea10-ea14.png, id=268, 586.8
+324pt x 442.2924pt>
+File: ../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea10-ea14.png Graphic f
+ile (type png)
+
+<use ../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea10-ea14.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea10
+-ea14.png used on input line 437.
+(pdftex.def)             Requested size: 381.43654pt x 287.48665pt.
+
+<../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea15-ea18.png, id=269, 586.8
+324pt x 442.2924pt>
+File: ../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea15-ea18.png Graphic f
+ile (type png)
+
+<use ../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea15-ea18.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea15
+-ea18.png used on input line 438.
+(pdftex.def)             Requested size: 381.43654pt x 287.48665pt.
+
+
+LaTeX Warning: Float too large for page by 2.67337pt on input line 440.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea19-ea22.png, id=270, 586.8
+324pt x 442.2924pt>
+File: ../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea19-ea22.png Graphic f
+ile (type png)
+
+<use ../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea19-ea22.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea19
+-ea22.png used on input line 446.
+(pdftex.def)             Requested size: 381.43654pt x 287.48665pt.
+
+<../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea23-ea26.png, id=271, 586.8
+324pt x 442.2924pt>
+File: ../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea23-ea26.png Graphic f
+ile (type png)
+
+<use ../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea23-ea26.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea23
+-ea26.png used on input line 447.
+(pdftex.def)             Requested size: 381.43654pt x 287.48665pt.
+
+
+LaTeX Warning: Float too large for page by 2.67337pt on input line 449.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea27-ea28.png, id=272, 586.8
+324pt x 224.037pt>
+File: ../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea27-ea28.png Graphic f
+ile (type png)
+
+<use ../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea27-ea28.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea27
+-ea28.png used on input line 455.
+(pdftex.def)             Requested size: 381.43654pt x 145.62231pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea01-ea04.png, id=273, 586.8
+324pt x 442.2924pt>
+File: ../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea01-ea04.png Graphic f
+ile (type png)
+
+<use ../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea01-ea04.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea01
+-ea04.png used on input line 463.
+(pdftex.def)             Requested size: 381.43654pt x 287.48665pt.
+
+<../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea05-ea09.png, id=274, 586.8
+324pt x 442.2924pt>
+File: ../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea05-ea09.png Graphic f
+ile (type png)
+
+<use ../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea05-ea09.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea05
+-ea09.png used on input line 464.
+(pdftex.def)             Requested size: 381.43654pt x 287.48665pt.
+
+
+LaTeX Warning: Float too large for page by 2.67337pt on input line 466.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea10-ea14.png, id=275, 586.8
+324pt x 442.2924pt>
+File: ../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea10-ea14.png Graphic f
+ile (type png)
+
+<use ../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea10-ea14.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea10
+-ea14.png used on input line 472.
+(pdftex.def)             Requested size: 381.43654pt x 287.48665pt.
+
+<../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea15-ea18.png, id=276, 586.8
+324pt x 442.2924pt>
+File: ../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea15-ea18.png Graphic f
+ile (type png)
+
+<use ../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea15-ea18.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea15
+-ea18.png used on input line 473.
+(pdftex.def)             Requested size: 381.43654pt x 287.48665pt.
+
+
+LaTeX Warning: Float too large for page by 2.67337pt on input line 475.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea19-ea22.png, id=277, 586.8
+324pt x 442.2924pt>
+File: ../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea19-ea22.png Graphic f
+ile (type png)
+
+<use ../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea19-ea22.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea19
+-ea22.png used on input line 481.
+(pdftex.def)             Requested size: 381.43654pt x 287.48665pt.
+
+<../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea23-ea26.png, id=278, 586.8
+324pt x 442.2924pt>
+File: ../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea23-ea26.png Graphic f
+ile (type png)
+
+<use ../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea23-ea26.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea23
+-ea26.png used on input line 482.
+(pdftex.def)             Requested size: 381.43654pt x 287.48665pt.
+
+
+LaTeX Warning: Float too large for page by 2.67337pt on input line 484.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea27-ea28.png, id=279, 586.8
+324pt x 226.2051pt>
+File: ../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea27-ea28.png Graphic f
+ile (type png)
+
+<use ../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea27-ea28.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea27
+-ea28.png used on input line 490.
+(pdftex.def)             Requested size: 381.43654pt x 147.03156pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: Reference `fig:part4subE-q3b-R' on page 26 undefined on input li
+ne 498.
+
+
+LaTeX Warning: Reference `fig:part4subE-q3b-L' on page 26 undefined on input li
+ne 498.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 497--499
+
+ []
+
+[26]
+<../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea01-ea04.png, id=284, 586
+.8324pt x 442.2924pt>
+File: ../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea01-ea04.png Graphic
+ file (type png)
+
+<use ../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea01-ea04.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea
+01-ea04.png used on input line 504.
+(pdftex.def)             Requested size: 381.43654pt x 287.48665pt.
+
+<../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea05-ea09.png, id=285, 586
+.8324pt x 442.2924pt>
+File: ../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea05-ea09.png Graphic
+ file (type png)
+
+<use ../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea05-ea09.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea
+05-ea09.png used on input line 505.
+(pdftex.def)             Requested size: 381.43654pt x 287.48665pt.
+
+
+LaTeX Warning: Float too large for page by 2.67337pt on input line 507.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea10-ea14.png, id=286, 586
+.8324pt x 442.2924pt>
+File: ../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea10-ea14.png Graphic
+ file (type png)
+
+<use ../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea10-ea14.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea
+10-ea14.png used on input line 513.
+(pdftex.def)             Requested size: 381.43654pt x 287.48665pt.
+
+<../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea15-ea18.png, id=287, 586
+.8324pt x 442.2924pt>
+File: ../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea15-ea18.png Graphic
+ file (type png)
+
+<use ../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea15-ea18.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea
+15-ea18.png used on input line 514.
+(pdftex.def)             Requested size: 381.43654pt x 287.48665pt.
+
+
+LaTeX Warning: Float too large for page by 2.67337pt on input line 516.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea19-ea22.png, id=288, 586
+.8324pt x 442.2924pt>
+File: ../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea19-ea22.png Graphic
+ file (type png)
+
+<use ../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea19-ea22.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea
+19-ea22.png used on input line 522.
+(pdftex.def)             Requested size: 381.43654pt x 287.48665pt.
+
+<../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea23-ea26.png, id=289, 586
+.8324pt x 442.2924pt>
+File: ../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea23-ea26.png Graphic
+ file (type png)
+
+<use ../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea23-ea26.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea
+23-ea26.png used on input line 523.
+(pdftex.def)             Requested size: 381.43654pt x 287.48665pt.
+
+
+LaTeX Warning: Float too large for page by 2.67337pt on input line 525.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea27-ea28.png, id=290, 586
+.8324pt x 218.2554pt>
+File: ../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea27-ea28.png Graphic
+ file (type png)
+
+<use ../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea27-ea28.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea
+27-ea28.png used on input line 531.
+(pdftex.def)             Requested size: 381.43654pt x 141.86432pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea01-ea04.png, id=291, 586
+.8324pt x 442.2924pt>
+File: ../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea01-ea04.png Graphic
+ file (type png)
+
+<use ../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea01-ea04.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea
+01-ea04.png used on input line 539.
+(pdftex.def)             Requested size: 381.43654pt x 287.48665pt.
+
+<../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea05-ea09.png, id=292, 586
+.8324pt x 442.2924pt>
+File: ../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea05-ea09.png Graphic
+ file (type png)
+
+<use ../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea05-ea09.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea
+05-ea09.png used on input line 540.
+(pdftex.def)             Requested size: 381.43654pt x 287.48665pt.
+
+
+LaTeX Warning: Float too large for page by 2.67337pt on input line 542.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea10-ea14.png, id=293, 586
+.8324pt x 442.2924pt>
+File: ../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea10-ea14.png Graphic
+ file (type png)
+
+<use ../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea10-ea14.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea
+10-ea14.png used on input line 548.
+(pdftex.def)             Requested size: 381.43654pt x 287.48665pt.
+
+<../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea15-ea18.png, id=294, 586
+.8324pt x 442.2924pt>
+File: ../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea15-ea18.png Graphic
+ file (type png)
+
+<use ../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea15-ea18.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea
+15-ea18.png used on input line 549.
+(pdftex.def)             Requested size: 381.43654pt x 287.48665pt.
+
+
+LaTeX Warning: Float too large for page by 2.67337pt on input line 551.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea19-ea22.png, id=295, 586
+.8324pt x 442.2924pt>
+File: ../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea19-ea22.png Graphic
+ file (type png)
+
+<use ../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea19-ea22.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea
+19-ea22.png used on input line 557.
+(pdftex.def)             Requested size: 381.43654pt x 287.48665pt.
+
+<../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea23-ea26.png, id=296, 586
+.8324pt x 442.2924pt>
+File: ../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea23-ea26.png Graphic
+ file (type png)
+
+<use ../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea23-ea26.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea
+23-ea26.png used on input line 558.
+(pdftex.def)             Requested size: 381.43654pt x 287.48665pt.
+
+
+LaTeX Warning: Float too large for page by 2.67337pt on input line 560.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea27-ea28.png, id=297, 586
+.8324pt x 221.8689pt>
+File: ../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea27-ea28.png Graphic
+ file (type png)
+
+<use ../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea27-ea28.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea
+27-ea28.png used on input line 566.
+(pdftex.def)             Requested size: 381.43654pt x 144.21306pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (8.33826pt too wide) in paragraph at lines 572--574
+\OT1/cmr/m/n/10.95 The used phase cal-i-bra-tor is \OT1/cmr/bx/n/10.95 J1822-09
+38\OT1/cmr/m/n/10.95 . The po-lar-iza-tion cal-i-bra-tor is \OT1/cmr/bx/n/10.95
+ J0319+4130\OT1/cmr/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 572--574
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 386--388
+Underfull \hbox (badness 10000) in paragraph at lines 585--595
 
  []
 
-[20]
-<../Imaging/plots/part4-subE-question3a_amp_pol-R.png, id=236, 586.8324pt x 442
-.2924pt>
-File: ../Imaging/plots/part4-subE-question3a_amp_pol-R.png Graphic file (type p
-ng)
- <use ../Imaging/plots/part4-subE-question3a_amp_pol-R.png>
-Package pdftex.def Info: ../Imaging/plots/part4-subE-question3a_amp_pol-R.png u
-sed on input line 393.
-(pdftex.def)             Requested size: 293.41548pt x 221.14566pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-<../Imaging/plots/part4-subE-question3a_amp_pol-L.png, id=237, 586.8324pt x 442
-.2924pt>
-File: ../Imaging/plots/part4-subE-question3a_amp_pol-L.png Graphic file (type p
-ng)
- <use ../Imaging/plots/part4-subE-question3a_amp_pol-L.png>
-Package pdftex.def Info: ../Imaging/plots/part4-subE-question3a_amp_pol-L.png u
-sed on input line 399.
-(pdftex.def)             Requested size: 293.41548pt x 221.14566pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 404--406
-
- []
-
-[21 <../Imaging/plots/plotcal_3c391-K0-delay.png>]
-<../Imaging/plots/part4-subE-question3b_phase_pol-R.png, id=247, 586.8324pt x 4
-42.2924pt>
-File: ../Imaging/plots/part4-subE-question3b_phase_pol-R.png Graphic file (type
- png)
- <use ../Imaging/plots/part4-subE-question3b_phase_pol-R.png>
-Package pdftex.def Info: ../Imaging/plots/part4-subE-question3b_phase_pol-R.png
- used on input line 411.
-(pdftex.def)             Requested size: 293.41548pt x 221.14566pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-<../Imaging/plots/part4-subE-question3b_phase_pol-L.png, id=248, 586.8324pt x 4
-42.2924pt>
-File: ../Imaging/plots/part4-subE-question3b_phase_pol-L.png Graphic file (type
- png)
- <use ../Imaging/plots/part4-subE-question3b_phase_pol-L.png>
-Package pdftex.def Info: ../Imaging/plots/part4-subE-question3b_phase_pol-L.png
- used on input line 418.
-(pdftex.def)             Requested size: 293.41548pt x 221.14566pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 429--431
-
- []
-
-[22 <../Imaging/plots/part4-subE-question3a_amp_pol-R.png> <../Imaging/plots/pa
-rt4-subE-question3a_amp_pol-L.png>] [23 <../Imaging/plots/part4-subE-question3b
-_phase_pol-R.png> <../Imaging/plots/part4-subE-question3b_phase_pol-L.png>]
-[24]
-<../Imaging/plots/part4-subF-question4_amp_pol-R.png, id=273, 586.8324pt x 442.
+[27] [28]
+<../Imaging/plots/part4-subF-question4_amp_pol-R.png, id=314, 586.8324pt x 442.
 2924pt>
 File: ../Imaging/plots/part4-subF-question4_amp_pol-R.png Graphic file (type pn
 g)
  <use ../Imaging/plots/part4-subF-question4_amp_pol-R.png>
 Package pdftex.def Info: ../Imaging/plots/part4-subF-question4_amp_pol-R.png us
-ed on input line 458.
+ed on input line 601.
 (pdftex.def)             Requested size: 293.41548pt x 221.14566pt.
 
-<../Imaging/plots/part4-subF-question4_amp_pol-L.png, id=274, 586.8324pt x 442.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../Imaging/plots/part4-subF-question4_amp_pol-L.png, id=315, 586.8324pt x 442.
 2924pt>
 File: ../Imaging/plots/part4-subF-question4_amp_pol-L.png Graphic file (type pn
 g)
  <use ../Imaging/plots/part4-subF-question4_amp_pol-L.png>
 Package pdftex.def Info: ../Imaging/plots/part4-subF-question4_amp_pol-L.png us
-ed on input line 465.
+ed on input line 608.
 (pdftex.def)             Requested size: 293.41548pt x 221.14566pt.
- [25 <../Imaging/plots/part4-subF-question4_amp_pol-R.png> <../Imaging/plots/pa
-rt4-subF-question4_amp_pol-L.png>]
-<../Imaging/plots/part4-subF-question4_phase_pol-R.png, id=282, 586.8324pt x 44
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../Imaging/plots/part4-subF-question4_phase_pol-R.png, id=316, 586.8324pt x 44
 2.2924pt>
 File: ../Imaging/plots/part4-subF-question4_phase_pol-R.png Graphic file (type 
 png)
  <use ../Imaging/plots/part4-subF-question4_phase_pol-R.png>
 Package pdftex.def Info: ../Imaging/plots/part4-subF-question4_phase_pol-R.png 
-used on input line 472.
+used on input line 615.
 (pdftex.def)             Requested size: 293.41548pt x 221.14566pt.
 
-<../Imaging/plots/part4-subF-question4_phase_pol-L.png, id=283, 586.8324pt x 44
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../Imaging/plots/part4-subF-question4_phase_pol-L.png, id=317, 586.8324pt x 44
 2.2924pt>
 File: ../Imaging/plots/part4-subF-question4_phase_pol-L.png Graphic file (type 
 png)
  <use ../Imaging/plots/part4-subF-question4_phase_pol-L.png>
 Package pdftex.def Info: ../Imaging/plots/part4-subF-question4_phase_pol-L.png 
-used on input line 478.
+used on input line 621.
 (pdftex.def)             Requested size: 293.41548pt x 221.14566pt.
- [26 <../Imaging/plots/part4-subF-question4_phase_pol-R.png> <../Imaging/plots/
-part4-subF-question4_phase_pol-L.png>]
-Overfull \hbox (19.64645pt too wide) in paragraph at lines 484--487
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (19.64645pt too wide) in paragraph at lines 627--630
 \OT1/cmr/m/n/10.95 The com-mand run is \OT1/cmr/m/n/6 myscale = fluxs-cale(vis=
 `3c391[]ctm[]mosaic[]10s[]spw0.ms', caltable=`3c391[]ctm[]mosaic[]10s[]spw0.G1'
 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 484--487
+Underfull \hbox (badness 10000) in paragraph at lines 627--630
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 488--490
+Underfull \hbox (badness 10000) in paragraph at lines 631--633
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 491--492
+Underfull \hbox (badness 10000) in paragraph at lines 634--635
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 493--494
+Underfull \hbox (badness 10000) in paragraph at lines 636--637
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 495--506
+Underfull \hbox (badness 10000) in paragraph at lines 638--649
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 507--508
+Underfull \hbox (badness 10000) in paragraph at lines 650--651
 
  []
 
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 509--522
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 652--665
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 523--524
+Underfull \hbox (badness 10000) in paragraph at lines 666--667
 
  []
 
-[28]
-<../Imaging/plots/part4-subG-question5_amp_pol-L.png, id=304, 586.8324pt x 442.
+[30]
+<../Imaging/plots/part4-subG-question5_amp_pol-L.png, id=332, 586.8324pt x 442.
 2924pt>
 File: ../Imaging/plots/part4-subG-question5_amp_pol-L.png Graphic file (type pn
 g)
  <use ../Imaging/plots/part4-subG-question5_amp_pol-L.png>
 Package pdftex.def Info: ../Imaging/plots/part4-subG-question5_amp_pol-L.png us
-ed on input line 531.
+ed on input line 674.
 (pdftex.def)             Requested size: 293.41548pt x 221.14566pt.
 
-<../Imaging/plots/part4-subG-question5_amp_pol-R.png, id=305, 586.8324pt x 442.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../Imaging/plots/part4-subG-question5_amp_pol-R.png, id=333, 586.8324pt x 442.
 2924pt>
 File: ../Imaging/plots/part4-subG-question5_amp_pol-R.png Graphic file (type pn
 g)
  <use ../Imaging/plots/part4-subG-question5_amp_pol-R.png>
 Package pdftex.def Info: ../Imaging/plots/part4-subG-question5_amp_pol-R.png us
-ed on input line 537.
+ed on input line 680.
 (pdftex.def)             Requested size: 293.41548pt x 221.14566pt.
- [29 <../Imaging/plots/part4-subG-question5_amp_pol-L.png> <../Imaging/plots/pa
-rt4-subG-question5_amp_pol-R.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 552--554
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 695--697
 
  []
 
-[30]
-<../Imaging/plots/part4-subH-question3_fld0-corrected-amp.png, id=320, 350.0578
+[31]
+<../Imaging/plots/part4-subH-question3_fld0-corrected-amp.png, id=343, 350.0578
 2pt x 391.4625pt>
 File: ../Imaging/plots/part4-subH-question3_fld0-corrected-amp.png Graphic file
  (type png)
 
 <use ../Imaging/plots/part4-subH-question3_fld0-corrected-amp.png>
 Package pdftex.def Info: ../Imaging/plots/part4-subH-question3_fld0-corrected-a
-mp.png used on input line 558.
+mp.png used on input line 701.
 (pdftex.def)             Requested size: 175.02847pt x 195.73076pt.
 
-<../Imaging/plots/part4-subH-question3_fld0-corrected-phase.png, id=321, 350.05
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../Imaging/plots/part4-subH-question3_fld0-corrected-phase.png, id=344, 350.05
 782pt x 391.4625pt>
 File: ../Imaging/plots/part4-subH-question3_fld0-corrected-phase.png Graphic fi
 le (type png)
 
 <use ../Imaging/plots/part4-subH-question3_fld0-corrected-phase.png>
 Package pdftex.def Info: ../Imaging/plots/part4-subH-question3_fld0-corrected-p
-hase.png used on input line 564.
+hase.png used on input line 707.
 (pdftex.def)             Requested size: 175.02847pt x 195.73076pt.
- [31 <../Imaging/plots/part4-subH-question3_fld0-corrected-amp.png> <../Imaging
-/plots/part4-subH-question3_fld0-corrected-phase.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 568--584
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 711--713
 
  []
 
+[32]
+<../Imaging/plots2/part4-subH-question3_fld1-corrected-amp.png, id=353, 350.057
+82pt x 391.4625pt>
+File: ../Imaging/plots2/part4-subH-question3_fld1-corrected-amp.png Graphic fil
+e (type png)
 
-<../Imaging/plots/part4-subH-question4_fld1-corrected-ampvsphase.png, id=331, 3
+<use ../Imaging/plots2/part4-subH-question3_fld1-corrected-amp.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subH-question3_fld1-corrected-
+amp.png used on input line 717.
+(pdftex.def)             Requested size: 175.02847pt x 195.73076pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../Imaging/plots2/part4-subH-question3_fld1-corrected-phase.png, id=354, 350.0
+5782pt x 391.4625pt>
+File: ../Imaging/plots2/part4-subH-question3_fld1-corrected-phase.png Graphic f
+ile (type png)
+
+<use ../Imaging/plots2/part4-subH-question3_fld1-corrected-phase.png>
+Package pdftex.def Info: ../Imaging/plots2/part4-subH-question3_fld1-corrected-
+phase.png used on input line 723.
+(pdftex.def)             Requested size: 175.02847pt x 195.73076pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../Imaging/plots/part4-subH-question4_fld1-corrected-ampvsphase.png, id=356, 3
 50.05782pt x 391.4625pt>
 File: ../Imaging/plots/part4-subH-question4_fld1-corrected-ampvsphase.png Graph
 ic file (type png)
 
 <use ../Imaging/plots/part4-subH-question4_fld1-corrected-ampvsphase.png>
 Package pdftex.def Info: ../Imaging/plots/part4-subH-question4_fld1-corrected-a
-mpvsphase.png used on input line 591.
+mpvsphase.png used on input line 734.
 (pdftex.def)             Requested size: 175.02847pt x 195.73076pt.
 
-Overfull \hbox (0.89534pt too wide) in paragraph at lines 596--597
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (5.27303pt too wide) in paragraph at lines 739--740
+\OT1/cmr/m/n/6 clean(vis=`3c391[]ctm[]mosaic[]spw0[]output.ms', imagename=`part
+5-question2[]initial', field=`', spw=`', mode=`mfs', niter=5000,
+ []
+
+
+Overfull \hbox (0.89534pt too wide) in paragraph at lines 739--740
 \OT1/cmr/m/n/6 gain=0.1, thresh-old=`1.0mJy', psf-mode=`clark', im-ager-mode=`m
 osaic', ft-ma-chine=`mosaic', mul-ti-scale=[0], in-ter-ac-tive=True,
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 600.
+File: ../Imaging/plots2/postcal.png Graphic file (type png)
+<use ../Imaging/plots2/postcal.png>
+Package pdftex.def Info: ../Imaging/plots2/postcal.png used on input line 744.
+(pdftex.def)             Requested size: 358.33788pt x 496.85503pt.
 
-Overfull \hbox (5.14925pt too wide) in paragraph at lines 598--600
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 750.
+
+Overfull \hbox (5.14925pt too wide) in paragraph at lines 748--750
 \OT1/cmr/m/it/10.95 Question) What do you ob-serve now com-pare it with pre cal
 -i-bra-tion im-age list changes? 
  []
 
-[32 <../Imaging/plots/part4-subH-question4_fld1-corrected-ampvsphase.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 600.
+[33] [34 <../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea01-ea04.png> <../
+Imaging/plots2/part4-subE-question3a_amp_pol-L-ea05-ea09.png>] [35pdfTeX warnin
+g (ext4): destination with the same identifier (name{figure.22}) has been alrea
+dy used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.750 \end{document}
+                     <../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea10-ea
+14.png> <../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea15-ea18.png>]
+[36pdfTeX warning (ext4): destination with the same identifier (name{figure.22}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.750 \end{document}
+                     <../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea19-ea
+22.png> <../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea23-ea26.png>]
+[37pdfTeX warning (ext4): destination with the same identifier (name{figure.22}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.750 \end{document}
+                     <../Imaging/plots2/part4-subE-question3a_amp_pol-L-ea27-ea
+28.png>] [38 <../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea01-ea04.png> 
+<../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea05-ea09.png>] [39pdfTeX wa
+rning (ext4): destination with the same identifier (name{figure.23}) has been a
+lready used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.750 \end{document}
+                     <../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea10-ea
+14.png> <../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea15-ea18.png>]
+[40pdfTeX warning (ext4): destination with the same identifier (name{figure.23}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.750 \end{document}
+                     <../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea19-ea
+22.png> <../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea23-ea26.png>]
+[41pdfTeX warning (ext4): destination with the same identifier (name{figure.23}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.750 \end{document}
+                     <../Imaging/plots2/part4-subE-question3a_amp_pol-R-ea27-ea
+28.png>] [42 <../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea01-ea04.png
+> <../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea05-ea09.png>] [43pdfTe
+X warning (ext4): destination with the same identifier (name{figure.24}) has be
+en already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.750 \end{document}
+                     <../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea10-
+ea14.png> <../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea15-ea18.png>]
+[44pdfTeX warning (ext4): destination with the same identifier (name{figure.24}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.750 \end{document}
+                     <../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea19-
+ea22.png> <../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea23-ea26.png>]
+[45pdfTeX warning (ext4): destination with the same identifier (name{figure.24}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.750 \end{document}
+                     <../Imaging/plots2/part4-subE-question3b_phase_pol-L-ea27-
+ea28.png>] [46 <../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea01-ea04.p
+ng> <../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea05-ea09.png>]
+[47pdfTeX warning (ext4): destination with the same identifier (name{figure.25}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.750 \end{document}
+                     <../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea10-
+ea14.png> <../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea15-ea18.png>]
+[48pdfTeX warning (ext4): destination with the same identifier (name{figure.25}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.750 \end{document}
+                     <../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea19-
+ea22.png> <../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea23-ea26.png>]
+[49pdfTeX warning (ext4): destination with the same identifier (name{figure.25}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.750 \end{document}
+                     <../Imaging/plots2/part4-subE-question3b_phase_pol-R-ea27-
+ea28.png> <../Imaging/plots/part4-subF-question4_amp_pol-R.png>] [50 <../Imagin
+g/plots/part4-subF-question4_amp_pol-L.png> <../Imaging/plots/part4-subF-questi
+on4_phase_pol-R.png>] [51 <../Imaging/plots/part4-subF-question4_phase_pol-L.pn
+g> <../Imaging/plots/part4-subG-question5_amp_pol-L.png>] [52 <../Imaging/plots
+/part4-subG-question5_amp_pol-R.png> <../Imaging/plots/part4-subH-question3_fld
+0-corrected-amp.png>] [53 <../Imaging/plots/part4-subH-question3_fld0-corrected
+-phase.png> <../Imaging/plots2/part4-subH-question3_fld1-corrected-amp.png>]
+[54 <../Imaging/plots2/part4-subH-question3_fld1-corrected-phase.png> <../Imagi
+ng/plots/part4-subH-question4_fld1-corrected-ampvsphase.png>] [55]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 750.
 
 (./RadioAstronomy_Practicum2_VLADataAnalysisAndCalibration_TLRH_6126561_report.
 aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 600.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 600.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 750.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 750.
 Package rerunfilecheck Info: File `RadioAstronomy_Practicum2_VLADataAnalysisAnd
 Calibration_TLRH_6126561_report.out' has not changed.
 (rerunfilecheck)             Checksum: 071BD46E4D3481E9115C8B34AF3A990F;828.
@@ -1047,16 +1665,16 @@ Calibration_TLRH_6126561_report.out' has not changed.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 600.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 750.
  ) 
 Here is how much of TeX's memory you used:
- 6762 strings out of 493315
- 103813 string characters out of 6137904
- 188212 words of memory out of 5000000
- 10032 multiletter control sequences out of 15000+600000
+ 6967 strings out of 493315
+ 113579 string characters out of 6137904
+ 195541 words of memory out of 5000000
+ 10203 multiletter control sequences out of 15000+600000
  13566 words of font info for 52 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 36i,8n,28p,933b,400s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,8n,28p,933b,349s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
@@ -1073,10 +1691,10 @@ e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
 013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/20
 13/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
 Output written on RadioAstronomy_Practicum2_VLADataAnalysisAndCalibration_TLRH_
-6126561_report.pdf (32 pages, 854569 bytes).
+6126561_report.pdf (55 pages, 1728053 bytes).
 PDF statistics:
- 406 PDF objects out of 1000 (max. 8388607)
- 294 compressed objects within 3 object streams
- 82 named destinations out of 1000 (max. 500000)
- 255 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 576 PDF objects out of 1000 (max. 8388607)
+ 380 compressed objects within 4 object streams
+ 112 named destinations out of 1000 (max. 500000)
+ 410 words of extra memory for PDF output out of 10000 (max. 10000000)
 
