@@ -161,7 +161,7 @@ Here, in the Amp vs. Antenna1 plot (Figure~\ref{fig:19-ant1}), it looks as if nu
 
 \section{Part2 - Flagging}
 \noindent \textit{Question 1-5) The command used in CASA} \\
-Here we see that the fourth and eleventh line (from the left) are at roughly half the average amplitude, respectively, almost at zero. We therefore flag these antennas. The fourth and eleventh antenna plotted in amp\_vs\_antenna1 (Figure~\ref{ig:19-ant1}) correspond to ea04, respectively, ea13, so we flag it (fourth and fifth command in the list). \\
+Here we see that the fourth and eleventh line (from the left) are at roughly half the average amplitude, respectively, almost at zero. We therefore flag these antennas. The fourth and eleventh antenna plotted in amp\_vs\_antenna1 (Figure~\ref{fig:19-ant1}) correspond to ea04, respectively, ea13, so we flag it (fourth and fifth command in the list). \\
 \begin{itemize}
     \item flagdata(vis = `3c391\_ctm\_mosaic\_10s\_spw0.ms', scan=`1')
     \item flagdata(vis = `3c391\_ctm\_mosaic\_10s\_spw0.ms', mode=`quack', quackmode=`beg', quackinterval=10.0, quackincrement=False)
@@ -419,7 +419,7 @@ See Figure~\ref{fig:part4subD} for the plot of the delay calibration.
 This question might be somewhat too difficult for me to answer. \\
 
 \noindent \textit{Question 3a) Plot the gain phases in R polarization for all antennae. Now using plotcal we can plot four plots: Ampl R polarization, L polarization} \\
-See Figure~\ref{fig:part4subE-q3a-R} for the R polarization, and Figure~\ref{fig:part4subE-q3a-L} for the L polarization. \\
+See Figure~\ref{fig:part4subE-q3a-amp-R} for the R polarization, and Figure~\ref{fig:part4subE-q3a-amp-L} for the L polarization. \\
 
 \newpage
 \begin{figure}[h!]
@@ -495,7 +495,7 @@ See Figure~\ref{fig:part4subE-q3a-R} for the R polarization, and Figure~\ref{fig
 
 
 \noindent \textit{Question 3b) Plot the gain phases in R polarization for all antennae. Now using plotcal we can plot four plots: Phase R polarization, L polarization} \\
-See Figure~\ref{fig:part4subE-q3b-R} for the R polarization, and Figure~\ref{fig:part4subE-q3b-L} for the L polarization. \\
+See Figure~\ref{fig:part4subE-q3b-phase-R} for the R polarization, and Figure~\ref{fig:part4subE-q3b-phase-L} for the L polarization. \\
 
 \newpage
 \begin{figure}[h!]
