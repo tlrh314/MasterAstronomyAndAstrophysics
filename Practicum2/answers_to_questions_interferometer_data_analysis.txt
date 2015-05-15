@@ -81,7 +81,8 @@ flagdata(vis = '3c391_ctm_mosaic_10s_spw0.ms', scan='1')
 flagdata(vis = '3c391_ctm_mosaic_10s_spw0.ms', mode='quack', quackmode='beg', quackinterval=10.0, quackincrement=False)
 flagdata(vis = '3c391_ctm_mosaic_10s_spw0.ms', antenna='ea15')
 # The 11th antenna plotted in amp_vs_antenna1 corresponds to ea13, so we flag it
-flagdata(vis = '3c391_ctm_mosaic_10s_spw0.ms', antenna='ea13)
+flagdata(vis = '3c391_ctm_mosaic_10s_spw0.ms', antenna='ea13')
+flagdata(vis = '3c391_ctm_mosaic_10s_spw0.ms', antenna='ea04')
 
 
 Answers to questions
@@ -94,7 +95,7 @@ be due to the flagging of the first ten seconds required for the antenna to stab
 Part 3 - Imaging
 Commands run
 clean(vis = '3c391_ctm_mosaic_10s_spw0.ms',
-imagename = 'MeLoveSomeMosaicPleaseMakeThisForMeDearCasa',
+imagename = 'precal',
 field='', spw='',
 mode='mfs',
 niter=5000,
@@ -343,7 +344,13 @@ Here, we use the C band, so we expect the FLUX to be 23.3 Jy? We obtain 13.9306,
 
 5)
 plotcal(caltable='3c391_ctm_mosaic_10s_spw0.fluxscale1', xaxis='time', yaxis='amp', poln='R', figfile='part4-subG-question5_amp_pol-R.png')
+
 plotcal(caltable='3c391_ctm_mosaic_10s_spw0.fluxscale1', xaxis='time', yaxis='amp', poln='L', figfile='part4-subG-question5_amp_pol-L.png')
+
+Not necessary?
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.fluxscale1', xaxis='time', yaxis='phase', poln='R', figfile='part4-subG-question5_phase_pol-R.png')
+
+plotcal(caltable='3c391_ctm_mosaic_10s_spw0.fluxscale1', xaxis='time', yaxis='phase', poln='L', figfile='part4-subG-question5_phase_pol-L.png')
 
 
 Part H? - Applying Calibrations
@@ -365,9 +372,9 @@ plotms(vis='3c391_ctm_mosaic_10s_spw0.ms', field='0', correlation='', timerange=
 
 plotms(vis='3c391_ctm_mosaic_10s_spw0.ms', field='0', correlation='', timerange='08:02:00~08:17:00', antenna='', avgtime='60s', xaxis='channel', yaxis='phase', ydatacolumn='corrected', plotfile='part4-subH-question3_fld0-corrected-phase.png')
 
-plotms(vis='3c391_ctm_mosaic_10s_spw0.ms', field='1', correlation='RR,LL', timerange='08:02:00~08:17:00', antenna='', avgtime='60s', xaxis='channel', yaxis='amp', ydatacolumn='corrected', plotfile='part4-subH-question3_fld1-corrected-amp.png')
+plotms(vis='3c391_ctm_mosaic_10s_spw0.ms', field='1', correlation='RR,LL', timerange='', antenna='', avgtime='60s', xaxis='channel', yaxis='amp', ydatacolumn='corrected', plotfile='part4-subH-question3_fld1-corrected-amp.png')
 
-plotms(vis='3c391_ctm_mosaic_10s_spw0.ms', field='1', correlation='RR,LL', timerange='08:02:00~08:17:00', antenna='', avgtime='60s', xaxis='channel', yaxis='phase', ydatacolumn='corrected', plotfile='part4-subH-question3_fld1-corrected-phase.png')
+plotms(vis='3c391_ctm_mosaic_10s_spw0.ms', field='1', correlation='RR,LL', timerange='', antenna='', avgtime='60s', xaxis='channel', yaxis='phase', ydatacolumn='corrected', plotfile='part4-subH-question3_fld1-corrected-phase.png')
 
 The fourth plot looks strange? And the fourth plot gives an error "Error during cache loading: MSSelectionNullSelection : The selected table has zero rows.".
 
@@ -382,6 +389,6 @@ split(vis='3c391_ctm_mosaic_10s_spw0.ms', outputvis='3c391_ctm_mosaic_spw0_outpu
 
 Part 5 - Imaging
 2)
-clean(vis='3c391_ctm_mosaic_10s_spw0.ms', imagename='part5-question2_initial', field='', spw='', mode='mfs', niter=5000, gain=0.1, threshold='1.0mJy', psfmode='clark', imagermode='mosaic', ftmachine='mosaic', multiscale=[0], interactive=True, imsize=[480, 480], cell=['2.5arcsec', '2.5arcsec'], stokes='I', weighting='briggs', robust=0.5, usescratch=False)
+clean(vis='3c391_ctm_mosaic_spw0_output.ms', imagename='part5-question2_initial', field='', spw='', mode='mfs', niter=5000, gain=0.1, threshold='1.0mJy', psfmode='clark', imagermode='mosaic', ftmachine='mosaic', multiscale=[0], interactive=True, imsize=[480, 480], cell=['2.5arcsec', '2.5arcsec'], stokes='I', weighting='briggs', robust=0.5, usescratch=False)
 
 3)
