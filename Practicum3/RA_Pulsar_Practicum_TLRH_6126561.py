@@ -63,11 +63,15 @@ time_samp = 0.00262143998406827
 # QUESTION: Why are there apparently data missing and why does the
 # level of the baseline change?  (1 point)
 
-# ANSWER: <<<FILL IN>>>
+# ANSWER: It looks like there are data missing at the sudden increase - or
+# decrease in pulse amplitude and background. This thing you call baseline I
+# call the background. I would think someone just switched a button on the
+# telescope causing the recording to stop and the background level to change.
 
 # Note that I divide by the minimum value to reduce the size of the
 # numbers on the y-axis
 
+pyplot.figure(figsize=(13.5, 10)) # increase figsize to prevent overlapping titles
 time = numpy.arange(nbins)*time_samp  # in seconds
 ax = pyplot.subplot(4, 1, 1)
 pyplot.plot(time, timeseries/1e6)
@@ -81,7 +85,11 @@ pyplot.title("Timeseries")
 # spectrum?  What is their relationship, and which one corresponds to
 # the pulsar's spin frequency?  (1 point)
 
-# ANSWER: <<<FILL IN>>>
+# ANSWER: The Fourier power spectrum finds the pulse and the 'overtones'. If
+# something is spinning with frequency nu, then there is also a periodicity at
+# 2*nu, 3*nu, and so on. The first peak is the frequency, but the second peak is
+# thrice the frequency. But the frequency is also the time between the second
+# and third peak, between the third and fourth peak, and so on.
 
 power_spectrum = numpy.abs(numpy.fft.fft(timeseries))**2
 
@@ -150,7 +158,7 @@ print pulse_periods
 print "Pulse period is {0} seconds".format(
     sum(pulse_periods)/len(pulse_periods))
 
-# ANSWER: Pulse period is 1.33695212898 seconds
+# ANSWER: Pulse period is 1.33695212898 seconds. Spin frequency is 0.74796993
 
 # Here's the value that I determined from the data and then tweaked by
 # hand.
@@ -173,7 +181,10 @@ spin_period = 1.337302088331  # http://adsabs.harvard.edu/abs/1994ApJ...422..671
 # profiles, which are the basis for doing precision pulsar timing,
 # right?  So how can that work if each pulse is different?  Discuss...
 
-# ANSWER: <<<FILL IN>>>
+# ANSWER: The atmospheric/ionospheric conditions differ as a function of time,
+# the noise levels in the receiver differ as well. However, here we observe
+# amplitude changes on the order of seconds, which is somewhat too fast for
+# atmospheric changes.
 
 # Note: this requires chopping the timeseries into chunks equal to the
 # pulsar period, which you determined in the previous step.
@@ -212,7 +223,9 @@ for phase in lo_phase_bin:
 # last incomplete pulse).
 stacked_profiles = numpy.asarray(stacked_profiles[:-1])
 
-ax1 = pyplot.subplot(4, 1, 3)
+ax = pyplot.subplot(4, 1, 3)
+#ax1.set_ylim(0, 120)
+#pyplot.ylim(0, 120)
 pyplot.imshow(stacked_profiles, origin='lower', aspect=0.4)
 pyplot.xlabel("Rotational Phase Bin")
 pyplot.ylabel("Pulse Number")
@@ -226,7 +239,11 @@ pyplot.title("Pulse Strength vs. Time")
 # QUESTION: what is the approximate pulse width in seconds and how
 # does this compare to the duration of the pulse period?  (1 point)
 
-# ANSWER: <<<FILL IN>>>
+# ANSWER: The FWHM is roughly 11. If we multiply this with the time bin size we
+# end up with 0.0288 seconds. The peaks are roughly 1.33 seconds apart, and the
+# pulse duration is the 0.0288 seconds. What is the 'duration of the pulse
+# period'? Should this either be the 'pulse period', or 'the duration of the
+# pulse'?
 
 squash = {}
 for i in range(len(stacked_profiles)):
@@ -238,7 +255,7 @@ for i in range(len(stacked_profiles)):
         except KeyError:
             squash[j] = 0
 
-ax2 = pyplot.subplot(4, 1, 4, sharex=ax1)
+ax = pyplot.subplot(4, 1, 4)
 pyplot.plot(squash.keys(), squash.values())
 pyplot.xlim(0, 500)
 pyplot.xlabel("Rotational Phase Bin")
@@ -248,5 +265,6 @@ pyplot.title("Cumulative Pulse Profile")
 # This just helps ensure that the plots aren't on top of each other.
 pyplot.subplots_adjust(left=None, bottom=None, right=None, top=None, wspace=None, hspace=0.75)
 
+# pyplot.tight_layout()
 pyplot.savefig("RA_Practicum3_PulsarTiming_TLRH_6126561.png")
 pyplot.show()
