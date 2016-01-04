@@ -6,7 +6,7 @@
 
     Author: Ziggy Pleunis (ziggypleunis@gmail.com)
     Collaborator: Timo Halbesma (timo.halbesma@student.uva.nl)
-    Version: 2015/10/17 post 14h17
+    Version: 2015/12/23 post 14h42
 """
 
 import glob
@@ -14,6 +14,8 @@ import numpy as np
 import scipy
 from scipy import stats
 import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
+from matplotlib.ticker import MaxNLocator
 import astropy.io.fits as pf
 try:
     import pyraf
@@ -49,6 +51,20 @@ nebular_lines_wav = [4861.332, 4958.9, 5006.8, 5577.4, 5875.621,
 ngc40_guess = [[4860.4, 4861.2], [4958.0, 4959.0], [5005.9, 5006.9],
                [5577.5], [5875.6], [6546.8, 6548.0], [6561.6, 6562.7],
                [6582.2, 6583.4], [6715.2, 6716.4], [6729.6, 6730.8]]
+
+
+def nfd2mjd(date_str):
+    """ Calculate MJD for date string, format: <YYYY-MM-DDTHH:MM:SS>"""
+
+    date, time = date_str.split('T')
+    year, month, day = map(float, date.split('-'))
+    hour, minute, sec = map(float, time.split(':'))
+
+    JD = 367 * year - int(7 * (year + int((month + 9) / 12)) / 4) - int(3 * (int((year + (month - 9) / 7) / 100) + 1) / 4) + \
+        int(275 * month / 9) + day + 1721028.5 + (hour + minute / 60 + sec / 3600) / 24
+    MJD = JD - 2400000.5
+
+    return MJD
 
 
 def log_to_wav(start, step, left, right):
@@ -150,7 +166,7 @@ def velocity(line, restline, vrad):
     return clight * (line / restline - 1) - vrad
 
 
-def line_velocity(wav, spectrum, vrad):
+def line_velocity(wav, spectrum, vrad, unseq):
     """
     Calculate the velocities of given emission lines.
 
@@ -159,36 +175,78 @@ def line_velocity(wav, spectrum, vrad):
     This also needs a list emission lines, but here that list is global.
     """
 
+    print_LaTeX = False
+
     # print LaTeX ready table
-    print 'Line & $\lambda_rest$ & $\lambda_obs$ & Intensity & Velocity \\\\'
-    print ' & (\AA) & (\AA) & & (km/s) \\\\'
+    if print_LaTeX:
+        print 'Line & $\lambda_0$ & $\lambda_\\text{obs}$ & Intensity & '+\
+               'Velocity (max) & Velocity (Gaussian fit) \\\\'
+        print ' & (\AA) & (\AA) & & (km/s) & (km/s) \\\\'
 
-    for i in range(len(nebular_lines_wav)):
-        element = nebular_lines[i]
-        rest_wav = nebular_lines_wav[i]
+    plot_number = 0
+    for line_nr in range(len(nebular_lines_wav)):
+        element = nebular_lines[line_nr]
+        rest_wav = nebular_lines_wav[line_nr]
 
-        obs_wavs = ngc40_guess[i]
+        obs_wavs = ngc40_guess[line_nr]
 
         for obs_wav in obs_wavs:
+            plot_number += 1
+            # fit Gaussians
+            line = np.intersect1d(np.where(wav >= obs_wav-0.3),
+                                  np.where(wav <= obs_wav+0.3))
 
+            # Obtain (binned!!) signal to noise ratio to use as error
+            nbins = 4  # because very narrow line
+            dx = (line.max() - line.min()) / nbins  # int because indices
+            bins = [(line.min() + i*dx) for i in xrange(nbins)]
+            snr_binned = np.zeros(nbins)
+            noise_binned = np.zeros(nbins)
+            for i in xrange(nbins):
+                xmin = line.min() + i*dx
+                xmax = line.min() + (i+1)*dx
+                snr_binned[i] = (np.max(spectrum[xmin:xmax]) /
+                                 np.std(spectrum[xmin:xmax]))
+                noise_binned[i] = np.std(spectrum[xmin:xmax])
+
+            # NB snr_binned has different length than subset of wav, norm_flux we use!
+            # Assume that the SNR in the bin is valid over the entire bin interval
+            snr = np.zeros(len(line))
+            noise = np.zeros(len(line))
+            for i in xrange(len(line)):
+                index = np.where(line[i] <= bins)
+                if len(index[0]) is 0:
+                    index = 3
+                else:
+                    index = index[0][0]
+                snr[i] = snr_binned[index]
+                noise[i] = noise_binned[index]
+
+            fit_values = fit_gaussian(wav[line], spectrum[line], noise,
+                                      unseq, plot_number, 0.1, False, False, False)
+
+            if not fit_values:
+                gauss_velocity = np.nan
+            else:
+                gauss_velocity = velocity(fit_values["x"][1], rest_wav, vrad)
+
+            # And calculate using estimate of peak
             left = wav > obs_wav - 0.3
             right = wav < obs_wav + 0.3
-
             both = np.logical_and(left, right)
-
-            # TODO try fit Gaussians
             peak = np.max(spectrum[both])
-
             peak_index = np.where(spectrum == peak)
-
             shift = wav[peak_index][0]
 
+
             # brackets so LaTeX doesn't think '[' belongs to '\\'
-            print '{' + element + '} &',
-            print '{0:.1f} &'.format(rest_wav),
-            print '{0:.1f} &'.format(obs_wav),
-            print '{0:.2f} &'.format(peak),
-            print '${0:.2f}$ \\\\'.format(velocity(shift, rest_wav, vrad))
+            if print_LaTeX:
+                print '{' + element + '} &',
+                print '{0:.1f} &'.format(rest_wav),
+                print '{0:.1f} &'.format(obs_wav),
+                print '{0:.2f} &'.format(peak),
+                print '${0:.2f}$ &'.format(velocity(shift, rest_wav, vrad)),
+                print '${0:.2f}$ \\\\'.format(gauss_velocity)
 
             if SHOWPLOTS:
                 plt.axvline(shift, c='r')
@@ -203,6 +261,7 @@ def line_velocity(wav, spectrum, vrad):
     plt.ylim([0, 30])
 
     plt.show()
+
 
 def sum_spectra(observations, vrad, plot=False):
     """
@@ -229,7 +288,7 @@ def sum_spectra(observations, vrad, plot=False):
 
     sum_flux = sum_flux / var_sum
 
-    line_velocity(obs.wav[:167297], sum_flux, vrad)
+    line_velocity(obs.wav[:167297], sum_flux, vrad, obs.unseq)
 
     if (not SHOWPLOTS and not SAVEPLOTS) and not plot:
         return
@@ -284,32 +343,319 @@ def gaussian(x, mu, sigma):
 
 
 # https://stackoverflow.com/questions/23828226/scipy-curve-fit-does-not-seem-to-change-the-initial-parameters
-def gaussFunction(x, A, mu, sigma):
-    return A*np.exp(-(x-mu)**2/(2.*sigma**2))
+def gauss(parms, x):
+    A = parms[0]
+    mu = parms[1]
+    sigma = parms[2]
+    return A*np.exp(-(x-mu)**2/(2.*sigma**2))+1
 
 
-def fit_gaussian(wav_values, norm_flux):
-    p0 = [np.max(norm_flux), wav_values[np.argmax(norm_flux)], 0.05]
-    popt, pcov = scipy.optimize.curve_fit(gaussFunction, wav_values, norm_flux, p0)
+def chisq(parms, x, y, dy):
+    ymod = gauss(parms, x)
+    return np.sum((y-ymod)**2/dy**2)
+
+
+def fit_gaussian(wav_values, norm_flux, error, unseq, line_nr,
+                 sigma_guess=7, verbose=False, plot=False, save=False):
+    # p0 = [np.max(norm_flux), wav_values[np.argmax(norm_flux)], 0.05]
+    # popt, pcov = scipy.optimize.curve_fit(gaussFunction, wav_values, norm_flux, p0, error)
     # curve_fit returns fit parameter values and errors
-    A_fit, mu_fit, sigma_fit = popt[0], popt[1], popt[2]
-    A_fit_stdev, mu_fit_stdev, sigma_fit_stdev = np.sqrt(np.diag(pcov))
+    # A_fit, mu_fit, sigma_fit = popt[0], popt[1], popt[2]
+    # A_fit_stdev, mu_fit_stdev, sigma_fit_stdev = np.sqrt(np.diag(pcov))
 
-    # Build in offset because we miss the tails
-    wav_range = np.linspace(wav_values[0]-42, wav_values[-1]+42, 10000)
-    fit_values = gaussFunction(wav_range, A_fit, mu_fit, sigma_fit)
+    # Xsquared_min = calculate_chi_squared(norm_flux,
+    #     gaussFunction(wav_values, A_fit, mu_fit, sigma_fit), error)
 
-    print "The fit parameters are as follows."
-    print "mu = {0:.2f} (stdev = {1:.2f})".format(mu_fit, mu_fit_stdev)
-    print "sigma = {0:.2f} (stdev = {1:.2f})".format(sigma_fit, sigma_fit_stdev)
+    # Here we have 3 fit parameters. Ddof is delta degrees of freedom.
+    # ddof = len(norm_flux)-3
+    # chisquared = scipy.stats.chi2(ddof)
+    # p_value = 1. - chisquared.cdf(Xsquared_min)
 
-    plt.figure(figsize=(10, 8))
-    plt.scatter(wav_values, norm_flux, lw=1, edgecolors=None, label="data")
-    plt.plot(wav_range, fit_values, c='red', lw=4, label="fit")
-    plt.xlabel(r'Wavelength $\AA$')
-    plt.ylabel('Normalised flux')
-    plt.legend()
-    plt.show()
+    # print "The fit parameters are as follows."
+    # print "mu = {0:.2f} (stdev = {1:.2f})".format(mu_fit, mu_fit_stdev)
+    # print "sigma = {0:.2f} (stdev = {1:.2f})".format(sigma_fit, sigma_fit_stdev)
+    # print "The p-value for this fit is {0:.2f}".format(p_value)
+
+    parms = [np.max(norm_flux), wav_values[np.argmax(norm_flux)], sigma_guess]
+    gauss_res = scipy.optimize.minimize(
+        chisq, parms, args=(wav_values, norm_flux, error),
+        method='Nelder-Mead')
+
+    if gauss_res["success"] is not True:
+        print "Error! The fit failed!"
+
+    ml_gauss = gauss_res["fun"]
+    dof = len(norm_flux) - 3
+
+    gauss_pars = gauss_res["x"]
+
+    # Sketchy calculation. This 3 should have been dof
+    chi2 = scipy.stats.chi2(3)
+    # ml_gaus/dof should have been just ml_gaus
+    # But in that case the p-values are all exactly zero...
+    p_gauss = 1.0 - chi2.cdf(ml_gauss/dof)
+
+    if verbose:
+        print "Reduced chi-squared is {0:.6f}, with\nA={1}\nmu={2}\nsigma={3}"\
+            .format(ml_gauss/dof, gauss_pars[0], gauss_pars[1], gauss_pars[2])
+        print "p-value for this fit is {0:.15f}".format(p_gauss)
+
+    if plot or save:
+        param_string = '\n'
+        param_string += r'$\chi^2_{{\rm reduced}}${1: <3}={0:.3f}'.format(ml_gauss/dof, "")
+        param_string += '\n'
+        param_string += r'$A${1: <11}={0:.3f}'.format(gauss_pars[0], "")
+        param_string += '\n'
+        param_string += r'$\mu${1: <11}={0:.3f}'.format(gauss_pars[1], "")
+        param_string += '\n'
+        param_string += r'$\sigma${1: <11}={0:.3f}'.format(gauss_pars[2], "")
+        param_string += '\n'
+        param_string += r'p-value{1: <1}={0:.4f}'.format(p_gauss, "")
+        param_string += '\n'
+
+        plt.subplots(2, 1, figsize=(10, 8))
+        gs1 = gridspec.GridSpec(3, 3)
+        gs1.update(hspace=0)
+        ax1 = plt.subplot(gs1[:-1,:])
+        ax2 = plt.subplot(gs1[-1,:])
+
+        lmbda = gauss_pars[1]  # To remove later.
+
+        ax1.errorbar(wav_values-lmbda, norm_flux, yerr=error,
+                     ls='', c="black", marker='o', ms=3, label="data")
+        ax2.errorbar(wav_values-lmbda, (norm_flux-(gauss(gauss_pars, wav_values))),
+                     yerr=error, ls='', c="red", marker='o', ms=3)
+
+        ax1.tick_params(labelsize=15)
+        ax2.tick_params(labelsize=15)
+
+    # Build in offset because we miss the tails. NB this is only for plotting.
+    if sigma_guess <= 1:
+        wav_range = np.linspace(wav_values[0], wav_values[-1], 100)
+    else:
+        wav_range = np.linspace(wav_values[0]-42, wav_values[-1]+42, 10000)
+    fit_values = gauss(gauss_pars, wav_range)
+
+    if plot or save:
+        ax1.plot(wav_range-lmbda, fit_values, c="red", lw=3, label="fit values:"+param_string)
+        ax2.axhline(y=0, lw=2, ls='dashed', c="black")
+
+        ax2.set_xlabel(r'Wavelength - {0:.2f} ($\AA$)'.format(lmbda), fontsize=18)
+        ax2.set_ylabel("Residuals", fontsize=18)
+        ax1.set_ylabel('Normalised Counts', fontsize=18)
+        ax1.legend()
+        ax1.tick_params(labelbottom='off')
+        nbins = len(ax2.get_yticklabels())
+        ax2.yaxis.set_major_locator(MaxNLocator(nbins=nbins, prune='upper'))
+
+    if SHOWPLOTS or plot:
+        plt.show()
+    if SAVEPLOTS or save:
+        plt.savefig('out/{0}_GaussianFit_Nebular-line-{1}.png'
+                    .format(unseq, line_nr),
+                        dpi=300, bbox_inches='tight')
+        # plt.close()
+
+    # Dealing with the nebular emission lines
+    if sigma_guess < 1 and p_gauss < 0.6:
+        # print "Error: fit failed"
+        return None
+    return gauss_res
+
+
+def calculate_center_of_gravity_velocity(all_observations,
+        xmin, xmax, vrad, LaTeX=False):
+    """
+    Calculate the center of gravity stellar emission line wavelength
+    To do so, one has to find emission lines, calculate lambda_cog.
+    We also fit a Gaussian profile to the emission line and then calculate
+    lambda_cog. The value of lambda_cog can be turned into velocity in the
+    line of sight.
+
+    Returns list of modified julian dates, list of v_los, list of v_los_gauss
+    """
+
+
+    mjd_list = []
+    v_los_list = []
+    v_los_gauss_list = []
+    lambda_nod_list = []
+
+    show_plots_of_linefinding = False
+    print "\nCalculating center of gravity line velocities."
+
+    print_header = True
+    for obs in all_observations:
+        if show_plots_of_linefinding:
+            plt.rcParams.update({'font.size': 20})
+            fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True, figsize=(18, 10))
+
+        # plot of the flux
+        # ax1.plot(obs.wav, obs.flux, c='red', label="obs.flux")
+        # ax1.set_ylim([0, np.max(obs.flux[obs.wav > xmin])])
+        # ax1.set_ylabel('Counts')
+        # ax1.legend()
+
+        # Design decision (after inspecting plot of both
+        # obs.flux and obs.norm_flux: continue with normalised flux.
+
+        # Now find stellar emission lines
+        # i) cut away wavelengths below 4500 because no look nice, visually selected :(
+        demand_i = np.where(obs.wav > 4500)
+        # ii) find counts 2 * mean counts
+        demand_ii = np.where(obs.norm_flux > 2*np.mean(obs.norm_flux))
+        # iii) neglect thin (nebular) lines, visually selected :(
+        demand_iii = np.where(obs.wav < 6500)
+
+        # intersection of three arrays
+        from functools import reduce
+        stellar_line_index = reduce(np.intersect1d,
+            (demand_i, demand_ii, demand_iii))
+
+        # Now how to find individual lines in array with all star em. lines?
+        if show_plots_of_linefinding:
+            ax1.scatter(obs.wav[stellar_line_index],
+                        obs.norm_flux[stellar_line_index],
+                        c='k', label="stellar emission lines")
+            ax1.set_ylim([1, np.max(obs.norm_flux[obs.wav > xmin])])
+            ax1.set_ylabel('Counts')
+            ax1.legend()
+
+        # We find groups of consecitives indices of at least length 42.
+        def consecutive(data, stepsize=1, max_gap=1):
+            return np.split(data,
+                np.where(np.diff(data) != stepsize)[0]+max_gap)
+
+        consecutives = consecutive(stellar_line_index)
+        individual_lines = []
+        for candidate in consecutives:
+            if len(candidate) > 42:  # Arbitrary
+                individual_lines.append(candidate)
+
+        if show_plots_of_linefinding:
+            colourpicker = {0: 'red', 1: 'orange', 2: 'yellow', 3: 'green',
+                            4: 'blue', 5: 'purple', 6: 'pink'}
+            for i, line in enumerate(individual_lines):
+                ax2.scatter(obs.wav[line.min():line.max()],
+                            obs.norm_flux[line.min():line.max()],
+                            c=colourpicker.get(i, 'black'),
+                            label="line {0}".format(i))
+            ax2.set_ylim([1, np.max(obs.norm_flux[obs.wav > xmin])])
+            ax2.set_ylabel('Counts')
+            ax2.legend()
+
+            # sharex=True, thus, only set ax2 lim and xlabel.
+            ax2.set_xlabel(r'Wavelength ($\AA$)')
+            ax2.set_xlim([xmin, xmax])
+
+            plt.minorticks_on()
+            plt.show()
+
+        if LaTeX and print_header:
+            print '& & & & \\multicolumn{2}{c}{Data} & \\multicolumn{2}{c}{Fit} \\\\'
+            print 'Object & MJD & line name & $\\lambda_0$ (\\AA) & $\\lambda_{\\rm COG}$ (\\AA) & $v_{\\rm LOS}$ (km/s) & $\\lambda_{\\rm COG}$ (\\AA) & $v_{\\rm LOS}$ (km/s) \\\\'
+            print '\\hline'
+            print_header = False
+
+        if LaTeX:
+            print 'HD~826',
+        for line_nr, line in enumerate(individual_lines):
+            # An issue might be that the tails of the lines have fallen off.
+            # See plot, and see demand_ii. Fix this by adding offset.
+
+            # Add offset to encount for tails of line
+            offset = 500 # arbitrary
+            line = np.arange(line.min()-offset, line.max()+offset)
+
+            # Obtain (binned!!) signal to noise ratio to use as error
+            nbins = 42
+            dx = (line.max() - line.min()) / nbins  # int because indices
+            bins = [(line.min() + i*dx) for i in xrange(nbins)]
+            snr_binned = np.zeros(nbins)
+            noise_binned = np.zeros(nbins)
+            for i in xrange(nbins):
+                xmin = line.min() + i*dx
+                xmax = line.min() + (i+1)*dx
+                snr_binned[i] = (np.max(obs.norm_flux[xmin:xmax]) /
+                                 np.std(obs.norm_flux[xmin:xmax]))
+                noise_binned[i] = np.std(obs.norm_flux[xmin:xmax])
+
+            # NB snr_binned has different length than subset of wav, norm_flux we use!
+            # Assume that the SNR in the bin is valid over the entire bin interval
+            snr = np.zeros(len(line)-1)
+            noise = np.zeros(len(line)-1)
+            for i in xrange(len(line)-1):
+                index = np.where(line[i] <= bins)
+                if len(index[0]) is 0:
+                    index = 41
+                else:
+                    index = index[0][0] - 1
+                snr[i] = snr_binned[index]
+                noise[i] = noise_binned[index]
+
+            # Now snr has same length as the line, and the snr values can
+            # be used as error for the fit and chi-squared calculation.
+            # NB len(line) = len of subset of wav + 1
+
+            # plt.figure()
+            # plt.plot(line, snr)
+            # plt.scatter(bins, snr_binned)
+            # plt.show()
+
+            # The idea was to calculate the center of gravity for
+            # the Gaussian fit, but the fits have high reduced chi^2 compared
+            # to the number of fit parameters, and have low p-values.
+            # Therefore we do not use the Gaussian fit, but the data.
+
+            # Fit a Gaussian
+            gauss_res = fit_gaussian(obs.wav[line.min():line.max()],
+                    obs.norm_flux[line.min():line.max()], noise,
+                    obs.unseq, line_nr)
+
+            x_values = obs.wav[line.min():line.max()]
+            fit_values = gauss(gauss_res["x"], x_values)
+
+            # Calculate center of gravity (units of \AA)
+            lambda_cog_gauss = (np.sum(x_values * (1 - fit_values)) /
+                np.sum((1-fit_values)))
+            lambda_cog = (np.sum(obs.wav[line.min():line.max()] *
+                (1-obs.norm_flux[line.min():line.max()])) /
+                np.sum((1-obs.norm_flux[line.min():line.max()])))
+
+            # Convert to velocity center of gravity
+            # Find nearest value in stellar_lines_wav, where lambda_0 is given
+            lambda_0_values = np.array(stellar_lines_wav)
+            index = np.abs(stellar_lines_wav - lambda_cog).argmin()
+            lambda_0 = lambda_0_values.flat[index]
+            line_name = stellar_lines[index]
+
+            speed_of_light = 299792.458  # km/s
+            v_los = speed_of_light * (lambda_0 - lambda_cog)/lambda_0
+            v_los_gauss = speed_of_light * (lambda_0 - lambda_cog_gauss)/lambda_0
+            # Correct for radial velocity
+            v_los -= vrad
+            v_los_gauss -= vrad
+
+            mjd = nfd2mjd(obs.header['DATE-OBS'])
+
+            if LaTeX:
+                print ' & {0:.2f} & {1} & '.format(mjd, line_name),
+                print '{0:.2f} & '.format(lambda_0),
+                print '{0:.2f} & {1:.2f} & '.format(lambda_cog, v_los),
+                print '{0:.2f} & {1:.2f} '.format(lambda_cog_gauss, v_los_gauss),
+                print '\\\\'.format(v_los)
+
+            mjd_list.append(mjd)
+            v_los_list.append(v_los)
+            v_los_gauss_list.append(v_los_gauss)
+            lambda_nod_list.append(lambda_0)
+
+        # Another issue might be that I have assumed we can use the normalised
+        # continuum, so I_cont in the formula is equal to one.
+        # Furthermore, we sum; (not) integrate. Here, dlambda != infinitesimal
+
+
+    return mjd_list, v_los_list, v_los_gauss_list, lambda_nod_list
 
 
 def run_iraf(self):
@@ -321,6 +667,61 @@ def run_iraf(self):
     #      *gapped* spectra
     #   -> shift spectra with IRAF our with own function?
     return
+
+
+def create_mjd_plot((mjd_list, v_los_list, v_los_gauss_list, lambda_nod_list)):
+
+    plt.figure(figsize=(18, 10))
+    plt.rcParams.update({'font.size': 20})
+
+    mjd = np.array(mjd_list)
+    v_los = np.array(v_los_list)
+    v_los_gauss = np.array(v_los_gauss_list)
+    lambda_nod = np.array(lambda_nod_list)
+
+    line1 = np.where(lambda_nod == 4650.25)
+    line2 = np.where(lambda_nod == 5696.92)
+    line3 = np.where(lambda_nod == 5812.0)
+
+    plt.errorbar(mjd[line1]-57000, v_los[line1], yerr=v_los[line1]*0.1,
+                 ls='', marker='o', ms=3, c='red', label=r'4650.25 $\AA$')
+    plt.errorbar(mjd[line2]-57000, v_los[line2], yerr=v_los[line2]*0.1,
+                 ls='', marker='o', ms=3, c='green', label=r'5696.92 $\AA$')
+    plt.errorbar(mjd[line3]-57000, v_los[line3], yerr=v_los[line3]*0.1,
+                 ls='', marker='o', ms=3, c='blue', label=r'5812.0 $\AA$')
+
+    plt.xlabel("MJD - 57000", fontsize=18)
+    plt.ylabel(r'$v_{\rm LOS}$ (km/s)', fontsize=22)
+
+    mean1 = np.mean(v_los[line1])
+    std1 = np.std(v_los[line1])
+    mean2 = np.mean(v_los[line2])
+    std2 = np.std(v_los[line2])
+    mean3 = np.mean(v_los[line3])
+    std3 = np.std(v_los[line3])
+
+    plt.axhline(y=mean1, linewidth=2, linestyle='dashed', c='red')
+    plt.axhline(y=mean1-std1, linewidth=2, linestyle='dotted', c='red')
+    plt.axhline(y=mean1+std1, linewidth=2, linestyle='dotted', c='red')
+    plt.axhspan(mean1-std1, mean1+std1, facecolor='red', alpha=0.2)
+
+    plt.axhline(y=mean2, linewidth=2, linestyle='dashed', c='green')
+    plt.axhline(y=mean2-std2, linewidth=2, linestyle='dotted', c='green')
+    plt.axhline(y=mean2+std2, linewidth=2, linestyle='dotted', c='green')
+    plt.axhspan(mean2-std2, mean2+std2, facecolor='green', alpha=0.2)
+
+    plt.axhline(y=mean3, linewidth=2, linestyle='dashed', c='blue')
+    plt.axhline(y=mean3-std3, linewidth=2, linestyle='dotted', c='blue')
+    plt.axhline(y=mean3+std3, linewidth=2, linestyle='dotted', c='blue')
+    plt.axhspan(mean3-std3, mean3+std3, facecolor='red', alpha=0.2)
+
+    plt.legend(loc=2)
+
+    plt.savefig('out/{0}.png'.format("vlos_vs_mjd"),
+                dpi=300, bbox_inches='tight')
+    plt.show()
+
+
 
 
 class HermesObservation(object):
@@ -617,110 +1018,6 @@ class HermesObservation(object):
             plt.savefig('out/{0}_normalised_masked_fit.png'.format(self.unseq),
                         dpi=300, bbox_inches='tight')
 
-    def calculate_center_of_gravity_velocity(self, xmin, xmax, LaTeX=False):
-        # wavelength range of Hermes: 377-900 nm, so 3770-9000 A
-
-        print "\nCalculating center of gravity line velocities."
-
-        plt.rcParams.update({'font.size': 20})
-        fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True, figsize=(18, 10))
-
-        # plot of the flux
-        # ax1.plot(self.wav, self.flux, c='red', label="self.flux")
-        # ax1.set_ylim([0, np.max(self.flux[self.wav > xmin])])
-        # ax1.set_ylabel('Counts')
-        # ax1.legend()
-
-        # Design decision (after inspecting plot of both
-        # self.flux and self.norm_flux: continue with normalised flux.
-
-        # Now find stellar emission lines
-        # i) cut away wavelengths below 4500 because no look nice, visually selected :(
-        demand_i = np.where(self.wav > 4500)
-        # ii) find counts 2 * mean counts
-        demand_ii = np.where(self.norm_flux > 2*np.mean(self.norm_flux))
-        # iii) neglect thin (nebular) lines, visually selected :(
-        demand_iii = np.where(self.wav < 6500)
-
-        # intersection of three arrays
-        from functools import reduce
-        stellar_line_index = reduce(np.intersect1d,
-           (demand_i, demand_ii, demand_iii))
-
-        # Now how to find individual lines in array with all star em. lines?
-        ax1.scatter(self.wav[stellar_line_index],
-                 self.norm_flux[stellar_line_index],
-                 c='k', label="stellar emission lines")
-        ax1.set_ylim([1, np.max(self.norm_flux[self.wav > xmin])])
-        ax1.set_ylabel('Counts')
-        ax1.legend()
-
-        # We find groups of consecitives indices of at least length 42.
-        def consecutive(data, stepsize=1, max_gap=1):
-            return np.split(data,
-                np.where(np.diff(data) != stepsize)[0]+max_gap)
-
-        consecutives = consecutive(stellar_line_index)
-        individual_lines = []
-        for candidate in consecutives:
-            if len(candidate) > 42:  # Arbitrary
-                individual_lines.append(candidate)
-        colourpicker = {0: 'red', 1: 'orange', 2: 'yellow', 3: 'green',
-                        4: 'blue', 5: 'purple', 6: 'pink'}
-        for i, line in enumerate(individual_lines):
-            ax2.scatter(self.wav[line.min():line.max()],
-                        self.norm_flux[line.min():line.max()],
-                        c=colourpicker.get(i, 'black'),
-                        label="line {0}".format(i))
-        ax2.set_ylim([1, np.max(self.norm_flux[self.wav > xmin])])
-        ax2.set_ylabel('Counts')
-        ax2.legend()
-
-        # sharex=True, thus, only set ax2 lim and xlabel.
-        ax2.set_xlabel(r'Wavelength ($\AA$)')
-        ax2.set_xlim([xmin, xmax])
-
-        plt.minorticks_on()
-        # plt.show()
-
-        # Calculate center of gravity (units of \AA)
-        if LaTeX:
-            print 'UNSEQ & line name & $\\lambda_0$ (\\AA) & $\\lambda_{\\rm COG}$ (\\AA) & $v_{\\rm COG}$ (km/s) \\\\'
-        for i, line in enumerate(individual_lines):
-            lambda_cog = (np.sum(self.wav[line.min():line.max()] *
-                          (1-self.norm_flux[line.min():line.max()])) /
-                          np.sum((1-self.norm_flux[line.min():line.max()])))
-            # Convert to velocity center of gravity
-            # Find nearest value in stellar_lines_wav, where lambda_0 is given
-            lambda_0_values = np.array(stellar_lines_wav)
-            index = np.abs(stellar_lines_wav - lambda_cog).argmin()
-            lambda_0 = lambda_0_values.flat[index]
-            line_name = stellar_lines[index]
-
-            speed_of_light = 299792.458  # km/s
-            v_cog = speed_of_light * (lambda_0 - lambda_cog)/lambda_0
-
-            if not LaTeX:
-                print 'Line {0} is {1}.'.format(i, line_name)
-                print 'Lambda_0:\t{0:.2f}\nLambda_cog:\t{1:.2f}'\
-                    .format(lambda_0, lambda_cog)
-                print 'v_cog:\t\t{0:.2f} km/s\n'.format(v_cog)
-            else:
-                print '{0} & {1} & '.format(self.unseq, line_name),
-                print '{0:.2f} & {1:.2f} & '.format(lambda_0, lambda_cog),
-                print '{0:.2f} \\\\'.format(v_cog)
-
-        # Fit a Gaussian, for jokes?
-        line = individual_lines[0]
-        fit_gaussian(self.wav[line.min():line.max()],
-                     self.norm_flux[line.min():line.max()])
-
-        # One issue might be that the tails of the lines have fallen off.
-        # See plot, and see demand_ii.
-        # Another issue might be that I have assumed we can use the normalised
-        # continuum, so I_cont in the formula is equal to one.
-        # Furthermore, we sum; (not) integrate. Here, dlambda != infinitesimal
-
     def pipeline(self, xmin, xmax, fit, plot=False):
         """Run the whole analysis pipeline."""
 
@@ -736,7 +1033,6 @@ class HermesObservation(object):
         self.plot_hermes(xmin, xmax, plot=2)
         self.normalise_mask(xmin, xmax, loc_edge, fit)
         self.plot_hermes(xmin, xmax, plot=3)
-        self.calculate_center_of_gravity_velocity(xmin, xmax)
 
 
 def main():
@@ -745,16 +1041,18 @@ def main():
     """
 
     vrad = -20.5  # km/s -> NGC 40
+    xmin = 4000
+    xmax = 7000
 
     all_observations = []
     for fname in obtain_fits_paths('../Data'):
         obs = HermesObservation(fname)
         # if obs.unseq == '00671212':
-        obs.pipeline(4000, 7000, 5)
+        obs.pipeline(xmin, xmax, 5)
         all_observations.append(obs)
         obs.header['VRAD'] = vrad  # TODO: add proper ref
         # obs.print_entire_header()
-        break
+        # break
 
 
         if SAVEFITS and True:
@@ -774,7 +1072,16 @@ def main():
 
     # generate_LaTeX_observationlog(all_observations)
 
+    # print "\n\n\n\n\n\n"
+
     # sum_spectra(all_observations, vrad, plot=False)
+
+    # print "\n\n\n\n\n\n"
+
+    cog_lists = calculate_center_of_gravity_velocity(all_observations,
+        xmin, xmax, vrad, LaTeX=False)
+
+    create_mjd_plot(cog_lists)
 
     if HAS_PYRAF:
         run_iraf()  # Rename to something with cross-correlate?
