@@ -5,7 +5,7 @@ Author: Ziggy Pleunis (ziggypleunis@gmail.com)
 Collaborator: Timo Halbesma (timo.halbesma@student.uva.nl)
 Version: 0.01 (Initial)
 Date created: Thu Oct 14, 2015 04:03 AM
-Last modified: Sat Jan 09, 2016 05:05 PM
+Last modified: Mon Jan 11, 2016 12:14 PM
 
 Description: pipeline for the cross correlation of [WR] CSPNe spectra
 
@@ -680,7 +680,7 @@ def generate_huib_plot(all_observations, vrad):
 
     splines = ["He2_4686", "He1_4713", "Ha_6563", "Hb_4861", "Hg_4341", "Hd_4102", "He1_5876", "He1_4026", "He1_4471", "He2_5412", "He2_4542", "He2_4200", "C3_5696"]
     wav0 = [4685.804, 4713.145, 6562.852, 4861.332, 4340.472, 4101.734, 5875.621, 4026.191, 4471.480, 5411.521, 4541.591, 4199.87, 5696.92]
-    ymin = [0.78, 0.8, 0.4, 0.8, 0.8, 0.8, 0.8, 0.8, 0.9, 0.8, 0.8, 0.8, 0.8]
+    ymin = [0.78, 0.8, 0.4, 0.8, 0.8, 0.8, 0.8, 0.8, 0.9, 0.8, 0.8, 0.8, 0]
     ymax = [5, 5, 12, 5, 8, 8, 8, 8, 9, 8, 8, 8, 8]
     wcont1a = [4671.5, 4695, 6540, 4840, 4324, 4082, 5851, 4012, 4460, 5390, 4527, 4186, 5672.4]
     wcont1b = [4672, 4700, 6542, 4846, 4328, 4085, 5858, 4016, 4464, 5397, 4531, 4190, 5648.7]
@@ -707,16 +707,24 @@ def generate_huib_plot(all_observations, vrad):
     for obs in all_observations:
         if (obs.unseq == '00670952') | (obs.unseq == '00671332'):
 #  00671468 00671469
-            print obs.unseq
+            # selection of wavelengths around line center lambda_0
             wavsel = obs.wav[(obs.wav > xmin) & (obs.wav < xmax)]
             fluxsel = obs.flux[(obs.wav > xmin) & (obs.wav < xmax)]
+            # Continuum wavelength around line. Probably visually obtained
+            # by Huib from the spectrum. Added the C3 line by inspecting the
+            # summed spectrum plot.
             wavc = obs.wav[((obs.wav > wcont1a[j]) & (obs.wav < wcont1b[j]) | ((obs.wav > wcont2a[j]) & (obs.wav < wcont2b[j])))]
             fluxc = obs.flux[((obs.wav > wcont1a[j]) & (obs.wav < wcont1b[j]) | ((obs.wav > wcont2a[j]) & (obs.wav < wcont2b[j])))]
+            # Assume the continuum is weak in the source such that we can
+            # approximate it as a linear line on the wavelength interval
+            # on the left and on the right of the emission line
             fit = np.polyfit(wavc, fluxc, 1)
             fit_fn = np.poly1d(fit)
+            # sel -> selection; c -> continuum; n -> normalised.
             fluxseln = fluxsel / fit_fn(wavsel)
             fluxcn = fluxc / fit_fn(wavc)
 
+            # Convert wavelength to velocity
             vsel = velocity(wavsel, wav0[j], vrad)
             ax1.plot(vsel, fluxseln, lw=1, c=colour.get(obs.unseq, "b"))
             # plt.tick_params(axis='x', labelbottom='off')
@@ -725,7 +733,7 @@ def generate_huib_plot(all_observations, vrad):
             fluxseln_list.append(fluxseln)
             fluxcn_list.append(fluxcn)
 
-    ax1.set_ylabel("Flux")
+    ax1.set_ylabel("Normalised Counts", fontsize=18)
     ax1.axis([-2100, 2100, ymin[j], ymax[j]])
     ax1.plot((-2000, -2000), (0., 8), '--k')
     ax1.plot((2000, 2000), (0., 8), '--k')
@@ -742,17 +750,36 @@ def generate_huib_plot(all_observations, vrad):
     stdc = np.std(fluxcn_list)
     tvs = std/(stdc*np.sqrt(average))
 
-    ax2.plot(vsel_list[0], tvs)
+    smoothed_vsel = []
+    smoothed_tvs = []
+    smoothing = 10
+    for i in range(0, len(vsel_list[0]), smoothing):
+        smoothed_vsel.append(np.average(vsel_list[0][i:i+smoothing-1]))
+        smoothed_tvs.append(np.average(tvs[i:i+smoothing-1]))
+
+    # ax2.plot(vsel_list[0], tvs)
+    ax2.plot(smoothed_vsel, smoothed_tvs)
+
 
     ax2.axis([-2100, 2100, 0, 3.5])
-    ax2.set_xlabel('Velocity (km/s)')
-    ax2.set_ylabel("$\sigma$(obs)/$\sigma$(exp)")
+    ax2.set_xlabel('Velocity (km/s)', fontsize=18)
+    ax2.set_ylabel("$\sigma$(obs)/$\sigma$(exp)", fontsize=18)
 
     # prob = stats.chi2.ppf(0.95, nfiles)/(nfiles-1)
     # ax2.plot((vmin,vmax),(prob,prob),'--b')
     ax2.plot((vmin, vmax), (1, 1),'--k')
 
-    plt.show()
+    # Fix overlapping tickmarks
+    ax1.tick_params(labelbottom='off')
+    nbins = len(ax2.get_yticklabels())
+    ax2.yaxis.set_major_locator(MaxNLocator(nbins=nbins, prune='upper'))
+
+    if SHOWPLOTS:
+        plt.show()
+    if SAVEPLOTS or True:
+        plt.savefig('out/HuibPlot_00670952_00671332_{0}.png'
+                    .format(wav0[j]),
+                    dpi=300, bbox_inches='tight')
 
 
 def run_iraf(self):
