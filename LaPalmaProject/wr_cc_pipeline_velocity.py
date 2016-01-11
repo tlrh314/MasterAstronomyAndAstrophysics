@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 """
-    wr_cc_pipeline_stable.py:
+File: wr_cc_pipeline_velocity.py
+Author: Ziggy Pleunis (ziggypleunis@gmail.com)
+Collaborator: Timo Halbesma (timo.halbesma@student.uva.nl)
+Version: 0.01 (Initial)
+Date created: Thu Oct 14, 2015 04:03 AM
+Last modified: Sat Jan 09, 2016 05:05 PM
 
-    pipeline for the cross correlation of [WR] CSPNe spectra
+Description: pipeline for the cross correlation of [WR] CSPNe spectra
 
-    Author: Ziggy Pleunis (ziggypleunis@gmail.com)
-    Collaborator: Timo Halbesma (timo.halbesma@student.uva.nl)
-    Version: 2015/12/23 post 14h42
 """
 
 import glob
@@ -60,7 +62,8 @@ def nfd2mjd(date_str):
     year, month, day = map(float, date.split('-'))
     hour, minute, sec = map(float, time.split(':'))
 
-    JD = 367 * year - int(7 * (year + int((month + 9) / 12)) / 4) - int(3 * (int((year + (month - 9) / 7) / 100) + 1) / 4) + \
+    JD = 367 * year - int(7 * (year + int((month + 9) / 12)) / 4) -\
+        int(3 * (int((year + (month - 9) / 7) / 100) + 1) / 4) + \
         int(275 * month / 9) + day + 1721028.5 + (hour + minute / 60 + sec / 3600) / 24
     MJD = JD - 2400000.5
 
@@ -658,6 +661,100 @@ def calculate_center_of_gravity_velocity(all_observations,
     return mjd_list, v_los_list, v_los_gauss_list, lambda_nod_list
 
 
+def generate_huib_plot(all_observations, vrad):
+    """
+    NB this code has been partially copy-pasted from prof. dr. em. H.F. Henrich's
+    plotHermes4.py script. Afterwards the code has been slightly modified
+    to generate plots in the same style as the other plots for the report.
+    """
+
+    clight = 299792.458  # km/s
+    def wtov(wave, waveref, vrad):
+        """ Convert wavelength to velocity units """
+        vel = clight*(wave/waveref-1)-vrad
+        return vel
+    def vtow(vel, waveref, vrad):
+        """ Convert wavelength to velocity units """
+        wave = waveref*(1+(vel+vrad)/clight)
+        return wave
+
+    splines = ["He2_4686", "He1_4713", "Ha_6563", "Hb_4861", "Hg_4341", "Hd_4102", "He1_5876", "He1_4026", "He1_4471", "He2_5412", "He2_4542", "He2_4200", "C3_5696"]
+    wav0 = [4685.804, 4713.145, 6562.852, 4861.332, 4340.472, 4101.734, 5875.621, 4026.191, 4471.480, 5411.521, 4541.591, 4199.87, 5696.92]
+    ymin = [0.78, 0.8, 0.4, 0.8, 0.8, 0.8, 0.8, 0.8, 0.9, 0.8, 0.8, 0.8, 0.8]
+    ymax = [5, 5, 12, 5, 8, 8, 8, 8, 9, 8, 8, 8, 8]
+    wcont1a = [4671.5, 4695, 6540, 4840, 4324, 4082, 5851, 4012, 4460, 5390, 4527, 4186, 5672.4]
+    wcont1b = [4672, 4700, 6542, 4846, 4328, 4085, 5858, 4016, 4464, 5397, 4531, 4190, 5648.7]
+    wcont2a = [4701.5, 4718, 6588, 4880, 4357, 4110, 5884, 4042, 4492, 5426, 4550, 4206, 5718.5]
+    wcont2b = [4702.2, 4720.8, 6594, 4884, 4362, 4112, 5889, 4046,4500, 5432, 4555, 4208, 5769.1]
+
+    vsini = 127  # FIXME: source?
+
+    # Use C III 5696.92 AA line
+    j = -1
+
+    f, (ax1, ax2) = plt.subplots(2, sharex=True)
+    f.subplots_adjust(hspace=0)
+    plt.setp([a.get_xticklabels() for a in f.axes[:-1]], visible=False)
+
+    xmin, xmax = wav0[j] - 42, wav0[j] + 42
+    vmin, vmax = wtov(xmin, wav0[j], vrad), wtov(xmax, wav0[j], vrad)
+
+    fluxseln_list = []
+    fluxcn_list = []
+    vsel_list = []
+
+    colour={'00670952': 'red', '00671468': 'blue'}
+    for obs in all_observations:
+        if (obs.unseq == '00670952') | (obs.unseq == '00671332'):
+#  00671468 00671469
+            print obs.unseq
+            wavsel = obs.wav[(obs.wav > xmin) & (obs.wav < xmax)]
+            fluxsel = obs.flux[(obs.wav > xmin) & (obs.wav < xmax)]
+            wavc = obs.wav[((obs.wav > wcont1a[j]) & (obs.wav < wcont1b[j]) | ((obs.wav > wcont2a[j]) & (obs.wav < wcont2b[j])))]
+            fluxc = obs.flux[((obs.wav > wcont1a[j]) & (obs.wav < wcont1b[j]) | ((obs.wav > wcont2a[j]) & (obs.wav < wcont2b[j])))]
+            fit = np.polyfit(wavc, fluxc, 1)
+            fit_fn = np.poly1d(fit)
+            fluxseln = fluxsel / fit_fn(wavsel)
+            fluxcn = fluxc / fit_fn(wavc)
+
+            vsel = velocity(wavsel, wav0[j], vrad)
+            ax1.plot(vsel, fluxseln, lw=1, c=colour.get(obs.unseq, "b"))
+            # plt.tick_params(axis='x', labelbottom='off')
+
+            vsel_list.append(vsel)
+            fluxseln_list.append(fluxseln)
+            fluxcn_list.append(fluxcn)
+
+    ax1.set_ylabel("Flux")
+    ax1.axis([-2100, 2100, ymin[j], ymax[j]])
+    ax1.plot((-2000, -2000), (0., 8), '--k')
+    ax1.plot((2000, 2000), (0., 8), '--k')
+    ax1.plot((-1500, -1500), (0., 8), '--k')
+    ax1.plot((1500, 1500), (0., 8), '--k')
+    ax1.plot((-2000, 2000), (1.0, 1.0), '--k', c="b")
+
+    # plt.tick_params(axis='x', labelbottom='off')
+
+    # calculate TVS
+    average = np.average(np.array(fluxseln_list), axis=0)
+    std = np.std(np.array(fluxseln_list), axis=0)
+    mean = np.mean(np.array(fluxseln_list), axis=0)
+    stdc = np.std(fluxcn_list)
+    tvs = std/(stdc*np.sqrt(average))
+
+    ax2.plot(vsel_list[0], tvs)
+
+    ax2.axis([-2100, 2100, 0, 3.5])
+    ax2.set_xlabel('Velocity (km/s)')
+    ax2.set_ylabel("$\sigma$(obs)/$\sigma$(exp)")
+
+    # prob = stats.chi2.ppf(0.95, nfiles)/(nfiles-1)
+    # ax2.plot((vmin,vmax),(prob,prob),'--b')
+    ax2.plot((vmin, vmax), (1, 1),'--k')
+
+    plt.show()
+
+
 def run_iraf(self):
     """ Depends on pyraf """
 
@@ -1040,7 +1137,7 @@ def main():
     Read all fits files in directory, run pipeline
     """
 
-    vrad = -20.5  # km/s -> NGC 40
+    vrad = -20.5  # km/s -> NGC 40, according to 2006AstL...32..759G
     xmin = 4000
     xmax = 7000
 
@@ -1050,10 +1147,9 @@ def main():
         # if obs.unseq == '00671212':
         obs.pipeline(xmin, xmax, 5)
         all_observations.append(obs)
-        obs.header['VRAD'] = vrad  # TODO: add proper ref
+        obs.header['VRAD'] = vrad
         # obs.print_entire_header()
         # break
-
 
         if SAVEFITS and True:
             # save normed spectrum as a .fits file as input for
@@ -1074,14 +1170,16 @@ def main():
 
     # print "\n\n\n\n\n\n"
 
-    # sum_spectra(all_observations, vrad, plot=False)
+    # sum_spectra(all_observations, vrad, plot=True)
 
     # print "\n\n\n\n\n\n"
 
-    cog_lists = calculate_center_of_gravity_velocity(all_observations,
-        xmin, xmax, vrad, LaTeX=False)
+    # cog_lists = calculate_center_of_gravity_velocity(all_observations,
+    #    xmin, xmax, vrad, LaTeX=False)
 
-    create_mjd_plot(cog_lists)
+    # create_mjd_plot(cog_lists)
+
+    generate_huib_plot(all_observations, vrad)
 
     if HAS_PYRAF:
         run_iraf()  # Rename to something with cross-correlate?
