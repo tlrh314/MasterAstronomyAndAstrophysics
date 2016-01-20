@@ -5,7 +5,7 @@ Author: Ziggy Pleunis (ziggypleunis@gmail.com)
 Collaborator: Timo Halbesma (timo.halbesma@student.uva.nl)
 Version: 0.01 (Initial)
 Date created: Thu Oct 14, 2015 04:03 AM
-Last modified: Mon Jan 11, 2016 12:14 PM
+Last modified: Sun Jan 17, 2016 03:21 pm
 
 Description: pipeline for the cross correlation of [WR] CSPNe spectra
 
@@ -225,8 +225,14 @@ def line_velocity(wav, spectrum, vrad, unseq):
                 snr[i] = snr_binned[index]
                 noise[i] = noise_binned[index]
 
+            print spectrum[line]
+            # noise = np.sqrt(spectrum[line])/(len(spectrum[line])*wav[1]-wav[0])
+            print "\n\n\n\n"
+            print noise
+
             fit_values = fit_gaussian(wav[line], spectrum[line], noise,
-                                      unseq, plot_number, 0.1, False, False, False)
+                                      unseq, plot_number, 0.1, verbose=True,
+                                      plot=True, save=False)
 
             if not fit_values:
                 gauss_velocity = np.nan
@@ -359,7 +365,7 @@ def chisq(parms, x, y, dy):
 
 
 def fit_gaussian(wav_values, norm_flux, error, unseq, line_nr,
-                 sigma_guess=7, verbose=False, plot=False, save=False):
+                 sigma_guess=7, verbose=False, plot=True, save=False):
     # p0 = [np.max(norm_flux), wav_values[np.argmax(norm_flux)], 0.05]
     # popt, pcov = scipy.optimize.curve_fit(gaussFunction, wav_values, norm_flux, p0, error)
     # curve_fit returns fit parameter values and errors
@@ -387,16 +393,28 @@ def fit_gaussian(wav_values, norm_flux, error, unseq, line_nr,
     if gauss_res["success"] is not True:
         print "Error! The fit failed!"
 
+    # print gauss_res
+
     ml_gauss = gauss_res["fun"]
-    dof = len(norm_flux) - 3
+    dof = len(norm_flux) - len(parms) - 1
+
+    # print "\n\n\n{0}\n{1}\n\n\n".format(norm_flux, len(norm_flux))
 
     gauss_pars = gauss_res["x"]
+    # print "chisq", chisq(gauss_pars, wav_values, norm_flux, error)
+    # print "[MLEs], chisq/dof:", gauss_pars, ml_gauss/dof
+    # print "dof", dof
+    # print "ml_gauss", ml_gauss
 
     # Sketchy calculation. This 3 should have been dof
-    chi2 = scipy.stats.chi2(3)
     # ml_gaus/dof should have been just ml_gaus
     # But in that case the p-values are all exactly zero...
+    chi2 = scipy.stats.chi2(3)
     p_gauss = 1.0 - chi2.cdf(ml_gauss/dof)
+
+    # Should be:
+    # chi2 = scipy.stats.chi2(dof)
+    # p_gauss = 1.0 - chi2.cdf(ml_gauss)
 
     if verbose:
         print "Reduced chi-squared is {0:.6f}, with\nA={1}\nmu={2}\nsigma={3}"\
@@ -532,7 +550,7 @@ def calculate_center_of_gravity_velocity(all_observations,
         consecutives = consecutive(stellar_line_index)
         individual_lines = []
         for candidate in consecutives:
-            if len(candidate) > 42:  # Arbitrary
+            if len(candidate) > 42:  # Arbitrary.
                 individual_lines.append(candidate)
 
         if show_plots_of_linefinding:
@@ -569,6 +587,15 @@ def calculate_center_of_gravity_velocity(all_observations,
             # Add offset to encount for tails of line
             offset = 500 # arbitrary
             line = np.arange(line.min()-offset, line.max()+offset)
+
+            # For checking what would happen with sqrt(N) as error
+            # print np.where(obs.flux[line.min():line.max()] < 20)
+            # error = np.sqrt(obs.norm_flux[line.min():line.max()])
+            # plt.errorbar(obs.wav[line.min():line.max()],
+            #              obs.norm_flux[line.min():line.max()],
+            #              yerr=error, marker='o', linestyle='', ms=3)
+            # plt.show()
+            # import sys; sys.exit(0)
 
             # Obtain (binned!!) signal to noise ratio to use as error
             nbins = 42
@@ -611,9 +638,26 @@ def calculate_center_of_gravity_velocity(all_observations,
             # Therefore we do not use the Gaussian fit, but the data.
 
             # Fit a Gaussian
+
+            wav_prev = None
+            binsize = []
+            for wav in obs.wav[line.min():line.max()]:
+                if not wav_prev:
+                    wav_prev = wav
+                    continue
+                else:
+                    binsize.append(wav - wav_prev)
+                    wav_prev = wav
+            binsize.append(binsize[-1])
+            binsize = np.array(binsize)
+            print len(binsize)
+            noise = 1./np.sqrt(obs.norm_flux[line.min():line.max()])
+            # noise = np.sqrt(obs.norm_flux[line.min():line.max()])
+            # print len(noise)
+            # import sys; sys.exit(0)
             gauss_res = fit_gaussian(obs.wav[line.min():line.max()],
                     obs.norm_flux[line.min():line.max()], noise,
-                    obs.unseq, line_nr)
+                    obs.unseq, line_nr, verbose=False, plot=False, save=True)
 
             x_values = obs.wav[line.min():line.max()]
             fit_values = gauss(gauss_res["x"], x_values)
@@ -778,7 +822,7 @@ def generate_huib_plot(all_observations, vrad):
         plt.show()
     if SAVEPLOTS or True:
         plt.savefig('out/HuibPlot_00670952_00671332_{0}.png'
-                    .format(wav0[j]),
+                    .format(splines[j]),
                     dpi=300, bbox_inches='tight')
 
 
@@ -1201,12 +1245,12 @@ def main():
 
     # print "\n\n\n\n\n\n"
 
-    # cog_lists = calculate_center_of_gravity_velocity(all_observations,
-    #    xmin, xmax, vrad, LaTeX=False)
+    cog_lists = calculate_center_of_gravity_velocity(all_observations,
+        xmin, xmax, vrad, LaTeX=True)
 
     # create_mjd_plot(cog_lists)
 
-    generate_huib_plot(all_observations, vrad)
+    # generate_huib_plot(all_observations, vrad)
 
     if HAS_PYRAF:
         run_iraf()  # Rename to something with cross-correlate?
