@@ -5,7 +5,7 @@ Author: Ziggy Pleunis (ziggypleunis@gmail.com)
 Collaborator: Timo Halbesma (timo.halbesma@student.uva.nl)
 Version: 0.01 (Initial)
 Date created: Thu Oct 14, 2015 04:03 AM
-Last modified: Tue Jan 19, 2016 05:32 pm
+Last modified: Wed Jan 20, 2016 01:57 pm
 
 Description: pipeline for the cross correlation of [WR] CSPNe spectra
 
@@ -202,8 +202,8 @@ def line_velocity(wav, spectrum, vrad, unseq):
             noise = 1./np.sqrt(spectrum[line])
 
             fit_values = fit_gaussian(wav[line], spectrum[line], noise,
-                                      unseq, plot_number, 0.1, verbose=True,
-                                      plot=True, save=False)
+                                      unseq, plot_number, 0.1, verbose=False,
+                                      plot=False, save=True)
 
             if not fit_values:
                 gauss_velocity = np.nan
@@ -423,15 +423,18 @@ def fit_gaussian(wav_values, norm_flux, error, unseq, line_nr,
     if SHOWPLOTS or plot:
         plt.show()
     if SAVEPLOTS or save:
-        plt.savefig('out/{0}_GaussianFit_Nebular-line-{1}.png'
-                    .format(unseq, line_nr),
+        plt.savefig('out/{3}/{0}_GaussianFit{2}-line-{1}.png'
+                    .format(unseq, line_nr,
+                            "_Nebular" if sigma_guess < 1 else "",
+                            "GaussianFitToNebularLine" if sigma_guess < 1
+                                else "GaussianFitToLine"),
                         dpi=300, bbox_inches='tight')
         # plt.close()
 
     # Dealing with the nebular emission lines
-    if sigma_guess < 1 and p_gauss < 0.6:
+    # if sigma_guess < 1:
         # print "Error: fit failed"
-        return None
+        # return None
     return gauss_res
 
 
@@ -1129,7 +1132,7 @@ def main():
 
     # print "\n\n\n\n\n\n"
 
-    # sum_spectra(all_observations, vrad, plot=True)
+    sum_spectra(all_observations, vrad, plot=False)
 
     # print "\n\n\n\n\n\n"
 
