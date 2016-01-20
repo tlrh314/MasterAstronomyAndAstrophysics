@@ -5,7 +5,7 @@ Author: Ziggy Pleunis (ziggypleunis@gmail.com)
 Collaborator: Timo Halbesma (timo.halbesma@student.uva.nl)
 Version: 0.01 (Initial)
 Date created: Thu Oct 14, 2015 04:03 AM
-Last modified: Sun Jan 17, 2016 03:21 pm
+Last modified: Tue Jan 19, 2016 05:32 pm
 
 Description: pipeline for the cross correlation of [WR] CSPNe spectra
 
@@ -199,36 +199,7 @@ def line_velocity(wav, spectrum, vrad, unseq):
             line = np.intersect1d(np.where(wav >= obs_wav-0.3),
                                   np.where(wav <= obs_wav+0.3))
 
-            # Obtain (binned!!) signal to noise ratio to use as error
-            nbins = 4  # because very narrow line
-            dx = (line.max() - line.min()) / nbins  # int because indices
-            bins = [(line.min() + i*dx) for i in xrange(nbins)]
-            snr_binned = np.zeros(nbins)
-            noise_binned = np.zeros(nbins)
-            for i in xrange(nbins):
-                xmin = line.min() + i*dx
-                xmax = line.min() + (i+1)*dx
-                snr_binned[i] = (np.max(spectrum[xmin:xmax]) /
-                                 np.std(spectrum[xmin:xmax]))
-                noise_binned[i] = np.std(spectrum[xmin:xmax])
-
-            # NB snr_binned has different length than subset of wav, norm_flux we use!
-            # Assume that the SNR in the bin is valid over the entire bin interval
-            snr = np.zeros(len(line))
-            noise = np.zeros(len(line))
-            for i in xrange(len(line)):
-                index = np.where(line[i] <= bins)
-                if len(index[0]) is 0:
-                    index = 3
-                else:
-                    index = index[0][0]
-                snr[i] = snr_binned[index]
-                noise[i] = noise_binned[index]
-
-            print spectrum[line]
-            # noise = np.sqrt(spectrum[line])/(len(spectrum[line])*wav[1]-wav[0])
-            print "\n\n\n\n"
-            print noise
+            noise = 1./np.sqrt(spectrum[line])
 
             fit_values = fit_gaussian(wav[line], spectrum[line], noise,
                                       unseq, plot_number, 0.1, verbose=True,
@@ -359,6 +330,11 @@ def gauss(parms, x):
     return A*np.exp(-(x-mu)**2/(2.*sigma**2))+1
 
 
+def gauss_wrapper(x, A, mu, sigma):
+    parms = (A, mu, sigma)
+    return gauss(parms, x)
+
+
 def chisq(parms, x, y, dy):
     ymod = gauss(parms, x)
     return np.sum((y-ymod)**2/dy**2)
@@ -366,25 +342,6 @@ def chisq(parms, x, y, dy):
 
 def fit_gaussian(wav_values, norm_flux, error, unseq, line_nr,
                  sigma_guess=7, verbose=False, plot=True, save=False):
-    # p0 = [np.max(norm_flux), wav_values[np.argmax(norm_flux)], 0.05]
-    # popt, pcov = scipy.optimize.curve_fit(gaussFunction, wav_values, norm_flux, p0, error)
-    # curve_fit returns fit parameter values and errors
-    # A_fit, mu_fit, sigma_fit = popt[0], popt[1], popt[2]
-    # A_fit_stdev, mu_fit_stdev, sigma_fit_stdev = np.sqrt(np.diag(pcov))
-
-    # Xsquared_min = calculate_chi_squared(norm_flux,
-    #     gaussFunction(wav_values, A_fit, mu_fit, sigma_fit), error)
-
-    # Here we have 3 fit parameters. Ddof is delta degrees of freedom.
-    # ddof = len(norm_flux)-3
-    # chisquared = scipy.stats.chi2(ddof)
-    # p_value = 1. - chisquared.cdf(Xsquared_min)
-
-    # print "The fit parameters are as follows."
-    # print "mu = {0:.2f} (stdev = {1:.2f})".format(mu_fit, mu_fit_stdev)
-    # print "sigma = {0:.2f} (stdev = {1:.2f})".format(sigma_fit, sigma_fit_stdev)
-    # print "The p-value for this fit is {0:.2f}".format(p_value)
-
     parms = [np.max(norm_flux), wav_values[np.argmax(norm_flux)], sigma_guess]
     gauss_res = scipy.optimize.minimize(
         chisq, parms, args=(wav_values, norm_flux, error),
@@ -393,52 +350,46 @@ def fit_gaussian(wav_values, norm_flux, error, unseq, line_nr,
     if gauss_res["success"] is not True:
         print "Error! The fit failed!"
 
-    # print gauss_res
-
     ml_gauss = gauss_res["fun"]
-    dof = len(norm_flux) - len(parms) - 1
-
-    # print "\n\n\n{0}\n{1}\n\n\n".format(norm_flux, len(norm_flux))
+    dof = len(norm_flux) - len(parms)
 
     gauss_pars = gauss_res["x"]
-    # print "chisq", chisq(gauss_pars, wav_values, norm_flux, error)
-    # print "[MLEs], chisq/dof:", gauss_pars, ml_gauss/dof
-    # print "dof", dof
-    # print "ml_gauss", ml_gauss
 
-    # Sketchy calculation. This 3 should have been dof
-    # ml_gaus/dof should have been just ml_gaus
-    # But in that case the p-values are all exactly zero...
-    chi2 = scipy.stats.chi2(3)
-    p_gauss = 1.0 - chi2.cdf(ml_gauss/dof)
+    # Now obtain confidence intervals on maximum likelihood estimates
+    popt, pcov = scipy.optimize.curve_fit(gauss_wrapper, wav_values, norm_flux, gauss_pars, error)
 
-    # Should be:
-    # chi2 = scipy.stats.chi2(dof)
-    # p_gauss = 1.0 - chi2.cdf(ml_gauss)
+    A_fit, mu_fit, sigma_fit = popt[0], popt[1], popt[2]
+    A_fit_stdev, mu_fit_stdev, sigma_fit_stdev = np.sqrt(np.diag(pcov))
 
     if verbose:
+        print "Scipy optimize minimize yields:"
         print "Reduced chi-squared is {0:.6f}, with\nA={1}\nmu={2}\nsigma={3}"\
             .format(ml_gauss/dof, gauss_pars[0], gauss_pars[1], gauss_pars[2])
-        print "p-value for this fit is {0:.15f}".format(p_gauss)
+        print "Scipy optimize curve_fit yields:"
+        print "A = {0:.2f} +/- = {1:.2f}".format(A_fit, A_fit_stdev)
+        print "mu = {0:.2f} +/- = {1:.2f}".format(mu_fit, mu_fit_stdev)
+        print "sigma = {0:.2f} +/- = {1:.2f}".format(sigma_fit, sigma_fit_stdev)
 
     if plot or save:
         param_string = '\n'
         param_string += r'$\chi^2_{{\rm reduced}}${1: <3}={0:.3f}'.format(ml_gauss/dof, "")
         param_string += '\n'
-        param_string += r'$A${1: <11}={0:.3f}'.format(gauss_pars[0], "")
+        param_string += r'$A${1: <11}={0:.3f}$\pm${2:.3f}'\
+            .format(gauss_pars[0], "", A_fit_stdev)
         param_string += '\n'
-        param_string += r'$\mu${1: <11}={0:.3f}'.format(gauss_pars[1], "")
+        param_string += r'$\mu${1: <11}={0:.3f}$\pm${2:.3f}'\
+            .format(gauss_pars[1], "", mu_fit_stdev)
         param_string += '\n'
-        param_string += r'$\sigma${1: <11}={0:.3f}'.format(gauss_pars[2], "")
-        param_string += '\n'
-        param_string += r'p-value{1: <1}={0:.4f}'.format(p_gauss, "")
+        param_string += r'$\sigma${1: <11}={0:.3f}$\pm${2:.3f}'\
+            .format(gauss_pars[2], "", sigma_fit_stdev)
         param_string += '\n'
 
-        plt.subplots(2, 1, figsize=(10, 8))
+        plt.subplots(2, 1, figsize=(14, 8))
         gs1 = gridspec.GridSpec(3, 3)
         gs1.update(hspace=0)
         ax1 = plt.subplot(gs1[:-1,:])
-        ax2 = plt.subplot(gs1[-1,:])
+        ax2 = plt.subplot(gs1[-1,:], sharex=ax1)
+
 
         lmbda = gauss_pars[1]  # To remove later.
 
@@ -454,7 +405,7 @@ def fit_gaussian(wav_values, norm_flux, error, unseq, line_nr,
     if sigma_guess <= 1:
         wav_range = np.linspace(wav_values[0], wav_values[-1], 100)
     else:
-        wav_range = np.linspace(wav_values[0]-42, wav_values[-1]+42, 10000)
+        wav_range = np.linspace(wav_values[0]-10, wav_values[-1]+10, 10000)
     fit_values = gauss(gauss_pars, wav_range)
 
     if plot or save:
@@ -588,73 +539,9 @@ def calculate_center_of_gravity_velocity(all_observations,
             offset = 500 # arbitrary
             line = np.arange(line.min()-offset, line.max()+offset)
 
-            # For checking what would happen with sqrt(N) as error
-            # print np.where(obs.flux[line.min():line.max()] < 20)
-            # error = np.sqrt(obs.norm_flux[line.min():line.max()])
-            # plt.errorbar(obs.wav[line.min():line.max()],
-            #              obs.norm_flux[line.min():line.max()],
-            #              yerr=error, marker='o', linestyle='', ms=3)
-            # plt.show()
-            # import sys; sys.exit(0)
-
-            # Obtain (binned!!) signal to noise ratio to use as error
-            nbins = 42
-            dx = (line.max() - line.min()) / nbins  # int because indices
-            bins = [(line.min() + i*dx) for i in xrange(nbins)]
-            snr_binned = np.zeros(nbins)
-            noise_binned = np.zeros(nbins)
-            for i in xrange(nbins):
-                xmin = line.min() + i*dx
-                xmax = line.min() + (i+1)*dx
-                snr_binned[i] = (np.max(obs.norm_flux[xmin:xmax]) /
-                                 np.std(obs.norm_flux[xmin:xmax]))
-                noise_binned[i] = np.std(obs.norm_flux[xmin:xmax])
-
-            # NB snr_binned has different length than subset of wav, norm_flux we use!
-            # Assume that the SNR in the bin is valid over the entire bin interval
-            snr = np.zeros(len(line)-1)
-            noise = np.zeros(len(line)-1)
-            for i in xrange(len(line)-1):
-                index = np.where(line[i] <= bins)
-                if len(index[0]) is 0:
-                    index = 41
-                else:
-                    index = index[0][0] - 1
-                snr[i] = snr_binned[index]
-                noise[i] = noise_binned[index]
-
-            # Now snr has same length as the line, and the snr values can
-            # be used as error for the fit and chi-squared calculation.
-            # NB len(line) = len of subset of wav + 1
-
-            # plt.figure()
-            # plt.plot(line, snr)
-            # plt.scatter(bins, snr_binned)
-            # plt.show()
-
-            # The idea was to calculate the center of gravity for
-            # the Gaussian fit, but the fits have high reduced chi^2 compared
-            # to the number of fit parameters, and have low p-values.
-            # Therefore we do not use the Gaussian fit, but the data.
+            noise = 1./np.sqrt(obs.norm_flux[line.min():line.max()])
 
             # Fit a Gaussian
-
-            wav_prev = None
-            binsize = []
-            for wav in obs.wav[line.min():line.max()]:
-                if not wav_prev:
-                    wav_prev = wav
-                    continue
-                else:
-                    binsize.append(wav - wav_prev)
-                    wav_prev = wav
-            binsize.append(binsize[-1])
-            binsize = np.array(binsize)
-            print len(binsize)
-            noise = 1./np.sqrt(obs.norm_flux[line.min():line.max()])
-            # noise = np.sqrt(obs.norm_flux[line.min():line.max()])
-            # print len(noise)
-            # import sys; sys.exit(0)
             gauss_res = fit_gaussian(obs.wav[line.min():line.max()],
                     obs.norm_flux[line.min():line.max()], noise,
                     obs.unseq, line_nr, verbose=False, plot=False, save=True)
@@ -791,6 +678,7 @@ def generate_huib_plot(all_observations, vrad):
     average = np.average(np.array(fluxseln_list), axis=0)
     std = np.std(np.array(fluxseln_list), axis=0)
     mean = np.mean(np.array(fluxseln_list), axis=0)
+    # continuum flux
     stdc = np.std(fluxcn_list)
     tvs = std/(stdc*np.sqrt(average))
 
